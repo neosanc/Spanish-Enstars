@@ -7285,13 +7285,14 @@
 
     const Commentable = ({ anchor, count, isOpen, onOpen, enabled, isMobile, alwaysCount, style, children }) => {
       const [hover, setHover] = useState(false);
+      const [tapped, setTapped] = useState(false);
       if (!enabled) return children;
       const asCount = count > 0 && (isMobile || alwaysCount);
-      const show = hover || isMobile || isOpen || (count > 0 && alwaysCount);
+      const show = isMobile ? (isOpen || count > 0 || tapped) : (hover || isOpen || (count > 0 && alwaysCount));
       return (
-        <div style={{ position: "relative", ...style }} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+        <div style={{ position: "relative", ...style }} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} onClick={isMobile && count === 0 ? () => setTapped(t => !t) : undefined}>
           {children}
-          <button onClick={(e) => { e.stopPropagation(); onOpen(anchor); }} title="Comentar" style={{ position: "absolute", top: -9, right: -9, display: "flex", alignItems: "center", gap: 3, height: 24, minWidth: 24, padding: asCount ? "0 8px" : 0, justifyContent: "center", borderRadius: 999, cursor: "pointer", border: "1px solid " + (isOpen ? "#4a85c2" : "rgba(150,185,225,0.6)"), background: isOpen ? "#4a85c2" : "rgba(255,255,255,0.97)", color: isOpen ? "#fff" : "#4a85c2", fontFamily: "'Nunito',sans-serif", fontSize: 12, fontWeight: 800, boxShadow: "0 1px 6px rgba(100,140,190,0.25)", opacity: show ? 1 : 0, transition: "opacity 0.15s, background 0.15s", lineHeight: 1, zIndex: 6 }}>
+          <button onClick={(e) => { e.stopPropagation(); onOpen(anchor); }} title="Comentar" style={{ position: "absolute", top: -9, right: -9, display: "flex", alignItems: "center", gap: 3, height: 24, minWidth: 24, padding: asCount ? "0 8px" : 0, justifyContent: "center", borderRadius: 999, cursor: "pointer", border: "1px solid " + (isOpen ? "#4a85c2" : "rgba(150,185,225,0.6)"), background: isOpen ? "#4a85c2" : "rgba(255,255,255,0.97)", color: isOpen ? "#fff" : "#4a85c2", fontFamily: "'Nunito',sans-serif", fontSize: 12, fontWeight: 800, boxShadow: "0 1px 6px rgba(100,140,190,0.25)", opacity: show ? 1 : 0, pointerEvents: show ? "auto" : "none", transition: "opacity 0.15s, background 0.15s", lineHeight: 1, zIndex: 6 }}>
             {asCount ? <><span style={{ fontSize: 11 }}>💬</span>{count}</> : <span style={{ fontSize: 16, marginTop: -1 }}>+</span>}
           </button>
         </div>
@@ -7318,7 +7319,7 @@
       );
     };
 
-    const DialogueBlock = ({ block, bIdx, enabled, byAnchor, openAnchor, onOpen, isMobile }) => {
+    const DialogueBlock = ({ block, bIdx, enabled, byAnchor, openAnchor, onOpen, isMobile, wide }) => {
       if (block.type === "image") {
         const anchor = "b" + bIdx;
         const lc = (byAnchor && byAnchor[anchor]) || [];
@@ -7336,9 +7337,9 @@
           const line = typeof rawLine === "object" ? rawLine.text : rawLine;
           const anchor = "b" + bIdx + "-l" + li;
           const lc = (byAnchor && byAnchor[anchor]) || [];
-          const hasPreview = enabled && !isMobile && lc.length > 0;
+          const hasPreview = enabled && wide && lc.length > 0;
           const bubble = (<div style={{ background: `linear-gradient(135deg,${char.color}18,${char.color}0c)`, border: `1px solid ${char.color}15`, borderRadius: li === 0 ? "4px 18px 18px 18px" : "18px", padding: "10px 16px", boxShadow: `0 1px 4px ${char.color}08` }}><p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 14.5, lineHeight: 1.65, color: line.startsWith("(") && line.endsWith(")") ? "#7a8a9e" : "#2c3e5a", fontStyle: line.startsWith("(") && line.endsWith(")") ? "italic" : "normal", margin: 0 }}>{line.split(/(\*\*[^*]+\*\*|\*[^*]+\*|\[\d+\])/).map((part, pi) => part.startsWith("**") && part.endsWith("**") ? <strong key={pi}>{part.slice(2, -2)}</strong> : part.startsWith("*") && part.endsWith("*") ? <em key={pi}>{part.slice(1, -1)}</em> : /^\[\d+\]$/.test(part) ? <FootnoteTooltip key={pi} num={part} notes={block.notes} /> : part)}</p></div>);
-          return (<div key={li} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}><Commentable anchor={anchor} count={lc.length} isOpen={openAnchor === anchor} onOpen={onOpen} enabled={enabled} isMobile={isMobile} style={{ maxWidth: hasPreview ? "58%" : "92%", flexShrink: 0 }}>{bubble}</Commentable>{hasPreview && <CommentPreview comments={lc} onOpen={() => onOpen(anchor)} />}</div>);
+          return (<div key={li} style={{ position: "relative", display: "flex" }}><Commentable anchor={anchor} count={lc.length} isOpen={openAnchor === anchor} onOpen={onOpen} enabled={enabled} isMobile={isMobile} alwaysCount={!wide} style={{ maxWidth: "92%", flexShrink: 0 }}>{bubble}</Commentable>{hasPreview && <div style={{ position: "absolute", top: 0, left: "100%", marginLeft: 24, width: 230 }}><CommentPreview comments={lc} onOpen={() => onOpen(anchor)} /></div>}</div>);
         })}</div></div></div>
       );
     };
@@ -7348,7 +7349,8 @@
       const supportsVisual = !!STORY_VISUAL[story.id];
       const [mode, setMode] = useState("text");
       const [isMobile, setIsMobile] = useState(typeof window !== "undefined" && window.innerWidth < 760);
-      useEffect(() => { const f = () => setIsMobile(window.innerWidth < 760); window.addEventListener("resize", f); return () => window.removeEventListener("resize", f); }, []);
+      const [wide, setWide] = useState(typeof window !== "undefined" && window.innerWidth >= 1200);
+      useEffect(() => { const f = () => { setIsMobile(window.innerWidth < 760); setWide(window.innerWidth >= 1200); }; window.addEventListener("resize", f); return () => window.removeEventListener("resize", f); }, []);
       const [commentsEnabled, setCommentsEnabled] = useState(() => localStorage.getItem("espstars_comments_off") !== "1");
       const [byAnchor, setByAnchor] = useState({});
       const [reloadTick, setReloadTick] = useState(0);
@@ -7381,7 +7383,7 @@
           <div style={{ background: "rgba(255,255,255,0.8)", borderRadius: 20, border: "1px solid rgba(160,190,230,0.15)", padding: "22px 26px", marginBottom: 32, textAlign: "center" }}><span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11, fontWeight: 700, color: "#8a9fba", letterSpacing: "0.1em", textTransform: "uppercase" }}>Capítulo {chapter.id}</span><h1 style={{ fontFamily: "'Libre Baskerville',serif", fontWeight: 700, fontSize: 24, color: "#2c3e5a", margin: "6px 0 0" }}>{chapter.title}</h1></div>
           {chapter.song && <ChapterAudioPlayer song={chapter.song} />}
           <div style={{ display: "flex", flexDirection: "column", background: "rgba(255,255,255,0.6)", borderRadius: 20, padding: "24px 20px", border: "1px solid rgba(160,190,230,0.1)" }}>
-            {dialogue.map((block, bIdx) => <DialogueBlock key={bIdx} block={block} bIdx={bIdx} enabled={commentsEnabled && !!sb} byAnchor={byAnchor} openAnchor={openAnchor} onOpen={setOpenAnchor} isMobile={isMobile} />)}
+            {dialogue.map((block, bIdx) => <DialogueBlock key={bIdx} block={block} bIdx={bIdx} enabled={commentsEnabled && !!sb} byAnchor={byAnchor} openAnchor={openAnchor} onOpen={setOpenAnchor} isMobile={isMobile} wide={wide} />)}
             {(() => { const allNotes = dialogue.filter(b => b.notes).flatMap(b => Object.entries(b.notes)); return allNotes.length > 0 ? <div style={{ marginTop: 28, padding: "16px 20px", borderRadius: 14, background: "rgba(74,133,194,0.04)", border: "1px solid rgba(74,133,194,0.08)" }}><div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12, fontWeight: 700, color: "#4a85c2", marginBottom: 8, letterSpacing: "0.04em" }}>NOTAS</div>{allNotes.map(([num, text]) => <div key={num} style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12, color: "#7a8a9e", lineHeight: 1.65, marginTop: 4 }}><span style={{ color: "#4a85c2", fontWeight: 700 }}>[{num}]</span> {text}</div>)}</div> : null; })()}
             {dialogue.length > 0 && <div style={{ display: "flex", justifyContent: "space-between", marginTop: 32, paddingTop: 20, borderTop: "1px solid rgba(160,190,230,0.15)" }}>
               {prevCh ? <button onClick={() => setSelectedChapter(prevCh)} style={{ background: "rgba(255,255,255,0.6)", border: "1px solid rgba(160,190,230,0.15)", borderRadius: 12, padding: "10px 18px", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#3a6db5", fontWeight: 600 }}>← {prevCh.title}</button> : <div />}
