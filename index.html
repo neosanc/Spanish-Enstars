@@ -1842,6 +1842,7 @@
       shinobu: { name: "Shinobu Sengoku", unit: "ryuseitai", color: "#FFDC00" },
       hiiro: { name: "Hiiro Amagi", unit: "alkaloid", color: "#BA2636" },
       hiiro_niki: { name: "Hiiro & Niki", unit: null, color: "#85526E", combo: ["hiiro", "niki"] },
+      hiiro_kohaku: { name: "Hiiro & Kohaku", unit: null, color: "#D75C7C", combo: ["hiiro", "kohaku"] },
       aira: { name: "Aira Shiratori", unit: "alkaloid", color: "#FFF1CF" },
       mayoi: { name: "Mayoi Ayase", unit: "alkaloid", color: "#522F60" },
       tatsumi: { name: "Tatsumi Kazehaya", unit: "alkaloid", color: "#7EBEA5" },
@@ -1903,7 +1904,8 @@
       { era: "!", id: "fms-ch1", title: "Capítulo 1 — Jerarquía", type: "main", unit: null, order: 13, chapters: 17, description: "¡Tú debes ser la estudiante transferida de la que tanto se habla! ¡Soy Subaru Akehoshi!", featured: ["subaru", "hokuto", "makoto", "mao", "kuro", "tetora", "koga", "keito", "tori"], status: "complete", banner: "images/img-46d57758.webp" },
       { era: "!", id: "fms-ch2", title: "Capítulo 2 — Rebelión", type: "main", unit: null, order: 14, chapters: 22, description: "Queridas y preciadas estrellas guía, ¡vosotros que escondéis un sueño resplandeciente! ¡Mostradme un brillo que logre que me convierta en cenizas!", featured: ["subaru", "hokuto", "makoto", "mao", "rei", "hinata", "yuta", "koga", "jin", "hajime", "tomoya", "mitsuru", "nazuna"], status: "complete", banner: "images/img-c5719964.webp" },
       { era: "!", id: "fms-ch3", title: "Capítulo 3 — Revolución", type: "main", unit: null, order: 15, chapters: 23, description: "A los demonios que habéis escapado de vuestras tumbas: os haré caer ante la justicia - No, ante mí.", featured: ["subaru", "hokuto", "makoto", "mao", "izumi", "kuro", "tetora", "rei", "kaoru", "adonis", "koga", "keito", "souma", "tori"], status: "complete", banner: "https://i.postimg.cc/fLZ7x8BN/1000-cb-20190503204153.webp" },
-      { era:"!", id: "fms-ch4", title: "Capítulo 4 — Reino", type: "main", unit:null, order:18, chapters:28, description: " ¡Un cometa que brilla en la oscuridad y los rincones más fríos del espacio, o en otras palabras, una sonrisa!", featured: ["subaru", "hokuto", "makoto", "mao", "hajime", "tomoya", "mitsuru", "nazuna", "hinata", "yuta", "eichi", "yuzuru", "tori", "keito", "souma", "rei", "akiomi"], status: "complete", banner: "https://i.postimg.cc/hGh1x8gH/1000-cb-20190510020352.webp" },
+      { era:"!", id: "fms-ch4", title: "Capítulo 4 — Reino", type: "main", unit:null, order:18, chapters:28, description: " ¡Un cometa que brilla en la oscuridad y los rincones más fríos del espacio, o en otras palabras, una sonrisa!", featured: ["subaru", "hokuto", "makoto", "mao", "souma", "adonis", "chiaki", "tetora", "midori", "jin", "akiomi", "rei", "tsukasa", "ritsu", "arashi", "keito", "kuro", "izumi", "eichi", "shinobu", "kanata", "yuta", "hinata", "hajime", "tomoya", "mitsuru", "nazuna", "wataru", "tori", "yuzuru", "koga", "kaoru"], status: "complete", banner: "https://i.postimg.cc/hGh1x8gH/1000-cb-20190510020352.webp" },
+      { era:"!", id: "fms-ch5", title: "Capítulo 5 — Ensemble", type: "main", unit:null, order:19, chapters:44, description: " TBA", featured: ["subaru", "hokuto", "makoto", "mao", "hajime", "tomoya", "mitsuru", "nazuna", "hinata", "yuta", "eichi", "yuzuru", "tori", "keito", "souma", "rei", "akiomi"], status: "complete", banner: "https://i.postimg.cc/0Nw9Wrv2/1000-cb-20210814173612.webp" },
       { era: "!!", id: "ms-ch1", title: "Capítulo 1 — Fracasados", type: "main", unit: null, order: 1, chapters: 24, description: "Siendo franco, habéis estado malgastando tiempo y recursos valiosos aquí sin lograr brillar. No tenéis derecho a llamarse idols.", featured: ["hiiro", "aira", "tatsumi", "mayoi", "eichi", "hajime", "tori", "subaru", "hokuto", "makoto", "mao", "rinne", "niki"], status: "complete", banner: "images/img-c11b1d7b.webp", translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" } },
       { era: "!!", id: "ms-ch2", title: "Capítulo 2 — Alborotadores", type: "main", unit: null, order: 2, chapters: 31, description: "¡Despetad! ¡Escuchad! ¡Oíd lo que queremos cantar! ¡Solo nosotros, Crazy:B, podemos daros lo que realmente queréis!", featured: ["hiiro", "aira", "subaru"], status: "not-started", banner: "images/img-7d802c9e.webp" },
       { era: "!!", id: "ms-ch3", title: "Capítulo 3 — Tiempos Turbulentos", type: "main", unit: null, order: 3, chapters: 36, description: "Aunque aún no me acostumbro a mi uniforme, aunque sigo incompleto... me he convertido en un idol, igual que tú.", featured: ["nagisa", "hiyori", "jun", "ibara"], status: "not-started", banner: "images/img-85354784.webp" },
@@ -1915,9 +1917,9 @@
       { era: "!!", id: "scout-lovebrew", title: "Lovebrew Café", type: "scout", unit: null, order: 9, chapters: 6, description: "Niki prepara unas galletas muy nutritivas con una planta rara para Tori. Él inmediatamente se las da a Eichi— Sin embargo, la planta tiene la habilidad de hacer que quien se la coma se “enamore”...", featured: ["tori", "niki", "eichi", "hajime"], status: "complete", banner: "images/img-84230207.webp" },
       { era: "!!", id: "other-valentine2026", title: "San Valentín 2026", type: "other", unit: null, order: 12, chapters: 1, description: "¡Hay un concurso de elaboración de chocolate para los idols de ES! ¡Unéte a los idols para hacer los mejores chocolates!", featured: [], status: "complete", banner: "https://i.postimg.cc/8zGV93qV/latest-cb-20240128074951.webp", bannerPos: "center 0%", bannerScale: "scale(1.4)" },
       { era: "!!", id: "amaneiro", title: "Amaneiro: Timbres del Cielo", type: "event", unit: "2wink", order: 17, chapters: 13, description: "Hinata acepta un trabajo con un fotógrafo famoso en lugar de Yuta, que estaba enfermo. Sintiéndose culpable por robarle su oportunidad, Hinata le sugiere que audicionen para ser co-protagonistas del drama romántico Amaneiro...", featured: ["hinata", "yuta", "mao", "kaoru", "kuro", "mika", "shu", "nagisa", "hiiro", "rinne", "himeru", "kohaku", "niki"], status: "complete", banner: "https://i.postimg.cc/vZwbybsz/latest-cb-20240914023306.webp" },
-
+      { era: "!!", id: "esu-fs1", title: "Scout exclusivo de Esu 1 - Sueña a lo grande", type: "scout", unit: "special_for_princess", order: 19, chapters: 5, description: "Anzu contacta a Esu para crearle un outfit exclusivo. Sin embargo, Fuyume dice que quiere coserle el outfit y Esu huye...", featured: ["esu", "fuyume", "kanna", "hokuto", "makoto", "keito", "kanata", "kohaku", "hiiro", "madara"], status: "complete", banner: "https://i.postimg.cc/3rzp0dB3/latest-cb-20240914021853.webp" },
+      { era: "!!", id: "rabits_esupri_vs", title: "Arco Tour Mundial / AREA 03: Special for Princess! VS Ra*bits", type: "event", unit: ["special_for_princess", "rabits"], order: 19, chapters: 11, description: "Es hora de la adorable “competición” y Hajime no quiere perder bajo ninguna circunstancia. Las unidades viajan a Hawaii, pero unos comentarios inesperados de Yume y Esu provocan consecuencias desastrosas.", featured: ["esu", "fuyume", "kanna", "raika", "hajime", "tomoya", "mitsuru", "nazuna"], status: "in-progress", banner: "images/rabits-esupri-vs-banner.webp" },
     ];
-
     const STORY_CHAPTERS = {
       "fms-ch1": [
         { id: 1, title: "Amistad", translated: true, translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" } },
@@ -2017,6 +2019,52 @@
         { id: 27, title: "Victoria absoluta", translated: true },
         { id: 28, title: "Compromiso", translated: true },
       ],
+      "fms-ch5": [
+        { id: 1, title: "Rotura", translated: true, translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" } },
+        { id: 2, title: "Soledad", translated: true },
+        { id: 3, title: "Ánimos", translated: true },
+        { id: 4, title: "Emocionado", translated: true },
+        { id: 5, title: "Regreso", translated: true },
+        { id: 6, title: "Esperanza", translated: true },
+        { id: 7, title: "Anuncio", translated: true },
+        { id: 8, title: "Valentía", translated: true },
+        { id: 9, title: "Inicio", translated: true },
+        { id: 10, title: "Enemigo fuerte", translated: true },
+        { id: 11, title: "Dificultades", translated: true },
+        { id: 12, title: "Cuidado", translated: true },
+        { id: 13, title: "Intenciones verdaderas", translated: true },
+        { id: 14, title: "Impaciencia", translated: true },
+        { id: 15, title: "Sentimientos verdaderos", translated: true },
+        { id: 16, title: "Giro de vuelta", translated: true },
+        { id: 17, title: "Inteligencia", translated: true },
+        { id: 18, title: "Arrepentimiento", translated: true },
+        { id: 19, title: "Devorasueños", translated: true },
+        { id: 20, title: "Llegada", translated: true },
+        { id: 21, title: "Justicia", translated: true },
+        { id: 22, title: "Anomalía", translated: true },
+        { id: 23, title: "Refuerzos", translated: true },
+        { id: 24, title: "Contraataque", translated: true },
+        { id: 25, title: "Progreso rápido", translated: true },
+        { id: 26, title: "Descanso", translated: true },
+        { id: 27, title: "Expectativas", translated: true },
+        { id: 28, title: "Velocidad", translated: true },
+        { id: 29, title: "Escenario", translated: true },
+        { id: 30, title: "Impresionado", translated: true },
+        { id: 31, title: "Carta", translated: true },
+        { id: 32, title: "Paisaje", translated: true },
+        { id: 33, title: "Régimen Militar", translated: true },
+        { id: 34, title: "Contraste", translated: true },
+        { id: 35, title: "Regreso", translated: true },
+        { id: 36, title: "Propósito", translated: true },
+        { id: 37, title: "Determinación", translated: true },
+        { id: 38, title: "Duelo", translated: true },
+        { id: 39, title: "Batalla decisiva", translated: true },
+        { id: 40, title: "Conclusión", translated: true },
+        { id: 41, title: "Destino", translated: true },
+        { id: 42, title: "Ganadores y perdedores", translated: true },
+        { id: 43, title: "Milagro", translated: true },
+        { id: 44, title: "Celebración", translated: true },
+      ],
       "ms-ch1": [
         { id: 1, title: "Prólogo", translated: true, translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" } },
         { id: 2, title: "Anuncio", translated: true },
@@ -2109,6 +2157,30 @@
         { id: 12, title: "Dos para Uno / Episodio 6", translated: true, song: {title: "Twin Wedding Vows", artist: "2wink", src: "audio/amaneiro.mp3", cover: "https://i.postimg.cc/8PMPwGJt/1000-cb-20240612150905.webp" }},
         { id: 13, title: "Epílogo", translated: true },
       ],
+      "esu-fs1": [
+        { id: 1, title: "Sueña a lo grande / Episodio 1", translated: true, translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" } },
+        { id: 2, title: "Sueña a lo grande / Episodio 1", translated: true },
+        { id: 3, title: "Deus Ex Machina / Episodio 1", translated: true },
+        { id: 4, title: "Deus Ex Machina / Episodio 2", translated: true },
+        { id: 5, title: "Primeros pasos de la amistad", translated: true },
+      ],
+      "rabits_esupri_vs": [
+      { id: 1, title: "Prólogo", translated: true, translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" } },
+      { id: 2, title: "Henoheno / Episodio 1", translated: false },
+      { id: 3, title: "Henoheno / Episodio 2", translated: false },
+      { id: 4, title: "Henoheno / Episodio 3", translated: false },
+      { id: 5, title: "Henoheno / Episodio 4", translated: false },
+      { id: 6, title: "Henoheno / Episodio 5", translated: false },
+      { id: 7, title: "Henoheno / Episodio 6", translated: false },
+      { id: 8, title: "Henoheno / Episodio 7", translated: false },
+      { id: 9, title: "Henoheno / Episodio 8", translated: false },
+      { id: 10, title: "Henoheno / Episodio 9", translated: false },
+      { id: 11, title: "Henoheno / Episodio 10", translated: false },
+      ],
+    };
+
+    const STORY_CHAPTER_CHARS = {
+      "esu-fs1": { 1: "esu", 2: "esu", 3: "kanna", 4: "kanna", 5: "kohaku" },
     };
 
     const STORY_DIALOGUE = {
@@ -3783,6 +3855,247 @@
       { speaker:"eichi", lines:["Entonces, ese derecho a participar en el SS que todos ansiáis conseguir...", "¿Sabéis cómo nuestra escuela elige a los participantes, a los representantes?", "Y agarraos, porque es impresionante. Participa la unidad del hijo de la familia que más dinero invierte en la escuela.", "No os estoy mintiendo. Está todo en los documentos oficiales. ¡No podía parar de reír!", "¿Qué son los idols? ¿Son los ricos? ¿Las autoridades?", "¡Eso no está bien, estudiantes de mi querida Academia Yumenosaki! ¡Lo que más brilla no son las monedas brillantes o las joyas, son nuestros sueños, nuestra actuación!", "Eso es lo más importante: la unidad que más brilla debería ser elegida como representante, ¿no creéis?", "Yo lo creo, y seguro que vosotros también.", "Por eso yo, el presidente del Consejo Estudiantil, Eichi Tenshouin, anuncio oficialmente...", "Que se celebrará un DreamFes para decidir nuestra unidad representante, la que de verdad merezca participar en el SS.", "¡Será un S1 denominado DDD, y quien lo gane nos representará en el SS!", "En principio, el estudiante que más invierte en esta escuela soy yo.", "Y mi unidad *fine* es la representante de esta escuela.", "Pero cedo ese derecho de inmediato a la unidad que gane el DDD. Os lo prometo aquí mismo.", "Esta es vuestra oportunidad de brillar al máximo como idols.", "Espero que intentéis participar en el DDD.", "Por supuesto, nosotros también participaremos en el DDD.", "Si lo ganásemos, participaríamos en el SS con la cabeza bien alta.", "Sin embargo, espero que aparezca otra unidad para derrotarme y ganarse la gloria de representarnos en el SS.", "Quiero que aceptéis este desafío apostando el peso de vuestros sueños y toda vuestra pasión.", "Deseo de todo corazón que aparezca una unidad que nos venza, ¡y que sea elegida como la verdadera representante de esta escuela!", "El DDD será este fin de semana. No queda ni una semana, así que debéis tomar una decisión pronto.", "El SS es a fin de año y quizá penséis que es muy pronto para elegir un representante cuando ni siquiera se han caído todas las flores de cerezo.", "Pero yo soy responsable del SS, y me pondré en la posición precaria de renunciar a ser representante aunque lo tenía garantizado.", "Es un poco extraño decirlo, pero, a cambio, os pido que toleréis este egoísmo mío.", "De todas formas, yo también prometo animar a los ganadores del DDD como representantes de nuestra escuela con todas mis fuerzas y durante todo el año.", "Apostaré por nuestra escuela y apoyaré a nuestros representantes. Si no lo hago, no se cumplirá nuestro deseo más anhelado: ganar el SS.", "Seremos todos un frente unido y concentraremos nuestros esfuerzos en el SS.", "El DDD será la ronda preliminar celebrada para elegir a los representantes de nuestra magnífica escuela, ¡nuestras estrellas de la esperanza!", "Quiero que uséis todo lo que habéis aprendido hasta ahora, ¡todos los sueños que han crecido desde mi hospitalización!", "Pero si vuestra actuación es mediocre, os aplastaremos sin piedad.", "...Llevo mucho tiempo hablando.", "Mañana, los profesores os darán toda la información oficial del DDD.", "Deberíais hablar con vuestra unidad sobre si queréis participar o no."] }, 
       { type:"image", src:"https://i.postimg.cc/Y9p1hPBs/1000-cb-20210814173435.webp", wide:true },
       { speaker:"eichi", lines:["Pero antes de todo eso, ya que estoy aquí en el escenario... Como regalo, en *fine* os enseñaremos una de nuestras nuevas canciones preparadas para el DDD.", "Os la ofrecemos como preludio de las inminentes batallas decisivas."] },
+      ],
+    },
+      "fms-ch5": {
+      1: [
+      { type: "location", src: "images/img-43f0176a.webp", label: "Clase 2-A", position: "center center" },
+      { speaker:"subaru", lines:["¡Por fin se terminan las clases!", "No queda nada para que empiece ese DDD o como se llame, así que tenemos que ir a practicar con todas nuestras fuerzas~☆", "Para no deberle más al senpai Sakuma, parece que esta vez podremos alquilar nuestra propia sala de prácticas con lo que hemos ahorrado.", "¡Como ganamos el S1, hemos ganado un montón de dinero!", "Y como tenemos tanto, podemos comprar muchas cosas para practicar y hasta hacer nuestro propio merchandising~ Siento que nuestro sueño crece cada vez más ☆", "También me gustaría que tuviésemos una canción nueva, pero eso quizá es difícil por el poco tiempo que nos queda.", "...¿Creo que eso es to~do? Normalmente Hokke es el que explica estas cosas. Sí que estás callado hoy, ¿qué pasa?"] },
+      { speaker:"hokuto", lines:["......"] },
+      { speaker:"subaru", lines:["Todo el día me has mirado con una cara muy rara, Hokke~ ¿Estás pensando en la propuesta del presidente?", "No te preocupes por eso, ¡vamos a ganarle a *fine* igual que le ganamos a Akatsuki!", "¡Nosotros podemos! Trickstar~♪"] },
+      { speaker:"hokuto", lines:["...Lo siento."] },
+      { speaker:"subaru", lines:["¿Hmm? ¿Qué pasa, Hokke? ¿A dónde vas?"] },
+      { speaker:"hokuto", lines:["...Lo siento mucho, Akehoshi."] },
+      { speaker:"subaru", lines:["Eh- ¿EH? ¿Qué? De verdad, ¿qué pasa? ¡Estás rarísimo hoy, Hokke!", "(Ahora que lo pienso, no he visto a Ukki hoy tampoco. ¿Y creo que Sari no vino al entrenamiento del club de básquet porque se tenía que encargar de algo?)", "(¿Qué está pasando? No lo entiendo, ¡pero me da muy mala espina!)"] },
+      { type:"image", src:"https://i.postimg.cc/WzCvwPy4/1000-cb-20190509030216.webp", wide:true },
+      { speaker:"adonis", lines:["... ¿Qué les pasa? ¿Parece que algo va mal?", "Kanzaki, ¿sabes qué está pasando?"] },
+      { speaker:"souma", lines:["Me gustaría que me dejases de pedir que te explique todo lo que no entiendes."] },
+      { speaker:"adonis", lines:["Lo siento. Pero considero que eres uno de mis compañeros de clase más cercanos. Y además, soy bastante ignorante sobre este país."] },
+      { speaker:"souma", lines:["Adonis-dono, es una virtud admitir que no sabes algo.", "Sin embargo, yo tampoco entiendo lo que está pasando. Suelo pensar que la amistad de ese grupo es uno de sus puntos fuertes.", "Planear que se separen es muy malvado. Tal y como dijo Keito-dono, parece ser que el presidente es un estratega con una disposición intrínseca al mal."] },
+      { speaker:"adonis", lines:["¿...?"] },
+      { speaker:"souma", lines:["(Separó a Trickstar, cuyas fortalezas eran su amistad y su cooperación, y planea borrarlos del mapa. Entiendo la lógica de sus acciones, pero me desagrada este tipo de intromisión.)", "(Más vale que no os dejéis derrotar por algo así, Trickstar... Quiero recuperar mi honor en una pelea justa con vosotros en un *dorifessu*.)"] },
+      { type: "location", src: "images/img-0046b61a.webp", label: "Pasillo", position: "center center" },
+      { speaker:"subaru", lines:["¡Espera!", "¡La sala de prácticas que hemos alquilado no es por aquí! ¡Está al otro lado! Ay, Hokke, a veces eres tan impulsivo...", "¿Eh?"] },
+      { speaker:"hokuto", lines:["......"] },
+      { speaker:"subaru", lines:["¿No me oyes? Eh, no me ignores, ¡o me siento muy solo! ¿Hokke?", "¡Te estoy diciendo que me esperes! ¡Hokuto!"] },
+      { speaker:"hokuto", lines:["......", "Y pensar que esta es la primera vez que me llamas Hokuto."] },
+      { speaker:"subaru", lines:["¿De verdad odias que te llame Hokke? ¡Si es así, prometo que te llamaré Hokuto a partir de ahora!", "¡Así que por favor, no te vayas!", "Sigamos caminando juntos, ¿no dijiste que somos compañeros que compartimos el mismo destino? Hokke... Hokuto, ¿¡me dijiste eso, verdad!?"] },
+      { speaker:"hokuto", lines:["Así es.", "Pero las cosas han cambiado. No puedo decir más, lo siento.", "Akehoshi, por favor, suéltame. Lo siento, pero tengo prisa. Tengo que irme."] },
+      { speaker:"subaru", lines:["¡No! ¡De ninguna manera! Si te suelto ahora, ¡vas a desaparecer!"] },
+      { speaker:"hokuto", lines:["Así es. Voy a entregar mi formulario de renuncia a Trickstar y mis papeles de inscripción a *fine* a la oficina del Consejo Estudiantil. Nos separaremos aquí, Akehoshi.", "Parece ser que Isara y Yuuki ya han completado su propio papeleo. Yo estuve dudando hasta el final, pero ya no nos queda tiempo.", "El presidente no es tan amable. Mientras dudo, la situación se pone cada vez peor. Daré un paso al costado antes de que me arrincone más.", "Puedes llamarme cruel o cobarde si quieres.", "Akehoshi, no entregaré el formulario de disolución de Trickstar.", "Tan solo nos retiraremos. Tú te puedes quedar en Trickstar, o puedes unirte a *fine* conmigo.", "Haz lo que quieras, pero si puedo pedirte una cosa, espero que no pierdas la esperanza que te guía.", "...He hablado de más. No soy así, creo que estoy muy emocional.", "Ha sido muy divertido hasta ahora, gracias. Gracias a ti, no, gracias a Trickstar, me gustan los idols un poco más.", "Gracias."] },
+      { speaker:"subaru", lines:["Qué te pasa... Entonces, esto de verdad es una despedida. Tú no harías bromas con esto. ¡No me puedo reír, ni un poco!", "Hokuto, siempre eres positivo... Siempre te esfuerzas y eres disciplinado, siempre nos muestras el camino a seguir con tu luz.", "Si te vas... ¿Qué hago ahora...?", "¡Hokuto...!"] },
+      ],
+      2: [
+      { type:"location", src:"https://i.postimg.cc/Cxb9SLrn/1000-cb-20190920235815.webp", label:"Sala de Prácticas", position:"center center" },
+      { speaker:"subaru", lines:["(...)","(Aunque llevo esperando un rato, nadie viene a la sala de prácticas.)", "(Puede que lo que Hokke dijo es verdad y los demás ya se han ido a Akatsuki y Knights.)", "(Todo ha pasado demasiado rápido. Nos reunimos como aliados, trabajamos duro juntos y nos hicimos amigos... O al menos esa era mi intención.)", "(Todo lo que nos quedaba pendiente ha desaparecido de un momento a otro.)", "(Confíabamos en nosotros más que una familia, más que nadie... Teníamos una unión, éramos una unidad maravillosa. ¿O eso solo lo pensaba yo?)", "(Siendo realistas, la decisión de Hokke y los otros es correcta. *fine*, Akatsuki y Knights son las mejores unidades de la Academia Yumenosaki.)", "(Ser parte de ellas es más beneficioso para nuestro futuro.)", "(Después de todo, no hacemos esto solo para divertirnos. Todos se inscribieron en esta escuela porque querían ser idols de verdad.)", "(Si piensas en el futuro, en vez de una unidad novata como Trickstar...)", "(Es mejor estar en una que tiene muchos logros, que es excelente y que goza de buena reputación en la industria del entretenimiento.)", "(Tienen presupuesto de sobra, conexiones, recursos humanos y todo lo que les hace falta. Es el mejor ambiente para mejorar sus habilidades como idols.)", "(Es un beneficio para nosotros como idols formar parte de otra unidad que no sea Trickstar.)", "(Mejor que una unidad que pierde todo su dinero solo por alquilar una sala de prácticas, mejor que una unidad tan débil y tan pobre...)", "(Es mejor practicar en un ambiente como ese.)", "(El presidente también lo dijo, ¿no? La juventud es corta.)", "(Hokke y los demás decidieron como adultos. Yo también debería estar pensando en lo que pasará después de la graduación y mi vida futura como idol.)", "(No puedo soñar para siempre. Debo enfrentarme a la realidad.)", "(En vez de perder el tiempo jugando a ser revolucionario, debo mejorar mis habilidades.)", "(Es una decisión sabia. Yo soy el idiota por estar sonriendo todo este tiempo.)", "(Pero fue muy poco tiempo... Quería divertirme más, quería disfrutar mi juventud al máximo.)", "(Nuestro momento brillante ha terminado muy rápido, nuestros cinco minutos de fama.)", "(Ganamos el S1, y aunque fuera un momento, pudimos cambiar esta escuela. Pudimos pensar que hicimos algo increíble.)", "(Solo por eso, considero que somos suertudos.)", "(Pero no podemos anhelar a nada más. Tenemos que convertir nuestra victoria en el S1, en ese escenario tan brillante, en un lindo recuerdo...)", "(Y, sin más, nos convertiremos en adultos y tendremos que vivir en la dura realidad.)", "(Estoy seguro de que eso es lo que tenemos que hacer. Y yo también. Debemos crecer.)", "(Pero Hokke, Ukki, Sari... ¿No somos niños todavía?)", "(Todavía podemos soñar. ¿O soy el único que cree eso?)", "(...)", "(Hemos vuelto a donde empezamos. Es como dijo el senpai Sakuma: las agujas del reloj, que por fin se estaban moviendo, han vuelto a su lugar a la fuerza.)", "(Es como antes... como cuando aún no había conocido a Hokke y a los demás.)", "(Vuelvo a estar solo.)", "(...)"] },
+      { speaker:"chiaki", lines:["¡Akehoshi!"] },
+      { speaker:"subaru", lines:["¡Oh, me has sorprendido!", "¿E-Eh? ¡Jefe Chiichan! ¿Qué haces aquí?"] },
+      { speaker:"chiaki", lines:["Jejeje, no seas tan distante, ¡no hace falta que me llames jefe! Chiichan basta, nos llevamos bien, ¿no?"] },
+      { speaker:"subaru", lines:["¿Nos llevamos bien? Solo somos novato y superior en el club de básquet, ¿no?", "Pero esta sala de prácticas la ha alquilado Trickstar. No debería entrar nadie más... Bueno, aunque de Trickstar solo quedo yo.", "(Suspiro)..."] },
+      { speaker:"chiaki", lines:["¿Qué pasa, qué pasa? ¡No es normal que suspires! ¡El Akehoshi que conozco no es así! ¡Sueles brillar mucho más, como el sol!", "Así es, ¡eres mi sol...!"] },
+      { speaker:"subaru", lines:["Además de ser muy ruidoso, estás demasiado cerca. ¿Necesitas ALGO? Estoy ocupado pensando en algo ahora mismo, pero POR FAVOR, cuéntame."] },
+      { speaker:"chiaki", lines:["¡No hace falta que seas tan formal, Akehoshi! Quiero que estés más cerca mío, como si fuera tu hermano o tu padre, ¡quiero que me ames! Me haría muy feliz...☆"] },
+      { speaker:"subaru", lines:["Eres igual de irritante que siempre, Jefe Chiichan..."] },
+      { speaker:"chiaki", lines:["¡Ya veo! Tú eres igual de adorable que siempre, Akehoshi... ☆", "Pero bueno, ¡ejem! ¡No he venido solo a parlotear, Akehoshi!", "Tengo que contarte algo serio, ¿podemos hablar un momento?"] },
+      { speaker:"subaru", lines:["...Me da igual. No es que tenga otra cosa que hacer. ¿De qué quieres hablar?"] },
+      { speaker:"chiaki", lines:["En el entrenamiento del club de básquetbol esta mañana, me di cuenta de que Isara y tú estabais muy raros. Así que he investigado un poco.", "Al fin y al cabo, tenemos a alguien experto en investigación en Ryuseitai~♪", "Parece que te han involucrado en el plan maligno de alguien... ¿Verdad, Akehoshi?", "¡Pero no te tienes que preocupar! ¡Ahora que he llegado, puedes estar tranquilo! ¡Borraré la tristeza de la faz de la tierra!"] },
+      { type:"image", src:"https://i.postimg.cc/qRZYPHdS/1000-cb-20190509041218.webp", wide:true },
+      { speaker:"chiaki", lines:["¡Con el corazón ardiente, soy Chiaki Morisawa! ¡Un aliado de la justicia que protege a la Academia Yumenosaki! Jajajaja ☆"] },
+      { speaker:"subaru", lines:["(¿Hmmm...?)", "(No lo entiendo del todo, pero para ser honesto, me irrita que esté tan animado cuando me encuentro mal...)", "(Bueno, no es que el Jefe Chiichan sea mala persona.)", "(¿Pero qué me querrá contar?)"] },
+      ],
+      3: [
+      { speaker:"subaru", lines:["...A ver, ¿qué pasa?", "¿Qué me tienes que decir? Necesito practicar y prepararme para ese DDD o como se llame que se va a celebrar en unos días, ¿sabes?", "Si solo vienes a entrometerte en eso, haré que te vayas ahora mismo. ¡No pueden entrar miembros de otra unidad aquí!"] },
+      { speaker:"chiaki", lines:["¡Akehoshi, parece que estás haciendo pucheros! ¡Pero aun así! ¡El hecho de que no hayas perdido las ganas de pelear aunque te hayan dejado solo es increíble!", "Pelear contra la soledad y aunque te arrinconen, ¡al final das un impresionante giro de vuelta! ¡Una gran explosión! ¡Una gran victoria! ¡De eso se trata ser un aliado de la justicia!", "Por eso creo que eres digno de ser mi sucesor... ☆", "¿Qué opinas, Akehoshi? ¿Te gustaría unirte a mi Ryuseitai?", "¡He intentado reclutarte muchas veces, pero siempre me dices que no! ¡Sin embargo, Akehoshi, no me rindo! ¡Tienes talento y resplendor!", "¡Quiero ese resplendor!", "¡En Ryuseitai podrás brillar y con tu talento llegaremos aún más lejos!", "¡Unéte a Ryuseitai, Akehoshi! No podras pelear solo contra el Consejo Estudiantil, ¡y no va a cambiar nada si estás triste y solo en un lugar como este!", "¡Úsanos! ¡Nos convertiremos en tu poder! ¡Los aliados de la justicia siempre ayudan a los más débiles!", "Ryuseitai no está bajo la autoridad del Consejo Estudiantil, y somos una unidad fuerte que hasta tiene a uno de los excéntricos, Kanata Shinkai.", "SI te unes a nosotros, seremos aún más fuertes. Derrocar al Consejo Estudiantil no será solo un sueño.", "No tienes por qué aferrarte a una unidad que ya ha llegado a su final.", "Es una pena, pero Trickstar no puede brillar más. Las estrellas se queman a si mismas y al final no son más que oscuridad. ¡Pero en Trickstar podrás brillar otra vez!", "Podrás vengarte del Consejo Estudiantil, ¡que te lo ha quitado todo injustamente! ¡Podrás mostrarle tu fuerza a los tipos que te traicionaron y te dejaron de lado!", "¡Y entonces te convertirás en la estrella más brillante, en la cima de esta academia!"] },
+      { speaker:"subaru", lines:["¿Eso es lo que me querías decir?", "Si es solo eso, no me hables más. No tengo ninguna intención de unirme a una unidad que no sea Trickstar.", "Aunque esté solo, soy de Trickstar.", "...Hasta yo creo que es infantil y egoísta. Estoy triste y derrotado. Pero no creo que el brillo de Trickstar se haya apagado.", "Y tampoco siento que me hayan traicionado o dejado de lado.", "Tan solo está un poco nublado ahora mismo. Algún día podremos brillar de nuevo.", "O al menos eso quiero creer. En el pasado... pude subirme a un escenario brillante, algo que no me atrevía a soñar cuando estaba solo como ahora.", "Con los demás, en ese S1.", "Fue un sueño que duró una sola noche. Puede que haya sido un milagro. Sin embargo, quiero volver a subir a ese escenario. A ese escenario tan brillante.", "Y los que debemos estar ahí... No puede ser Ryuseitai, *fine*, Akatsuki o Knights, tiene que ser Trickstar.", "No puedo explicarlo bien, pero eso es lo que creo genuinamente.", "Jefe Chiichan, aunque has venido hasta aquí a hablarme. Aunque te has preocupado por mí y me has dado ánimos. Lo siento.", "Mi hogar no es Ryuseitai.", "Soy de Trickstar."] },
+      { speaker:"chiaki", lines:["......", "Pero el problema real es, ¿qué planeas hacer a partir de ahora?", "Nosotros también vamos a participar en el DDD, así que he revisado los requisitos de participación. Hay que ser una unidad para participar.", "La gran premisa del DDD es que es la ronda preliminar para decidir qué unidad representará a nuestra escuela en el SS al final del año.", "Un individuo no puede participar.", "Y según las reglas de la Academia Yumenosaki, la cantidad mínima de personas necesaria para formar una unidad es dos. Ni siquiera podrás poner pie en el campo de batalla decisivo si estás solo.", "Si solo hay una persona, tu unidad será disuelta a la fuerza. No tendrás opción más que quedarte quieto mientras enfrentas este cruel destino, sin poder hacer nada.", "Aun así, ¿seguirás sirviendo a Trickstar hasta el final?"] },
+      { speaker:"subaru", lines:["......"] },
+      { speaker:"chiaki", lines:["......", "...Ja, ¡jaja! ¡Jajaja! Jaaajajajaja ☆"] },
+      { speaker:"subaru", lines:["¿Q-Qué pasa? ¿Te has vuelto loco, Jefe Chiichan?"] },
+      { speaker:"chiaki", lines:["No, verás, por fin lo entiendo. Ya veo, por eso la chica llevaba esa ropa puesta.", "Jajajaja ☆"] },
+      { speaker:"subaru", lines:["¿La chica...?"] },
+      { speaker:"chiaki", lines:["Bueno, no te preocupes. Entiendo perfectamente cómo te sientes, Akehoshi.", "Perdón por ponerte a prueba.", "Si tu corazón estuviese roto por lo que dijo el presidente... Si fuese así, pensé que no podrías ser capaz de quedarte en el campo de batalla.", "No hubiese podido hacer más que determinar que eres débil y que Ryuseitai y yo debemos cuidarte.", "¡Pero eres un guerrero! ¡Y sigues en el campo de batalla!", "¡Tu alma todavía no se ha muerto!", "Tu corazón es de hierro. No, ¡es una joya que es más resiliente y brilla más que cualquier otra!", "¡Estoy feliz, Akehoshi! ¡No has perdido las ganas de pelear, todavía no te han roto el corazón! ¡Tus posibildiades de ganar no son cero!", "¡Démosle al presidente, que te ha hecho sufrir con sus actos tan crueles, su merecido!", "Quiero que dejes que te apoye con eso. ¡Eso es lo que te vine a decir!"] },
+      { speaker:"subaru", lines:["¿A-A qué te refieres...?"] },
+      ],
+      4: [
+      { speaker:"chiaki", lines:["¡Adelante, compañeros míos! ¡Mis queridos aliados de la justicia...!", "¡Los aliados de la justicia siempre se presentan sin que les tiemble la voz! ¡Con su presentación hacen que los débiles se relajen y puedan sonreír!", "¡Así que me presentaré yo primero!", "Soy el líder de Ryuseitai, ¡con el corazón ardiente, Chiaki Morisawa! ¡Ryusei Rojo...!"] },
+      { speaker:"tetora", lines:["Ah, ¿ya podemos entrar? ¡Me cuesta estar sincronizado!", "Pero... ¡Las llamas negras son prueba de mi esfuerzo! ¡Un espíritu de batalla que arrasa con la oscuridad!", "¡Ryusei Negro, Tetora Nagumo...!", "Venga, Midori, ¡date prisa y preséntate también! ¡Si no lo haces a tiempo, nuestro líder nos molestará luego!"] },
+      { type:"image", src:"https://i.postimg.cc/XYP0M5k4/1000-cb-20210814194306.webp", wide:true },
+      { speaker:"midori", lines:["¿Hmmm...?", "Me llamo Midori, así que soy verde.", "Midori Takamine, el Ryusei Verde..."] },
+      { speaker:"chiaki", lines:["¡Y los cinco juntos! Somos Ryuseitai... ☆"] },
+      { speaker:"subaru", lines:["¿Qué hacéis, apareciendo uno detrás del otro? ¿Y dices los cinco juntos, pero solo sois tres?"] },
+      { speaker:"chiaki", lines:["¿Eh? Qué raro. Eh, Ryusei Negro, ¿dónde están los otros dos?"] },
+      { speaker:"tetora", lines:["¿Qué? Ah, te refieres a mí cuando dices Ryusei Negro... ¡Me gustaría que me llamases por mi nombre! ¡O me lío!", "Hmmm, a ver... Sengoku... Ryusei Amarillo, ¡está en medio de su investigación!", "Parece que está recabando información sobre lo que van a hacer las otras unidades y sobre el DDD.", "Ryusei Azul... El senpai Shinkai, estaba por alguna razón nadando en la fuente con el uniforme puesto, ¡así que lo ignoré porque no quiero que nadie piense que lo conozco! ¡Ossu!"] },
+      { speaker:"midori", lines:["Eh, ¿para qué hemos venido hasta aquí...?", "Si no tengo que hacer nada, ¿me puedo ir a casa...?"] },
+      { speaker:"chiaki", lines:["Espera, Ryusei Verde. A partir de hoy vamos a entrenar en esta sala de prácticas.", "Después de todo, falta poco para que comience el DDD. En el peor de los casos nos quedaremos a dormir aquí para poder concentrarnos y practicar ♪"] },
+      { speaker:"midori", lines:["Ehh, pero odio hacer cosas tan apasionadas como esa..."] },
+      { speaker:"subaru", lines:["¡E-Espera! Ya te he dicho que esta sala de prácticas la ha alquilado Trickstar. ¡Me causarás muchas molestias si decides practicar aquí!"] },
+      { speaker:"chiaki", lines:["No he decidido nada. Fui a pedirle permiso a ella.", "Adelante. Que no te de vergüenza, esa ropa te queda muy bien."] },
+      { speaker:"subaru", lines:["Oh, estudiante transferida... ¿Qué pasa? ¿Por qué llevas ese outfit tan raro?"] },
+      { speaker:"tetora", lines:["No digas que se ve rara, siempre tienes que darle un lindo cumplido a la ropa de las chicas. ¡El Jefe me enseñó eso!", "Lo ha hecho el Jefe a mano, y como esperaba, te queda muy bien. ¡Te ves genial, estudiante transferida!", "Aunque lo ha cosido de imprevisto, este outfit de idol.", "Así que lo mejor será que no te muevas muy bruscamente. El Jefe no está acostumbrado a hacer ropa para chicas, así que algunas costuras no están del todo listas."] },
+      { speaker:"subaru", lines:["¿Outfit de idol...?", "Eh, la estudiante transferida es una productora, ¿verdad? ¿Por qué llevas puesto un outfit de idol...?"] },
+      { speaker:"chiaki", lines:["Así es, es una productora.", "Las productoras apoyan, animan y permiten que los idols brillen. Si algo te preocupan, te dan la mano y te empujan para que puedas subir al escenario, ese es el tipo de personas que son.", "Tienes que ser una unidad para participar en el DDD, y por eso no puedes participar tu solo.", "Por tanto, ella se convertirá en una idol temporalmente.", "Por supuesto, no sabe ser idol, así que sera como una muñeca que no puede hacer nada.", "Y siendo precisos, no es estudiante del curso de idols así que no está calificada para participar en un DreamFes.", "Por eso, para que pueda participar, se nos ocurrió que puede llevar una máscara y actuar como un “idol misterioso”.", "Así, Trickstar, que iba a perder el DDD automáticamente por no cumplir con los requisitos de inscripción, podrá participar.", "La oportunidad que antes no existía, ahora ha nacido, aunque sea diminuta.", "Si todavía tenéis una oportunidad, podéis pelear, y hay esperanza suficiente para seguir avanzando. ¿No, Akehoshi?", "Por eso ha venido ella. Para apoyarte y disipar a las nubes oscuras que te rodean.", "Ha venido como productora.", "Lo diré todas las veces que haga falta: no estás solo."] },
+      ],
+      5: [
+      { speaker:"subaru", lines:["No sé qué ha pasado para que la estudiante transferida haya llegado vestida de idol, pero... Eso me ha sorprendido mucho.", "(Ahora que lo pienso, el presidente estaba hablando de mí y los otros... de los idols... con mucha pasión, pero...)", "(Ni siquiera mencionó a la estudiante transferida, casi como si no la tuviera en cuenta.)", "(Es normal. Ha llegado hace poco y todavía es novata como productora.)", "(No sabe casi nada de idols. Hasta hace unos días, vivía en un mundo completamente distinto al nuestro. No tenía nada que ver con nosotros.)", "(Puede que sea insignificante para el presidente. Por eso no la está vigilando. La estudiante transferida es un punto ciego del Consejo Estudiantil.)", "(Ella contiene una pequeña posibilidad, una que el “Emperador” no ha considerado.)", "(La estudiante transferida no es insignificante.)", "(Nos cuidó mientras nos desmoronábamos, y pensó en mí mientras yo me deprimía.)", "(Debe haber pensado que tenía que hacer algo.)", "(Por eso le fue a pedir consejo a varias personas, como al senpai Kiryu...)", "(Le pidió que le hiciera un outfit, y aunque parece avergonzada, se lo ha puesto.)", "(Se le ocurrió una idea que nadie más pensaría y ha decidido participar como una idol enmascarada. Ha venido corriendo a ayudarme.)", "(Me hace muy feli que se sienta así. No, la respeto.)", "(Mientras yo estaba deprimido, la estudiante transferida estaba corriendo de un lado a otro sin rendirse.)", "(Pensó en el futuro, miró adelante y avanzó.)", "(No es momento de que me quede quieto llorando.)", "(¡La estrella de la esperanza todavía brilla!)", "Jajaja, ¿por qué estaba tan deprimido? ¿Seré estupido?", "Tienes razón, no estoy solo.", "Me puse triste y me convencí de que estaba solo.", "Pero todavía te tengo a ti, estudiante transferida.", "Gracias. ¡Estoy muy conmovido! ¡Estoy tan feliz que se me salen las lágrimas!"] },
+      { speaker:"chiaki", lines:["Jajaja ☆ ¡No es momento de llorar, Akehoshi!", "No podemos perder ni un segundo hasta que llegue el DDD- a partir de ahora, ¡vamos a entrenar intensamente!", "Quiero que sea una práctica conjunta de Ryuseitai y Trickstar. Si somos más, podemos entrenar mejor, ¿verdad?", "Y os damos las gracias por dejarnos usar esta sala de prácticas. Sería un desperdicio que haya tan poca gente en una sala tan grande.", "Quiero que me permitas entrometerme por lo menos en esto, Akehoshi.", "Eres mi novato, soy el presidente de tu club, y un aliado de la justicia. Cuando tengas problemas, ¡quiero que te apoyes en mí sin dudarlo!"] },
+      { speaker:"tetora", lines:["Ajaja, es muy molesto que tengamos que seguir tus órdenes, ¡pero Trickstar son los héroes que derrotaron al odioso Consejo Estudiantil!", "Bueno, también derrotaste a Akatsuki de mi Jefe, así que tengo sentimientos encontrados. ¡Pero Trickstar me dio esperanza!", "Os estoy animando. No, ¡quiero pelear con vosotros! ¡No dejaré que Trickstar desaparezca sin más!", "Acabemos con el Consejo Estudiantil juntos y que se haga justicia en esta escuela ♪"] },
+      { speaker:"midori", lines:["Estos tipos son muy intensos...", "Por qué me habré metido en una unidad así...", "Ahhh, estoy tan deprimido, me quiero morir..."] },
+      { speaker:"chiaki", lines:["Eh, eh, ¿qué pasa? No estás nada animado, Ryusei Verde. ¡Habla más alto, enciende la llama de tu alma!", "¡Trabajo duro, amistad, victoria! ¡Una gran victoria y una gran explosión! Jajajajaja... ☆"] },
+      { speaker:"subaru", lines:["Jajaja ☆", "Aunque estaba tan triste hasta hace un segundo... Ahora estoy muy emocionado, ¡creo que esto será divertido!", "¡Gracias! Me voy a esforzar al máximo ☆"] },
+      ],
+      6: [
+      { type:"location", src:"https://i.postimg.cc/904qXZwx/1000-cb-20210630131442.webp", label:"Auditorio", position:"center center" },
+      { speaker:"jin", lines:["Gracias, gracias.", "Muchas gracias por venir al colegio hoy.", "Parece que ha llegado mucha gente aunque no hicimos demasiada promoción.", "Es la primera vez que la escuela intenta este formato para un DreamFes. Este evento será como un experimento. Nos disculpamos por cualquier inconveniente.", "También me disculpo por salir al escenario siendo tan viejo cuando habéis venido a ver a idols lindos y jóvenes.", "Normalmente un niño muy adorable llamado Nito se encarga de las presentaciones.", "Pero también es un idol y está participando con su unidad, así que está ocupado.", "Casi todos los estudiantes de la Academia Yumenosaki participarán en este DreamFes... DDD. Por eso, para ser honesto, nos falta personal.", "Los profesores contaremos los votos y todo eso para asegurarnos de que sea justo.", "...¿A lo mejor me tenía que presentar antes de decir todo esto?", "Hmm, hace mucho que no me subo al escenario, así que no sé cuándo decir cada cosa. Debe ser por la edad, ¿eh, profe Kunugi?"] },
+      { speaker:"akiomi", lines:["Jin. Digo... Profesor Sagami. Deja el parloteo y explícalo todo bien.", "Dios mío. Este DreamFes no tiene ningún sentido. Está claro que *fine* ganará de todas maneras.", "Sus abilidades, popularidad, talento y todo lo demás; no hay por donde criticarlos. Son lo mejor de esta escuela.", "Para empezar, los profesores los elegimos unánimemente para representarnos en el SS bajo un criterio justo.", "Estar tan decepcionado por eso como para crear un DreamFes es absurdo.", "Están evaluando nuestra habilidad para juzgarlos. Es normal llegar a esa conclusión, ¿no?", "Me apena que los estudiantes no confíen en nosotros, pero no es prudente que perdamos el tiempo.", "Tenshouin, también, qué estará pensando... No perdonaré actos altruistas como este una segunda vez."] },
+      { speaker:"jin", lines:["Sí, sí. Basta de quejas y a trabajar. Después de todo, somos adultos. Akiyan, llevas tanto tiempo estresado que se te va a empezar a caer el pelo."] },
+      { speaker:"akiomi", lines:["Profesor Sagami, no me llames Akiyan."] },
+      { speaker:"jin", lines:["Alguien se ha levantado con el pie izquierdo. Pero yo estoy bastante emocionado, más de lo que debería alguien de mi edad.", "La juventud es agradable, ¿no? Ser impulsivo y todo eso, intentar varias cosas con muchas ganas ♪"] },
+      { speaker:"akiomi", lines:["Jin. Por lo menos, no fumes en el escenario. El público te puede ver.", "Has desperdiciado tu vida como idol con el alcohol, los cigarros y las mujeres. ¿No te arrepientes?"] },
+      { speaker:"jin", lines:["Es mi método de enseñanza. Ser tan duro con los chicos y solo dejarles ver los lados buenos de las cosas no es forma de enseñar.", "Para empezar, ya no soy un idol, así que no pasa nada, ¿no? Además, no voy a dejar que los mocosos me imiten.", "Tú deberías relajarte de vez en cuando, o vas a terminar calvo."] },
+      { speaker:"akiomi", lines:["¡No voy a terminar calvo! ¡Cuido lo que como y me preocupo de mi pelo!"] },
+      { speaker:"jin", lines:["Jajaja. Como siempre, estás estresado... O, más bien, es como que tienes el humor de un niño rico. Akiyan... Bueno, no pasa nada.", "Las cosas buenas de los idols no se miden con números.", "Muchas veces pensamos que hay idols excelentes pero son inútiles cuando se suben al escenario.", "Por eso no es malo que puedan competir justamente. Es práctico y sigue las reglas.", "Akiyan, te gusta la lógica, pero seguro que has aprendido por las duras que la lógica no siempre sirve en la industria de los idols."] },
+      { speaker:"akiomi", lines:["......"] },
+      { speaker:"jin", lines:["Lo que significa ser un idol, cómo hacer a la audiencia feliz... Creo que eso es lo que más importa.", "Sin importar cuán bien bailes o cantes, cuán lindo sea tu rostro, cuán bien hecha esté tu ropa...", "Esas cosas dan igual. No sirven de nada.", "Aunque te saques un diez en un examen, no significa que seas un idol de diez.", "El valor de los idols es mucho más difuso- Es algo que se observa en perspectiva y es preciado.", "Yo he sido idol por mucho tiempo y he enseñado a muchos idols como profesor aquí, pero... Todavía no sé exactamente cuál es ese factor tan preciado.", "Es difícil. Y no se me da bien la lógica.", "Pero la felicidad más grande para un idol son las sonrisas del público.", "Su aplauso, sus ánimos, sus reacciones positivas. Los idols brillan más fuerte cuando tienen eso.", "Ese brillo ilumina este mundo y mejora las vidas de quienes lo ven, aunque sea un poco. ¿No crees que eso son los idols?", "De los mocosos de nuestra escuela, ¿qué unidad brillará más?", "Dependerá del público que los ha venido a ver hoy.", "Puede que el DDD sea la manera más óptima de decidir a los representantes del SS, los mejores idols de nuestra escuela."] },
+      ],
+      7: [
+      { speaker:"jin", lines:["Así que, a los que lleváis tanto tiempo aquí, gracias por esperarnos.", "Yo, Jin Sagami, profesor del curso de idols, anuncio el inicio del DDD."] },
+      { speaker:"akiomi", lines:["(Ah, ¡lo ha dicho de repente! ¡Yo quería anunciar el inicio del DDD!)", "(¡Jin siempre, siempre me roba el protagonismo...!)"] },
+      { speaker:"jin", lines:["Wah, ¿qué pasa? Por favor, no me mires así.", "Bueno, no pasa nada, ¡ejem!", "Creo que ya lo sabéis, pero el DDD es una ronda preliminar para la competición que se celebrará a fin de año para decidir quiénes son los mejores idols de Japón.", "O en otras palabras, es la competición para decidir a los representantes del SS dentro de nuestra escuela.", "Espero que disfrutéis de sus actuaciones y animéis a los que os gustan.", "Vuestros aplausos se convertirán en su poder.", "En el SS a finales del año, podréis ver una actuación incluso más increíble que la de hoy.", "Pensad en eso, y por favor sed testigos de las jovenes semillas que hoy comienzan a florecer.", "Estoy seguro de que no es una pérdida de tiempo. Espero que el día de hoy esté lleno de felicidad para todos.", "(Menuda sarta de toooonterías. Pero han venido aquí un fin de semana, en su tiempo libre, así que me daría pena aburrirlos.)", "(Esforzaos al máximo, mocosos. Aseguraos de que todos lo pasen bien.)", "(Y algún día, podréis ver el paisaje más hermoso desde la cima más alta que nosotros no pudimos alcanzar.)", "(Si podéis, quiero que sigáis el arduo camino hasta el SS con una sonrisa.)", "(Superad las dificultades juntos, codo a codo con vuestros amigos, apoyándoos los unos en los otros.)", "(Si os perdéis, os mostraremos por dónde seguir.)"] },
+      { speaker:"akiomi", lines:["Jin, que no te desborden las emociones. Explica las cosas bien hasta el final.", "Siempre, siempre dices lo que te da la gana y te olvidas del resto.", "Bueno, no te preocupes. Seguiré explicándolo yo.", "A todos los que han venido.", "Las reglas del DDD también están escritas en los panfletos que os dieron, pero las explicaré con mayor detalle verbalmente.", "El DDD es la competición para elegir al representante de nuestra escuela para el SS. Por tanto, las reglas fundamentales están basadas en las reglas del SS.", "La idea es que si pelean utilizando el mismo formato del SS, podremos determinar qué unidad es más capaz de participar en el SS.", "Hay varios escenarios exteriores en las premisas de la Academia Yumenosaki.", "Los espléndidos idols de nuestra escuela actuarán en estos escenarios.", "Por favor disfrutad de sus canciones e iluminad vuestras luces por la unidad que os guste más.", "Junto con los panfletos, cada uno de vosotros tiene una luz.", "Si no os han dado una, por favor dirigíos a la recepción y hablad con la persona a cargo... Por favor, buscad una según los protocolos reglamentados.", "Esas luces os permitirán votar en el DDD.", "En cada escenario habrán dos unidades que competirán en un formato versus.", "Uno contra uno, las unidades competirán por la superioridad.", "Tendréis que votar por una de las unidades en competencia.", "Usando vuestras luces podéis decidir cuántos puntos le dais a cada unidad. El color de la luz determina la cantidad de puntos.", "Cada color corresponde a una cantidad de puntos. Los detalles de las votaciones están descritos en los panfletos. Por favor revisadlos cuando tengáis un momento.", "...Haremos un conteo de votos cada hora.", "Los resultados de la votación deciden qué unidades siguen participando y cuáles deben retirarse en cada escenario.", "En otras palabras, en la primera hora, la mitad de las unidades participando en el DDD se tendrán que retirar. Y no podrán seguir actuando.", "La cantidad de unidades que avanzarán a la ronda siguiente cada vez será menor.", "Este proceso se repetirá hasta que quede una única unidad.", "La unidad que llegue al final será coronada como la ganadora.", "Serán los representantes de nuestra escuela y tendrán derecho de participar en el SS.", "Es bastante simple y claro, ¿verdad?", "En resumen, es un torneo. Las unidades competirán una contra la otra, los que avancen competirán entre ellos... Y el que llegue al final ganará.", "También es importante mencionar que cada hora desaparecerán la mitad de los escenarios.", "Hay suficientes escenarios para todas las unidades así que es imposible hacer trampas no participando.", "Todas las unidades deben competir con otra, y cada hora retiraremos a la mitad.", "Es una pelea dura y sin piedad por la supervivencia. Si pierdes, todo se termina.", "En este auditorio sólo será la final. La unidad más excelente se decidirá aquí, con todo el público mirando."] },
+      { speaker:"jin", lines:["Ummm, al principio hay muchos escenarios así que quizá no sabéis a dónde ir...", "Pero bueno, seguid vuestros instintos e id a donde queráis.", "Os podéis mover libremente hasta que empecemos a contar los votos. Podéis dar vueltas por la escuela hasta que encontréis una unidad que os gustan.", "Rogamos de corazón que podáis encontrar una unidad que os conmueva.", "Creo que ya basta de explicaciones. La primera ronda empieza en treinta minutos. Los idols ya se están preparando para salir al escenario.", "Me gustaría pediros que os empecéis a mover también. Parece que algunos chicos impulsivos ya han comenzado a tocar.", "Por favor, dad vueltas por la escuela mientras las melodías y las voces os guían.", "Los idols están esperando vuestros aplausos."] },
+      ],
+      8: [
+      { type: "location", src: "https://i.postimg.cc/gcDQW3fC/1000-cb-20210630112118.webp", label: "Escenario exterior", position: "center top" },
+      { speaker:"subaru", lines:["¡Vale! ¡Ya estoy listo!", "¿Tú también estás preparada, estudiante transferida?", "Wow, nuestro outfit de unidad te queda muy bien.", "Esa ropa de chica que llevabas antes era muy mona. Pero sería todo un problema si descubriesen tu identidad real.", "Pero el outfit de chico te queda muy bien también.", "Te esforzaste por hacerlo como el de nuestra unidad, ¿no?", "¡Ya sabes coser súper bien! Es impresionante considerando que solo quedaban un par de días para el DDD.", "Ahora solo te falta la máscara... Ahí va ♪ ¡La estudiante transferida renace como el “misterioso idol X”!", "Para asegurar que no descubran tu verdadera identidad, lo mejor es que hables lo menos posible. O en otras palabras, no podrás cantar.", "Sería todo un problema que se den cuenta de que eres una productora y no un idol.", "Practicaste cómo actuar, pero solo un poco. Solo necesitas inflar la cantidad de participantes, así que intentaré ocuparme de todo yo como pueda.", "Y mientras compramos tiempo, los otros... Hokke, Sari y Ukki, puede que vuelvan. Aunque quizá estoy siendo muy fantasioso.", "Gracias a ti, puedo subirme al escenario.", "Solo eso me hace feliz. Me has dado esperanza cuando estaba tan triste que me quería rendir. Gracias.", "Solo Dios sabe si pasaremos de ronda o no. Esforcémonos al máximo, ¡vamos!", "La primera ronda del DDD... Nuestra primera competición empezará pronto. Ahhhh, ¡es ahora o nunca!", "¡Es la primera vez en toda mi vida que me da miedo subirme al escenario!", "¿La unidad contra la que vamos a competir aún no ha llegado?", "Bueno, si nuestro oponente no llega, ganaremos automáticamente. Sería muy fácil.", "Se supone que hay suficientes escenarios exteriores para todas las unidades.", "Estuvimos entrenando en la sala de prácticas hasta el último minuto, ¿eh?", "¡Nos costó un montón encontrar un escenario libre y tuvimos que venir a esta esquina remota de la escuela!", "Me pregunto si llegará algún público hasta aquí. ¿Estará bien que estemos aquí?", "¿No habrán cancelado este escenario, verdad?", "(Si no te subes a un escenario en el tiempo predeterminado, te descalifican. Pierdes automáticamente. Por eso buscamos uno rápidamente, pero...)", "(Los que estaban mejor ubicados ya estaban ocupados por otras unidades.)", "(¡Nos costó mucho encontrar uno vacío!)", "(Si Ukki estuviese aquí... Buscaría toda la información online y hubiésemos perdido menos tiempo.)", "(Y si Hokke o Sari estuviesen aquí... Se les da tan bien planificar las cosas que no estaríamos improvisando tanto.)", "(Podré yo... No, ¿podremos la estudiante transferida y yo realmente ganar el DDD?)", "(Me he dado cuenta tras nuestra separación que todos los demás me estaban ayudando mucho.)", "(Eran la razón por la que podía actuar tranquilamente sin preocuparme de nada.)", "(Pero debo probar que no era una carga para los demás. Que no era un problema para ellos.)", "(Debo probar que puedo proteger a Trickstar, puedo proteger nuestro hogar, ¡para que puedan volver cuando quieran!)", "(Aunque nada nos garantiza que volverán.)", "(Pero si seguimos ganando el DDD, ¡si brillamos en un lugar cada vez más alto! ¡Seguro que los demás nos verán!)", "(Y sabiendo lo amables que son, ¡seguro que pensarán que no nos pueden dejar solos y volverán!)", "(¡Por eso estamos aquí! ¡Para no perder nuestro brillo, por eso hemos venido la estudiante transferida y yo!)", "(¡No va a cambiar nada si estamos deprimidos y con la cabeza agachada!)"] },
+      ],
+      9: [
+      { speaker:"subaru", lines:["¡Pero sigo muy ansioso! No puede ser, ¡creo que estoy nervioso de verdad!"] },
+      { speaker:"rei", lines:["Kukuku ♪ Parece que estás inusualmente desesperado. Puedo empatizar con eso.", "Ya estás en el campo de batalla. No podrás pelear si entras en pánico."] },
+      { speaker:"subaru", lines:["Ah, ¡senpai Sakuma!", "Siempre tan escurridizo. ¿Necesitas algo?", "N-No puede ser... ¿El primer oponente de Trickstar es UNDEAD del senpai Sakuma!", "Uwaaa, ¡imposible! ¡No podremos ganar!"] },
+      { speaker:"rei", lines:["Kukuku, tomaré eso como un cumplido. Es muy lindo que no puedas mentir... ♪", "No obstante, debes estar tranquilo. Nosotros estamos... mira, estamos en ese escenario a la sombra de ese edificio, por ahí...", "La competición con nuestro enemigo ya ha empezado.", "No soy tu enemigo."] },
+      { speaker:"subaru", lines:["Ah, ¡es verdad! ¡Oigo el ruido explosivo de la guitarra de Gami del otro lado del edificio!", "Menos mal, no quería pelearme contra vosotros ♪"] },
+      { speaker:"rei", lines:["El DDD es una competición sin piedad, si seguimos ganando, deberemos enfrentarnos en algún momento... Cuando llegue ese momento, por favor, sed amables con nosotros.", "Bueno, pero en tu caso, el problema yace en si avanzaréis la primera ronda. Así que, ¿cómo estáis?", "Me preocupé y vine a veros... De momento, parece que habéis evitado perder automáticamente."] },
+      { speaker:"subaru", lines:["¡Sip! Es todo gracias a la estudiante transferida ☆"] },
+      { speaker:"rei", lines:["Ya veo, ya veo. Parece que lo habéis logrado por los pelos...♪", "Sin embargo, Trickstar está al borde de la muerde. Si no os esforzáis desesperadamente, no podréis sobrevivir en este campo de batalla."] },
+      { speaker:"subaru", lines:["Hmm, tienes razón, pero todo depende de quién sea nuestro oponente...", "Yo soy el único que puede cantar, al fin y al cabo. Es una pelea de uno contra muchos y eso me pone en desventaja desde un inicio."] },
+      { speaker:"rei", lines:["Es raro que te quejes... Parece que estás agotado. Tenshouin hace cosas tan crueles como siempre.", "Aunque en circunstancias normales es una unidad fuerte, *fine* y Tenshouin atacan sin piedad.", "Al momento de la verdad, ¿podrás aguantar? ¿Puedo tener mis expectativas puestas en ti?"] },
+      { speaker:"subaru", lines:["No me sirven las expectativas. ¡Ayúdame de manera más concreta! ¡Estoy en problemas!", "Senpai Sakuma, ¿y si me prestas a un par de miembros temporalmente?"] },
+      { speaker:"rei", lines:["Ah, me temo que no puedo. Aunque me encantaría ayudar... Prestarle una mano a otra unidad generalmente no se permite en los DreamFes.", "Y tú, que has vivido el difícil sentimiento de que te roben a tus miembros, ¿realmente crees que la solución es esa?", "A pesar de que alguien te haya engañado con una artimaña, no significa que tú también la puedas usar.", "Debes seguir siendo honrado. Esforzarte al máximo también significa eso."] },
+      { speaker:"subaru", lines:["¿Uuu...? Si me dices cosas tan complicadas me pierdo..."] },
+      { speaker:"rei", lines:["De todas formas, una de los miembros más poderosos de UNDEAD, Kaoru, está relajándose en el techo y nos ha dicho “os dejo las preliminares a vosotros ☆”", "No tenemos margen suficiente como para prestaros miembros.", "Y además, por la gran pérdida que sufrimos contra *fine* el otro día en un B1, parece que nos están subestimando.", "La primera unidad con la que estamos competiendo piensa que somos mediocres.", "“Aunque sea una unidad de renombre, si *fine* les pudo ganar, puede que no sean tan buenos... ¡Serán un oponente fácil!”", "Seguro que están pensando algo así, de manera completamente errónea.", "Debemos limpiar nuestro nombre. Esta en juego el prestigio de nuestro UNDEAD, así que debemos darlo todo.", "Esforzémonos al máximo en nuestros campos de batalla respectivos.", "Por suerte, el escenario exterior en el que estamos estará a las sombras y luego se hará de noche.", "Aunque yo soy débil a la luz del sol, podré actuar con todas mis fuerzas.", "Siendo honesto, no creo que podamos perder...♪"] },
+      { speaker:"subaru", lines:["Qué miedo. Si puedo, no me gustaría pelear contra UNDEAD hasta el último momento.", "Más que pensar en el futuro, debería pensar en superar el primer escenario frente a mí."] },
+      { speaker:"rei", lines:["Así se habla. Te animaré. ... ¿Hm?", "No es momento de cháchara. Parece que ya ha llegado tu oponente."] },
+      ],
+      10: [
+      { speaker:"rei", lines:["¿Hm...?"] },
+      { speaker:"subaru", lines:["¿Me pregunto qué tipo de unidad será nuestros primeros oponentes?"] },
+      { type:"image", src:"https://i.postimg.cc/nzCnfKC3/1000-cb-20210814205020.webp", wide:true },
+      { speaker:"arashi", lines:["Kyaaa ♪ ¡Mira, mira, pequeño Tsukasa! ¡Nuestro oponente está súper emocionado!", "Los chicos adorables y trabajadores son el tesoro de este mundo, ¿no? ☆"] },
+      { type:"image", src:"https://i.postimg.cc/htDWq8YD/1000-cb-20190511164904.webp", wide:true },
+      { speaker:"tsukasa", lines:["¡Sí! Nosotros tampoco podemos bajar la guardia...♪", "Los leones se esfuerzan hasta al cazar conejos. Yo también me esforzaré al máximo para emocionar al público ♪"] },
+      { speaker:"ritsu", lines:["Ah... No es que me importe, ¿pero y Secchan?", "Si nos podemos saltar esto, yo también me quiero ir a dormir.", "Al fin y al cabo, es imposible que Knights pierda en la primera ronda."] },
+      { speaker:"arashi", lines:["Ufufu. Izumi está ocupado con nuestro nuevo integrante, seguro que está con él ahora mismo.", "Así que nosotros tenemos que ocuparnos de la primera ronda, ¿vale? ♪", "¿Hm, hmmm? Mira, mira, Ritsu, tu hermano está aquí."] },
+      { speaker:"ritsu", lines:["¿Ehhh...?"] },
+      { speaker:"rei", lines:["¿Hm? ¡Oh, Ritsu! Soy yo, tu hermanito ♪"] },
+      { speaker:"ritsu", lines:["No, no lo conozco de nada."] },
+      { speaker:"rei", lines:["¿¡De qué estás hablando, Ritsu!? ¡Soy tu hermano, tu hermanito!"] },
+      { speaker:"arashi", lines:["Creo que te está llamando, Ritsu."] },
+      { speaker:"ritsu", lines:["Qué molesto. ¿Llamo a la poli?"] },
+      { speaker:"subaru", lines:["Ese chico, si no me equivoco, es Ritsu Sakuma de la Clase 2-B... Así que es el hermano pequeño del senpai Sakuma. Ahora que lo pienso, ¡tienen el mismo apellido! ¿No os lleváis bien?"] },
+      { speaker:"rei", lines:["Así es. Aunque lo quiero tanto que no me molestaría si me apuñalase en los ojos...", "Parece que mi hermano pequeño está en su etapa rebelde.", "De todas formas, el primer oponente de Trickstar es Knights.", "Es una unidad veterana y antigua. Tengo un mal presentimiento.", "Puede que sea difícil para Trickstar pelear bien contra ellos. Le costaría hasta a una unidad normal.", "Vuestra posibilidad de ganar es casi inexistente si Knights es vuestro oponente.", "No os puedo decir más que descansad en paz... Bueno, ¿qué haréis, Trickstar?", "¿Hm? ¿Qué pasa? ¿Por qué estás mirando para todos lados?"] },
+      { speaker:"subaru", lines:["No, me da igual que nuestro oponente sea Knights. Nuestra situación ya era terrible desde el inicio, es difícil que se ponga peor.", "Hasta diría que toda esta desesperanza me tiene más determinado.", "Pero Knights es la unidad que robó a Ukki de Trickstar, se ha transferido a esa unidad, así que estaba viendo si lo veía por aquí.", "Si está feliz, en el lugar al que se ha transferido...", "Entonces no le diré nada. Nos animaremos el uno al otro.", "Pero si no está feliz...", "Si le han hecho daño de alguna manera, no lo podré pasar por alto.", "¡Eh, Knights!", "¿Dónde está Ukki? ¡No os perdonaré si le habéis hecho algo malo!"] },
+      { speaker:"arashi", lines:["Aww, ¡qué mono! Está ladrando como un perrito ♪", "¡Qué miedo! Protégeme, pequeño Tsukasa ♪"] },
+      { speaker:"tsukasa", lines:["Sí, si eso deseas, lo haré todo por ti. Sin embargo...", "Senpai Narukami, eres más fuerte que yo y sabes pelear mejor, ¿verdad? Siendo honesto, no creo que necesites que te proteja."] },
+      { speaker:"arashi", lines:["Ay, ¡sígueme el rollo! ¿No entiendes que una dama quiere ser protegida de corazón por un chico?"] },
+      { speaker:"tsukasa", lines:["Para empezar, no eres una dama, ¿no...?"] },
+      { speaker:"subaru", lines:["(Sí que están relajados...)", "(Para Knights, Trickstar es un oponente insignificante... Aunque sea frustrante, es así)", "(Knights es una unidad fuerte que sería difícil de vencer incluso si estuviesemos todos. Siendo solo la estudiante transferida y yo, es casi imposible ganar.)", "(Bueno, ¿qué debería hacer?)"] },
+      ],
+      11: [
+      { speaker:"rei", lines:["Puede que no sea apropiado que diga esto, pero... No os estáis comportando de forma elegante, Knights.", "Eliminar a Trickstar rápido para destruir la posición de Yuuki Makoto... ¿Habéis venido hasta aquí con esa intención?", "Aunque la persona en cuestión no quería transferirse, lo obligásteis y ahora vais a quitarle su libertad y su posición en su antigua unidad a la fuerza. Todo esto para reclutarlo...", "No son acciones que pueda alabar.", "¿Y os hacéis llamar Knights? ¿Esta es vuestra idea de ser caballerosos?"] },
+      { speaker:"subaru", lines:["(¿Hm...? ¿Transferido? ¿Contra su voluntad?)", "(¿Ukki no se transfirió queriendo?)", "(Ahora que lo pienso, no ha venido a clase desde que anunciaron el DDD.)", "(¿Será que está encerrado en algún lugar y no se puede mover?)"] },
+      { speaker:"arashi", lines:["...Me duele que nos digas eso.", "Yo también odio hacer las cosas por la fuerza, ¿sabes? ¡Me disgusta que no haya amor!", "Pero nuestro Izumi está extremadamente dedicado a nuestro nuevo miembro.", "Se ha vuelto un poco loco. Yo tampoco estoy de acuerdo. Me molestaría que se difunda el rumor de que Knights hace las cosas así.", "Siempre derrotamos a nuestros enemigos de forma elegante, con gracia y belleza. Eso es Knights, ¿a que sí?"] },
+      { speaker:"tsukasa", lines:["¡Sí! Seguir las reglas es lo que hace que los juegos sean divertidos ♪"] },
+      { speaker:"ritsu", lines:["Ehhh... Si las cosas terminan rápido, eso sería genial. Me da igual ser caballeroso o lo que sea.", "Sería una molestia que la gente se queje después. Si seguimos las reglas, no nos causamos problemas para el futuro."] },
+      { speaker:"arashi", lines:["Y destrozar a Trickstar injustamente también me haría sentir mal.", "Yo soy una gran aliada de los chicos trabajadores ♪"] },
+      { speaker:"ritsu", lines:["Vale, entonces, ¿que os parece esto?", "Hermano."] },
+      { speaker:"rei", lines:["¡Oh, Ritsu! ¡Me llamas hermano...!", "Así que todavía crees que somos familia. ¡Qué bien! Te quiero ☆"] },
+      { speaker:"ritsu", lines:["Qué molesto... Tú deberías saber dónde tienen encerrado a nuestro nuevo miembro, ¿verdad?"] },
+      { speaker:"rei", lines:["Por supuesto. Lo sé todo, si tiene que ver con nuestra escuela, lo sé todo."] },
+      { speaker:"ritsu", lines:["Díselo a Trickstar. Cuando lo sepa, que haga lo que quiera.", "Puede que sea capaz de salvar a nuestro nuevo miembro antes de que comience el espectáculo."] },
+      { speaker:"rei", lines:["¿Hm...?"] },
+      { speaker:"subaru", lines:["¡Oh, qué sorpresa que seas tan amable! Sí o sí salvaré a Ukki ☆"] },
+      { speaker:"ritsu", lines:["(Ah... Qué fácil, es idiota. Es mejor para Knights que sepa esto.)"] },
+      { type:"image", src:"https://i.postimg.cc/q7Zyz824/1000-cb-20190511020429.webp", wide:true },
+      { speaker:"ritsu", lines:["(Si todo sale bien... Podremos ganar la primera ronda sin tener que pelear ni esforzarnos.)", "(Victoria fácil, victoria fácil ♪)"] },
+      { speaker:"subaru", lines:["¡No os perdonaré si lo habéis encerrado! ¡Hay un límite a lo que se puede hacer!", "¡Si Ukki no se fue de Trickstar porque quería, sigue siendo nuestro camarada! ¡Y me aseguraré de salvar a nuestros camaradas!"] },
+      { speaker:"rei", lines:["Bien. Tus sentimientos son preciados, pero... Falta poco tiempo para que empiece la primera ronda.", "¿Tienes suficiente tiempo para ir a buscarlo y rescatarlo?", "Además, el papeleo que fuerza a Yuuki Makoto a trasnferirse quizá ya está listo.", "Y si es así, no es miembro de Trickstar, es miembro de Knights.", "Sería difícil completar todo el papeleo para transferirlo de vuelta ahora mismo. Sin importar cómo se sienta el joven, no se permite ayudar a otra unidad.", "Trickstar habrá fallado y estará obligado a retirarse del DDD.", "O quizás, aunque te esfuerces por salvarlo... El corazón de Yuuki Makoto está en Knights. Si es así, solo harías más enemigos.", "Creo que tenéis mejores posibilidades de ganar si peleáis como estáis.", "Y si ocurre otro milagro y Yuuki Makoto vuelve a Trickstar... Tiene talento, pero le falta mucha práctica.", "Aunque vuelva, no significa que podáis ganar contra Knights. Y perderéis mucha energía corriendo por toda la escuela para buscarlo.", "¿Seréis capaces de superar la primera ronda si hacéis eso?"] },
+      { speaker:"subaru", lines:["Hm. ¡No quiero pensar en cosas complicadas como las consecuencias!", "Dime dónde está Ukki, ¡mi camarada! ¡Senpai Sakuma!", "Puede que vuelva con nosotros. ¡Puede que siga siendo nuestro compañero!", "¡Eso es más que suficiente para ir a buscarlo!"] },
+      { speaker:"rei", lines:["Si eso crees... Vale. No tenemos tiempo. No diré las mismas cosas una y otra vez.", "Yuuki Makoto seguramente está en la sala de prácticas que Knights alquiló para el DDD.", "Te mandaré un mapa con la ubicación exacta a tu teléfono, usálo como referencia.", "Date prisa. Este mundo no es tan piadoso como para que puedas tener todo lo que quieres. Si eliges el camino equivocado, perderás el tiempo. Debes hacer lo que consideres correcto para no arrepentirte."] },
+      { speaker:"subaru", lines:["¡Sí! Gracias, senpai Sakuma ☆", "¡Estudiante transferida! ¡Por favor espera aquí un momento! ¡Volveré con Yuuki pronto, así que aguanta hasta entonces! Cuento contigo ☆", "¡No me rendiré hasta el final! Tú piensas lo mismo, ¿verdad?", "¡La estrella de la esperanza aún no se ha apagado!"] },
+
+      ],
+      12: [
+      { type:"location", src:"https://i.postimg.cc/pL0XQCx0/1000-cb-20191024215233.webp", label:"Patio", position:"center top" },
+      { speaker:"mao", lines:["Me reporto.", "Todo va bien en el lado A, el patio y el jardín de la terraza.", "Parece que hay un poco de basura, así que deberíamos mandar a un equipo de limpieza."] },
+      { speaker:"souma", lines:["Todo va bien en el lado B, la recepción, y la entrada de la escuela también.", "Como pensaba, cuesta caminar y vigilar todos las esquinas de la escuela. He sacado un entrenamiento de piernas gratuito."] },
+      { speaker:"kuro", lines:["Nos falta personal, así que no podemos hacer nada. No te quejes, Kanzaki... Y no hay ningún problema en el lado C y D tampoco."] },
+      { speaker:"keito", lines:["Gracias por vuestro trabajo duro.", "Lo siento, Kanzaki, Kiryu e Isara. Siento que me tengáis que ayudar con tareas del Consejo Estudiantil.", "A esta hora la mayoría de estudiantes... y la mayoría de miembros del Consejo Estudiantil, están participando en el DreamFes con sus unidades.", "Tenemos menos gente para ser personal rutinario que en un DreamFes normal.", "Y los profesores también tienen que ayudar, sin embargo, bajo el pretexto de ser justos, también están a cargo de contar los votos.", "No tiene remedio, pero nosotros nos tenemos que ocupar de vigilar el recinto.", "Pero es bastante difícil. Imaginar que se contan los votos cada hora me pone inquieto.", "Construir tantos escenarios exteriores y que toquen todas las unidades al mismo tiempo... Es la primera vez que hacemos un formato así.", "Y ha venido mucha gente. Los estudiantes que normalmente tienen que ver los S1 desde clase pueden caminar libremente al escenario.", "Todo es según las órdenes de Eichi, así que no me puedo quejar.", "Pero no sé cómo debería actuar. Es difícil para alguien normal entender lo que piensa Eichi. Ojalá se pusiera en mi lugar y sintiera cómo es ser arrastrado de un lado a otro.", "El DDD... Sería agradable si todo terminase de forma armoniosa, sin ningún problema."] },
+      { speaker:"kuro", lines:["Bueno, cada hora se deben retirar la mitad de las unidades.", "¿No puedes elegir a algunos de los descalificados para que trabajen un poco?", "A medida que pasa el tiempo debiese ser más fácil."] },
+      { speaker:"souma", lines:["Hmm. Si nos hubiésemos inscrito en el DDD, creo que me gustaría disfrutar como parte del público tras perder.", "Siendo honesto, no me apetecería trabajar.", "El DDD es una gran batalla nunca antes vista en la larga historia de la Academia Yumenosaki, me emociona mucho...☆"] },
+      { speaker:"keito", lines:["No saques la espada, Kanzaki.", "Bueno, no podemos esperar tanto de otras personas. Apoyaremos solos al DDD y, estando preparados para cualquier imprevisto, resolveremos todos los problemas que aparezcan.", "Debemos preparar el escenario para que Eichi y los demás puedan brillar al máximo.", "Nosotros, en Akatsuki, seremos los héroes ocultos del DDD."] },
+      { speaker:"kuro", lines:["No te emociones tanto, Hasumi.", "Ya ha vuelto el gran y poderoso presidente del Consejo Estudiantil, ¿no debería asumir la responsabilidad él para que nosotros nos podamos relajar?"] },
+      { speaker:"keito", lines:["Los aliados cuyos pensamientos son imposibles de entender son peores que los enemigos. Eichi es ese tipo de aliado. Me da muchos dolores de cabeza.", "Y también se le ocurrió esto del DDD sin consultarme nada."] },
+      { speaker:"souma", lines:["Así que ni siquiera Hasumi-dono entiende las verdaderas intenciones del presidente.", "Seguro que los que están participando en el DDD tampoco... La mayoría no deben entender nada y simplemente están siguiendo la vibra feliz de hoy."] },
+      { speaker:"keito", lines:["Las intenciones verdaderas de Eichi... Aunque no lo parezca, Eichi y yo somos amigos desde pequeños, así que tengo una idea difusa.", "Precisamente por eso me quedaré tras bambalinas esta vez. No quiero meterme en su camino. Eso es lo único que puedo hacer por él.", "Según las normas del DDD, si Akatsuki ganase todas las rondas, tendríamos que competir contra *fine* de Eichi.", "No vamos a llegar a ningún lado si competimos contra nuestros aliados. Eso es lo que menos quiero.", "Para realmente ayudar a Eichi, es mejor ocuparnos del trabajo rutinario para que no haya ningún problema con el DDD."] },
+      { speaker:"souma", lines:["Por supuesto. Además, la batalla ya ha empezado. Aunque dijiese algo como “ojalá pudiese participar en el DDD”, ya no podemos inscribirnos.", "No iremos al campo de batalla esta vez. Debemos dedicarnos a nuestros deberes.", "Si fuera posible, desearía que Akatsuki pudiese mostrar nuestro espectacular poderío militar en este campo de batalla como una *yunitta*.", "Sin embargo, si Hasumi-dono decide priorizar el trabajo, no hay más que discutir.", "Hasumi-dono es el líder de nuestro Akatsuki. Seguiremos a Hasumi-dono en la vida y en la muerte.", "Por suerte, los miembros de Akatsuki están familiarizados con tácticas de combate, así que podemos vigilar el recinto sin problemas."] },
+      { speaker:"keito", lines:["...No me hubiese importado si os inscribíais al DDD sin mí.", "Elegir no entrar a este DreamFes y darle prioridad a mis deberes del Consejo Estudiantil es egoísta por mi parte. No debéis sentiros obligados a seguir mis caprichos."] },
+      { speaker:"kuro", lines:["No seas tan distante. Somos compañeros, ¿no? Por los compañeros no importa meterse en líos ajenos.", "Así somos en Akatsuki, ¿verdad?", "No ha pasado mucho tiempo desde el S1, necesitamos descansar los músculos. No somos tan jóvenes como para poder actuar al máximo cada vez.", "La vida no es solo ganar DreamFes."] },
+      { speaker:"souma", lines:["Aunque, si fuera posible, me gustaría recuperar el honor perdido en el S1.", "*Torikkustaa* está al borde de la muerte ahora mismo. Si los venciesemos ahora, no se sentiría justo.", "Derrotar a un enemigo en ese estado no tiene mérito alguno.", "Aunque parece que el presidente no siente lo mismo. Creo que para él es suficiente con ganar usando cualquier método... Con eso no puedo estar de acuerdo.", "Crear una grieta en *Torikkustaa* y hacer que sean incapaces de actuar antes siquiera de que empiece la batalla es una manera asquerosa de actuar.", "Los *Dorifessu* son la guerra para los *aidorus*, aunque quizá eso solo lo pienso yo.", "*Torikkustaa* ha sufrido demasiado. No puedo ni mirarlos, me da mucha pena.", "...Oh. No debería haber dicho eso contigo presente, Isara-dono."] },
+      { speaker:"mao", lines:["......"] },
+      ],
+      13: [
+      { speaker:"mao", lines:["(Compañeros...)", "(Esas personas por las que no te importaría meterte en líos. Para mí, eso era Trickstar.)", "(Me voy a retirar de Trickstar e inscribirme en Akatsuki. Ese es mi destino, es inevitable. Nos ha atrapado una corriente contra la que no podemos pelear...)", "(Por eso me he ido de Trickstar y ahora los estoy ayudando a ellos.)", "(Pero mi corazón no pertenece a Akatsuki todavía. Mi alma sigue siendo de Trickstar.)", "(Quizá me acostumbre a esto algún día.)", "(Si me importa mi futuro, debería dejar de pensar en el cariño que le tengo a Trickstar e intentar encajar con Akatsuki.)", "(Pero yo...)", "(Soy un cobarde. Aunque dije que no me gustaba vivir como un espía doble, aún no sé qué lado elegir.)", "(Me inscribiré en Akatsuki tal y como propuso el presidente. Los demás también seguirán sus instrucciones y todo irá según planea el presidente.)", "(No podemos pelearnos, no podemos desobedecer al presidente. Si lo pensamos racionalmente y con calma, es obvio que no podemos elegir libremente.)", "(Aun así, todavía no he llenado el papeleo para inscribirme en Akatsuki. Y aún no envío mi retiro de Trickstar.)", "(Se podría decir que sigo siendo parte de Trickstar.)", "(He usado el hecho de que Akatsuki no va a participar en el DDD a mi favor y estoy posponiendo el papelo de transferencia. Todo mientras fingo ser inocente.)", "(No es necesario transferirme hasta que no participemos en un DreamFes, al fin y al cabo.)", "(Pero por otro lado, tampoco he hecho nada para ayudar a Trickstar, ni siquiera fui a entrenar. No le dije ni una palabra a Subaru cuando fuimos al entrenamiento de básquet juntos.)", "(Me daba mucho miedo que me culpase y me llamase traidor.)", "(Sin inclinarme a uno u otro lado, estoy intentando mantener el balance.)", "(Todavía no puedo elegir qué debería hacer. Aunque debería tirar a la basura mi pasado, aunque debería preocuparme del futuro.)", "(Aunque eso fue lo que decidí para mí mismo, tengo tanto miedo de convertirme en un traidor que no estoy haciendo nada de lo que me pueda arrepentir...)", "(Estoy alargándolo todo manteniendo mi posición ambigua y arrastrándome por el suelo.)", "(Ah, me odio a mi mismo. Pensé que era más inteligente.)", "(No puedo dejar ir a Trickstar, así que estoy vagando sin aliarme con nadie. Pero todos los demás ya han elegido qué hacer y están actuando...)", "(Soy el único que está perdido y preocupado, y no me molesta. Estoy evitando todo lo que pueda herirme, tengo miedo y estoy solo. Solo estoy esperando a que pase el tiempo.)", "(Soy un cobarde.)"] },
+      { speaker:"keito", lines:["Isara.", "Por más que me guste hablar, esta vez seré directo.", "No te daré ninguna extensión. No tienes tiempo para estar preocupado. Y estoy seguro de que Eichi tampoco.", "La juventud es corta. Nadie te da un descanso, y a veces deberías seguir tus impulsos sin pensar mucho. Cuanto más pienses, más te enredas."] },
+      { speaker:"mao", lines:["¿Umm? ¿Qué intentas decir, vicepresidente?"] },
+      { speaker:"keito", lines:["Escucha. Estoy hablando como Keito, no como vicepresidente del Consejo Estudiantil ni como líder de Akatsuki... como Keito Hasumi.", "Te diré algo. La razón por la que te dejé entrar a Akatsuki es porque creo mucho en ti.", "Eso es verdad. Eres habilidoso como idol y excelente en tu trabajo del Consejo Estudiantil.", "Es precisamente porque eres capaz de hacer mucho que no sabes exactamente lo que deberías hacer. ¿O me equivoco?", "Precisamente por eso tengo altas expectativas puestas en ti.", "Y además empatizo. Solía ser como tú. Pensaba que vivía mi vida de forma inteligente, pero al final, solo estoy lleno de arrepentimientos.", "Por eso te digo esto. Te advierto como persona mayor que tú.", "No, más bien, deseo. Deseo que no te vuelvas como yo, que hagas las cosas que yo no pude. Espero poder ver eso, así que diré algo que te ayudará.", "Quiero que tú, que eres parecido a mi yo del pasado, me escuches."] },
+      { speaker:"mao", lines:["......"] },
+      ],
+      14: [
+      { type:"location", src:"https://i.postimg.cc/fR7j8tm4/1000-cb-20180712060443.webp", label:"Pasillo del segundo piso", position:"center center" },
+      { speaker:"subaru", lines:["¿¡Por aquí!?", "...Tampoco está aquí. Maldita sea, Ukki, ¿dónde estás? Sal de una vez, ¡tus padres se pondrían a llorar si te viesen así! ¡Y yo también estoy al borde de las lágrimas!", "¡El DreamFes va a empezar pronto! Ya escucho los instrumentos y las canciones, ¡no tengo tiempo de hacer esto!", "No, ¡no puedo perder mi determinación! ¡Voy a salvar a Ukki y volver al escenario donde me espera la estudiante transferida!", "¡Y entonces Trickstar ganará el DDD!", "¡Los sueños tienen que ser grandes! ¡Sin límites! ¡No me rendiré hasta haberlo conseguido todo!", "...Qué raro que esté tan animado.", "Quizá tengo adrenalina por estar corriendo tanto. Es como un calentamiento ☆", "Ah, no puedo estar tan tranquilo. Si sigo así se me va a acabar el tiempo, ¡tengo que darme prisa! ¿Dónde estás, Ukki?", "Oh, el senpai Sakuma me ha mandado un mensaje.", "Ajaja, ¿parece que al senpai no se le da bien usar el móvil? Ha puesto todas las palabras juntas y hay muchos errores... Qué adorable ♪", "¿Hm? Así de mal escrito cuesta leerlo... ¿Hmmmm?", "Hmm. Las reglas generales del DDD indican que es necesario ser una unidad para participar. ¿Una unidad requiere un mínimo de dos miembros...?", "En otras palabras, si el mínimo de dos miembros no está en el escenario, no serán reconocidos como una unidad, ¿y serán descalificados?", "¡Wah, no puede ser! ¡Trickstar solo tiene a una persona, la estudiante transferida, en el escenario!", "Si no vuelvo pronto nos descalificarán, ¿verdad?", "Ahhh, ¡por qué no puedan salir las cosas bien! ¿Y ahora que hago?", "¡En el peor de los casos tendré que abandonar a Ukki y volver al escenario! ¡No puedo perder sin pelear!", "¡Mierda! ¡Esas personas de Knights, especialmente el hermano pequeño del senpai Sakuma! Pensé que estaba siendo simpático sin motivo, ¡pero lo tenía todo pensado!", "¡Querían ganar automáticamente! ¡Si no vuelvo al escenario, ganarán sin esforzarse nada!", "¡Qué manipuladores! ¡No lo soporto! ¡Le daré la vuelta a todo esto! ¡Haré que Knights y el presidente admitan su derrota!", "Me esforzaré al máximo ☆"] },
+      { speaker:"izumi", lines:["¡Eh, tú! ¿Por qué haces tanto ruido?", "A diferencia de los S1 normales, en el DDD no hay que mirarlos desde clase, ¿verdad?", "Todos están fuera con el público, ¿qué haces dentro del colegio?", "Qué incordio... No quiero verte, márchate de una vez. No estoy de buen humor, quién sabe lo que te podría hacer."] },
+      { speaker:"subaru", lines:["(Wah, ¿qué bicho le ha picado a este tipo? ¡No pinta bien!)", "(Es la primera vez que nos conocemos, ¿no? ¿Por qué me está tratando así?)", "(¡No, no puedo retirarme ahora! Cada segundo cuenta, ¡tengo que encontrar a Ukki como sea!)", "Um, ¡disculpa! ¿Has visto a Ukki por aquí?"] },
+      { speaker:"izumi", lines:["¿Ukki...? ¿Qué? ¿Un mono? Si buscas a un mono, entonces mírate al espejo.", "Pero bueno... ¡Ah! ¿Hmm...?", "Sabía que había visto tu cara antes. Eres conocido de Yuukun, Subaru Akehoshi de Trickstar, ¿verdad?", "¿Puedes estar aquí perdiendo el tiempo? El primer oponente de Trickstar es Knights, ¿no? Si no te esfuerzas al máximo no nos costará nada ganarte, ¿sabes?", "Aunque no esté yo personalmente, cada individuo en Knights es un idol impresionante.", "Solo nos unimos como equipo por intereses individuales, pero nuestras habilidades son fuera de serie en esta escuela.", "No ser conscientes de su propia situación, el tonto e idiota Trickstar... De verdad, me pregunto por qué a Yuukun le gusta tanto esa unidad."] },
+      { speaker:"subaru", lines:["......", "Cuando dices Yuukun, ¿te refieres a Ukki?", "Creo que lo entiendo. Eres el malvado de Knights que ha secuestrado a Ukki, ¿no?", "¿Dónde está? ¡Devúelvenoslo ahora mismo! ¡No dudaré en pegarte dependiendo de cómo contestes!", "¡Es mi amigo! ¡Mi preciado compañero!"], },
+      { speaker:"izumi", lines:["Hmm. ¡Qué inmaduro, qué incordio!", "Eh, esto no es ningún juego. Los idols son merchandising... Si haces algo estúpido no basta con decir que es un impulso de la juventud.", "Debes pensar de forma racional y tranquila. ¿El futuro de Yuukun es mejor en Knights o en Trickstar?", "Hasta un niño sabría cuál es la opción correcta. ¿Por qué no sois capaces de entenderlo?"] },
+      { speaker:"subaru", lines:["¡Cállate! Me da igual lo que digas, ¿dónde está Yuuki? ¡Pelo de alga!", "¡La mejor opción y el camino a seguir dependen de Ukki! ¡Él debe decidir por sí mismo!", "Si Ukki decide que no quiere caminar codo a codo con nosotros, ¡lo respetaré! Y hasta lo animaré, pero eso no es lo que está pasando, ¿¡verdad!?", "Si estás ignorando su voluntad, ¡y forzándolo a seguir la tuya...! ¡No lo perdonaré! ¡Protegeré la luz de su alma!", "¡Nosotros, Trickstar, seremos el lugar en que su sonrisa pueda florecer!"] },
+      ],
+      15: [
+      { type:"location", src:"https://i.postimg.cc/Cxb9SLrn/1000-cb-20190920235815.webp", label:"Sala de Prácticas", position:"center center" },
+      { speaker:"makoto", lines:["(......)", "(...¿Hm, hmmm? Oh no, ¿¡me he desmayado!?)", "(Qué miedo, ¡creo que casi me quedo dormido y no despierto! Estoy muy mareado; hace mucho que no como nada.)", "(Izumi san no me quiere dar de comer ni me deja dormir.)", "(¡Y cuando me da de comer, me quiere dar la comida en la boca!)", "(¡Hacer eso es asqueroso! ¡No entiendo lo que está pensando! ¡De verdad no lo entiendo!)", "(Y cuando me negué a que me diese de comer, se puso aún de peor humor...)", "(Me ha ignorado todo el tiempo: ¡es como una tortura de la mafia!)", "(Izumi me dijo que hasta que fuese más honesto no me dejaría vivir como una persona normal.)", "(S-Si sigo así, ¡seré como un pájaro encerrado hasta que me muera! ¡No puedo soportarlo, por favor que alguien me salve!)", "(Maltrato, secuestro y abandono, ¿¡esto es un crimen, no!?)", "(¡Es un crimen! ¡Policía! ¡Akehoshi, Hidaka, Isara! ¡Estudiante transferida! ¡Que alguien me salve...!)", "(Aaah. Izumi seguramente se inventó una excusa creíble para mis padres y mis compañeros. ¡Ese tipo siempre intenta mantener las apariencias!)", "(Si supiera que las cosas iban a terminar así, me hubiese llevado mejor con mis padres.)", "(Hace poco me quedé a dormir en la escuela para prepararme para el S1... Seguro que mis padres piensan que estoy haciendo eso otra vez.)", "(Pero si no me comunico con nadie en un mes o en un año, seguro que alguien se da cuenta de que algo va mal, ¡pero creo que se morirá mi cuerpo o mi espíritu antes de eso!)", "(Ya no sé cuándo es de día o de noche... ¿Será el día del DDD hoy?)", "(¿Creo que puedo oír una música de fondo?)", "(¡En ese caso, no puedo estar aquí encerrado!)", "(Tengo que darme prisa y reunirme con los demás, aunque quizá no importa si estoy ahí o no.)", "(Puede que solo sea un lastre para ellos...)", "(¡Pero aún así, quiero hacer algo! ¡Para ayudarlos a todos! No, ¡porque quiero subir al mismo escenario que ellos!)", "(Por eso he trabajado tan duro. ¡Por fin íbamos a ganar! ¡No es momento de estar quieto, yo también soy parte de Trickstar!)", "(Eso es lo que pienso, pero...)", "(Espero que no hayan pensado que traicioné a Trickstar y me uní a Knights como dijo el presidente, ¿verdad?)", "(¡Eso sería terrible! ¡Nadie va a venir a rescatar a un traidor! Aaaah, ¡por más que lo intente, no encuentro una solución!)", "(¡No es verdad! ¡Llevo secuestrado muchos días en esta sala de prácticas por culpa de Izumi!)", "(¡Me he negado todo este tiempo a firmar los papeles de transferencia de Knights!)", "(¡Sigo siendo parte de Trickstar! ¡Soy vuestro compañero! Ojalá alguien lo creyese todavía. ¡Están poniendo a prueba mi lealtad...!)", "(Si hubiese sabido que esto iba a pasar, ¿¡no hubiese sido mejor negarme a la propuesta del presidente desde que la hizo!?)", "¿No debería haber dicho mi opinión claramente en ese momento? ¿¡Tendría que haber dicho a los cuatro vientos que soy su aliado!?", "(Aaah. Es demasiado tarde para arrepentirme. Y si soy honesto, el presidente me daba mucho miedo...)","(¡No fui capaz de enfrentarme a él directamente, estaba temblando!)", "(¡Viendo al enemigo en persona, me empezaron a temblar las piernas!)", "(Oogami se burlaría de mí. No he mejorado ni un poco, aunque entrené tanto y se suponía que había madurado...)", "(¡No, no me puedo rendir! ¡Por esto siempre soy un lastre!)", "(Debo poder hacer algo. ¡Tengo que creerlo! Si no creo en mí mismo, ¿quién lo hará?)", "(¡Si algo aprendí de mi entrenamiento con Oogami es que si lo intento desesperadamente puedo lograr cualquier cosa!)", "(...¿Hm?)", "(Creo que oigo... ¿La voz de alguien? Es la voz de Akehoshi, ¿no?)", "(¿Se habrá dado cuenta de que estoy encerrado aquí y ha venido a buscarme? Aaah, esto es lo que estaba esperando ☆)", "¡Akehoshi! ¡Aquí estoy! ¡Por favor, date cuenta!", "¡Me han secuestrado todo este tiempo! ¡En esta sala de prácticas!", "...Ah, es verdad. ¡Esta sala está insonorizada! ¡Es de la Academia Yumenosaki, la han hecho para practicar sin molestar!", "¿Puede que no me oiga por más que grite?", "Es una sala de prácticas, así que hay mucho equipo. Hay un microfono, lo voy a poner en el volumen más alto... ¡Se me da bien la tecnología, os lo demostraré!", "“¡Ah! ¡Ah! ¡Probando!”", "“¡Wah...! Me duelen los oídos, el sonido hace mucho eco en las salas insonorizadas.”", "(Puede que solo haya una pequeña oportunidad de que me escuchen...)", "(Y además, Izumi está vigilando la puerta.)", "(Tengo que engañarlo de alguna manera, si no me encargo de Izumi, ¡no podré salir de aquí!)", "(También podría esperar a que Akehoshi derribe a Izumi y robe la llave, pero la violencia no es buena.)", "(En el peor de los casos, no suspenderán. Y si no llega a eso, ¡seguro que no lo dejan participar en el DDD!)", "(¡No puedo dejar que eso pase! ¡No puedo dejar que el futuro de Trickstar termine por mi culpa!)", "(¡No ayudo mucho en el escenario, por lo menos no debería ser un lastre!)", "(¿Qué hago? Aaah, ¡no hay tiempo para pensar!)", "(A veces debería actuar sin preocuparme, según mi impulso, con toda mi determinación... ¡Con todo lo que tengo!)", "(¡En eso consiste Trickstar! ¡Mírame, Izumi! ¡Te lo demostraré!)", "(¡Lo probaré! ¡Que ya no soy una marioneta que no puede hacer nada!)"] },
+      ],
+      16: [
+      { type:"location", src:"https://i.postimg.cc/fR7j8tm4/1000-cb-20180712060443.webp", label:"Pasillo del segundo piso", position:"center center" },
+      { speaker:"subaru", lines:["¡E-eh! ¿¡Me estás escuchando, no!? ¡No me ignores!"] },
+      { speaker:"izumi", lines:["......"] },
+      { speaker:"subaru", lines:["(¿Hmm? ¿Qué pasa? Se ha quedado completamente callado.)", "(¡Qué le pasa, no lo entiendo! Tengo..., ¡tengo que darme prisa y salvar a Ukki o no llegaremos a tiempo al escenario!)", "(¡Tendré que derribarlo e inmovilizarlo...!)", "¡Te estoy HABLANDO! Solo porque seas mayor que yo, no voy a quedarme quieto. ¡Si no me devuelves a Ukki, lo recuperaré por la fuerza!"] },
+      { speaker:"izumi", lines:["...Cállate un momento."] },
+      { speaker:"subaru", lines:["¿Eh? ¿Has dicho algo?", "...Creo que alguien está hablando dentro de esa habitación...", "¿Será la voz de Ukki?", "¡Así que realmente has encerrado a mi preciado compañero en esta sala de prácticas! No te preocupes, Ukki, ¡voy a salvarte ahora mismo!"] },
+      { speaker:"izumi", lines:["¡Te he dicho que te calles!"] },
+      { speaker:"subaru", lines:["¿¡Perdón!?", "(¿Q-Qué le pasa a este tipo? ¡Qué miedo! ¿¡Parece que me va a matar!?)", "(¡No, no puedo rendirme ahora! ¡Es ahora o nunca! ¡Recuperaré a Ukki y volveré al escenario donde nos está esperando la estudiante transferida!)"] },
+      { speaker:"makoto", lines:["“¿Izumi, me oyes?”", "“¡Libérame de una vez! ¡Si no lo haces, usaré todo tipo de artimañas!”", "“¡Te obligaré a que me saques de aquí! ¡Hay algo que debo hacer!”", "“¡No me importa dejarlo todo atrás para poder subirme al escenario con todos!”"] },
+      { speaker:"izumi", lines:["...Cada uno de vosotros, sois demasiado insolentes para ser novatos. ¿Os tengo que volver a enseñar cómo se le habla a los mayores?", "Ah... No me podrá escuchar desde dentro. Después de todo, es una sala insonorizada. ¿Ha usado un micrófono para que pueda escucharlo?", "¿Estará esperando que le abra la puerta para responderle...?", "Eso no es bueno, Yuukun. Yuukun, no te dejaré salir hasta que seas honesto.", "Eso ya lo sabes, ¿no? No dejaré que alguien como Yuukun me manipule tan fácilmente."] },
+      { speaker:"makoto", lines:["“¡Parece que no tienes ninguna intención de abrir la puerta! Ya veo, ¡lo entiendo!”", "“¡Espero que no te arrepientas! ¡Puede que sea el más inútil e incompetente de esta escuela! ¡Pero no soy tu marioneta!”", "“¡Cuando caiga, te arrastraré conmigo, Izumi! ¡Un ratón acorralado muerde al gato...!”"] },
+      { speaker:"izumi", lines:["¿Q-Qué? ¿Qué dices, Yuukun?"] },
+      { speaker:"makoto", lines:["“¡Ugh!”"] },
+      { speaker:"izumi", lines:["...¿Qué? ¿Qué es ese ruido?"] },
+      { speaker:"makoto", lines:["“¡Golpe! ¡Bong! ¡Bang!”"] },
+      { speaker:"izumi", lines:["Eh, ¿Yuukun? ¿Pero qué haces...?"] },
+      { speaker:"makoto", lines:["“¡Bang! ¡Bong! ¡Bang!”"] },
+      { speaker:"izumi", lines:["¿...?"] },
+      { speaker:"makoto", lines:["“¿S-Sabes lo que estoy haciendo, no?”", "“Según tú, lo único bueno que tengo... Mi cara... ¡La estoy destrozando contra la pared!”", "“¡Me duele mucho! ¡Pero no pararé incluso aunque se rompan los huesos de mi nariz, mi mandíbula, o aunque se me caigan los dientes!”", "“¡Me voy a destrozar la cara! ¡Tanto que ni siquiera se podrá arreglar con cirujía plástica!”"] },
+      { speaker:"subaru", lines:["¿¡Qué!? ¡Qué haces, Ukki! ¡Para!", "¡No te desesperes! ¡Te salvaré ahora mismo!"] },
+      { speaker:"makoto", lines:["“Wow ♪ Akehoshi también está aquí. ¡Te oigo! Gracias, ¿cómo has venido a salvar a alguien como yo...?”", "“Sin embargo, lo siento. Ya me he decidido. ¡Actuaré según lo que creo!”", "“Hasta yo tengo un corazón. ¡Un corazón libre! ¡Un corazón que me han dado todos los de Trickstar!”", "“¡Akehoshi, sé testigo!”", "“¡Izumi me ha secuestrado y por eso he tenido que destrozar mi cara tanto que nadie me va a querer nunca más...!”"] },
       ],
     },
       "ms-ch1": {
@@ -6109,7 +6422,218 @@
       { speaker:"hinata_yuta", lines:["Vale~♪"] },
       ],  
     },
-    };
+      "esu-fs1": {
+      1: [
+      { type:"era", season:"primavera", yearLabel:"Segundo año de ES" },
+      { type:"location", src:"https://i.postimg.cc/SsMSBNzV/1000-cb-20240109215306.webp", time: "Un día de mayo.", label:"Trickstudio", position:"center center" },
+      { speaker:"hokuto", lines:["¿Hm...?", "Anzu, has venido al Trickstudio.", "Tranquila, no hace falta que pares de trabajar. Me alegro de que puedas usar este sitio.", "Bocetos, telas por todas partes... ¿Estás trabajando en unos outfits?", "...Hmm. Así que son outfits para los idols que se han unido a ES hace poco.", "¿Ya los has contactado? Tan eficiente como siempre, Anzu.", "Si estás haciendo outfits personalizados para cada idol, naturalmente, debes hablar con ellos primero.", "Los outfits reflejan la personalidad de un idol, así que también es una buena oportunidad para conocer mejor a los nuevos idols.", "...Es verdad. Ahora que has abandonado la Asociación-P, por fin tienes más tiempo libre. Eso es bueno.", "Pero me gustaría que usases un poco de ese tiempo para hacer nuestros outfits...", "Jaja, es broma. Sea lo que sea que hagas, quiero apoyarte.", "Estoy deseando ver qué se te ocurre para los chicos nuevos, Anzu."] },
+      { type:"location", src:"https://i.postimg.cc/g2CBMzmJ/1000-cb-20220408235321.webp", label:"Parque de ES", position:"center center" },
+      { speaker:"esu", lines:["¡Llega corriendo el participante Sagiri al parque! Sin rumbo fijo, ¿dónde acabará?", "......", "¿¡Cómo voy a saber eso!? Ugh, hasta dónde me va a seguir ese tipo—", "...¿Hm? Me ha llegado un mensaje al móvil.", "Veamos, qué será... Espera, es de Anzu, ¿la productora?", "¿Qué querrá decirme la productora? ¿Me habré metido en un lío? ¿Me va a castigar? ¿Me va a reñir?", "No, no, no, ¡no he hecho nada malo en ES! ¡Lo único que hice fue mezclar unas bebidas distintas y tomármelas!", "¡Tengo que parar de procrastinar y leerlo de una vez!... Sí, buena idea. ¡Eso haré!", "Vale, entonces... Quiere hacer outfits para los idols. “Outfits exclusivos”, dice...", "¿¡“Outfits exclusivos!?” ¿¡Y eso qué es!?"] },
+      { speaker:"fuyume", lines:["Wow, Esu... No grites así de repente."] },
+      { speaker:"esu", lines:["¿¡Gah!? ¡Eso te lo debería decir yo a ti! ¡No te me acerques sigilosamente!"] },
+      { speaker:"fuyume", lines:["No, lo único que tienes que hacer es susurrarle a Yume: “me alegro tanto de que Fuyume esté aquí”... Eso es más que suficiente ♪"] },
+      { speaker:"esu", lines:["¿Quién le va a susurrar eso a nadie?", "Bueno, estoy en medio de algo importante. Por eso he gritado.", "Mira, Anzu me ha mandado un mensaje sobre algún tipo de... outfit exclusivo para mí."] },
+      { speaker:"fuyume", lines:["¿Anzu? ¿Y por qué tiene tu número esa tal Anzu?"] },
+      { speaker:"esu", lines:["¿Eh? Solo te estoy explicando lo que ha pasado... ¿¡Por qué te acercas con esa mirada tan intimidante!?", "¡Deja de intentar leerme los mensajes!"] },
+      { speaker:"fuyume", lines:["Mm-hmm. Yume ya lo entiende. Anzu quiere hacerte un outfit... bueno, a todos los idols nuevos de ES.", "Ahora que lo pienso, a Yume lo llamaron hace poco también. Yume también debe tener un mensaje pendiente, ¿verdad?", "...Jeje, es tal como Yume pensaba. ¿Ves? Esta tal Anzu le preguntó lo mismo a Yume ♪"] },
+      { speaker:"esu", lines:["Oh, es verdad. ¿Entonces Anzu está haciendo outfits para todos los idols nuevos?", "Pero ¿qué es un “outfit exclusivo”?", "Ya tenemos el uniforme de idols de ES.", "Pero si es exclusivo, a lo mejor es el tipo de outfit que hará que todos piensen: “¡Wow~! ¡No puede ser~! ¡¡Eso es tan Esu Sagiri~!!”"] },
+      { speaker:"fuyume", lines:["(Suspiro)..."] },
+      { speaker:"esu", lines:["¿¡Por qué suspiras!?"] },
+      { speaker:"fuyume", lines:["Porque sigues siendo un niño, Esu.", "Deberías terminar de leer el mensaje antes de ponerte a chillar. Lo dice justo aquí: “outfits que muestran la individualidad y encanto de cada idol.”"] },
+      { speaker:"esu", lines:["Que me lo diga una persona tan desconectada de la realidad que prácticamente vive en un mundo de fantasía como tú... Me duele un poco.", "¿Hmm? ¿Así que eso es lo que lo hace “exclusivo”? ¿Un outfit que muestra mi individualidad y encanto?"] },
+      { speaker:"fuyume", lines:["Eso dice. Así que Yume ha decidido que... Va a diseñar su propio outfit... Jeje ♪"] },
+      { speaker:"esu", lines:["¿Cómo has decidido eso?"] },
+      { speaker:"fuyume", lines:["Porque la individualidad y el encanto de Yume solo le pertenecen a Yume y a nadie más, ¿verdad?", "Yume se niega a llevar ropa hecha por alguien que Yume ni conoce... o a que otra persona intente mostrar los encantos de Yume.", "Yume ya lo ha pensado mucho, pero tú te has emocionado de inmediato. No le has dado ni una vuelta, ¿no?"] },
+      { speaker:"esu", lines:["¡Eso no es verdad! El mensaje me acaba de llegar. Y además—", "Tú eres el que dijo que había que leerlo todo, Fuyume. Mira, justo aquí: “Vamos a idear juntos el tipo de outfit que te quede mejor.”", "Así que decidir hacerlo tú solo sin preguntarle a nadie más está mal, ¿no crees?"] },
+      { speaker:"fuyume", lines:["Jeje, estás haciendo pucheros, Esu.", "No necesitas a Anzu para esto. Yume también coserá tu outfit ♪", "Yume hará el outfit perfecto para ti... el más genial y especial posible... ♪"] },
+      { speaker:"esu", lines:["¡¡Me niego rotundamente!!"] },
+      { speaker:"fuyume", lines:["No te avergüences de que te lo haga tu Madre a mano. Ahora quédate quieto mientras Yume te mide, ¿vale?"] },
+      { speaker:"esu", lines:["¡No eres mi madre! ¿¡Y estamos en medio del parque!?", "¡Ugh, no me puedo concentrar con este tipo rondándome!", "Tengo que huir de Fuyume. Sip, ese es el plan."] },
+      { speaker:"fuyume", lines:["Esu, ¡espera! ¡No puedes dejar a Yume solo...!"] },
+      { speaker:"esu", lines:["...Oh, es verdad. Así es como terminé en este parque.", "No me importa hablar con él luego, ¡pero no le voy a dejar acercarse para tomar mis medidas!", "Y el participante Sagiri sale corriendo otra vez. ¿¡Dónde acabará ahora...!?"] },
+      ],
+      2: [
+      { type:"location", src:"https://i.postimg.cc/PqmhyFG1/1000-cb-20200508181610.webp", label:"Recepción de ES", position:"center center" },
+      { speaker:"esu", lines:["...Y aquí estamos~☆", "Vale, vale, creo que no me sigue nadie. Por fin me ha perdido la pista.", "Aunque Fuyume llegue al edificio de ES... ¡Este sitio es enorme! Podré huir. ¡Creo!", "Pero quedarme en la recepción es peligroso. Subiré a una planta cualquiera."] },
+      { type:"location", src:"https://i.postimg.cc/JzXW7dz9/1000-cb-20200621002204.webp", label:"Sala de Descanso", position:"center center" },
+      { speaker:"esu", lines:["La sala de descanso... Sip, ¡este es el lugar ideal! ¡Perfecto!", "Desde la ventana se ve bien, así que veré a Fuyume si se acerca. Además, hay comida y bebida gratis. Parece que no pasa nada siempre que no te lo lleves todo.", "Mh-hmm. ¡Me podría quedar aquí para siempre! ¡Esta sí que es la sede de los idols!", "Hay mucho espacio aquí. A nadie le molestará que me ponga en un rincón, ¿verdad?", "Voy a coger unos cojines y los pongo al lado de la ventana... Listo.", "Ohh, ¡se ve bien! ¡Este rincón ahora es la base oficial del Capitán Esu Sagiri!", "No puedo pensar bien si no tengo un lugar para relajarme un rato~ Ahora por fin puedo leer bien el mensaje de Anzu ♪", "...Así que un outfit exclusivo muestra la individualidad y encanto de un idol, y Anzu quiere hacerme uno... Hmm.", "Vale, eso ya lo había leído.", "Ahora que he establecido mi base en la sede de los idols, ¡es el momento perfecto para pensar en mi outfit! ...Pero la verdad, no sé por dónde empezar.", "¿Debería pedirle una pista a Anzu...?", "Espera, primero debería responderle, ¿no? ¡Bien visto, Esu! ¡Bien pensado!", "...Oh, ¡hay una fecha para una reunión al final del mensaje!", "Me está preguntando si este día me viene bien, ¡tengo que responder rápido...!", "No, no, dice que no hay prisa. ¡Pero si no me doy prisa, le causaré problemas!", "¿Hm? ¿Quién me está hablando—?", "¿¡Quéeeeee!? ¿¡Anzu!?", "Oíste a alguien hablando y... ¿resulta que soy yo?", "Tiene sentido. ¡La gente siempre me dice que soy muy ruidoso!", "Esto, em, la cosa es que me he tenido que esconder en ES por... una razón. Y estaba revisando tu mensaje.", "Me estoy intentando tomar esto del outfit en serio...", "Um, ¿por qué te has sentado? ¿Te gusta mi base?", "¿No? ¿Quieres sentarte y hablar sobre el outfit exclusivo conmigo...?", "O sea, eso sería genial, ¿pero estás segura? Probablemente tengas un montón de cosas que hacer...", "Bueno, si a ti te parece bien, ¡a mí también! ¡Gracias! En serio, ¡vamos a por ello!", "Oh, y por “base” me refiero a estos cojines que he puesto en la sala de descanso... la verdad, ¡son súper cómodos!", "Ajaja. Bueno, en un edificio tan bonito y grande como este, sería raro que fuesen incómodos ♪", "En cuanto al outfit... Sí, no se me ha ocurrido nada de momento.", "Pero si de verdad es “exclusivo”, ¡supongo que tiene que ser algo muy atrevido y que llame la atención! ¡Eso me dice el instinto!", "Quiero decir, tiene que mostrar mi individualidad y encanto, ¿no?", "Yo soy el gran aventurero del mundo de los idols, ¡el que va a llegar a la cima de la industria de los idols! ¡Así es —ese soy yo! ¡¡Esu Sagiri!!", "¡Es imposible que este outfit sea simple! ¡¡Tiene que brillar tanto que no puedas apartar la vista!!", "Vale, vale, creo que me he emocionado mucho ♪", "... ¿Hm? ¿Dices que no pasa nada y que quieres conocerme mejor?", "¡Entendido! ¡Si te ayudan mis historias, entonces escucha bien!", "¡Empecemos con mi última aventura!", "Bueno, era un día de verano, así que salí a escalar una montaña y—"] },
+      { type:"location", src:"https://i.postimg.cc/J4qpNNdP/1000-cb-20201128163854.webp", label:"Sala de Descanso", position:"center center" },
+      { speaker:"esu", lines:["(Bebe bebe bebe bebe) ♪", "Tenía la garganta seca por haber hablado tanto... Ahh, qué alivio~☆", "Se te da bien escuchar, Anzu. Me puse a hablar tanto que no me di cuenta de que habían pasado varias horas.", "...Sí, lo sé. Ya está atardeciendo, y un niño como yo debería volver a casa."] },
+      { type:"image", src:"https://i.postimg.cc/024n3ctL/1000-cb-20240726051710.webp", wide:true },
+      { speaker:"esu", lines:["Pero por fin tengo mi base lista.", "Los cojines son tan cómodos y suaves... estoy muy bien aquí. ¡¡Me estoy emocionando!!", "Hasta podría quedarme a dormir aquí. Mmm~ Qué cómodo...♪", "¿Crees que me podría quedar hasta que anochezca si seguimos hablando?", "¿Ya tienes suficiente información? Imposible, ¡tengo muchas más cosas de las que hablar!", "Nunca esperé que me hicieras un outfit, estaba muy sorprendido. ¡Quiero saber cómo funciona todo!", "Si me lo puedes decir luego, supongo que puedo esperar...", "¡Pero tienes que dejar que vea cómo haces el outfit!", "... ¿Preguntas si estoy emocionado por mi outfit exclusivo? ¡Pues claro que sí! ¡Estoy más que emocionado!", "Me has enseñado fotos de los outfits que les hiciste a los demás idols, ¡y eso me ha emocionado aún más!", "Cada uno gritaba “¡idol!” y rebosaba individualidad...", "Me hizo pensar en el idol que los llevaba, ¡y el tipo de actuación que harían encima del escenario!", "¿¡Y saber que yo voy a tener uno de esos!? ¡Me emociona solo pensarlo!", "No puedo parar de decirlo, pero voy en serio. ¡Me muero por ver cómo queda!", "Al fin y al cabo, será el outfit del hombre que va a llegar a la cima de la industria de los idols— el outfit que llevaré.", "Un outfit que capture todos los corazones, cruce la línea de meta y brille para que todos lo vean... Así será ♪", "...Jeje. Así que sí, como puedes ver, ¡estoy emocionadísimo!", "Un outfit que irá de aventuras en el mundo de los idols conmigo —algo tan especial y preciado—", "¡¡¡Anzu, cuento contigo!!!"] },
+      ],
+      3: [
+      { type:"era", season:"primavera", yearLabel:"Segundo año de ES" },
+      { type:"location", src:"https://i.postimg.cc/3rLy2WFv/1000-cb-20200913204051.webp", time: "A mitades de abril.", label:"Patio de Seisoukan", position:"center center" },
+      { speaker:"keito", lines:["......"] },
+      { speaker:"makoto", lines:["¿Hm? Eh, ¡Hasumi!", "Buenas tardes~ ...Um, ¿qué haces aquí a estas horas?"] },
+      { speaker:"keito", lines:["Eso debería preguntártelo yo a ti. Y no te pongas tan incómodo. No te voy a reñir por estar despierto tan tarde.", "En todo caso, yo también estoy haciendo lo mismo.", "Hm, ¿estás tan saturado de tareas que no puedes dormir?"] },
+      { speaker:"makoto", lines:["Eh... S-sí, ¡algo así!", "(¡No se lo puedo decir! ¡Me descargué unos juegos en las ofertas de primavera y me vicié tanto que se me olvidó la hora!)", "(¡De ninguna manera le puedo decir que dejé de lado mis tareas para jugar a videojuegos...!)", "Ajaja. Bueno, ya sabes, me he graduado de Yumenosaki hace poco, y las cosas han sido tan caóticas~ Así que no puedo dormir bien~"] },
+      { speaker:"keito", lines:["Hm. Sigues siendo igual de sensible que siempre.", "Si quieres, te puedo dar algunos consejos para prepararte para el futuro."] },
+      { speaker:"makoto", lines:["Oh, ¿¡te refieres a las ofertas de primavera!? ¡Ni que lo digas! ¡Todos esos juegos raros y minoritarios que suelen costar una fortuna de repente son súper baratos!"] },
+      { speaker:"keito", lines:["¿De qué estás hablando? Bueno, no sé mucho sobre tus queridos videojuegos—"] },
+      { speaker:"makoto", lines:["(¿M-Me habrá pillado? ¿Me habré metido en un lío?)"] },
+      { speaker:"keito", lines:["Por eso precisamente quería pedirte ayuda.", "¿Qué opinas de esto?"] },
+      { speaker:"makoto", lines:["¿? ¿Esto es...?", "Espera, ¿qué es esto? Hay una máquina rara detrás de los árboles.", "¿S-Será un ovni que ha aterrizado aquí?"] },
+      { speaker:"keito", lines:["No tengo ni idea. No podía dormir, así que estaba haciendo las rondas como supervisor de los dormitorios cuando vi esto.", "No puedo ignorarlo, pero no sé muy bien qué hacer. No tiene remedio."] },
+      { speaker:"makoto", lines:["Qué será esto... Hasta está haciendo ruiditos. Qué futurista~ Es como algo sacado de una película de ciencia ficción~"] },
+      { speaker:"keito", lines:["Eh, no lo toques. Puede que explote."] },
+      { speaker:"makoto", lines:["No creo que explote...", "Oh, lo sabía. He visto este tipo de mecanismo antes. El panel de control debería estar justo... Aquí—", "Listo. Creo que lo puedo encender."] },
+      { speaker:"keito", lines:["¿E-Encender? ¿Se transformará en un robot gigante o algo así?"] },
+      { speaker:"makoto", lines:["No estoy seguro, pero puede que se transforme.", "¡Mira! Mira esto, Hasumi. Ábrete sésamo~♪"] },
+      { speaker:"keito", lines:["¿Por qué estás tan emocionado por esto? Bueno, eres de Trickstar al fin y al cabo."] },
+      { speaker:"kanna", lines:["......"] },
+      { speaker:"keito", lines:["Qué... ¡Se ha abierto la tapa! Y hay algo dentro... ¿Qué es esto?"] },
+      { type:"image", src:"https://i.postimg.cc/NjPq4qPM/1000-cb-20240726051632.webp", wide:true },
+      { speaker:"kanna", lines:["Buenos días."] },
+      { speaker:"keito", lines:["Qu— Oh, eh... Buenos días.", "Espera, ¡no es momento de modales! ¿¡Qué haces dentro de una máquina!? ¿Eres un alien? ¡Seguro que a Tsukinaga le encantaría esto!"] },
+      { speaker:"kanna", lines:["No soy un alien.", "Perdón. No pretendía asustar a nadie.", "Tengo sueño, y da pereza explicarlo todo... pero supongo que no me queda otra.", "Mi saludo de antes no es del todo correcto. Es “buenos días” para mí, pero para vosotros dos, “buenas noches” tendría más sentido."] },
+      { speaker:"keito", lines:["¿De qué estás hablando?"] },
+      { speaker:"makoto", lines:["Parece que vive en su propio mundo, eh."] },
+      { speaker:"kanna", lines:["En resumen, estaba durmiendo aquí.", "La cama de mi habitación asignada no la puedo usar del todo."] },
+      { speaker:"keito", lines:["Hmm, así que estás pensando tanto que no puedes dormir, igual que nosotros."] },
+      { speaker:"kanna", lines:["No es para tanto. Es que no me podía quedar dormido, así que he traído mi cama de casa."] },
+      { speaker:"keito", lines:["¿T-Tu cama? ¿Quieres decir que esa máquina es tu cama?"] },
+      { speaker:"kanna", lines:["Sí. Revisé las normas del dormitorio, y está prohibido llevar tus propios muebles a Seisoukan.", "El único problema es que no cabía por la puerta... Así que he terminado durmiendo fuera.", "Las reglas no dicen nada sobre usar una tienda de campaña o un saco de dormir en el patio."] },
+      { speaker:"keito", lines:["Pero eso no significa que se pueda hacer. Y lo dices todo con tanta convicción que casi te creo, pero decir que esta máquina es un saco de dormir es forzar demasiado la definición."] },
+      ],
+      4: [
+      { speaker:"kanna", lines:["(Suspiro)... Se nota que no entiendes nada.", "Este es mi último invento. Se llama “amigo-duerme-donde-quieras”."] },
+      { speaker:"keito", lines:["¿Pero qué nombre es ese? Parece que se lo ha inventado un comediante que no vende ni un ticket."] },
+      { speaker:"makoto", lines:["(Los insultos de Hasumi son rápidos y crueles... Debería tomar nota.)"] },
+      { speaker:"kanna", lines:["El nombre no importa. No se me ha ocurrido a mí.", "Diseñé la cama con investigación ergonómica de primera para que cualquiera se duerma en cuestión de segundos.", "Incluso multiplica por doce el efecto reparador del sueño. Si tenéis alguna duda, podéis probarlo.", "Parece que también os cuesta dormir. Con el Amigo, os quedaréis sopa antes de daros cuenta."] },
+      { speaker:"makoto", lines:["Oh, eso suena interesante.", "Ejeje. Eso suele pasar con la tecnología nueva, ¿eh? La usas una vez y luego termina en el cajón para siempre. Pero no puedes evitar seguir comprándola."] },
+      { speaker:"kanna", lines:["Siempre que tenga clientes como tú, no se me terminará el trabajo."] },
+      { speaker:"makoto", lines:["¿Trabajo? Si vives aquí, es que eres un idol, ¿no?"] },
+      { speaker:"kanna", lines:["Oficialmente. Pero mi verdadero trabajo es otro.", "Decir que soy inventor suena un poco sospechoso, lo sé. Pero es lo que hago."] },
+      { speaker:"makoto", lines:["Oh, creo que he oído hablar de ti. ¿Eres al que llaman “Deus Ex Machina”?"] },
+      { speaker:"keito", lines:["¿Qué? Ese apodo solo se le podría ocurrir a un niño en plena etapa de delirios."] },
+      { speaker:"makoto", lines:["¡Es increíble! Sus insultos son geniales. ¡Debo aprender de él!"] },
+      { speaker:"keito", lines:["¿Por qué me miras con esos ojos brillantes...?"] },
+      { speaker:"kanna", lines:["Yo tampoco me he dado ese título. Y “Deus Ex Machina” no suena muy bien."] },
+      { speaker:"keito", lines:["Un dios salido de una máquina... ¿Será que eres un robot muy bien disfrazado de humano?"] },
+      { speaker:"makoto", lines:["Ajaja, sí que lo parece."] },
+      { speaker:"kanna", lines:["... Siempre me dicen eso.", "Da igual. ¿Os gustaría probar la cama?", "Como disculpa por las molestias, dejad que os regale una noche de sueño profundo."] },
+      { speaker:"makoto", lines:["Oh, a mí me interesa~♪ ¿Me tumbo aquí? ¿Y duermo hasta el amanecer?"] },
+      { speaker:"keito", lines:["E-Eh, espera, Yuuki, no vayas tan rápido—"] },
+      { speaker:"kanna", lines:["(Empuja)."] },
+      { type:"location", src:"https://i.postimg.cc/j2JLs4w4/images-q-tbn-ANd9Gc-R1H4PZr-Ss0p0f-QXR6f-IUvez-Mdjcgxr-Fj-Ckg-s.png", label:"???", position:"center center" },
+      { speaker:"keito", lines:["(¿Q-Qué? ¿¡Me ha empujado...!?)"] },
+      { speaker:"makoto", lines:["Wow, ¡no te caigas encima de mí, Hasumi! ¡Me estás aplastando! Esta cama es solo para uno, ¿¡no!?"] },
+      { speaker:"kanna", lines:["—Buenas noches a los dos.", "Dormid bien. Cuando tengáis los ojos cerrados, la molesta realidad desaparecerá."] },
+      { type:"location", src:"https://i.postimg.cc/J7BN7NW2/1000-cb-20200925023823.webp", label:"Dormitorio de Makoto, Adonis y Chiaki", position:"center center" },
+      { speaker:"makoto", lines:["......", "(¿E-Eh? ¿Estaba... dormido? ¿Habré soñado todo eso...?)", "(Qué sueño tan raro... Seguro que me lo he inventado todo. Era demasiado surrealista.)", "(Hablé con un niño raro bajo la luna sobre cosas extrañas. Es solo un sueño, así que no vale la pena contárselo a nadie... No tiene ningún sentido.)", "Ajaja. Eso me pasa por jugar sin parar... Sueños raros. Vale, basta de tonterías, hora de volver a la realidad—"] },
+      { speaker:"keito", lines:["¡Yuuki! ¿¡Estás ahí!?"] },
+      { speaker:"makoto", lines:["Wow, ¿¡me has asustado!? ¿H-Hasumi? ¿Qué pasa?"] },
+      { speaker:"keito", lines:["¿Te acuerdas de lo que pasó ayer por la noche?"] },
+      { speaker:"makoto", lines:["¿Eh?"] },
+      { speaker:"keito", lines:["Así que de verdad fue un sueño... Se me está borrando el recuerdo, casi no sé lo que pasó.", "Ayer por la noche, ¿no vimos una máquina y a un niño muy raros?"] },
+      { speaker:"makoto", lines:["Bueno... No, eso fue solo un sueño, ¿verdad? Pero espera, Hasumi, ¿soñamos lo mismo?"] },
+      { type:"location", src:"https://i.postimg.cc/ncpX8BVP/1000-cb-20200508182036.webp", label:"Patio de ES", position:"center center" },
+      { speaker:"kanna", lines:["......", "(Hmm... Estoy seguro de que interferí en sus procesos neuronales y les he borrado la memoria, pero creo que se me ha olvidado algo.)", "(Esta máquina todavía no es perfecta.)", "(Si no cumple las expectativas de su creador ni desempeña su función, es un fracaso.)", "(Igual que yo.)", "(No puedo comercializarla ni de broma. Todavía hay mucho por mejorar.)"] },
+      { speaker:"kanata", lines:["Hmm~ ¿Hmm~?"] },
+      { speaker:"kanna", lines:["¿Ocurre algo?"] },
+      { speaker:"kanata", lines:["¿? Bueno sí, me gusta “bañarme”. Pero en esta “estación” hace un poco de frío, y puede que me “resfríe”—"] },
+      { speaker:"kanna", lines:["Ya veo. Entonces, ¿te gustaría probar uno de mis inventos?", "Este se llama el “amigo-súper-calentito”.", "(Los humanos se inquietan con las cosas que parecen humanas pero no lo son.)", "(Ese valle inquietante... Yo también lo quiero superar.)", "(No soy—)", "(No soy una máquina.)"] },
+      { speaker:"kanata", lines:["¿? ¿Qué pasa~?"] },
+      { speaker:"kanna", lines:["...No pasa nada. Perdón, a veces tengo fallos en el sistema.", "(O por lo menos, no de momento.)", "(Pero algún día lo seré.)"] },
+      ],
+      5: [
+      { type:"location", src:"https://i.postimg.cc/9XKqHKhJ/1000-cb-20200508182307.webp", label:"Cocina de los apartamentos Seisoukan", position:"center center" },
+      { speaker:"hiiro_kohaku", lines:["(Muerden)..."] },
+      { speaker:"hiiro", lines:["Ah, he ensuciado la mesa un poco. Kohaku, ¿me pasas una servilleta?"] },
+      { speaker:"kohaku", lines:["Claro, aquí tienes. Abre un poco más la boca para que no salten migajas a todas partes."] },
+      { speaker:"hiiro", lines:["Gracias. Tendré cuidado ♪"] },
+      { speaker:"kohaku", lines:["(... Si desayunamos así, parece inofensivo.)", "(Pero desde MATRIX, Hiiro me dejó una impresión tan fuerte que estar cerca de él me da que pensar.)", "(Como esos entrenamientos tan brutales que mis hermanas me obligaban a hacer... No. Era como prepararnos para cualquier imprevisto.)", "(Y para ayudar a Crazy:B a ganar su primera ronda, aceptó el papel de villano a propósito.)", "(También pasaron muchas más cosas en el Pueblo Amagi, por supuesto. Pero más que nada...)"] },
+      { speaker:"hiiro", lines:["Hmm. El pan de esta mañana está súper rico. Creo que voy a repetir."] },
+      { speaker:"kohaku", lines:["(Susurra) Parece completamente normal, pero es muy estricto. Sigue todas las normas al pie de la letra y hace que los demás hagan lo mismo.", "(Por ejemplo, si hubiese una norma que estipulase que solo se puede desayunar pan, ¿qué haría Hiiro?)", "(¿Me pediría que comiese pan también, aunque estuviera comiendo arroz?)", "Uf. Me he quedado aquí sentado pensando en tonterías y he tardado un montón en desayunar."] },
+      { speaker:"unknown", lines:["Ya he vuelto ☆ ¡Salir a correr siempre me da sed!"] },
+      { speaker:"kohaku", lines:["Mm... esa voz tiene que ser Madara. Buenos días."] },
+      { speaker:"madara", lines:["Oh, ¡Kohaku! Buenos días ☆"] },
+      { speaker:"kohaku", lines:["Siempre hablas tan fuerte.", "Pero bueno, te quería preguntar algo...", "Madara, para desayunar, ¿prefieres pan o arroz?"] },
+      { speaker:"madara", lines:["... ¿Hm? Qué pregunta tan inesperada.", "Pero me alegra saber que quieres conocer mis gustos ♪"] },
+      { speaker:"kohaku", lines:["Ah, no. No es nada importante. Y no me lo tienes que decir."] },
+      { speaker:"madara", lines:["No seas tímido. Puedes decírmelo. “Madara, quiero prepararte el desayuno”, ¿eh? ♪"] },
+      { speaker:"kohaku", lines:["Nunca te diría eso. Y en vez de decir esas cosas, podrías preguntarme directamente por qué me da curiosidad.", "A ver cómo lo digo... Estaba comiendo con Hiiro hace un rato.", "Después de lo que pasó en MATRIX, me siento raro con él cerca."] },
+      { speaker:"madara", lines:["Hmm. Ya veo. Ahora lo entiendo todo.", "Pero, aun así... Quién pensaría que me pedirías consejo sobre relaciones a mí, Kohaku ♪", "¡Mama está muy feliz! ¡Me conmueve! Estoy tan feliz que quiero acariciarte el pelo, Kohaku ☆"] },
+      { speaker:"kohaku", lines:["¿¡Wow!? ¿¡Estate quieto, por favor!?", "¿Y por qué me estás mirando así? ¿Te estás burlando de mí?"] },
+      { speaker:"madara", lines:["Jajaja. Quién sabe~", "Bueno, con respecto a tu problema, Kohaku, creo que se solucionaría fácilmente si te hicieras amigo de Hiiro."] },
+      { speaker:"kohaku", lines:["¿Amigo?"] },
+      { speaker:"madara", lines:["Sí. Por ejemplo... si Hiiro te invitase a comer, Kohaku, no le dirías que no, ¿verdad?"] },
+      { speaker:"kohaku", lines:["Bueno, tienes razón. Estábamos comiendo juntos hace un rato."] },
+      { speaker:"madara", lines:["¿Y si te pidiera dar una vuelta por ES juntos? ¿O ir de compras? Tampoco le dirías que no, ¿verdad?"] },
+      { speaker:"kohaku", lines:["Si no tuviese planes previos... no tendría ninguna razón para decirle que no."] },
+      { speaker:"madara", lines:["Mm. En otras palabras, ya os lleváis bastante bien.", "¿Pero cómo ves a Hiiro, Kohaku?", "¿Alguna vez has dado un par de pasos atrás y lo has mirado objetivamente? Como un miembro de otra unidad... ¿o como alguien cercano a tus amigos?"] },
+      { speaker:"kohaku", lines:["Bueno, creo que es alguien cercano a Love."] },
+      { speaker:"madara", lines:["Entonces todo lo que pasó en MATRIX seguramente hizo que tus sentimientos hacia Hiiro se volvieran más encontrados.", "Aunque os lleváis bien, la manera en que piensas en él es más compleja.", "Por eso puede que sea más fácil que pienses en él como un amigo y empieces de cero."] },
+      { speaker:"kohaku", lines:["Oh... No esperaba que precisamente tú dijeses algo tan razonable, Madara."] },
+      { speaker:"madara", lines:["...Eso es bastante cruel. Soy mayor que tú, ¿sabes? Tengo más experiencia en la vida."] },
+      { speaker:"kohaku", lines:["Perdóname. Solo me sorprende escuchar consejos sobre cómo hacer amigos de alguien que no tiene muchos amigos."] },
+      { speaker:"madara", lines:["Hmmm~ ¿No te estás burlando tú de mí ahora, Kohaku?"] },
+      { speaker:"kohaku", lines:["Ajaja. Pero aun así, es una perspectiva interesante. Gracias ♪", "En ese caso, hablaré con Hiiro de inmediato—"] },
+      { type:"location", src:"https://i.postimg.cc/kG9KhHhf/1000-cb-20210305130623.webp", label:"Segundo piso del centro comercial", position:"center center" },
+      { speaker:"hiiro", lines:["Esto parece ser... una tienda que vende merchandising de idols.", "¿Querías entrar aquí conmigo, Kohaku?"] },
+      { speaker:"kohaku", lines:["Perdón por llamarte así, de repente. Supongo que te sorprendí.", "Pedirte que nos juntásemos es una cosa... pero cuando intenté pensar en lugares a los que van los amigos juntos, solo se me ocurrió una tienda de merchandising de idols."] },
+      { speaker:"hiiro", lines:["¿Amigos?"] },
+      { speaker:"kohaku", lines:["Sí. Quiero ser tu amigo, Hiiro.", "Hasta pensé que podíamos acercarnos con una pelea callejera. Pero supuse que eso podía esperar a que nos conociéramos más."] },
+      { speaker:"hiiro", lines:["¿Pelea? ¿Conocernos?"] },
+      { speaker:"kohaku", lines:["Ah, estoy pensando en voz alta. No te preocupes.", "...Creo que nos hemos llevado bien hasta ahora.", "Así que, ¿qué opinas de ser amigos?", "Nuestras unidades suelen tocar juntas y probablemente nos veremos bastante, ¿verdad?", "Nunca he intentado hacer amigos antes, así que a lo mejor estoy diciendo tonterías. Pero... Si no te molesta... Piénsalo, ¿vale?"] },
+      { speaker:"hiiro", lines:["... ¡Hmm! ¡Kohaku, me encantaría ser tu amigo!"] },
+      { speaker:"kohaku", lines:["¿De verdad?"] },
+      { speaker:"hiiro", lines:["Por supuesto ♪ Eres amigo de Aira, así que siempre te he considerado amigo mío.", "Pero ahora que lo pienso, nunca lo hemos dicho explícitamente.", "Así que a partir de ahora, como amigos... espero que nos llevemos bien, Kohaku ♪"] },
+      { speaker:"kohaku", lines:["Ajaja. No está mal confirmar la amistad con un apretón de manos ♪", "Vine aquí pensando que podíamos ir de compras como amigos, pero ya que estamos, me gustaría saber más de ti, Hiiro.", "Hiiro, eres amigo de Hinata y los demás, ¿verdad? ¿Qué hacéis cuando estáis juntos, de qué habláis?"] },
+      { speaker:"hiiro", lines:["¡Yo me encargo! ¡Vamos a pasarlo bien charlando y comprando!"] },
+      { speaker:"kohaku", lines:["Gracias... Me alegro de que seamos amigos ♪"] },
+      ],
+    },
+      "rabits_esupri_vs": {
+    1: [
+    { type:"era", season:"invierno", yearLabel:"Segundo año de ES" },
+    { type:"location", src:"https://i.postimg.cc/Qdp4vvFt/1000-cb-20230529161441.webp", label:"Estados Unidos de América. Una playa en Hawái", position:"center center" },
+    { speaker:"mitsuru", lines:["—YahooOOO ☆ ¡Las olas hawaianas nos han estado esperando todo este TIEMPO...!"] },
+    { speaker:"nazuna", lines:["Ah, ¡eh, Mitsuru! ¡Te he dicho que no te metas en el agua tan rápido!"] },
+    { speaker:"mitsuru", lines:["Ajaja, ¡no pasa nada! ¡Me estiré un poco mientras esperaba a Tomo y a Hajime!", "¡De verdad, sois muy lentos! ¡Tardasteis un montón solo en poneros los bañadores!", "Venga, chicos, el último que llegue es un huevo podrido, ¡vamos a pasarlo bien! ¡Vamos, al agua, que está muy fresca~...♪"] },
+    { speaker:"tomoya", lines:["No, por eso te he dicho que esperes, Mitsuru. ¿Te has puesto protector solar?", "¡Estoy seguro de que no! ¿Qué vas a hacer si apareces en nuestra Competición de la Megaesfera pareciendo una langosta...?", "¡No huyas nadando sin responderme~! ¡Te estoy hablando~!"] },
+    { speaker:"nazuna", lines:["Ajaja, Mitsuru-chin. Sí que está emocionado, ¿eh?~", "Hace mucho que no veo a Tomo-chin persiguiendo a Mitsuru-chin así."] },
+    { speaker:"hajime", lines:["Fufu, empatizo con ellos.", "Es la primera vez que vengo a Hawái, así que también estoy muy emocionado.", "Cuando era niño soñaba con viajar a un resort como este...♪"] },
+    { speaker:"nazuna", lines:["Ah, ahora que lo dices... Me di cuenta de que estabas un poco confundido cuando hicimos el sorteo, Hajime-chin.", "¿Quizá tenías problemas para elegir el resort al que querías ir?"] },
+    { speaker:"hajime", lines:["Uu... Ni~chan, no se te escapa una. Lo admito, estaba pensando en lugares como Guam o las Maldivas."] },
+    { speaker:"nazuna", lines:["¡Ajaja! Esos lugares son bastante famosos como destinos, ¿eh?"] },
+    { speaker:"hajime", lines:["...Ni~chan, ¿tú tenías algún lugar en mente?"] },
+    { speaker:"nazuna", lines:["Nah, no pensé en nada especial.", "La verdad, es bastante sorprendente que nos dejasen venir a Hawái, teniendo en cuenta que hay otra competición en América."] },
+    { speaker:"hajime", lines:["Ajaja, Hawái también forma parte de América, ¿no? Eso tampoco lo sabía antes."] },
+    { speaker:"nazuna", lines:["Bueno, NiceP ha organizado todo esto y él dio el visto bueno, así que supongo que no pasa nada.", "De todas formas, creo que elegimos bien con Hawái.", "Siempre hay muchos turistas japoneses, así que gran parte de la información está escrita en japonés. Además, el clima es súper agradable, hace bastante calor aunque ya es noviembre."] },
+    { speaker:"hajime", lines:["Eso es muy cierto. Si no hubiésemos traído ropa de verano, nos daría calor, aunque sea invierno."] },
+    { speaker:"nazuna", lines:["Exacto, exacto. Sabes, no había pensado en eso. Si Mitsuru-chin no nos hubiese dicho que metiéramos los bañadores en la maleta, quizá habría acabado trayendo ropa de invierno."] },
+    { speaker:"hajime", lines:["Fufu, ¡eso se lo debemos a Mitsuru...!", "Si tuviésemos más tiempo, me encantaría hacer más turismo. Pero eso no es posible, ¿verdad...?"] },
+    { speaker:"nazuna", lines:["Desafortunadamente no. Es fácil olvidarlo cuando nos lo estamos pasando tan bien, pero no hemos venido aquí por ocio.", "—Hemos venido a avanzar a la siguiente fase del MM."] },
+    { speaker:"hajime", lines:["La verdad, me resulta increíble pensar que estamos participando en una competición de proporciones tan grandes.", "Siento como si todo el mundo hubiese cambiado tras la aparición de la Megaesfera..."] },
+    { speaker:"nazuna", lines:["Estoy de acuerdo. Nunca había pensado que podíamos trabajar en el extranjero hasta hace muy poco.", "Pero, en ese sentido, puede que Esupri piense lo mismo."] },
+    { speaker:"hajime", lines:["...Esupri. Solo hace un año que debutaron, es increíble si lo piensas."] },
+    { speaker:"nazuna", lines:["Sí. Pero NiceP los está produciendo, así que es normal que participen.", "Hajime-chin, ¿sabes cómo son los chicos de Esupri?"] },
+    { speaker:"hajime", lines:["...No. Solo he conversado brevemente con Esu y Yume.", "¿Tú los conoces mejor que yo, no, Ni~chan?", "Si mal no recuerdo, Kanna y tú formasteis parte de la misma unidad Shuffle."] },
+    { speaker:"nazuna", lines:["Ah, sí. Pero tampoco lo conozco mucho.", "Lo llaman niño prodigio, y con razón. Las habilidades de análisis y observación de Kanna-chin nos ayudaron bastante.", "Aunque parezca sorprendente, cuida mucho de los demás. O quizá solo lo hace por cuestión de eficiencia.", "Pude apoyarme en esas habilidades entonces, pero pensar que ahora las usará contra nosotros... Puede que sea todo un reto.", "Hablando de unidades Shuffle, Tomo-chin también estuvo en una con uno de ellos. Estaría bien que nos contara cómo fue."] },
+    { speaker:"hajime", lines:["......"] },
+    { speaker:"nazuna", lines:["De todas formas, parece que la gente está muy emocionada por esta competición. Dicen que es una batalla de ternura.", "Seguro que es por lo que dijo Mitsuru-chin en el sorteo. ¡Pero si es una batalla de ternura, es imposible que perdamos!"] },
+    { speaker:"hajime", lines:["...Claro. ¡Esforzémonos por ganar, Ni~chan!", "Ganaremos y podremos anunciar con orgullo que somos la unidad más adorable del mundo entero ♪"] },
+    { speaker:"nazuna", lines:["¡Ajaja! ¡No me esperaba algo tan arrogante de ti, Hajime-chin! Es bastante sorprendente."] },
+    { speaker:"hajime", lines:["Hasta yo estoy preparado para una pelea feroz, ¿sabes?", "—Sobre todo esta vez, ¡no tengo ninguna intención de perder!"] },
+    { speaker:"nazuna", lines:["¿...? ¿Por qué es tan especial esta—? ¿¡Waaargh!?"] },
+    { speaker:"hajime", lines:["(Tose, tose)... Uu, ¿por qué me salpicas con agua salada de repente...? Sabe fatal."] },
+    { speaker:"mitsuru", lines:["¡Ni~chan! Hajime, tú también, ¿cuánto tiempo vais a estar ahí sentados a la sombra?", "Hemos venido hasta Hawái, ¡no vale la pena pensar en cosas serias!", "Mira, os he traído una pistola de agua a cada uno, ¡así que vamos a pasarlo bien!"] },
+    { type:"image", src:"images/esu-beach-watergun.webp", wide:true },
+    { speaker:"nazuna", lines:["...Vale. ¡Si eso es lo que quieres, entonces Ni~chan se lo va a pasar bien hasta el último momento!", "¡Prepárate, Mitsuru-chin! ¡Te voy a mojar hasta los huesos!"] },
+    { speaker:"mitsuru", lines:["¡Ajaja! ¡Venga, Ni~chan! ¡Voy a correr a tu alrededor hasta que te canses!", "Zoom~...☆"] },
+    { speaker:"tomoya", lines:["Uuf... Aaah... ¿Cómo es posible que tenga tanta energía?"] },
+    { speaker:"hajime", lines:["Tomoya, buen trabajo."] },
+    { speaker:"tomoya", lines:["La verdad, Mitsuru me está haciendo dar mil vueltas. Acabamos de llegar y no he parado de perseguirlo.", "Espera, ¿¡por qué me estás apuntando tú también con la pistola!?"] },
+    { speaker:"hajime", lines:["Ejeje, ¿es que no puedo?"] },
+    { speaker:"tomoya", lines:["No es que no puedas... Bueno, qué demonios, vale.", "Al fin y al cabo, hoy es el día que hemos reservado para ir de turismo y conocer un poco la isla.", "Ahora que lo pienso, Hajime, ¿has visto a los de Esupri por aquí?"] },
+    { speaker:"hajime", lines:["No, no los he visto. ¿Pasa algo?"] },
+    { speaker:"tomoya", lines:["Quiero decir, puede que le esté dando muchas vueltas, pero... No los he visto por ningún lado hoy.", "Teníamos programado llegar al mismo aeropuerto y nos estamos alojando en el mismo hotel. Así que deberíamos haberlos visto al menos una vez.", "Esu y los otros... ¿Me pregunto qué estarán haciendo ahora?"] },
+    ],
+      },
+  };
 
     const VOICELINES = {
       "other-valentine2026": {
@@ -6336,7 +6860,7 @@
     function textColorFor(hex) { const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16); return (0.299 * r + 0.587 * g + 0.114 * b) / 255 > 0.65 ? "#3a3040" : hex; }
     function getLogoKey(unitId) { return unitId === "crazy_b" ? "crazyb" : unitId === "special_for_princess" ? "special_for_princess_" : unitId; }
     function storiesForChar(charId) { return STORIES.filter(s => s.type !== "main" && (s.featured.includes(charId) || (s.unit && CHARACTERS[charId]?.unit === s.unit))); }
-    function storiesForUnit(unitId) { return STORIES.filter(s => s.unit === unitId); }
+    function storiesForUnit(unitId) { return STORIES.filter(s => Array.isArray(s.unit) ? s.unit.includes(unitId) : s.unit === unitId); }
 
     // ─── SHARED COMPONENTS ─────────────────────────────────────
     const Avatar = ({ charId, size = 48 }) => { const char = CHARACTERS[charId]; if (!char) return null; if (char.combo) { return <div style={{ width: size, height: size, borderRadius: "50%", flexShrink: 0, overflow: "hidden", display: "flex", border: `2px solid ${char.color}50`, boxShadow: `0 2px 8px ${char.color}25` }}>{char.combo.map((cid, i) => { const cIcon = ICON_IMAGES[cid]; const cc = CHARACTERS[cid] || {}; return <div key={cid} style={{ width: "50%", height: "100%", overflow: "hidden", borderRight: i === 0 ? "1px solid rgba(255,255,255,0.55)" : "none", background: `linear-gradient(145deg,${cc.color || "#999"}cc,${cc.color || "#999"}88)` }}>{cIcon ? <img src={cIcon} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} /> : null}</div>; })}</div>; } const icon = ICON_IMAGES[charId]; const col = char.color, r = parseInt(col.slice(1, 3), 16), g = parseInt(col.slice(3, 5), 16), b = parseInt(col.slice(5, 7), 16), lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255; if (icon) return <div style={{ width: size, height: size, borderRadius: "50%", flexShrink: 0, overflow: "hidden", border: `2px solid ${col}50`, boxShadow: `0 2px 8px ${col}25` }}><img src={icon} alt={char.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} /></div>; return <div style={{ width: size, height: size, borderRadius: "50%", background: `linear-gradient(145deg,${col}cc,${col}88)`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: size * 0.4, fontWeight: 800, color: lum > 0.6 ? "#3a3040" : "#fff", flexShrink: 0, border: `2px solid ${col}50`, boxShadow: `0 2px 8px ${col}25` }}>{char.name.charAt(0)}</div>; };
@@ -6349,9 +6873,9 @@
 
     const Header = ({ setNav }) => (<header style={{ position: "sticky", top: 0, zIndex: 100, background: "rgba(240,246,255,0.82)", backdropFilter: "blur(20px) saturate(1.8)", borderBottom: "1px solid rgba(160,190,230,0.2)", padding: "0 24px" }}><div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: 60 }}><button onClick={() => setNav({ page: "home" })} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 10, padding: 0 }}><span style={{ fontSize: 22, color: "#4a85c2" }}>✦</span><span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 17, background: "linear-gradient(135deg,#3a6db5,#5b8dd9)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>EspStars</span></button><nav style={{ display: "flex", gap: 4 }}><button onClick={() => setNav({ page: "home" })} style={{ background: "transparent", border: "none", cursor: "pointer", padding: "8px 16px", borderRadius: 10, fontFamily: "'Nunito',sans-serif", fontWeight: 600, fontSize: 14, color: "#7a94b5" }}>Inicio</button><button onClick={() => setNav({ page: "browse", tab: "stories" })} style={{ background: "transparent", border: "none", cursor: "pointer", padding: "8px 16px", borderRadius: 10, fontFamily: "'Nunito',sans-serif", fontWeight: 600, fontSize: 14, color: "#7a94b5" }}>Explorar</button></nav></div></header>);
 
-    const StoryMiniCard = ({ story, onClick, index }) => { const unit = story.unit ? UNIT_DATA[story.unit] : null; const hasBanner = !!story.banner; return (<button onClick={onClick} style={{ display: "flex", alignItems: "stretch", borderRadius: 14, background: "rgba(255,255,255,0.6)", border: "1px solid rgba(160,190,230,0.12)", cursor: "pointer", textAlign: "left", transition: "all 0.25s", animation: `fadeSlideUp 0.4s ease ${(index || 0) * 0.05}s both`, width: "100%", overflow: "hidden", padding: 0 }} onMouseEnter={e => { e.currentTarget.style.transform = "translateX(4px)"; e.currentTarget.style.boxShadow = "0 4px 14px rgba(100,140,190,0.1)"; }} onMouseLeave={e => { e.currentTarget.style.transform = "translateX(0)"; e.currentTarget.style.boxShadow = "none"; }}><div style={{ flex: 1, minWidth: 0, padding: "12px 16px", display: "flex", flexDirection: "column", justifyContent: "center", gap: 3 }}><div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 14, color: "#2c3e5a" }}>{story.title}</div><div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11, color: "#8a9fba" }}>{story.type === "main" ? "Historia Principal" : story.type === "event" ? "Evento" : story.type === "other" ? "Otros" : "Scout"}{unit ? ` · ${unit.name}` : ""} · {story.chapters} cap.</div><div style={{ marginTop: 2 }}><StatusBadge status={story.status} /></div></div>{hasBanner ? <div style={{ width: 200, flexShrink: 0, position: "relative", minHeight: 70 }}><img src={story.banner} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} /></div> : <div style={{ padding: "12px 16px", display: "flex", alignItems: "center" }}><span style={{ fontSize: 14, color: "#4a85c2" }}>→</span></div>}</button>); };
+    const StoryMiniCard = ({ story, onClick, index }) => { const unit = story.unit ? UNIT_DATA[Array.isArray(story.unit) ? story.unit[0] : story.unit] : null; const hasBanner = !!story.banner; return (<button onClick={onClick} style={{ display: "flex", alignItems: "stretch", borderRadius: 14, background: "rgba(255,255,255,0.6)", border: "1px solid rgba(160,190,230,0.12)", cursor: "pointer", textAlign: "left", transition: "all 0.25s", animation: `fadeSlideUp 0.4s ease ${(index || 0) * 0.05}s both`, width: "100%", overflow: "hidden", padding: 0 }} onMouseEnter={e => { e.currentTarget.style.transform = "translateX(4px)"; e.currentTarget.style.boxShadow = "0 4px 14px rgba(100,140,190,0.1)"; }} onMouseLeave={e => { e.currentTarget.style.transform = "translateX(0)"; e.currentTarget.style.boxShadow = "none"; }}><div style={{ flex: 1, minWidth: 0, padding: "12px 16px", display: "flex", flexDirection: "column", justifyContent: "center", gap: 3 }}><div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 14, color: "#2c3e5a" }}>{story.title}</div><div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11, color: "#8a9fba" }}>{story.type === "main" ? "Historia Principal" : story.type === "event" ? "Evento" : story.type === "other" ? "Otros" : "Scout"}{unit ? ` · ${unit.name}` : ""} · {story.chapters} cap.</div><div style={{ marginTop: 2 }}><StatusBadge status={story.status} /></div></div>{hasBanner ? <div style={{ width: 200, flexShrink: 0, position: "relative", minHeight: 70 }}><img src={story.banner} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} /></div> : <div style={{ padding: "12px 16px", display: "flex", alignItems: "center" }}><span style={{ fontSize: 14, color: "#4a85c2" }}>→</span></div>}</button>); };
 
-    const StoryCard = ({ story, onClick, index }) => { const unit = story.unit ? UNIT_DATA[story.unit] : null; const tc = { main: { l: "Historia Principal", a: "#3a6db5", bg: "linear-gradient(135deg,#e8f0fd,#dde8fa)" }, event: { l: "Evento", a: "#5b9bd5", bg: "linear-gradient(135deg,#edf4fc,#e3eefa)" }, scout: { l: "Scout", a: "#7baaf0", bg: "linear-gradient(135deg,#f0f4fd,#e8eefa)" } }[story.type] || { l: "", a: "#3a6db5", bg: "" }; return (<button onClick={onClick} style={{ display: "flex", flexDirection: "column", textAlign: "left", padding: 0, background: "rgba(255,255,255,0.65)", borderRadius: 18, border: "1px solid rgba(160,190,230,0.15)", overflow: "hidden", cursor: "pointer", transition: "all 0.3s cubic-bezier(0.4,0,0.2,1)", boxShadow: "0 2px 12px rgba(100,140,190,0.06)", animation: `fadeSlideUp 0.5s ease ${index * 0.06}s both` }} onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(100,140,190,0.14)"; }} onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 2px 12px rgba(100,140,190,0.06)"; }}><div style={{ height: story.banner ? 120 : 75, background: tc.bg, position: "relative", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>{story.banner ? <><img src={story.banner} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: story.bannerPos || "center 20%", transform: story.bannerScale || "none" }} /><div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(255,255,255,0.7) 0%, transparent 50%)" }} /></> : <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: tc.a, opacity: 0.65 }}>{tc.l}</span>}{unit && <span style={{ position: "absolute", top: 8, right: 10, padding: "3px 8px", borderRadius: 8, background: `${unit.color}20`, color: textColorFor(unit.color), fontSize: 10, fontWeight: 700, fontFamily: "'Nunito',sans-serif" }}>{unit.name}</span>}</div><div style={{ padding: "14px 18px 18px", flex: 1, display: "flex", flexDirection: "column", gap: 8 }}><h3 style={{ fontFamily: "'Libre Baskerville',serif", fontWeight: 700, fontSize: 16, color: "#2c3e5a", margin: 0, lineHeight: 1.35 }}>{story.title}</h3><p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, lineHeight: 1.55, color: "#7a94b5", margin: 0, flex: 1 }}>{story.description}</p><div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 4 }}><StatusBadge status={story.status} /><span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12, color: "#a0b4cc" }}>{story.chapters} cap.</span></div>{story.featured.length > 0 && <div style={{ display: "flex", marginTop: 4 }}>{story.featured.slice(0, 5).map((cId, i) => <div key={cId} style={{ marginLeft: i > 0 ? -8 : 0, zIndex: 5 - i }}><Avatar charId={cId} size={28} /></div>)}</div>}</div></button>); };
+    const StoryCard = ({ story, onClick, index }) => { const unit = story.unit ? UNIT_DATA[Array.isArray(story.unit) ? story.unit[0] : story.unit] : null; const tc = { main: { l: "Historia Principal", a: "#3a6db5", bg: "linear-gradient(135deg,#e8f0fd,#dde8fa)" }, event: { l: "Evento", a: "#5b9bd5", bg: "linear-gradient(135deg,#edf4fc,#e3eefa)" }, scout: { l: "Scout", a: "#7baaf0", bg: "linear-gradient(135deg,#f0f4fd,#e8eefa)" } }[story.type] || { l: "", a: "#3a6db5", bg: "" }; return (<button onClick={onClick} style={{ display: "flex", flexDirection: "column", textAlign: "left", padding: 0, background: "rgba(255,255,255,0.65)", borderRadius: 18, border: "1px solid rgba(160,190,230,0.15)", overflow: "hidden", cursor: "pointer", transition: "all 0.3s cubic-bezier(0.4,0,0.2,1)", boxShadow: "0 2px 12px rgba(100,140,190,0.06)", animation: `fadeSlideUp 0.5s ease ${index * 0.06}s both` }} onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(100,140,190,0.14)"; }} onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 2px 12px rgba(100,140,190,0.06)"; }}><div style={{ height: story.banner ? 120 : 75, background: tc.bg, position: "relative", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>{story.banner ? <><img src={story.banner} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: story.bannerPos || "center 20%", transform: story.bannerScale || "none" }} /><div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(255,255,255,0.7) 0%, transparent 50%)" }} /></> : <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: tc.a, opacity: 0.65 }}>{tc.l}</span>}{unit && <span style={{ position: "absolute", top: 8, right: 10, padding: "3px 8px", borderRadius: 8, background: `${unit.color}20`, color: textColorFor(unit.color), fontSize: 10, fontWeight: 700, fontFamily: "'Nunito',sans-serif" }}>{unit.name}</span>}{story.extras && story.extras.length > 0 && <div style={{ position: "absolute", top: 7, left: 8, display: "flex", flexDirection: "column", gap: 5, alignItems: "flex-start", maxWidth: "82%" }}>{story.extras.map((ex, i) => { const col = (CHARACTERS[ex.charId] && CHARACTERS[ex.charId].color) || "#5b9bd5"; return (<span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 4, padding: "4px 11px", borderRadius: 999, background: col, color: "#fff", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 11, lineHeight: 1.3, border: "2px solid rgba(255,255,255,0.95)", boxShadow: `0 1px 6px ${col}70`, textShadow: "0 1px 2px rgba(0,0,0,0.25)", whiteSpace: "nowrap" }}><span style={{ fontSize: 12 }}>{ex.emoji}</span>{ex.label}</span>); })}</div>}</div><div style={{ padding: "14px 18px 18px", flex: 1, display: "flex", flexDirection: "column", gap: 8 }}><h3 style={{ fontFamily: "'Libre Baskerville',serif", fontWeight: 700, fontSize: 16, color: "#2c3e5a", margin: 0, lineHeight: 1.35 }}>{story.title}</h3><p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, lineHeight: 1.55, color: "#7a94b5", margin: 0, flex: 1 }}>{story.description}</p><div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 4 }}><StatusBadge status={story.status} /><span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12, color: "#a0b4cc" }}>{story.chapters} cap.</span></div>{story.featured.length > 0 && <div style={{ display: "flex", marginTop: 4 }}>{story.featured.slice(0, 5).map((cId, i) => <div key={cId} style={{ marginLeft: i > 0 ? -8 : 0, zIndex: 5 - i }}><Avatar charId={cId} size={28} /></div>)}</div>}</div></button>); };
 
     // ─── CHARACTER DETAIL ──────────────────────────────────────
     const CharEraToggle = ({ stories, setNav, emptyText }) => {
@@ -6630,6 +7154,26 @@
       );
     };
 
+    const EventPromo = ({ setNav }) => {
+      const story = STORIES.find(s => s.id === "rabits_esupri_vs");
+      if (!story) return null;
+      return (
+        <div style={{ maxWidth: 1200, margin: "0 auto 30px", padding: "0 24px" }}>
+          <button onClick={() => setNav({ page: "story", story })} style={{ position: "relative", display: "block", width: "100%", textAlign: "left", padding: 0, border: "1px solid rgba(120,170,240,0.35)", borderRadius: 22, overflow: "hidden", cursor: "pointer", minHeight: 210, boxShadow: "0 6px 26px rgba(80,140,210,0.20)", animation: "fadeSlideUp 0.55s ease both", transition: "transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s" }} onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 14px 38px rgba(80,140,210,0.30)"; }} onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 6px 26px rgba(80,140,210,0.20)"; }}>
+            <img src="images/rabits-esupri-vs-banner.webp" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(105deg, rgba(20,40,75,0.90) 0%, rgba(28,55,100,0.78) 42%, rgba(35,70,120,0.30) 75%, rgba(40,80,130,0.10) 100%)" }} />
+            <span style={{ position: "absolute", top: 14, right: 18, fontSize: 15, opacity: 0.75, color: "#fff" }}>✧</span>
+            <div style={{ position: "relative", zIndex: 1, padding: "26px 30px", maxWidth: 640 }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 7, padding: "5px 13px", borderRadius: 999, background: "rgba(255,255,255,0.18)", border: "1px solid rgba(255,255,255,0.35)", backdropFilter: "blur(4px)", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#fff", marginBottom: 14 }}>✦ Nuevo evento · En curso</div>
+              <h2 style={{ fontFamily: "'Libre Baskerville',serif", fontWeight: 700, fontSize: "clamp(22px,3vw,30px)", lineHeight: 1.25, color: "#fff", margin: "0 0 10px", textShadow: "0 2px 10px rgba(0,0,0,0.35)" }}>¿Competición entre Ra*bits y ESUPRI?</h2>
+              <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 15, lineHeight: 1.55, color: "#e8f0ff", margin: "0 0 18px", textShadow: "0 1px 6px rgba(0,0,0,0.4)", fontWeight: 600 }}>Tour mundial en Hawái 🌴 · ¿Yume insulta a Hajime? 💢 La adorable “competición” que nadie quiere perder.</p>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 22px", borderRadius: 13, background: "linear-gradient(135deg,#5b9bd5,#7baaf0)", color: "#fff", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 14, boxShadow: "0 4px 16px rgba(40,90,160,0.4)" }}>¡Un capítulo nuevo cada día! →</span>
+            </div>
+          </button>
+        </div>
+      );
+    };
+
     const HomePage = ({ setNav }) => (
       <div style={{ animation: "fadeIn 0.6s ease", position: "relative", zIndex: 1 }}>
         <FloatingCircles />
@@ -6641,7 +7185,7 @@
             <button onClick={() => setNav({ page: "browse", tab: "stories" })} style={{ padding: "12px 30px", borderRadius: 14, background: "linear-gradient(135deg,#4a85c2,#6da0e0)", border: "none", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 14, color: "#fff", boxShadow: "0 4px 20px rgba(74,133,194,0.3)" }}>Explorar Historias →</button>
           </div>
         </section>
-        <AnnouncementBanner />
+        <EventPromo setNav={setNav} />
         <section style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px 60px", position: "relative", zIndex: 1 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}><h2 style={{ fontFamily: "'Libre Baskerville',serif", fontWeight: 700, fontSize: 22, color: "#2c3e5a", margin: 0 }}>Actualizado Recientemente</h2><div style={{ height: 2, flex: 1, background: "linear-gradient(90deg,rgba(160,190,230,0.3),transparent)" }} /></div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(290px,1fr))", gap: 18 }}>{STORIES.filter(s => (s.era === "!!" || s.era === "!") && s.status !== "not-started" && !s.hidden).sort((a, b) => b.order - a.order).slice(0, 3).map((s, i) => <StoryCard key={s.id} story={s} index={i} onClick={() => setNav({ page: "story", story: s })} />)}</div>
@@ -7011,22 +7555,118 @@
       );
     };
 
+    // ─── VOTACIÓN DEL EVENTO (ESUPRI vs Ra*bits) ───────────────
+    const POLL_ID = "rabits_esupri_vs_poll";
+    const POLL_OPTIONS = [
+      { key: "esupri", label: "Special for Princess!", unitId: "special_for_princess", color: "#E6B8D2" },
+      { key: "rabits", label: "Ra*bits", unitId: "rabits", color: "#68C0F4" },
+    ];
+    const EventPoll = () => {
+      const [counts, setCounts] = useState({ esupri: 0, rabits: 0 });
+      const [mine, setMine] = useState(null);
+      const [ready, setReady] = useState(false);
+      const voter = getVoterId();
+      useEffect(() => {
+        if (!sb) { setReady(true); return; }
+        let active = true;
+        sb.from("reactions").select("reaction, voter").eq("story_id", POLL_ID).then(({ data, error }) => {
+          if (!active) return;
+          if (error) { console.error("poll load", error); setReady(true); return; }
+          const c = { esupri: 0, rabits: 0 }; let m = null;
+          (data || []).forEach(r => { if (c[r.reaction] != null) c[r.reaction]++; if (r.voter === voter) m = r.reaction; });
+          setCounts(c); setMine(m); setReady(true);
+        });
+        return () => { active = false; };
+      }, []);
+      const vote = async (key) => {
+        if (!sb || mine === key) return;
+        const prev = mine;
+        setCounts(p => { const n = { ...p }; if (prev && n[prev] > 0) n[prev]--; n[key]++; return n; });
+        setMine(key);
+        await sb.from("reactions").delete().eq("story_id", POLL_ID).eq("voter", voter);
+        const { error } = await sb.from("reactions").insert({ story_id: POLL_ID, reaction: key, voter });
+        if (error) { console.error("poll vote", error); }
+      };
+      if (!sb) return null;
+      const total = counts.esupri + counts.rabits;
+      return (
+        <div style={{ background: "rgba(255,255,255,0.72)", borderRadius: 22, border: "1px solid rgba(160,190,230,0.2)", padding: "24px 26px", marginBottom: 24, animation: "fadeIn 0.5s ease" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}><span style={{ fontSize: 20 }}>🏆</span><h2 style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 18, color: "#2c3e5a", margin: 0 }}>¿Quién crees que va a ganar?</h2></div>
+          <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#8a9fba", margin: "0 0 18px" }}>{mine ? "¡Gracias por votar! Puedes cambiar tu voto cuando quieras." : "Vota por tu unidad favorita en esta competición ♪"}</p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {POLL_OPTIONS.map(o => {
+              const pct = total > 0 ? Math.round((counts[o.key] / total) * 100) : 0;
+              const active = mine === o.key;
+              return (
+                <button key={o.key} onClick={() => vote(o.key)} style={{ position: "relative", display: "block", width: "100%", textAlign: "left", padding: "15px 18px", borderRadius: 14, cursor: "pointer", overflow: "hidden", background: `linear-gradient(135deg, ${o.color}2e, ${o.color}10)`, border: active ? `2px solid ${o.color}` : `2px solid ${o.color}55`, boxShadow: active ? `0 4px 16px ${o.color}66` : "none", transition: "all 0.2s" }} onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; }} onMouseLeave={e => { e.currentTarget.style.transform = "none"; }}>
+                  <div style={{ position: "absolute", inset: 0, width: `${mine ? pct : 0}%`, background: `linear-gradient(90deg, ${o.color}88, ${o.color}44)`, transition: "width 0.6s cubic-bezier(0.4,0,0.2,1)" }} />
+                  <div style={{ position: "relative", zIndex: 1, display: "flex", alignItems: "center", gap: 13 }}>
+                    <div style={{ flexShrink: 0, height: 34, display: "flex", alignItems: "center" }}><UnitLogo unitId={o.unitId} height={34} /></div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 16, color: "#2c3e5a" }}>{o.label}</div>
+                      {active && <div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12, fontWeight: 700, color: textColorFor(o.color) }}>✓ tu voto</div>}
+                    </div>
+                    {mine && <div style={{ textAlign: "right", flexShrink: 0 }}><div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 19, color: "#2c3e5a" }}>{pct}%</div><div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11, color: "#7a8ea8" }}>{ready ? counts[o.key] : "·"} votos</div></div>}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+          {mine && <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12, color: "#a0b4cc", margin: "14px 0 0", textAlign: "center" }}>{total} voto{total === 1 ? "" : "s"} en total</p>}
+        </div>
+      );
+    };
+
+    // ─── CUENTA REGRESIVA AL PRÓXIMO CAPÍTULO ──────────────────
+    // Fecha de salida del Cap. 2: 2 de julio 2026, 00:00 hora de Chile (UTC-4).
+    // Para cambiarla, edita esta sola línea (formato ISO con offset horario):
+    const NEXT_CHAPTER_RELEASE = new Date("2026-07-02T00:00:00-04:00");
+    const EventCountdown = () => {
+      const [now, setNow] = useState(Date.now());
+      useEffect(() => { const t = setInterval(() => setNow(Date.now()), 1000); return () => clearInterval(t); }, []);
+      const diff = NEXT_CHAPTER_RELEASE.getTime() - now;
+      if (diff <= 0) return (
+        <div style={{ borderRadius: 16, padding: "16px 20px", marginBottom: 8, background: "linear-gradient(135deg, rgba(120,222,228,0.28), rgba(150,200,245,0.22))", border: "1px solid rgba(90,200,210,0.4)", textAlign: "center", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 15, color: "#1f7a89" }}>✨ ¡El Capítulo 2 ya está disponible! ✨</div>
+      );
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      const box = (val, label) => (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", minWidth: 54 }}>
+          <span style={{ fontFamily: "'Libre Baskerville',serif", fontWeight: 700, fontSize: 26, color: "#fff", textShadow: "0 2px 8px rgba(0,0,0,0.25)", lineHeight: 1 }}>{String(val).padStart(2, "0")}</span>
+          <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.85)", marginTop: 6 }}>{label}</span>
+        </div>
+      );
+      return (
+        <div style={{ borderRadius: 16, padding: "18px 22px", marginBottom: 8, background: "linear-gradient(135deg,#e35d6a,#f08a70)", boxShadow: "0 4px 18px rgba(205,70,80,0.32)", animation: "fadeIn 0.5s ease" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 7, justifyContent: "center", marginBottom: 12, fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 13, letterSpacing: "0.06em", textTransform: "uppercase", color: "#fff" }}>El Capítulo 2 sale en</div>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "flex-start", gap: 10 }}>
+            {box(d, "días")}<span style={{ color: "rgba(255,255,255,0.6)", fontSize: 24, fontWeight: 700, lineHeight: 1 }}>:</span>
+            {box(h, "horas")}<span style={{ color: "rgba(255,255,255,0.6)", fontSize: 24, fontWeight: 700, lineHeight: 1 }}>:</span>
+            {box(m, "min")}<span style={{ color: "rgba(255,255,255,0.6)", fontSize: 24, fontWeight: 700, lineHeight: 1 }}>:</span>
+            {box(s, "seg")}
+          </div>
+        </div>
+      );
+    };
+
     const StoryPage = ({ story, chapterId, setNav }) => {
       const chapterList = STORY_CHAPTERS[story.id] || [];
       const selectedChapter = (chapterId != null) ? chapterList.find(c => c.id === chapterId) : null;
       const setSelectedChapter = (ch) => setNav({ page: "story", story, chapterId: ch ? ch.id : null });
-      const unit = story.unit ? UNIT_DATA[story.unit] : null;
+      const units = (story.unit ? (Array.isArray(story.unit) ? story.unit : [story.unit]) : []).map(uid => ({ uid, data: UNIT_DATA[uid] })).filter(u => u.data);
       const typeLabel = story.type === "main" ? "Historia Principal" : story.type === "event" ? "Evento" : story.type === "other" ? "Otros" : "Scout";
       if (selectedChapter) return selectedChapter.type === "miniTalk" ? <MiniTalkReader story={story} chapter={selectedChapter} setSelectedChapter={setSelectedChapter} /> : <ChapterReader story={story} chapter={selectedChapter} setSelectedChapter={setSelectedChapter} />;
       return (
         <div style={{ maxWidth: 800, margin: "0 auto", padding: "32px 24px 60px", animation: "fadeIn 0.5s ease" }}>
           <button onClick={() => setNav({ page: "browse", tab: "stories" })} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#8a9fba", marginBottom: 20, display: "block" }}>← Volver a Explorar</button>
           <div style={{ background: "rgba(255,255,255,0.65)", borderRadius: 22, border: "1px solid rgba(160,190,230,0.15)", overflow: "hidden", marginBottom: 24 }}>
-            {story.banner && <div style={{ display: "flex", justifyContent: "center", padding: "20px 20px 0", background: "linear-gradient(to bottom, rgba(220,232,248,0.3), transparent)" }}><img src={story.banner} alt="" style={{ maxWidth: 360, width: "100%", height: "auto", borderRadius: 12, boxShadow: "0 4px 16px rgba(100,140,190,0.12)" }} /></div>}
+            {story.banner && <div style={{ display: "flex", justifyContent: "center", padding: "26px 20px 0", background: "linear-gradient(to bottom, rgba(220,232,248,0.3), transparent)" }}><div style={{ position: "relative", maxWidth: 360, width: "100%" }}><img src={story.banner} alt="" style={{ width: "100%", height: "auto", borderRadius: 12, boxShadow: "0 4px 16px rgba(100,140,190,0.12)", display: "block" }} />{story.extras && story.extras.length > 0 && <div style={{ position: "absolute", top: -11, right: -7, display: "flex", flexDirection: "column", gap: 6, alignItems: "flex-end" }}>{story.extras.map((ex, i) => { const col = (CHARACTERS[ex.charId] && CHARACTERS[ex.charId].color) || "#5b9bd5"; return (<span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "5px 13px", borderRadius: 999, background: col, color: "#fff", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 12, border: "2px solid rgba(255,255,255,0.95)", boxShadow: `0 2px 10px ${col}70`, textShadow: "0 1px 2px rgba(0,0,0,0.25)", whiteSpace: "nowrap" }}><span style={{ fontSize: 13 }}>{ex.emoji}</span>{ex.label}</span>); })}</div>}</div></div>}
             <div style={{ padding: "20px 28px 24px" }}>
               <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 12, flexWrap: "wrap" }}>
                 <span style={{ padding: "4px 12px", borderRadius: 8, background: "rgba(74,133,194,0.08)", color: "#3a6db5", fontSize: 11, fontWeight: 700, fontFamily: "'Nunito',sans-serif", letterSpacing: "0.06em", textTransform: "uppercase" }}>{typeLabel}</span>
-                {unit && <button onClick={() => setNav({ page: "unit", unitId: story.unit })} style={{ padding: "4px 12px", borderRadius: 8, background: `${unit.color}12`, color: textColorFor(unit.color), fontSize: 11, fontWeight: 700, fontFamily: "'Nunito',sans-serif", display: "flex", alignItems: "center", gap: 4, border: "none", cursor: "pointer" }}><span style={{ width: 12, height: 12, borderRadius: "50%", background: unit.color }} />{unit.name}</button>}
+                {units.map(({ uid, data }) => <button key={uid} onClick={() => setNav({ page: "unit", unitId: uid })} style={{ padding: "4px 12px", borderRadius: 8, background: `${data.color}12`, color: textColorFor(data.color), fontSize: 11, fontWeight: 700, fontFamily: "'Nunito',sans-serif", display: "flex", alignItems: "center", gap: 4, border: "none", cursor: "pointer" }}><span style={{ width: 12, height: 12, borderRadius: "50%", background: data.color }} />{data.name}</button>)}
                 <div style={{ flex: 1 }} /><StatusBadge status={story.status} />
               </div>
               <h1 style={{ fontFamily: "'Libre Baskerville',serif", fontWeight: 700, fontSize: 26, color: "#2c3e5a", margin: "0 0 10px", lineHeight: 1.35 }}>{story.title}</h1>
@@ -7035,8 +7675,9 @@
               {story.translator && <div style={{ marginTop: 14, paddingTop: 10, borderTop: "1px solid rgba(160,190,230,0.08)" }}><span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12, color: "#8a9fba" }}>Traducción por </span><a href={story.translator.url} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12, color: "#4a85c2", fontWeight: 600, textDecoration: "none" }}>{story.translator.name}</a></div>}
               <StoryReactions storyId={story.id} />
             </div></div>
+          {story.id === "rabits_esupri_vs" && <EventPoll />}
           {VOICELINES[story.id] ? <VoicelinesReader story={story} setNav={setNav} /> : <><h2 style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 18, color: "#2c3e5a", margin: "0 0 14px" }}>Capítulos</h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>{(STORY_CHAPTERS[story.id] || []).map((ch, i) => (<button key={ch.id} onClick={() => { if (ch.translated) setSelectedChapter(ch); }} disabled={!ch.translated} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 18px", borderRadius: 14, background: ch.translated ? "rgba(255,255,255,0.65)" : "rgba(240,244,250,0.4)", border: ch.translated ? "1px solid rgba(160,190,230,0.15)" : "1px solid rgba(160,190,230,0.08)", cursor: ch.translated ? "pointer" : "default", opacity: ch.translated ? 1 : 0.5, animation: `fadeSlideUp 0.4s ease ${i * 0.04}s both`, textAlign: "left" }}><span style={{ width: 34, height: 34, borderRadius: 10, background: ch.translated ? "rgba(74,133,194,0.08)" : "rgba(180,195,215,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 14, color: ch.translated ? "#3a6db5" : "#a8b8cc", flexShrink: 0 }}>{ch.id}</span><div style={{ flex: 1 }}><div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, color: ch.translated ? "#2c3e5a" : "#a0afc0" }}>{ch.title}</div></div>{ch.translated ? <>{ch.type === "miniTalk" && <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 10, fontWeight: 700, color: "#c0507a", padding: "2px 8px", borderRadius: 6, background: "rgba(220,120,160,0.1)", border: "1px solid rgba(220,120,160,0.2)", marginRight: 6 }}>Mini Talk</span>}<span style={{ fontSize: 14, color: "#4a85c2" }}>→</span></> : <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11, color: "#a8b8cc", padding: "2px 8px", borderRadius: 6, background: "rgba(180,195,215,0.12)" }}>Próximamente</span>}</button>))}</div></>}
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>{(STORY_CHAPTERS[story.id] || []).map((ch, i) => (<React.Fragment key={ch.id}>{story.id === "rabits_esupri_vs" && ch.id === 2 && <EventCountdown />}<button onClick={() => { if (ch.translated) setSelectedChapter(ch); }} disabled={!ch.translated} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 18px", borderRadius: 14, background: ch.translated ? "rgba(255,255,255,0.65)" : "rgba(240,244,250,0.4)", border: ch.translated ? "1px solid rgba(160,190,230,0.15)" : "1px solid rgba(160,190,230,0.08)", cursor: ch.translated ? "pointer" : "default", opacity: ch.translated ? 1 : 0.5, animation: `fadeSlideUp 0.4s ease ${i * 0.04}s both`, textAlign: "left" }}>{STORY_CHAPTER_CHARS[story.id] && STORY_CHAPTER_CHARS[story.id][ch.id] && <div style={{ flexShrink: 0, opacity: ch.translated ? 1 : 0.45, filter: ch.translated ? "none" : "grayscale(0.5)" }}><Avatar charId={STORY_CHAPTER_CHARS[story.id][ch.id]} size={42} /></div>}<span style={{ width: 34, height: 34, borderRadius: 10, background: ch.translated ? "rgba(74,133,194,0.08)" : "rgba(180,195,215,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 14, color: ch.translated ? "#3a6db5" : "#a8b8cc", flexShrink: 0 }}>{ch.id}</span><div style={{ flex: 1 }}><div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, color: ch.translated ? "#2c3e5a" : "#a0afc0" }}>{ch.title}</div></div>{ch.translated ? <>{ch.type === "miniTalk" && <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 10, fontWeight: 700, color: "#c0507a", padding: "2px 8px", borderRadius: 6, background: "rgba(220,120,160,0.1)", border: "1px solid rgba(220,120,160,0.2)", marginRight: 6 }}>Mini Talk</span>}<span style={{ fontSize: 14, color: "#4a85c2" }}>→</span></> : <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11, color: "#a8b8cc", padding: "2px 8px", borderRadius: 6, background: "rgba(180,195,215,0.12)" }}>Próximamente</span>}</button></React.Fragment>))}</div></>}
         </div>
       );
     };
@@ -7222,8 +7863,9 @@
       );
     };
 
-    const CommentItem = ({ c, replies, storyId, chapterId, anchor, onPosted }) => {
+    const CommentItem = ({ c, replies, storyId, chapterId, anchor, likes, toggleLike, onPosted }) => {
       const [open, setOpen] = useState(false);
+      const heart = (cm, small) => { const e = (likes && likes[cm.id]) || { count: 0, mine: false }; return (<button onClick={() => toggleLike(cm)} title="Me gusta" style={{ display: "inline-flex", alignItems: "center", gap: 4, background: "none", border: "none", cursor: "pointer", padding: 0, fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: small ? 11.5 : 12, color: e.mine ? "#e0566f" : "#9aabbf" }}><span style={{ fontSize: small ? 13 : 15 }}>{e.mine ? "❤️" : "🤍"}</span>{e.count > 0 ? e.count : ""}</button>); };
       return (
         <div style={{ padding: "12px 0", borderTop: "1px solid rgba(160,190,230,0.18)" }}>
           <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 4 }}>
@@ -7231,14 +7873,18 @@
             <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11, color: "#a0b4cc" }}>{timeAgo(c.created_at)}</span>
           </div>
           <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13.5, lineHeight: 1.55, color: "#2c3e5a", margin: 0, whiteSpace: "pre-wrap", wordBreak: "break-word" }}>{c.body}</p>
-          <button onClick={() => setOpen(o => !o)} style={{ background: "none", border: "none", cursor: "pointer", padding: "4px 0", marginTop: 2, fontFamily: "'Nunito',sans-serif", fontSize: 12, fontWeight: 700, color: "#5b9bd5" }}>{open ? "Cancelar" : "Responder"}</button>
-          {replies.length > 0 && <div style={{ marginTop: 6, paddingLeft: 12, borderLeft: "2px solid rgba(160,190,230,0.3)", display: "flex", flexDirection: "column", gap: 10 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 18, marginTop: 5 }}>
+            {heart(c)}
+            <button onClick={() => setOpen(o => !o)} style={{ background: "none", border: "none", cursor: "pointer", padding: 0, fontFamily: "'Nunito',sans-serif", fontSize: 12, fontWeight: 700, color: "#5b9bd5" }}>{open ? "Cancelar" : "Responder"}</button>
+          </div>
+          {replies.length > 0 && <div style={{ marginTop: 8, paddingLeft: 12, borderLeft: "2px solid rgba(160,190,230,0.3)", display: "flex", flexDirection: "column", gap: 10 }}>
             {replies.map(r => (<div key={r.id}>
               <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 2 }}>
                 <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 12.5, color: "#3a5070" }}>{r.author || "Anónimo"}</span>
                 <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 10.5, color: "#a0b4cc" }}>{timeAgo(r.created_at)}</span>
               </div>
-              <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, lineHeight: 1.5, color: "#2c3e5a", margin: 0, whiteSpace: "pre-wrap", wordBreak: "break-word" }}>{r.body}</p>
+              <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, lineHeight: 1.5, color: "#2c3e5a", margin: "0 0 3px", whiteSpace: "pre-wrap", wordBreak: "break-word" }}>{r.body}</p>
+              {heart(r, true)}
             </div>))}
           </div>}
           {open && <div style={{ marginTop: 8 }}><CommentForm storyId={storyId} chapterId={chapterId} anchor={anchor} parentId={c.id} autoFocus placeholder="Escribe una respuesta..." onPosted={() => { setOpen(false); onPosted(); }} /></div>}
@@ -7246,8 +7892,9 @@
       );
     };
 
-    const CommentPanel = ({ storyId, chapterId, anchor, isMobile, onClose, onPosted }) => {
+    const CommentPanel = ({ storyId, chapterId, anchor, isMobile, likes, toggleLike, onClose, onPosted }) => {
       const [comments, setComments] = useState(null);
+      const [sort, setSort] = useState("popular");
       const load = () => {
         if (!sb) { setComments([]); return; }
         sb.from("comments").select("*").eq("story_id", storyId).eq("chapter_id", String(chapterId)).eq("anchor", anchor).order("created_at", { ascending: true }).then(({ data, error }) => {
@@ -7257,8 +7904,9 @@
       };
       const afterPost = () => { load(); onPosted && onPosted(); };
       useEffect(() => { setComments(null); load(); }, [anchor, storyId, chapterId]);
-      const tops = (comments || []).filter(c => !c.parent_id);
-      const repliesOf = id => (comments || []).filter(c => c.parent_id === id);
+      const likeCount = id => (likes && likes[id] ? likes[id].count : 0);
+      const tops = (comments || []).filter(c => !c.parent_id).sort((a, b) => sort === "popular" ? (likeCount(b.id) - likeCount(a.id) || new Date(b.created_at) - new Date(a.created_at)) : (new Date(b.created_at) - new Date(a.created_at)));
+      const repliesOf = id => (comments || []).filter(c => c.parent_id === id).sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
       const panelStyle = isMobile
         ? { position: "fixed", left: 0, right: 0, bottom: 0, maxHeight: "82vh", borderRadius: "20px 20px 0 0", animation: "sheetUp 0.28s ease" }
         : { position: "fixed", top: 0, right: 0, height: "100vh", width: 400, maxWidth: "100%", animation: "sheetRight 0.28s ease" };
@@ -7270,10 +7918,13 @@
               <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 16, color: "#2c3e5a" }}>Comentarios {comments ? `(${comments.length})` : ""}</span>
               <button onClick={onClose} aria-label="Cerrar" style={{ background: "rgba(160,190,230,0.15)", border: "none", cursor: "pointer", width: 30, height: 30, borderRadius: "50%", fontSize: 16, color: "#5a7aa0", lineHeight: 1 }}>✕</button>
             </div>
+            {tops.length > 0 && <div style={{ display: "flex", gap: 6, padding: "10px 20px 4px", flexShrink: 0 }}>
+              {[{ k: "popular", l: "⭐ Populares" }, { k: "recent", l: "🕒 Recientes" }].map(o => { const on = sort === o.k; return (<button key={o.k} onClick={() => setSort(o.k)} style={{ padding: "5px 13px", borderRadius: 999, cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 12, border: on ? "1.5px solid #5b9bd5" : "1.5px solid rgba(160,190,230,0.3)", background: on ? "rgba(91,155,213,0.12)" : "rgba(255,255,255,0.6)", color: on ? "#3a6db5" : "#8a9fba" }}>{o.l}</button>); })}
+            </div>}
             <div style={{ flex: 1, overflowY: "auto", padding: "4px 20px 12px" }}>
               {comments === null ? <div style={{ textAlign: "center", padding: "30px", fontFamily: "'Nunito',sans-serif", color: "#8a9fba", fontSize: 13 }}>Cargando…</div>
                 : tops.length === 0 ? <div style={{ textAlign: "center", padding: "30px 16px", fontFamily: "'Nunito',sans-serif", color: "#8a9fba", fontSize: 13.5, lineHeight: 1.6 }}>Aún no hay comentarios.<br />¡Sé la primera en comentar esta línea! ✨</div>
-                  : tops.map(c => <CommentItem key={c.id} c={c} replies={repliesOf(c.id)} storyId={storyId} chapterId={chapterId} anchor={anchor} onPosted={afterPost} />)}
+                  : tops.map(c => <CommentItem key={c.id} c={c} replies={repliesOf(c.id)} storyId={storyId} chapterId={chapterId} anchor={anchor} likes={likes} toggleLike={toggleLike} onPosted={afterPost} />)}
             </div>
             <div style={{ flexShrink: 0, padding: "12px 20px 16px", borderTop: "1px solid rgba(160,190,230,0.2)", background: "rgba(255,255,255,0.6)" }}>
               <CommentForm storyId={storyId} chapterId={chapterId} anchor={anchor} onPosted={afterPost} placeholder="Escribe un comentario..." />
@@ -7285,12 +7936,11 @@
 
     const Commentable = ({ anchor, count, isOpen, onOpen, enabled, isMobile, alwaysCount, style, children }) => {
       const [hover, setHover] = useState(false);
-      const [tapped, setTapped] = useState(false);
       if (!enabled) return children;
       const asCount = count > 0 && (isMobile || alwaysCount);
-      const show = isMobile ? (isOpen || count > 0 || tapped) : (hover || isOpen || (count > 0 && alwaysCount));
+      const show = isMobile ? (isOpen || count > 0) : (hover || isOpen || (count > 0 && alwaysCount));
       return (
-        <div style={{ position: "relative", ...style }} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} onClick={isMobile && count === 0 ? () => setTapped(t => !t) : undefined}>
+        <div style={{ position: "relative", cursor: isMobile ? "pointer" : "default", ...style }} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} onClick={isMobile ? () => onOpen(anchor) : undefined}>
           {children}
           <button onClick={(e) => { e.stopPropagation(); onOpen(anchor); }} title="Comentar" style={{ position: "absolute", top: -9, right: -9, display: "flex", alignItems: "center", gap: 3, height: 24, minWidth: 24, padding: asCount ? "0 8px" : 0, justifyContent: "center", borderRadius: 999, cursor: "pointer", border: "1px solid " + (isOpen ? "#4a85c2" : "rgba(150,185,225,0.6)"), background: isOpen ? "#4a85c2" : "rgba(255,255,255,0.97)", color: isOpen ? "#fff" : "#4a85c2", fontFamily: "'Nunito',sans-serif", fontSize: 12, fontWeight: 800, boxShadow: "0 1px 6px rgba(100,140,190,0.25)", opacity: show ? 1 : 0, pointerEvents: show ? "auto" : "none", transition: "opacity 0.15s, background 0.15s", lineHeight: 1, zIndex: 6 }}>
             {asCount ? <><span style={{ fontSize: 11 }}>💬</span>{count}</> : <span style={{ fontSize: 16, marginTop: -1 }}>+</span>}
@@ -7300,11 +7950,12 @@
     };
 
     // Vista previa de comentarios a la derecha de cada línea (desktop)
-    const CommentPreview = ({ comments, onOpen }) => {
-      const tops = comments.filter(c => !c.parent_id);
+    const CommentPreview = ({ comments, likes, onOpen }) => {
+      const lc = (id) => (likes && likes[id] ? likes[id].count : 0);
+      const tops = comments.filter(c => !c.parent_id).sort((a, b) => lc(b.id) - lc(a.id) || new Date(b.created_at) - new Date(a.created_at));
       const shown = tops.slice(0, 2);
       return (
-        <div onClick={onOpen} style={{ flex: "1 1 0", minWidth: 130, maxWidth: 240, cursor: "pointer", display: "flex", flexDirection: "column", gap: 6, marginTop: 2 }}>
+        <div onClick={onOpen} style={{ flex: "1 1 0", minWidth: 130, maxWidth: 270, cursor: "pointer", display: "flex", flexDirection: "column", gap: 6, marginTop: 2 }}>
           {shown.map(c => (
             <div key={c.id} style={{ background: "rgba(255,255,255,0.75)", border: "1px solid rgba(160,190,230,0.3)", borderRadius: 12, padding: "7px 11px", transition: "all 0.15s" }} onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.97)"; e.currentTarget.style.boxShadow = "0 2px 10px rgba(100,140,190,0.15)"; }} onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.75)"; e.currentTarget.style.boxShadow = "none"; }}>
               <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 2 }}>
@@ -7319,12 +7970,35 @@
       );
     };
 
-    const DialogueBlock = ({ block, bIdx, enabled, byAnchor, openAnchor, onOpen, isMobile, wide }) => {
+    const SEASONS = {
+      primavera: { label: "Primavera", icon: "🌸", grad: "linear-gradient(135deg,#ffd9e8,#ffbcd6)", color: "#d56a93", text: "#a83c66" },
+      verano: { label: "Verano", icon: "🌻", grad: "linear-gradient(135deg,#bdf0dd,#9fe3ef)", color: "#2aa79a", text: "#1c7d72" },
+      otoño: { label: "Otoño", icon: "🍁", grad: "linear-gradient(135deg,#ffe2b8,#ffc59a)", color: "#cc7a33", text: "#a35a1c" },
+      invierno: { label: "Invierno", icon: "❄️", grad: "linear-gradient(135deg,#d9ecff,#bcd9f5)", color: "#5a93cc", text: "#33689c" },
+    };
+    const SHOUT_CLIP = "polygon(0 5px, 7% 0, 14% 5px, 21% 0, 29% 5px, 36% 0, 43% 5px, 50% 0, 57% 5px, 64% 0, 71% 5px, 79% 0, 86% 5px, 93% 0, 100% 5px, calc(100% - 5px) 17%, 100% 33%, calc(100% - 5px) 50%, 100% 67%, calc(100% - 5px) 83%, 100% calc(100% - 5px), 93% 100%, 86% calc(100% - 5px), 79% 100%, 71% calc(100% - 5px), 64% 100%, 57% calc(100% - 5px), 50% 100%, 43% calc(100% - 5px), 36% 100%, 29% calc(100% - 5px), 21% 100%, 14% calc(100% - 5px), 7% 100%, 0 calc(100% - 5px), 5px 83%, 0 67%, 5px 50%, 0 33%, 5px 17%)";
+
+    const DialogueBlock = ({ block, bIdx, enabled, byAnchor, likes, openAnchor, onOpen, isMobile, wide }) => {
+      if (block.type === "era") {
+        const s = SEASONS[block.season] || SEASONS.primavera;
+        return (
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 7, margin: "-4px 0 -18px", animation: "fadeIn 0.5s ease" }}>
+            <span style={{ fontSize: 13 }}>{s.icon}</span>
+            <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 12, letterSpacing: "0.03em", color: s.text }}>{s.label}</span>
+            {block.yearLabel && <><span style={{ color: s.color, opacity: 0.4 }}>·</span><span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 600, fontSize: 12, color: "#9aabbf" }}>{block.yearLabel}</span></>}
+          </div>
+        );
+      }
+      if (block.type === "video") return (
+        <div style={{ display: "flex", justifyContent: "center", margin: "24px 0", animation: "fadeIn 0.4s ease" }}>
+          <video src={block.src} autoPlay loop muted playsInline style={{ maxWidth: "100%", maxHeight: 520, width: "auto", height: "auto", margin: "0 auto", background: "#0a0f1a", borderRadius: 14, boxShadow: "0 4px 20px rgba(100,140,190,0.15)", display: "block" }} />
+        </div>
+      );
       if (block.type === "image") {
         const anchor = "b" + bIdx;
         const lc = (byAnchor && byAnchor[anchor]) || [];
         return (
-          <Commentable anchor={anchor} count={lc.length} isOpen={openAnchor === anchor} onOpen={onOpen} enabled={enabled} isMobile={isMobile} alwaysCount style={{ display: "block" }}><div style={{ display: "flex", justifyContent: "center", margin: "24px 0", animation: "fadeIn 0.4s ease" }}><img src={block.src} alt={block.alt || ""} style={{ maxWidth: block.wide ? "100%" : "320px", width: "100%", borderRadius: 14, boxShadow: "0 4px 20px rgba(100,140,190,0.15)" }} /></div></Commentable>
+          <Commentable anchor={anchor} count={lc.length} isOpen={openAnchor === anchor} onOpen={onOpen} enabled={enabled} isMobile={isMobile} alwaysCount style={{ display: "block" }}><div style={{ display: "flex", justifyContent: "center", margin: "24px 0", animation: "fadeIn 0.4s ease" }}><img src={block.src} alt={block.alt || ""} onError={e => { e.currentTarget.style.display = "none"; }} style={{ maxWidth: block.wide ? "100%" : "320px", width: "100%", borderRadius: 14, boxShadow: "0 4px 20px rgba(100,140,190,0.15)" }} /></div></Commentable>
         );
       }
       if (block.type === "location") return (
@@ -7335,11 +8009,16 @@
       return (
         <div style={{ animation: "fadeIn 0.3s ease", marginBottom: 18 }}>{block.location && <div style={{ textAlign: "center", margin: "8px 0 20px", display: "flex", alignItems: "center", gap: 12 }}><div style={{ flex: 1, height: 1, background: "rgba(160,190,230,0.2)" }} /><span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12, color: "#8a9fba", fontStyle: "italic" }}>{block.location}</span><div style={{ flex: 1, height: 1, background: "rgba(160,190,230,0.2)" }} /></div>}{block.time && <div style={{ textAlign: "center", marginBottom: 18, fontFamily: "'Nunito',sans-serif", fontSize: 12, color: "#a0b4cc" }}>{block.time}</div>}<div style={{ display: "flex", gap: 10, alignItems: "flex-start", paddingRight: enabled ? 10 : 50 }}><Avatar charId={block.speaker} size={48} /><div style={{ display: "flex", flexDirection: "column", gap: 8, flex: 1, minWidth: 0 }}><span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 12, color: textColorFor(char.color), letterSpacing: "0.04em", textTransform: "uppercase", marginLeft: 4, marginBottom: -3 }}>{char.combo ? char.name : char.name.split(" ")[0]}</span>{lines.map((rawLine, li) => {
           const line = typeof rawLine === "object" ? rawLine.text : rawLine;
+          const shout = typeof rawLine === "object" && rawLine.shout;
           const anchor = "b" + bIdx + "-l" + li;
           const lc = (byAnchor && byAnchor[anchor]) || [];
           const hasPreview = enabled && wide && lc.length > 0;
-          const bubble = (<div style={{ background: `linear-gradient(135deg,${char.color}18,${char.color}0c)`, border: `1px solid ${char.color}15`, borderRadius: li === 0 ? "4px 18px 18px 18px" : "18px", padding: "10px 16px", boxShadow: `0 1px 4px ${char.color}08` }}><p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 14.5, lineHeight: 1.65, color: line.startsWith("(") && line.endsWith(")") ? "#7a8a9e" : "#2c3e5a", fontStyle: line.startsWith("(") && line.endsWith(")") ? "italic" : "normal", margin: 0 }}>{line.split(/(\*\*[^*]+\*\*|\*[^*]+\*|\[\d+\])/).map((part, pi) => part.startsWith("**") && part.endsWith("**") ? <strong key={pi}>{part.slice(2, -2)}</strong> : part.startsWith("*") && part.endsWith("*") ? <em key={pi}>{part.slice(1, -1)}</em> : /^\[\d+\]$/.test(part) ? <FootnoteTooltip key={pi} num={part} notes={block.notes} /> : part)}</p></div>);
-          return (<div key={li} style={{ position: "relative", display: "flex" }}><Commentable anchor={anchor} count={lc.length} isOpen={openAnchor === anchor} onOpen={onOpen} enabled={enabled} isMobile={isMobile} alwaysCount={!wide} style={{ maxWidth: "92%", flexShrink: 0 }}>{bubble}</Commentable>{hasPreview && <div style={{ position: "absolute", top: 0, left: "100%", marginLeft: 24, width: 230 }}><CommentPreview comments={lc} onOpen={() => onOpen(anchor)} /></div>}</div>);
+          const isWhisper = line.startsWith("(") && line.endsWith(")");
+          const content = line.split(/(\*\*[^*]+\*\*|\*[^*]+\*|\[\d+\])/).map((part, pi) => part.startsWith("**") && part.endsWith("**") ? <strong key={pi}>{part.slice(2, -2)}</strong> : part.startsWith("*") && part.endsWith("*") ? <em key={pi}>{part.slice(1, -1)}</em> : /^\[\d+\]$/.test(part) ? <FootnoteTooltip key={pi} num={part} notes={block.notes} /> : part);
+          const bubble = shout
+            ? (<div style={{ display: "inline-block", maxWidth: "100%", background: `${char.color}bb`, clipPath: SHOUT_CLIP, filter: `drop-shadow(0 2px 5px ${char.color}33)`, padding: 2 }}><div style={{ background: `linear-gradient(135deg,#ffffff,${char.color}12)`, clipPath: SHOUT_CLIP, padding: "13px 20px" }}><p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 14.5, lineHeight: 1.6, color: "#2c3e5a", margin: 0 }}>{content}</p></div></div>)
+            : (<div style={{ background: `linear-gradient(135deg,${char.color}18,${char.color}0c)`, border: `1px solid ${char.color}15`, borderRadius: li === 0 ? "4px 18px 18px 18px" : "18px", padding: "10px 16px", boxShadow: `0 1px 4px ${char.color}08` }}><p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 14.5, lineHeight: 1.65, color: isWhisper ? "#7a8a9e" : "#2c3e5a", fontStyle: isWhisper ? "italic" : "normal", margin: 0 }}>{content}</p></div>);
+          return (<div key={li} style={{ position: "relative", display: "flex" }}><Commentable anchor={anchor} count={lc.length} isOpen={openAnchor === anchor} onOpen={onOpen} enabled={enabled} isMobile={isMobile} alwaysCount={!wide} style={{ maxWidth: "92%", flexShrink: 0 }}>{bubble}</Commentable>{hasPreview && <div style={{ position: "absolute", top: 0, left: "100%", marginLeft: 44, width: 270 }}><CommentPreview comments={lc} likes={likes} onOpen={() => onOpen(anchor)} /></div>}</div>);
         })}</div></div></div>
       );
     };
@@ -7349,21 +8028,38 @@
       const supportsVisual = !!STORY_VISUAL[story.id];
       const [mode, setMode] = useState("text");
       const [isMobile, setIsMobile] = useState(typeof window !== "undefined" && window.innerWidth < 760);
-      const [wide, setWide] = useState(typeof window !== "undefined" && window.innerWidth >= 1200);
-      useEffect(() => { const f = () => { setIsMobile(window.innerWidth < 760); setWide(window.innerWidth >= 1200); }; window.addEventListener("resize", f); return () => window.removeEventListener("resize", f); }, []);
+      const [wide, setWide] = useState(typeof window !== "undefined" && window.innerWidth >= 1340);
+      useEffect(() => { const f = () => { setIsMobile(window.innerWidth < 760); setWide(window.innerWidth >= 1340); }; window.addEventListener("resize", f); return () => window.removeEventListener("resize", f); }, []);
       const [commentsEnabled, setCommentsEnabled] = useState(() => localStorage.getItem("espstars_comments_off") !== "1");
+      const [showHint, setShowHint] = useState(() => localStorage.getItem("espstars_mobilehint") !== "1");
+      const dismissHint = () => { localStorage.setItem("espstars_mobilehint", "1"); setShowHint(false); };
       const [byAnchor, setByAnchor] = useState({});
+      const [likes, setLikes] = useState({});
       const [reloadTick, setReloadTick] = useState(0);
       const [openAnchor, setOpenAnchor] = useState(null);
+      const cVoter = getVoterId();
       const toggleComments = () => setCommentsEnabled(v => { const nv = !v; localStorage.setItem("espstars_comments_off", nv ? "0" : "1"); if (!nv) setOpenAnchor(null); return nv; });
       const reloadComments = () => setReloadTick(t => t + 1);
+      const toggleLike = async (comment) => {
+        if (!sb) return;
+        const e = likes[comment.id] || { count: 0, mine: false };
+        setLikes(p => ({ ...p, [comment.id]: { count: Math.max(0, e.count + (e.mine ? -1 : 1)), mine: !e.mine } }));
+        const { error } = e.mine
+          ? await sb.from("comment_likes").delete().eq("comment_id", comment.id).eq("voter", cVoter)
+          : await sb.from("comment_likes").insert({ comment_id: comment.id, story_id: comment.story_id, chapter_id: comment.chapter_id, voter: cVoter });
+        if (error) { console.error("like toggle", error); setLikes(p => ({ ...p, [comment.id]: e })); }
+      };
       useEffect(() => {
         if (!sb || !commentsEnabled) return;
         let active = true;
-        sb.from("comments").select("*").eq("story_id", story.id).eq("chapter_id", String(chapter.id)).order("created_at", { ascending: true }).then(({ data, error }) => {
+        Promise.all([
+          sb.from("comments").select("*").eq("story_id", story.id).eq("chapter_id", String(chapter.id)).order("created_at", { ascending: true }),
+          sb.from("comment_likes").select("comment_id, voter").eq("story_id", story.id).eq("chapter_id", String(chapter.id)),
+        ]).then(([cRes, lRes]) => {
           if (!active) return;
-          if (error) { console.error("comments load", error); return; }
-          const m = {}; (data || []).forEach(r => { (m[r.anchor] = m[r.anchor] || []).push(r); }); setByAnchor(m);
+          if (cRes.error) { console.error("comments load", cRes.error); return; }
+          const m = {}; (cRes.data || []).forEach(r => { (m[r.anchor] = m[r.anchor] || []).push(r); }); setByAnchor(m);
+          if (!lRes.error) { const lm = {}; (lRes.data || []).forEach(r => { const e = lm[r.comment_id] = lm[r.comment_id] || { count: 0, mine: false }; e.count++; if (r.voter === cVoter) e.mine = true; }); setLikes(lm); }
         });
         return () => { active = false; };
       }, [story.id, chapter.id, commentsEnabled, reloadTick]);
@@ -7381,16 +8077,17 @@
             </div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.8)", borderRadius: 20, border: "1px solid rgba(160,190,230,0.15)", padding: "22px 26px", marginBottom: 32, textAlign: "center" }}><span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11, fontWeight: 700, color: "#8a9fba", letterSpacing: "0.1em", textTransform: "uppercase" }}>Capítulo {chapter.id}</span><h1 style={{ fontFamily: "'Libre Baskerville',serif", fontWeight: 700, fontSize: 24, color: "#2c3e5a", margin: "6px 0 0" }}>{chapter.title}</h1></div>
+          {isMobile && commentsEnabled && showHint && <div style={{ display: "flex", alignItems: "center", gap: 10, margin: "0 0 6px", padding: "9px 14px", borderRadius: 14, background: "linear-gradient(135deg, rgba(91,155,213,0.13), rgba(120,170,240,0.1))", border: "1px solid rgba(91,155,213,0.28)" }}><span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, fontWeight: 700, color: "#3a6db5", lineHeight: 1.4 }}>💬 Toca cualquier diálogo para comentar</span><button onClick={dismissHint} aria-label="Entendido" style={{ marginLeft: "auto", flexShrink: 0, background: "rgba(255,255,255,0.65)", border: "none", cursor: "pointer", width: 24, height: 24, borderRadius: "50%", fontSize: 12, color: "#3a6db5", lineHeight: 1 }}>✕</button></div>}
           {chapter.song && <ChapterAudioPlayer song={chapter.song} />}
           <div style={{ display: "flex", flexDirection: "column", background: "rgba(255,255,255,0.6)", borderRadius: 20, padding: "24px 20px", border: "1px solid rgba(160,190,230,0.1)" }}>
-            {dialogue.map((block, bIdx) => <DialogueBlock key={bIdx} block={block} bIdx={bIdx} enabled={commentsEnabled && !!sb} byAnchor={byAnchor} openAnchor={openAnchor} onOpen={setOpenAnchor} isMobile={isMobile} wide={wide} />)}
+            {dialogue.map((block, bIdx) => <DialogueBlock key={bIdx} block={block} bIdx={bIdx} enabled={commentsEnabled && !!sb} byAnchor={byAnchor} likes={likes} openAnchor={openAnchor} onOpen={setOpenAnchor} isMobile={isMobile} wide={wide} />)}
             {(() => { const allNotes = dialogue.filter(b => b.notes).flatMap(b => Object.entries(b.notes)); return allNotes.length > 0 ? <div style={{ marginTop: 28, padding: "16px 20px", borderRadius: 14, background: "rgba(74,133,194,0.04)", border: "1px solid rgba(74,133,194,0.08)" }}><div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12, fontWeight: 700, color: "#4a85c2", marginBottom: 8, letterSpacing: "0.04em" }}>NOTAS</div>{allNotes.map(([num, text]) => <div key={num} style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12, color: "#7a8a9e", lineHeight: 1.65, marginTop: 4 }}><span style={{ color: "#4a85c2", fontWeight: 700 }}>[{num}]</span> {text}</div>)}</div> : null; })()}
             {dialogue.length > 0 && <div style={{ display: "flex", justifyContent: "space-between", marginTop: 32, paddingTop: 20, borderTop: "1px solid rgba(160,190,230,0.15)" }}>
               {prevCh ? <button onClick={() => setSelectedChapter(prevCh)} style={{ background: "rgba(255,255,255,0.6)", border: "1px solid rgba(160,190,230,0.15)", borderRadius: 12, padding: "10px 18px", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#3a6db5", fontWeight: 600 }}>← {prevCh.title}</button> : <div />}
               {nextCh && <button onClick={() => setSelectedChapter(nextCh)} style={{ background: "linear-gradient(135deg,#4a85c2,#5b9bd5)", border: "none", borderRadius: 12, padding: "10px 18px", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#fff", fontWeight: 600, boxShadow: "0 2px 8px rgba(74,133,194,0.3)" }}>{nextCh.title} →</button>}
             </div>}
             <div ref={bottomRef} />
-            {openAnchor && commentsEnabled && sb && <CommentPanel storyId={story.id} chapterId={chapter.id} anchor={openAnchor} isMobile={isMobile} onClose={() => setOpenAnchor(null)} onPosted={reloadComments} />}
+            {openAnchor && commentsEnabled && sb && <CommentPanel storyId={story.id} chapterId={chapter.id} anchor={openAnchor} isMobile={isMobile} likes={likes} toggleLike={toggleLike} onClose={() => setOpenAnchor(null)} onPosted={reloadComments} />}
           </div>
         </div>
       );
