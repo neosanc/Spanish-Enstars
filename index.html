@@ -2337,8 +2337,8 @@
       { id: 1, title: "Prólogo", translated: true, translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" } },
       { id: 2, title: "Henoheno / Episodio 1", translated: true },
       { id: 3, title: "Henoheno / Episodio 2", translated: true },
-      { id: 4, title: "Henoheno / Episodio 3", translated: true },
-      { id: 5, title: "Henoheno / Episodio 4", translated: false },
+      { id: 4, title: "Henoheno / Episodio 3", translated: true, releaseAt: "2026-07-04T00:00:00-04:00" },
+      { id: 5, title: "Henoheno / Episodio 4", translated: false, releaseAt: "2026-07-05T00:00:00-04:00" },
       { id: 6, title: "Henoheno / Episodio 5", translated: false },
       { id: 7, title: "Henoheno / Episodio 6", translated: false },
       { id: 8, title: "Henoheno / Episodio 7", translated: false },
@@ -7616,7 +7616,7 @@
     4: [
     { type:"location", src:"https://i.postimg.cc/wxWcC37F/1000-cb-20240717232833.webp", time: "Esa misma noche", label:"Un hotel de lujo en Hawái", position:"center center" },
     { type:"stream-banner", logo:"MEGA\nSTREAM", text:"『MM Directo de Inicio』Apuntando a la victoria" },
-    { speaker:"hajime", lines:["“Aloha a todo el mundo”~♪", "“Fufu, parece que nos oyen alto y claro. Vale, ¡entonces vamos a empezar nuestro directo de hoy~!”"] },
+    { speaker:"hajime", lines:["“Aloha a todo el mundo~♪”", "“Fufu, parece que nos oyen alto y claro. Vale, ¡entonces vamos a empezar nuestro directo de hoy~!”"] },
     { speaker:"nazuna", lines:["“Hoy vamos a presentarnos de cara a nuestra primera competición del MM, ¡que comience el directo~!”"] },
     { speaker:"mitsuru", lines:["“¡Ah, mira, mira! ¡Ya llegan muchos comentarios que dicen que nos han apoyado desde el Mega Stream!”", "“¡Muchas gracias por vuestro apoyo! ¡Me hace muy feliz leeros~♪”"] },
     { speaker:"tomoya", lines:["“Vamos a esforzarnos al máximo para llegar a la final, ¡así que nos haría muy felices que nos sigáis viendo a partir de ahora!”"] },
@@ -8699,14 +8699,12 @@
     // ─── CUENTA REGRESIVA AL PRÓXIMO CAPÍTULO ──────────────────
     // Fecha de salida del Cap. 2: 2 de julio 2026, 00:00 hora de Chile (UTC-4).
     // Para cambiarla, edita esta sola línea (formato ISO con offset horario):
-    const NEXT_CHAPTER_RELEASE = new Date("2026-07-05T00:00:00-04:00");
-    const EventCountdown = () => {
+    const EventCountdown = ({ chapters }) => {
       const [now, setNow] = useState(Date.now());
       useEffect(() => { const t = setInterval(() => setNow(Date.now()), 1000); return () => clearInterval(t); }, []);
-      const diff = NEXT_CHAPTER_RELEASE.getTime() - now;
-      if (diff <= 0) return (
-        <div style={{ borderRadius: 16, padding: "16px 20px", marginBottom: 8, background: "linear-gradient(135deg, rgba(120,222,228,0.28), rgba(150,200,245,0.22))", border: "1px solid rgba(90,200,210,0.4)", textAlign: "center", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 15, color: "#1f7a89" }}>✨ ¡El Capítulo 5 ya está disponible! ✨</div>
-      );
+      const next = (chapters || []).find(c => c.releaseAt && new Date(c.releaseAt).getTime() > now);
+      if (!next) return null;
+      const diff = new Date(next.releaseAt).getTime() - now;
       const d = Math.floor(diff / 86400000);
       const h = Math.floor((diff % 86400000) / 3600000);
       const m = Math.floor((diff % 3600000) / 60000);
@@ -8719,7 +8717,7 @@
       );
       return (
         <div style={{ borderRadius: 16, padding: "18px 22px", marginBottom: 8, background: "linear-gradient(135deg,#e35d6a,#f08a70)", boxShadow: "0 4px 18px rgba(205,70,80,0.32)", animation: "fadeIn 0.5s ease" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 7, justifyContent: "center", marginBottom: 12, fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 13, letterSpacing: "0.06em", textTransform: "uppercase", color: "#fff" }}>El Capítulo 5 sale en</div>
+          <div style={{ display: "flex", alignItems: "center", gap: 7, justifyContent: "center", marginBottom: 12, fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 13, letterSpacing: "0.06em", textTransform: "uppercase", color: "#fff" }}>El Capítulo {next.id} sale en</div>
           <div style={{ display: "flex", justifyContent: "center", alignItems: "flex-start", gap: 10 }}>
             {box(d, "días")}<span style={{ color: "rgba(255,255,255,0.6)", fontSize: 24, fontWeight: 700, lineHeight: 1 }}>:</span>
             {box(h, "horas")}<span style={{ color: "rgba(255,255,255,0.6)", fontSize: 24, fontWeight: 700, lineHeight: 1 }}>:</span>
@@ -8781,6 +8779,8 @@
 
     const StoryPage = ({ story, chapterId, setNav }) => {
       const chapterList = STORY_CHAPTERS[story.id] || [];
+      const [nowTs, setNowTs] = useState(Date.now());
+      useEffect(() => { const t = setInterval(() => setNowTs(Date.now()), 1000); return () => clearInterval(t); }, []);
       const selectedChapter = (chapterId != null) ? chapterList.find(c => c.id === chapterId) : null;
       const setSelectedChapter = (ch) => setNav({ page: "story", story, chapterId: ch ? ch.id : null });
       const units = (story.unit ? (Array.isArray(story.unit) ? story.unit : [story.unit]) : []).map(uid => ({ uid, data: UNIT_DATA[uid] })).filter(u => u.data);
@@ -8805,7 +8805,7 @@
             </div></div>
           {story.id === "rabits_esupri_vs" && <EventPoll />}
           {VOICELINES[story.id] ? <VoicelinesReader story={story} setNav={setNav} /> : <><h2 style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 18, color: "#2c3e5a", margin: "0 0 14px" }}>Capítulos</h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>{(STORY_CHAPTERS[story.id] || []).map((ch, i) => (<React.Fragment key={ch.id}><button onClick={() => { if (ch.translated) setSelectedChapter(ch); }} disabled={!ch.translated} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 18px", borderRadius: 14, background: ch.translated ? "rgba(255,255,255,0.65)" : "rgba(240,244,250,0.4)", border: ch.translated ? "1px solid rgba(160,190,230,0.15)" : "1px solid rgba(160,190,230,0.08)", cursor: ch.translated ? "pointer" : "default", opacity: ch.translated ? 1 : 0.5, animation: `fadeSlideUp 0.4s ease ${i * 0.04}s both`, textAlign: "left" }}>{STORY_CHAPTER_CHARS[story.id] && STORY_CHAPTER_CHARS[story.id][ch.id] && <div style={{ flexShrink: 0, opacity: ch.translated ? 1 : 0.45, filter: ch.translated ? "none" : "grayscale(0.5)" }}><Avatar charId={STORY_CHAPTER_CHARS[story.id][ch.id]} size={42} /></div>}<span style={{ width: 34, height: 34, borderRadius: 10, background: ch.translated ? "rgba(74,133,194,0.08)" : "rgba(180,195,215,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 14, color: ch.translated ? "#3a6db5" : "#a8b8cc", flexShrink: 0 }}>{ch.id}</span><div style={{ flex: 1 }}><div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, color: ch.translated ? "#2c3e5a" : "#a0afc0" }}>{ch.title}</div></div>{ch.translated ? <>{ch.type === "miniTalk" && <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 10, fontWeight: 700, color: "#c0507a", padding: "2px 8px", borderRadius: 6, background: "rgba(220,120,160,0.1)", border: "1px solid rgba(220,120,160,0.2)", marginRight: 6 }}>Mini Talk</span>}<span style={{ fontSize: 14, color: "#4a85c2" }}>→</span></> : <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11, color: "#a8b8cc", padding: "2px 8px", borderRadius: 6, background: "rgba(180,195,215,0.12)" }}>Próximamente</span>}</button>{story.id === "rabits_esupri_vs" && ch.id === 4 && <EventCountdown />}</React.Fragment>))}</div>{story.phoneCall && <SoraPhoneCall data={story.phoneCall} />}</>}
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>{(STORY_CHAPTERS[story.id] || []).map((ch, i) => { const available = ch.translated && (!ch.releaseAt || nowTs >= new Date(ch.releaseAt).getTime()); return (<React.Fragment key={ch.id}><button onClick={() => { if (available) setSelectedChapter(ch); }} disabled={!available} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 18px", borderRadius: 14, background: available ? "rgba(255,255,255,0.65)" : "rgba(240,244,250,0.4)", border: available ? "1px solid rgba(160,190,230,0.15)" : "1px solid rgba(160,190,230,0.08)", cursor: available ? "pointer" : "default", opacity: available ? 1 : 0.5, animation: `fadeSlideUp 0.4s ease ${i * 0.04}s both`, textAlign: "left" }}>{STORY_CHAPTER_CHARS[story.id] && STORY_CHAPTER_CHARS[story.id][ch.id] && <div style={{ flexShrink: 0, opacity: available ? 1 : 0.45, filter: available ? "none" : "grayscale(0.5)" }}><Avatar charId={STORY_CHAPTER_CHARS[story.id][ch.id]} size={42} /></div>}<span style={{ width: 34, height: 34, borderRadius: 10, background: available ? "rgba(74,133,194,0.08)" : "rgba(180,195,215,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 14, color: available ? "#3a6db5" : "#a8b8cc", flexShrink: 0 }}>{ch.id}</span><div style={{ flex: 1 }}><div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, color: available ? "#2c3e5a" : "#a0afc0" }}>{ch.title}</div></div>{available ? <>{ch.type === "miniTalk" && <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 10, fontWeight: 700, color: "#c0507a", padding: "2px 8px", borderRadius: 6, background: "rgba(220,120,160,0.1)", border: "1px solid rgba(220,120,160,0.2)", marginRight: 6 }}>Mini Talk</span>}<span style={{ fontSize: 14, color: "#4a85c2" }}>→</span></> : <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11, color: "#a8b8cc", padding: "2px 8px", borderRadius: 6, background: "rgba(180,195,215,0.12)" }}>Próximamente</span>}</button></React.Fragment>); })}</div>{story.id === "rabits_esupri_vs" && <EventCountdown chapters={chapterList} />}{story.phoneCall && <SoraPhoneCall data={story.phoneCall} />}</>}
         </div>
       );
     };
