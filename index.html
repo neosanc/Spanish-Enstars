@@ -119,6 +119,16 @@
       }
     }
 
+    @keyframes marqueeLeft {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
     @keyframes cardBob {
 
       0%,
@@ -128,6 +138,18 @@
 
       50% {
         transform: translateY(-5px)
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(32px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0)
       }
     }
 
@@ -9825,8 +9847,56 @@
       );
     };
 
-    // Columna de comentarios recientes que sube flotando junto al título de la home
-    const RecentCommentsFloat = ({ setNav }) => {
+    // Tarjeta de comentario reciente (reutilizada en escritorio y móvil)
+    const RecentCommentCard = ({ c, story, setNav, width = "100%", lines = 3, i = 0, bob = true }) => (
+      <button onClick={() => setNav({ page: "story", story })} style={{ display: "block", width, flexShrink: 0, textAlign: "left", background: "rgba(255,255,255,0.85)", border: "1px solid rgba(160,190,230,0.28)", borderRadius: 18, padding: "15px 17px", cursor: "pointer", boxShadow: "0 6px 22px rgba(100,140,190,0.12)", animation: bob ? `cardBob ${3.6 + (i % 4) * 0.5}s ease-in-out ${(i % 5) * 0.35}s infinite` : "none", transition: "box-shadow 0.2s, border-color 0.2s" }}
+        onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 10px 28px rgba(74,133,194,0.22)"; e.currentTarget.style.borderColor = "rgba(91,155,213,0.5)"; }}
+        onMouseLeave={e => { e.currentTarget.style.boxShadow = "0 6px 22px rgba(100,140,190,0.12)"; e.currentTarget.style.borderColor = "rgba(160,190,230,0.28)"; }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 9, marginBottom: 9 }}>
+          <div style={{ width: 28, height: 28, borderRadius: "50%", flexShrink: 0, background: "linear-gradient(135deg,#6da0e0,#9b7be0)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 13 }}>{(c.author && c.author.trim() ? c.author.trim() : "A").charAt(0).toUpperCase()}</div>
+          <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 13, color: "#2c3e5a", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{c.author && c.author.trim() ? c.author.trim() : "Anónimo"}</span>
+          <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 10.5, color: "#a0b4cc", marginLeft: "auto", flexShrink: 0 }}>{timeAgo(c.created_at)}</span>
+        </div>
+        <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13.5, lineHeight: 1.55, color: "#5a6f8c", margin: "0 0 11px", display: "-webkit-box", WebkitLineClamp: lines, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{c.body}</p>
+        <div style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "4px 11px", borderRadius: 999, background: "rgba(91,155,213,0.1)", fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 11, color: "#4a85c2", maxWidth: "100%" }}><span>💬</span><span style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{story.title}</span></div>
+      </button>
+    );
+
+    const CommentsHeading = () => (
+      <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 14, justifyContent: "center" }}>
+        <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 12.5, color: "#4a85c2", letterSpacing: "0.02em" }}>✦ Lo que dicen los lectores</span>
+      </div>
+    );
+
+    // Móvil: una sola tarjeta que rota suavemente entre los comentarios
+    const CommentRotator = ({ items, setNav }) => {
+      const [idx, setIdx] = useState(0);
+      const [paused, setPaused] = useState(false);
+      useEffect(() => {
+        if (paused || items.length < 2) return;
+        const t = setInterval(() => setIdx(i => (i + 1) % items.length), 4800);
+        return () => clearInterval(t);
+      }, [paused, items.length]);
+      const cur = items[idx % items.length];
+      return (
+        <div style={{ width: "100%", maxWidth: 400, margin: "40px auto 0", animation: "fadeIn 0.9s ease" }}>
+          <CommentsHeading />
+          <div onTouchStart={() => setPaused(true)} onTouchEnd={() => setPaused(false)}>
+            <div style={{ animation: "cardBob 4.2s ease-in-out infinite" }}>
+              <div key={idx} style={{ animation: "slideInRight 0.5s ease" }}>
+                <RecentCommentCard c={cur.c} story={cur.story} setNav={setNav} lines={3} bob={false} />
+              </div>
+            </div>
+          </div>
+          {items.length > 1 && <div style={{ display: "flex", justifyContent: "center", gap: 6, marginTop: 14 }}>
+            {items.slice(0, Math.min(items.length, 8)).map((_, i) => <span key={i} style={{ width: i === (idx % items.length) ? 18 : 6, height: 6, borderRadius: 999, background: i === (idx % items.length) ? "linear-gradient(90deg,#4a85c2,#7baaf0)" : "rgba(160,190,230,0.4)", transition: "width 0.3s, background 0.3s" }} />)}
+          </div>}
+        </div>
+      );
+    };
+
+    // Comentarios recientes junto al título (columna vertical en escritorio, rotador en móvil)
+    const RecentCommentsFloat = ({ setNav, mobile }) => {
       const [comments, setComments] = useState(null);
       const [paused, setPaused] = useState(false);
       useEffect(() => {
@@ -9840,29 +9910,16 @@
       // Enlaza cada comentario con su historia (descartamos los que no encajan o están ocultos)
       const items = comments.map(c => ({ c, story: STORIES.find(s => s.id === c.story_id) })).filter(x => x.story && !x.story.hidden);
       if (items.length === 0) return null;
+      if (mobile) return <CommentRotator items={items} setNav={setNav} />;
       const loop = items.length >= 3 ? [...items, ...items] : items;
+      const animate = loop.length > items.length;
       const duration = Math.max(18, items.length * 3.4);
-      const Card = ({ c, story, i }) => (
-        <button onClick={() => setNav({ page: "story", story })} style={{ display: "block", width: "100%", textAlign: "left", background: "rgba(255,255,255,0.82)", border: "1px solid rgba(160,190,230,0.28)", borderRadius: 16, padding: "13px 15px", cursor: "pointer", boxShadow: "0 6px 20px rgba(100,140,190,0.1)", animation: `cardBob ${3.6 + (i % 4) * 0.5}s ease-in-out ${(i % 5) * 0.35}s infinite`, transition: "box-shadow 0.2s, border-color 0.2s" }}
-          onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 10px 28px rgba(74,133,194,0.22)"; e.currentTarget.style.borderColor = "rgba(91,155,213,0.5)"; }}
-          onMouseLeave={e => { e.currentTarget.style.boxShadow = "0 6px 20px rgba(100,140,190,0.1)"; e.currentTarget.style.borderColor = "rgba(160,190,230,0.28)"; }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 7 }}>
-            <div style={{ width: 26, height: 26, borderRadius: "50%", flexShrink: 0, background: "linear-gradient(135deg,#6da0e0,#9b7be0)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 12 }}>{(c.author && c.author.trim() ? c.author.trim() : "A").charAt(0).toUpperCase()}</div>
-            <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 12.5, color: "#2c3e5a", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{c.author && c.author.trim() ? c.author.trim() : "Anónimo"}</span>
-            <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 10.5, color: "#a0b4cc", marginLeft: "auto", flexShrink: 0 }}>{timeAgo(c.created_at)}</span>
-          </div>
-          <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, lineHeight: 1.5, color: "#5a6f8c", margin: "0 0 9px", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{c.body}</p>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "3px 10px", borderRadius: 999, background: "rgba(91,155,213,0.1)", fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 10.5, color: "#4a85c2", maxWidth: "100%" }}><span>💬</span><span style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{story.title}</span></div>
-        </button>
-      );
       return (
         <div style={{ width: 320, flexShrink: 0, animation: "fadeIn 0.9s ease" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 12, justifyContent: "center" }}>
-            <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 12.5, color: "#4a85c2", letterSpacing: "0.02em" }}>✦ Lo que dicen los lectores</span>
-          </div>
+          <CommentsHeading />
           <div onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} style={{ position: "relative", height: 380, overflow: "hidden", WebkitMaskImage: "linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent)", maskImage: "linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent)" }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: 14, animation: loop.length > items.length ? `marqueeUp ${duration}s linear infinite` : "none", animationPlayState: paused ? "paused" : "running" }}>
-              {loop.map((x, i) => <Card key={i} c={x.c} story={x.story} i={i} />)}
+            <div style={{ display: "flex", flexDirection: "column", gap: 14, animation: animate ? `marqueeUp ${duration}s linear infinite` : "none", animationPlayState: paused ? "paused" : "running" }}>
+              {loop.map((x, i) => <RecentCommentCard key={i} c={x.c} story={x.story} setNav={setNav} i={i} />)}
             </div>
           </div>
         </div>
@@ -9887,6 +9944,7 @@
           </div>
           {showFloat && <RecentCommentsFloat setNav={setNav} />}
           </div>
+          {!showFloat && <RecentCommentsFloat setNav={setNav} mobile />}
         </section>
         <EventPromo setNav={setNav} />
         <section style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px 60px", position: "relative", zIndex: 1 }}>
