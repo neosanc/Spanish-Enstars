@@ -109,6 +109,28 @@
       }
     }
 
+    @keyframes marqueeUp {
+      from {
+        transform: translateY(0)
+      }
+
+      to {
+        transform: translateY(-50%)
+      }
+    }
+
+    @keyframes cardBob {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-5px)
+      }
+    }
+
     ::-webkit-scrollbar {
       width: 6px
     }
@@ -9803,17 +9825,67 @@
       );
     };
 
-    const HomePage = ({ setNav }) => (
+    // Columna de comentarios recientes que sube flotando junto al título de la home
+    const RecentCommentsFloat = ({ setNav }) => {
+      const [comments, setComments] = useState(null);
+      const [paused, setPaused] = useState(false);
+      useEffect(() => {
+        if (!sb) return;
+        sb.from("comments").select("story_id, author, body, created_at").order("created_at", { ascending: false }).limit(14).then(({ data, error }) => {
+          if (error) { console.error("recent comments", error); setComments([]); return; }
+          setComments(data || []);
+        });
+      }, []);
+      if (!sb || !comments) return null;
+      // Enlaza cada comentario con su historia (descartamos los que no encajan o están ocultos)
+      const items = comments.map(c => ({ c, story: STORIES.find(s => s.id === c.story_id) })).filter(x => x.story && !x.story.hidden);
+      if (items.length === 0) return null;
+      const loop = items.length >= 3 ? [...items, ...items] : items;
+      const duration = Math.max(18, items.length * 3.4);
+      const Card = ({ c, story, i }) => (
+        <button onClick={() => setNav({ page: "story", story })} style={{ display: "block", width: "100%", textAlign: "left", background: "rgba(255,255,255,0.82)", border: "1px solid rgba(160,190,230,0.28)", borderRadius: 16, padding: "13px 15px", cursor: "pointer", boxShadow: "0 6px 20px rgba(100,140,190,0.1)", animation: `cardBob ${3.6 + (i % 4) * 0.5}s ease-in-out ${(i % 5) * 0.35}s infinite`, transition: "box-shadow 0.2s, border-color 0.2s" }}
+          onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 10px 28px rgba(74,133,194,0.22)"; e.currentTarget.style.borderColor = "rgba(91,155,213,0.5)"; }}
+          onMouseLeave={e => { e.currentTarget.style.boxShadow = "0 6px 20px rgba(100,140,190,0.1)"; e.currentTarget.style.borderColor = "rgba(160,190,230,0.28)"; }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 7 }}>
+            <div style={{ width: 26, height: 26, borderRadius: "50%", flexShrink: 0, background: "linear-gradient(135deg,#6da0e0,#9b7be0)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 12 }}>{(c.author && c.author.trim() ? c.author.trim() : "A").charAt(0).toUpperCase()}</div>
+            <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 12.5, color: "#2c3e5a", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{c.author && c.author.trim() ? c.author.trim() : "Anónimo"}</span>
+            <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 10.5, color: "#a0b4cc", marginLeft: "auto", flexShrink: 0 }}>{timeAgo(c.created_at)}</span>
+          </div>
+          <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, lineHeight: 1.5, color: "#5a6f8c", margin: "0 0 9px", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{c.body}</p>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "3px 10px", borderRadius: 999, background: "rgba(91,155,213,0.1)", fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 10.5, color: "#4a85c2", maxWidth: "100%" }}><span>💬</span><span style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{story.title}</span></div>
+        </button>
+      );
+      return (
+        <div style={{ width: 320, flexShrink: 0, animation: "fadeIn 0.9s ease" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 12, justifyContent: "center" }}>
+            <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 12.5, color: "#4a85c2", letterSpacing: "0.02em" }}>✦ Lo que dicen los lectores</span>
+          </div>
+          <div onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} style={{ position: "relative", height: 380, overflow: "hidden", WebkitMaskImage: "linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent)", maskImage: "linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent)" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14, animation: loop.length > items.length ? `marqueeUp ${duration}s linear infinite` : "none", animationPlayState: paused ? "paused" : "running" }}>
+              {loop.map((x, i) => <Card key={i} c={x.c} story={x.story} i={i} />)}
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    const HomePage = ({ setNav }) => {
+      const [showFloat, setShowFloat] = useState(typeof window !== "undefined" && window.innerWidth >= 940);
+      useEffect(() => { const f = () => setShowFloat(window.innerWidth >= 940); window.addEventListener("resize", f); return () => window.removeEventListener("resize", f); }, []);
+      return (
       <div style={{ animation: "fadeIn 0.6s ease", position: "relative", zIndex: 1 }}>
         <FloatingCircles />
         <BalladEventBanner setNav={setNav} />
         <BirthdayBanner setNav={setNav} />
-        <section style={{ padding: "65px 24px 55px", textAlign: "center", position: "relative", zIndex: 1 }}>
-          <div style={{ position: "relative", maxWidth: 600, margin: "0 auto" }}>
+        <section style={{ padding: "65px 24px 55px", position: "relative", zIndex: 1 }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 48, flexWrap: "wrap", maxWidth: 1120, margin: "0 auto" }}>
+          <div style={{ position: "relative", maxWidth: 600, flex: showFloat ? "0 1 560px" : "1 1 auto", textAlign: "center" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 14px", borderRadius: 20, background: "rgba(91,155,213,0.08)", marginBottom: 20, fontSize: 12, fontWeight: 700, color: "#4a85c2", fontFamily: "'Nunito',sans-serif" }}>✦ Proyecto de Traducción al Español</div>
             <h1 style={{ fontFamily: "'Libre Baskerville',serif", fontWeight: 700, fontSize: "clamp(30px,5vw,48px)", lineHeight: 1.2, color: "#2c3e5a", margin: "0 0 16px" }}>Ensemble Stars!!<br /><span style={{ background: "linear-gradient(135deg,#4a85c2,#7baaf0)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Traducciones</span></h1>
             <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 16, lineHeight: 1.7, color: "#7a94b5", maxWidth: 500, margin: "0 auto 28px" }}>Traducciones al español de historias principales, eventos y scouts. A partir de traducciones de EngStars.</p>
             <button onClick={() => setNav({ page: "browse", tab: "stories" })} style={{ padding: "12px 30px", borderRadius: 14, background: "linear-gradient(135deg,#4a85c2,#6da0e0)", border: "none", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 14, color: "#fff", boxShadow: "0 4px 20px rgba(74,133,194,0.3)" }}>Explorar Historias →</button>
+          </div>
+          {showFloat && <RecentCommentsFloat setNav={setNav} />}
           </div>
         </section>
         <EventPromo setNav={setNav} />
@@ -9822,7 +9894,8 @@
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(290px,1fr))", gap: 18 }}>{STORIES.filter(s => (s.era === "!!" || s.era === "!") && s.status !== "not-started" && !s.hidden).sort((a, b) => b.order - a.order).slice(0, 3).map((s, i) => <StoryCard key={s.id} story={s} index={i} onClick={() => setNav({ page: "story", story: s })} />)}</div>
         </section>
       </div>
-    );
+      );
+    };
 
     const BrowsePage = ({ setNav, browseTab, setBrowseTab, initialEra }) => {
       const [activeEra, setActiveEra] = useState(initialEra && initialEra.era ? initialEra.era : "!!");
