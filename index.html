@@ -1916,7 +1916,7 @@
       { era: "!!", id: "rabits_esupri_vs", title: "Arco Tour Mundial / AREA 03: Special for Princess! VS Ra*bits", type: "event", unit: ["special_for_princess", "rabits"], order: 19, chapters: 11, description: "Es hora de la adorable “competición” y Hajime no quiere perder bajo ninguna circunstancia. Las unidades viajan a Hawái, pero unos comentarios inesperados de Yume y Esu provocan consecuencias desastrosas.", featured: ["esu", "fuyume", "kanna", "raika", "hajime", "tomoya", "mitsuru", "nazuna"], status: "in-progress", banner: "images/rabits-esupri-vs-banner.webp", translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" }},
       { era: "!!", id: "sora-bday-2026", title: "¡Feliz cumpleaños, Sora! 2026", type: "other", unit: "switch", order: 17, chapters: 3, description: "Una mini talk especial para celebrar el cumpleaños de Sora Harukawa junto a Switch y Anzu. En cada escena, ¡tú eliges qué responder! ♪", featured: ["sora", "tsukasa"], status: "complete", banner: "images/sora-bday-banner.png", bannerPos: "center 28%", translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" }, phoneCall: { caller: "sora", label: "Llamada de cumpleaños ♪", src: "audio/sora-call.mp3", lines: ["¡Hola, soy Sora! Hihi. ¿Te he sorprendido? Estaba buscando el regalo de Sora, ¡y Sora tuvo que llamar para darte las gracias! Muchas gracias por hoy~ El día de Sora fue muy divertido ♪"] } },
       { era: "!!", id: "himeru-bday-2026", title: "¡Feliz cumpleaños, HiMERU! 2026", type: "other", unit: "crazy_b", order: 18, chapters: 3, description: "Una mini talk especial para celebrar el cumpleaños de HiMERU, que coincide con el Tanabata, junto a Anzu. En cada escena, ¡tú eliges qué responder! ♪", featured: ["himeru"], status: "complete", banner: "images/himeru-0b4ff7f9.webp", bannerPos: "center 22%", translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" }, phoneCall: { caller: "himeru", label: "Llamada de cumpleaños ♪", src: "audio/himeru-call.mp3", lines: ["Hola. Jaja, gracias a ti, el cumpleaños de HiMERU fue maravilloso.", "HiMERU está un poco triste de que el día tenga que terminar…", "HiMERU espera que lo sigas cuidando, señorita productora."] } },
-      { era: "!!", id: "evt-ballad", title: "SHUFFLE x Balada de los perdidos", type: "event", unit: null, order: 24, chapters: 12, description: "El proyecto más reciente de P-Choice consiste en una película. Yuzuru y Niki son elegidos como co-protagonistas por un director al que ayudaron. Pero actuar como entidades inhumanas es más dificil de lo que pensaban...", featured: ["yuzuru", "niki", "rei", "tsumugi", "mama", "hajime"], hidden: true, status: "complete", banner: "https://i.postimg.cc/8knsYXLm/latest-cb-20240914102438.webp", translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" }},
+      { era: "!!", id: "evt-ballad", title: "SHUFFLE x Balada de los perdidos", type: "event", unit: null, order: 24, chapters: 12, description: "El proyecto más reciente de P-Choice consiste en una película. Yuzuru y Niki son elegidos como co-protagonistas por un director al que ayudaron. Pero actuar como entidades inhumanas es más dificil de lo que pensaban...", featured: ["yuzuru", "niki", "rei", "tsumugi", "mama", "hajime"], hidden: false, status: "complete", banner: "https://i.postimg.cc/8knsYXLm/latest-cb-20240914102438.webp", translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" }},
     ];
     const STORY_CHAPTERS = {
       "himeru-bday-2026": [
@@ -2516,8 +2516,8 @@
       { id: 7, title: "Henoheno / Episodio 6", translated: true, releaseAt: "2026-07-07T00:00:00-04:00" },
       { id: 8, title: "Henoheno / Episodio 7", translated: true, releaseAt: "2026-07-08T00:00:00-04:00" },
       { id: 9, title: "Henoheno / Episodio 8", translated: true, releaseAt: "2026-07-09T00:00:00-04:00" },
-      { id: 10, title: "Henoheno / Episodio 9", translated: false, releaseAt: "2026-07-10T00:00:00-04:00" },
-      { id: 11, title: "Henoheno / Episodio 10", translated: false },
+      { id: 10, title: "Henoheno / Episodio 9", translated: true, releaseAt: "2026-07-10T00:00:00-04:00" },
+      { id: 11, title: "Henoheno / Episodio 10", translated: false, releaseAt: "2026-07-11T00:00:00-04:00" },
       ],
       "evt-ballad": [
        { id: 1, title: "Prólogo", translated: true, translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" } },
@@ -2531,7 +2531,7 @@
         { id: 9, title: "Descubrimiento / Episodio 2", translated: true },
         { id: 10, title: "Descubrimiento / Episodio 3", translated: true },
         { id: 11, title: "Epílogo 1", translated: true },
-        { id: 12, title: "Epílogo 2", translated: true },
+        { id: 12, title: "Epílogo 2", translated: true, song: { title: "Balada de los Perdidos", artist: "SHUFFLE", src: "audio/balada.mp3", cover: "https://i.postimg.cc/cH1tR4yY/latest-cb-20240728150221.webp", theme: { bg: "linear-gradient(135deg,#140608,#2a0a10 55%,#3d0d12)", border: "1px solid rgba(200,40,55,0.4)", shadow: "0 3px 16px rgba(120,10,20,0.45)", coverEmoji: "🕯️", coverBg: "radial-gradient(circle at 50% 35%,#4a0e16,#160608)", coverBorder: "1px solid rgba(200,40,55,0.45)", coverShadow: "0 3px 12px rgba(140,10,25,0.5)", btn: "linear-gradient(135deg,#c81f2e,#7a0d16)", btnShadow: "0 3px 10px rgba(200,30,45,0.5)", title: "#ff5b6b", artist: "#c88a9a", track: "rgba(200,60,80,0.22)", fill: "linear-gradient(90deg,#7a0d16,#e0323f)", time: "#b06a78", decor: [ { emoji: "🕸️", left: "-6px", top: "-8px", size: 34, opacity: 0.14 }, { emoji: "🕸️", left: "auto", right: "6px", top: "auto", bottom: "-10px", size: 30, opacity: 0.12 }, { emoji: "👻", left: "62%", top: "14%", size: 20, opacity: 0.14 }, { emoji: "🔥", left: "44%", top: "58%", size: 18, opacity: 0.16 }, { emoji: "🔥", left: "80%", top: "52%", size: 16, opacity: 0.13 } ] } } },
       ],
       "evt-marching": [
       { id: 1, title: "Nazuna Nito / Episodio 1", translated: true, translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" } },
@@ -2540,6 +2540,491 @@
       { id: 4, title: "Tomoya Mashiro / Episodio 1", translated: true },
       { id: 5, title: "Tomoya Mashiro / Episodio 2", translated: true },
       { id: 6, title: "Tomoya Mashiro / Epsiodio 3", translated: true },
+      ],
+    };
+
+    const STORY_MINITALKS = {
+      "evt-ballad": [
+        {
+          id: 1, char: "yuzuru", title: "Yuzuru · Descanso de primavera", translated: true, type: "miniTalk",
+          sections: [
+            {
+              intro: [
+                { type: "location", src: "https://i.postimg.cc/6qKNFTzK/1000-cb-20200621002202.webp", label: "Cafetería COCHI" },
+                { speaker: "yuzuru", lines: ["Estoy muy agradecido por todos tus consejos, señorita Anzu.", "¿Qué te parece si pedimos algo de comer? Supongo que después de tanto hablar te ha dado hambre.", "Si no me equivoco, este restaurante tiene un menú de temporada y uno normal. ¿Cuál prefieres?"] },
+              ],
+              prompt: "¿Qué menú prefieres?",
+              options: [
+                { label: "El menú normal está bien.", dialogue: [
+                  { speaker: "yuzuru", lines: ["¿El normal? Entonces puedes elegir una de estas comidas.", "Como hay mucho donde elegir, es un poco difícil.", "¿Hay algo que te llame la atención, señorita Anzu? Yo me encargo de la cuenta, así que pide lo que más te apetezca."] },
+                ] },
+                { label: "El menú de temporada.", dialogue: [
+                  { speaker: "yuzuru", lines: ["Hmm. Parece que tienen muchos postres con sabor a flor de cerezo.", "Y también tienen panqueques de matcha y pasta con mostaza parda.", "Jeje, cada plato de este menú está pensado para saber a primavera."] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "yuzuru", lines: ["Mmm, los postres de este sitio están muy ricos.", "Creo que la última vez que vine con el joven amo no estaban en el menú.", "Tengo que decírselo al joven amo. Seguro que le encantan… ♪"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "Espero que le gusten.", dialogue: [
+                  { speaker: "yuzuru", lines: ["Yo también. Al joven amo le gustan bastante las cosas dulces, así que seguro que estará muy contento.", "Pero últimamente ha comido fuera de horas más a menudo… Tengo que tener cuidado con eso.", "… Desde que me gradué de Yumenosaki, parece que ha aprovechado su libertad al máximo cuando no lo estoy vigilando."] },
+                ] },
+                { label: "Este también está rico.", dialogue: [
+                  { speaker: "yuzuru", lines: ["¿Oh? Quizá deba pedir uno de esos también, entonces. Gracias por la recomendación.", "Se ve muy apetecible, pero nunca lo he probado.", "Me haría feliz que me recomiendes alguna cosa más, señorita Anzu."] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "yuzuru", lines: ["Ahh… No hay nada mejor que una taza de té tras el almuerzo.", "El aroma, la temperatura exacta, la preparación… Todo es exquisito.", "Ahora estoy de humor para preparar té también… ♪"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¿Habrás adoptado el hábito por tu trabajo?", dialogue: [
+                  { speaker: "yuzuru", lines: ["Quizá. O quizá disfrutar de una mezcla tan fantástica me ha inspirado a mejorar.", "Aunque no soy malo con el té, siempre se puede mejorar.", "Me dedicaré a preparar té incluso más delicioso."] },
+                ] },
+                { label: "Ahora también me apetece tomar té.", dialogue: [
+                  { speaker: "yuzuru", lines: ["¿De verdad? En ese caso, ¿te gustaría celebrar una pequeña fiesta de té?", "Ayer compré unas hojas nuevas, y tengo muchas ganas de probarlas.", "Me encantaría saber qué opinas, señorita Anzu. Jeje, qué emoción… ♪"] },
+                ] },
+              ],
+            },
+          ],
+        },
+        {
+          id: 2, char: "yuzuru", title: "Yuzuru · Limpiando la oficina", translated: true, type: "miniTalk",
+          sections: [
+            {
+              intro: [
+                { type: "location", src: "https://i.postimg.cc/6pqxkkV8/1000-cb-20200508182603.webp", label: "Oficina de STAR PRO" },
+                { speaker: "yuzuru", lines: ["Jeje. Ahora solo falta guardar los afiches que reemplazamos. Vamos a mover los muebles para limpiar por debajo, ¿vale?", "Parece que terminaré antes de lo que pensaba gracias a ti, señorita Anzu.", "… ¿Dices que los idols no suelen hacer esto? Por favor, no te preocupes. Lo hago porque lo disfruto ♪"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "Me aseguraré de compensarte.", dialogue: [
+                  { speaker: "yuzuru", lines: ["Oh no, no hace falta. Que me permitas limpiar es más que suficiente.", "Hace tiempo que me molesta lo sucia que está la zona cerca de las estanterías de Trickstar…", "Así que poder limpiarlo me hace muy feliz ♪"] },
+                ] },
+                { label: "Yo me ocupo de lo que falta.", dialogue: [
+                  { speaker: "yuzuru", lines: ["Tú tampoco deberías ocuparte de esto, ¿no, señorita Anzu?", "Creo que sería mejor si me permites ayudarte. Si trabajamos juntos dejaremos la oficina reluciente en un momento.", "Además, todavía queda un rato hasta que lleguen los demás… Como estamos limpiando temprano por la mañana, todos podrán pasar el día en una oficina muy pulcra ♪"] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "yuzuru", lines: ["Dejando eso de lado, los pósters nuevos le dan un aire fresco a la agencia.", "Jeje. Estoy seguro de que ALKALOID estará muy alegre. Ya me imagino sus caras.", "Sabes, quizá nos podríamos sacar una foto con todos los idols de la agencia para recordar la ocasión… ♪"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¡Será un lindo recuerdo!", dialogue: [
+                  { speaker: "yuzuru", lines: ["De hecho, el joven amo estaba organizando uno de sus álbumes de fotos el otro día, y me dijo que no tenía muchas fotos mías.", "Sin embargo, yo suelo sacarle casi todas las fotos, así que no me pareció raro…", "Pero conversamos sobre sacarle fotos a las unidades y los idols de la agencia."] },
+                ] },
+                { label: "Voy a buscar la cámara.", dialogue: [
+                  { speaker: "yuzuru", lines: ["¿Oh? ¿Te ofreces para ser nuestra fotógrafa, señorita Anzu?", "Seguro que casi todos preferimos que salgas en la fotografía…", "Quizás podemos poner un trípode. Así no queda nadie fuera."] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "yuzuru", lines: ["Listo. La oficina está mucho mejor ♪", "Me voy a tomar un café. ¿Quieres algo, señorita Anzu?", "Suelo beber té, pero mientras estábamos grabando fui a una tienda que vendía un café tan delicioso que decidí comprarme unos granos."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¿Los estás moliendo tú mismo?", dialogue: [
+                  { speaker: "yuzuru", lines: ["Jeje. El señor Yuuki compró una máquina de café para su cuarto hace poco, así que nos ha traído la antigua a la oficina.", "A pesar de que es de segunda mano, es automática y tiene muchas funciones…", "La uso de vez en cuando… ♪"] },
+                ] },
+                { label: "¡Yo también quiero probarlo!", dialogue: [
+                  { speaker: "yuzuru", lines: ["En ese caso, por favor espera un momento.", "Creo que el chocolate que me regaló el señor Eichi sigue en la nevera. Te voy a traer un poco también.", "Jeje. Hemos empezado el día con muchos caprichos."] },
+                ] },
+              ],
+            },
+          ],
+        },
+        {
+          id: 3, char: "niki", title: "Niki · Batido de verduras", translated: true, type: "miniTalk",
+          sections: [
+            {
+              intro: [
+                { type: "location", src: "https://i.postimg.cc/d3wz4pQ9/1000-cb-20200508175426.webp", label: "Jardín del Cielo" },
+                { speaker: "niki", lines: ["¿Oh, An? ¿Qué haces aquí sentada mirando a la nada? ¿Te ha dado tanta hambre que no puedes moverte…?", "No tienes hambre, ¿pero estás agotada~?", "En momentos como este, tienes que consumir nutrientes extra. ¡Mira, te comparto un poco de mi zumo de verduras!"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¿Lo has hecho tú?", dialogue: [
+                  { speaker: "niki", lines: ["¡Sí! Tiene espinaca, zanahoria y muchas cosas más… ¡Y también le he puesto fruta y miel para que esté rico!", "Me pasó algo hace poco, y desde entonces me apasionan las verduras~", "Son igual de ricas que la carne o el pescado. ¡Y hasta pueden ser el plato principal! Estoy aprendiendo nuevas formas de cocinarlas ♪"] },
+                ] },
+                { label: "Me vendría bien una bebida.", dialogue: [
+                  { speaker: "niki", lines: ["¡Oh, genial! Toma, te la abro~", "Ah, perdón. Supongo que puedes hacer eso sola, ¿no? Pero ya la he abierto, ¡así que adelante!", "Creo que no pasa nada por dejar que la gente te ayude cuando estás agotado ♪"] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "niki", lines: ["Hace unos días, me dio tanta hambre que me quedé frito de la nada en mi cuarto.", "Pero Takamine pasaba por ahí y me salvó la vida. Me preparó verduras crudas con lo que había cosechado en Gardenia.", "Estaba demasiado rico~ ¡Desde ese momento estoy en racha! ¡Solo cocino cosas con verduras!"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¿Cuál es tu verdura favorita?", dialogue: [
+                  { speaker: "niki", lines: ["An, ¡me preguntas algo muy difícil! ¡No puedo elegir solo una!", "Las hortalizas de raíz, las verduras de hoja verde, las que crecen en las parras… Todas tienen su encanto, ¿no?", "El repollo de primavera está súper rico esta temporada~ Voy a preparar una pasta con un montón de verduras de primavera para cenar esta noche ♪"] },
+                ] },
+                { label: "Me alegra que Takamine te ayudase.", dialogue: [
+                  { speaker: "niki", lines: ["¡Y que lo digas! Estaba en mi cuarto, así que alguien me hubiese encontrado tarde o temprano.", "Pero si me quedaba solo mucho tiempo… ¡Por eso estoy muy agradecido con Takamine!", "Le preparé unos donuts de verduras para darle las gracias, y creo que le gustaron mucho ♪ Hasta me pidió repetir~"] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "niki", lines: ["Parece que estás de mejor humor con el batido. Me alegro.", "No te preocupes. No me perdonaría si te ignorase al verte tan cansada. ¡Y los de ES no me dejarían en paz tampoco!", "Mucha gente se preocupa por ti. Tienes que asegurarte de cuidar tu cuerpo."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "Lo haré.", dialogue: [
+                  { speaker: "niki", lines: ["¡Así me gusta!", "A veces veo a nuestro Director Adjunto trabajar tanto que me preocupa.", "Suelo dejarle detallitos en el escritorio~ Pero no creo que sepa que se los regalo yo."] },
+                ] },
+                { label: "Esto es para ti.", dialogue: [
+                  { speaker: "niki", lines: ["Es… ¿¡Un cupón de descuento para un buffet!?", "¡Solo te he dado un zumo! ¿Seguro que me lo puedo quedar?", "Wow, ¿sí que vale la pena hacer cosas buenas, eh~? ¡Ahora tengo aún más ganas de ir a trabajar!"] },
+                ] },
+              ],
+            },
+          ],
+        },
+        {
+          id: 4, char: "niki", title: "Niki · Una comida para un Dios", translated: true, type: "miniTalk",
+          sections: [
+            {
+              intro: [
+                { type: "location", src: "https://i.postimg.cc/Df5Jx5J2/1000-cb-20200712225043.webp", label: "Calle Tiempo" },
+                { speaker: "niki", lines: ["¿Oh? ¿Vienes de vuelta de la grabación, An? Qué coincidencia encontrarme contigo ♪", "Ah, sí, hay una exhibición de ocultismo a la vuelta de la esquina. Pero no vine por eso.", "¡Se rumorea que el restaurante de la exhibición es fantástico, así que vine a probarlo!"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¿Qué has comido?", dialogue: [
+                  { speaker: "niki", lines: ["¡Probé el plato “Yokai Terrorífico”! Es una colaboración entre el restaurante y la exhibición.", "Todos los platos se veían curiosos y ricos.", "Me dieron ganas de añadir algo parecido al menú del Cinnamon ♪"] },
+                ] },
+                { label: "Siempre tienes datos de restaurantes nuevos.", dialogue: [
+                  { speaker: "niki", lines: ["Mh-hmm. Un chef de verdad siempre tiene que estar al día con todas las novedades culinarias~ ♪", "… Me gustaría decir eso, pero en realidad fue Aoba el que me contó de este restaurante.", "Al parecer Switch estuvo ayudando con la exposición. ¿Creo que iban a actuar ahí o algo así…?"] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "niki", lines: ["¿Has aprendido mucho sobre los dioses locales? Ohh, no sabía que te interesaban esos temas a ti también.", "Me pregunto… ¿Las entidades inhumanas comerán algo?", "Seguro que ni les da hambre, ¿no…? Me darían un poco de envidia si nunca tienen hambre."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¿No se comen las ofrendas…?", dialogue: [
+                  { speaker: "niki", lines: ["Ahh, es verdad. Mucha gente lleva comida a los santuarios y esas cosas.", "¿Será como un bufet de tenedor libre con todas las ofrendas que les llegan?", "Si es algo así, ¡qué celos! ¡Aunque no poder elegir lo que quieres es un poco deprimente…!"] },
+                ] },
+                { label: "¿Por qué no vas a ver la exhibición?", dialogue: [
+                  { speaker: "niki", lines: ["Umm~ No iba a ir porque no me interesa mucho.", "¿Qué dices? ¿Hay una sección de comida en la exhibición? Eso sí que me gusta.", "A lo mejor hay algún consejo sobre ingredientes o platos que no conozco."] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "niki", lines: ["Ah, ¿tienes que irte a trabajar después de esto? Yo tengo el día libre, ¡así que mi plan es comer algo y dar un paseo!", "Kohaku me recomendó una tienda nueva que vende los mejores churros del mundo~ ♪", "¡Parece que está muy llena, así que estoy listo para enfrentarme a una fila larga…!"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "Seguro que puedes manejarlo.", dialogue: [
+                  { speaker: "niki", lines: ["Si al final puedo comer algo rico, ¡no me importa tener que esperar!", "Ojalá pudieses venir conmigo, Anzu. ¡Qué pena…!", "Deberíamos ir juntos cuando tengas un rato ♪"] },
+                ] },
+                { label: "Espero que estén muy ricos.", dialogue: [
+                  { speaker: "niki", lines: ["Solo de pensar en los churros recién fritos con azúcar y canela…", "¡Ya me está dando hambre…!", "Como tendré que esperar un buen rato, mejor busco algo para picar antes."] },
+                ] },
+              ],
+            },
+          ],
+        },
+        {
+          id: 5, char: "rei", title: "Rei · Noticias de Postres", translated: true, type: "miniTalk",
+          sections: [
+            {
+              intro: [
+                { type: "location", src: "https://i.postimg.cc/y6XYVTFC/1000-cb-20200508181940.webp", label: "Calle Estaciones" },
+                { speaker: "rei", lines: ["Descubrí algo mientras estaba paseando… ¿A lo mejor ya lo sabes, jovencita?", "Kekeke, se rumorea que hay una tienda cerca que vende los dulces más deliciosos del mundo ♪", "Si he despertado tu curiosidad, ¿quizás podríamos ir juntos?"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¡Claro que sí!", dialogue: [
+                  { speaker: "rei", lines: ["Oh, vaya, no esperaba tanto entusiasmo.", "Ahh, ¿dices que te has olvidado de almorzar y tienes mucha hambre?", "En ese caso, hemos recibido estas deliciosas noticias justo a tiempo."] },
+                ] },
+                { label: "Nunca he ido a ese sitio.", dialogue: [
+                  { speaker: "rei", lines: ["Las pastelerías no suelen quedarse mucho en un mismo sitio hoy en día, ¿no?", "Asumo que sería bastante laborioso recordar todas las que hay por aquí cerca.", "Sin embargo, yo suelo terminar informado de estas cosas. Por favor, pregúntame cuando quieras."] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "rei", lines: ["¿Deseas saber por qué estoy tan informado en materias de postres?", "Jeje, es simple. UNDEAD presentó la inauguración de la tienda en un programa de comedia al que fuimos.", "Estaban deliciosos, me gustaron mucho. Le di algunos a Ritsu hace poco, y aunque no me dio las gracias, creo que estaba feliz."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "Tengo ganas de ver el programa.", dialogue: [
+                  { speaker: "rei", lines: ["Oh, ¿dices que verás nuestro programa en internet?", "Qué encantadora. Siéntete libre de verlo cuando tengas un poco de tiempo libre.", "Te recomiendo que te fijes en Koga. Estaba tan sorprendido con lo ricos que eran los postres que empezó a tartamudear ♪"] },
+                ] },
+                { label: "Me alegra que le hayan gustado a Ritsu.", dialogue: [
+                  { speaker: "rei", lines: ["Yo también. Hacía mucho que no veía a Ritsu sonreír de cerca… ♪", "No solo le gustaron, al parecer también inspiraron su creatividad en la cocina.", "Está pensando en inventar un nuevo tipo de postre. Pero no me ha dejado probarlo todavía…"] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "rei", lines: ["Bien, ¿vamos a la pastelería? Puede que haya fila…", "Tienes tiempo antes de tu próxima reunión, ¿verdad? Fantástico.", "Hoy no tengo que trabajar, pero sí que tengo una cena programada esta noche."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¿Una cena de negocios?", dialogue: [
+                  { speaker: "rei", lines: ["No, es una cena relajada con mis amigos.", "Hibiki, Shinkai y yo teníamos el día libre.", "Así que pensamos que sería buena idea juntarnos a comer. No puedo esperar ♪"] },
+                ] },
+                { label: "Es inusual tener tiempo libre.", dialogue: [
+                  { speaker: "rei", lines: ["Así es. Últimamente he estado saturado con todas las grabaciones.", "Cuando tengo tiempo libre, me aseguro de descansar.", "Tú también debes asegurarte de dormir lo suficiente y no trabajar de más, jovencita."] },
+                ] },
+              ],
+            },
+          ],
+        },
+        {
+          id: 6, char: "rei", title: "Rei · Tiempo Libre", translated: true, type: "miniTalk",
+          sections: [
+            {
+              intro: [
+                { type: "location", src: "https://i.postimg.cc/fWX5kVbG/1000-cb-20240802202631.webp", label: "Jardín del Cielo" },
+                { speaker: "rei", lines: ["Sakasaki me contó un poco sobre tu último proyecto de P Choice.", "Me da la sensación de que esta vez también nos hemos reunido un grupo interesante de gente.", "Seguro que será un proyecto exitoso… ♪"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¿Qué te contó…?", dialogue: [
+                  { speaker: "rei", lines: ["¿Te da curiosidad saber lo que me ha dicho Sakasaki?", "No te preocupes. Me dijo que fue un trabajo muy satisfactorio.", "Nunca duda de los encargos que le entregas, jovencita. Es solo que expresa la gratitud a su manera."] },
+                ] },
+                { label: "Asegurémonos de que vaya bien.", dialogue: [
+                  { speaker: "rei", lines: ["Claro que sí. Al fin y al cabo, imagino que el éxito de P Choice tendrá impacto en tu carrera profesional.", "No escatimaré ningún esfuerzo. Espero que sirva para compensar un poco todo lo que haces por nosotros, jovencita.", "Prepárate para ver mi mejor faceta… ♪"] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "rei", lines: ["Tengo un poco de tiempo libre. Quizás es hora de enterarme en qué proyectos han estado involucrados los demás.", "Como es obvio, sé los detalles básicos de todos… Pero es mejor conocerlos a profundidad si vamos a trabajar juntos.", "¿Qué ocurre? ¿Te gustaría saber más sobre lo que yo he hecho últimamente?"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¿Te ha tocado algún encargo divertido?", dialogue: [
+                  { speaker: "rei", lines: ["Déjame pensar… Las complicaciones del trabajo siempre son entretenidas…", "Pero supongo que el más divertido fue la sesión de fotos para una revista hace unos días. Me gustó ponerme trajes que no llevaría normalmente.", "La sesión estaba basada en sugerencias de los fans… Espero que tú también tengas ganas de verla, jovencita ♪"] },
+                ] },
+                { label: "¿Te ha tocado algún encargo complicado?", dialogue: [
+                  { speaker: "rei", lines: ["Hm~ Hay uno que me viene a la mente al instante.", "Estaba en un segmento de un programa de comedia sobre la búsqueda de vida extraterrestre, por más ridículo que parezca.", "Sin embargo, no podíamos volver al plató hasta que encontráramos algo. Aoba y yo tuvimos que caminar hasta que nos desmayamos…"] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "rei", lines: ["Bien, creo que es hora de terminar mi breve descanso y volver a la oficina.", "De hecho, Koga ha compuesto una canción nueva y quiere que la escuche.", "Se le nota muy orgulloso… Keke, no puedo esperar a ver qué se le ha ocurrido ♪"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "Yo también quiero escucharla.", dialogue: [
+                  { speaker: "rei", lines: ["Ohh, en ese caso, ¿quizás podemos ir juntos a Rhythm Link?", "Seguro que a Koga le gustará recibir varios comentarios sobre su canción. Y tu opinión es siempre más que bienvenida.", "Puedo llamar a Kaoru y a Adonis también, así vamos todos juntos."] },
+                ] },
+                { label: "¿Una canción nueva?", dialogue: [
+                  { speaker: "rei", lines: ["Así es. Todavía no sé cuándo la sacará al público, pero debes escucharla cuando lo haga.", "De momento parece ser solo un borrador… Imagino que le hará algunos ajustes.", "Kekeke. No puedo esperar al día del estreno… ♪"] },
+                ] },
+              ],
+            },
+          ],
+        },
+        {
+          id: 7, char: "madara", title: "Madara · Degustación", translated: true, type: "miniTalk",
+          sections: [
+            {
+              intro: [
+                { type: "location", src: "https://i.postimg.cc/BQ7CVH7D/1000-cb-20201128163912.webp", label: "Calle Tiempo" },
+                { speaker: "madara", lines: ["Un amigo mío preparó un evento en un restaurante por aquí cerca, así que fui a saludarlo.", "Era una degustación de su nuevo menú, y todo estaba riquísimo ♪", "Al parecer, van a sacar un menú nuevo y mejorado el mes que viene en base a esta degustación."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¡Qué emoción!", dialogue: [
+                  { speaker: "madara", lines: ["Ya estaba muy rico, ¿y ahora será aún mejor? Qué ganas ♪", "Estaba pensando reservar una cena en cuanto saquen el menú nuevo. ¿Te gustaría venir conmigo, Anzu?", "¡Me encantaría que probases lo rico que está todo tú misma!"] },
+                ] },
+                { label: "Me encantaría ir.", dialogue: [
+                  { speaker: "madara", lines: ["¡Qué bien! Vamos juntos el mes que viene, ¿entonces?", "Fui a la degustación de hoy yo solo, así que me puso un poco triste no poder hablar con nadie de lo rico que estaba todo.", "¡La comida siempre sabe mejor en compañía!"] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "madara", lines: ["¿Hm? Te preguntas por qué estoy cargado de bolsas, ¿no, Anzu?", "De hecho, preparé algunos regalos para llevarle a mi amigo, pero al final terminé yo lleno de souvenirs.", "Mira, son zumos de fruta 100% naturales. Están muy ricos. Toma, ¡quédate con un par!"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¡Esto es…!", dialogue: [
+                  { speaker: "madara", lines: ["¿Hm? ¿Dices que son una edición limitada de una verdulería carísima…?", "¡No sabía que tenían tanto valor!", "En ese caso, llévate todos los que quieras. Merecen que los disfrute alguien que sea capaz de comprender lo que valen."] },
+                ] },
+                { label: "¿Seguro?", dialogue: [
+                  { speaker: "madara", lines: ["Sí. No me los puedo tomar todos yo.", "La verdad, si no los quieres, se los daré a Wataru y al resto cuando vuelva a los dormitorios.", "Me haría muy feliz que los disfrutes, Anzu. ♪"] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "madara", lines: ["¿Has terminado todo lo que tenías que hacer por aquí, Anzu?", "Yo iba a pedirme un taxi de vuelta porque llevo muchas bolsas. ¡Si ya estás libre, puedes volver conmigo!", "Te puedo dejar en tu casa o en ES, donde prefieras."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¡En ES, por favor!", dialogue: [
+                  { speaker: "madara", lines: ["¡Entendido! No debería haber mucho tráfico a esta hora, así que llegaremos enseguida.", "Si tienes que volver a ES, ¿será que te queda mucho por hacer todavía, Anzu?", "Me da la sensación de que vas a volver tarde a casa. Asegúrate de tener cuidado a la vuelta."] },
+                ] },
+                { label: "¡Gracias!", dialogue: [
+                  { speaker: "madara", lines: ["No es nada. Te he dado muchas bolsas de bebidas, lo menos que puedo hacer es llevarte a casa.", "Además, me encantaría seguir hablando un rato más.", "Vamos a charlar de todas nuestras novedades en el camino de vuelta ♪"] },
+                ] },
+              ],
+            },
+          ],
+        },
+        {
+          id: 8, char: "madara", title: "Madara · Vínculos Profundos", translated: true, type: "miniTalk",
+          sections: [
+            {
+              intro: [
+                { type: "location", src: "https://i.postimg.cc/kMp9MhBR/1000-cb-20200508180927.webp", label: "Pasillo de ES" },
+                { speaker: "madara", lines: ["Desde que te has ido de la P-Asociación, seguro que tienes que encargarte de muchas cosas tú sola, ¿verdad?", "Tienes más libertad, pero imagino que se siente sobrecogedor o quizá te sientes aislada de los demás.", "Si alguna vez piensas eso, me puedes pedir ayuda a mí ♪"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "Eso es un alivio.", dialogue: [
+                  { speaker: "madara", lines: ["Me alegra que creas eso ♪", "Como he trabajado en una unidad yo solo mucho tiempo, sé lo difícil que es trabajar tú solo.", "Seguro que hay mucho con lo que te puedo ayudar si estás atascada, Anzu."] },
+                ] },
+                { label: "Lo recordaré.", dialogue: [
+                  { speaker: "madara", lines: ["Hmm… Me da la sensación de que te cortas un poco conmigo…", "Siempre quieres manejarlo todo sola, hasta que llegas a agotarte por completo, Anzu. De verdad, en cuanto me doy la vuelta, estás trabajando más de la cuenta.", "Sé que es porque eres muy responsable, ¡pero dejas a Mama muy preocupado!"] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "madara", lines: ["No me puedo creer que estoy participando en otra Unidad Shuffle.", "Es muy distinto a BUTOUKAI. Estoy muy emocionado.", "Pero también me gustó mucho trabajar en BUTOUKAI y hacerme más amigo de mis compañeros de gimnasio."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "Desde aquel entonces…", dialogue: [
+                  { speaker: "madara", lines: ["Oh, sí, todavía seguimos compartiendo rutinas de vez en cuando. Nos solemos topar en el gimnasio.", "Jaja, y siento que me he acercado más a Kuro ♪", "Me encantaría que los miembros de este proyecto nos ayudáramos a seguir creciendo también."] },
+                ] },
+                { label: "Yo también me lo pasé bien.", dialogue: [
+                  { speaker: "madara", lines: ["Siempre y cuando tú lo hayas disfrutado, yo estoy feliz.", "Viniste a vernos entrenar varias veces en ese entonces, ¿no?", "¡Creo que fue gracias a ti que todos nos motivamos para entrenar al máximo!"] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "madara", lines: ["Oh, hablando del rey de Roma, Jun me ha mandado un mensaje.", "Dice que quiere que Tetora, él y yo vayamos al gimnasio juntos por la tarde.", "No puedo decepcionar a mi querido novato si me ha pedido que vaya, ¿no?"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "No te sobreexijas demasiado.", dialogue: [
+                  { speaker: "madara", lines: ["Claro que no. No vale la pena entrenar si termino haciéndome daño.", "Además, tengo que parar a Tetora si se pone demasiado peso en las máquinas.", "¡Lo haremos todo bien, está bajo control! ¡No te preocupes!"] },
+                ] },
+                { label: "¡Diviértete!", dialogue: [
+                  { speaker: "madara", lines: ["Seguro que sí. Voy a forzar mis músculos al máximo junto a Tetora y Jun… ♪", "Tú también puedes venir si tienes un rato, Anzu.", "Hacer ejercicio sirve mucho para aclarar la cabeza. Y seguro que los chicos tienen ganas de verte ♪"] },
+                ] },
+              ],
+            },
+          ],
+        },
+        {
+          id: 9, char: "tsumugi", title: "Tsumugi · Leyendo Juntos", translated: true, type: "miniTalk",
+          sections: [
+            {
+              intro: [
+                { type: "location", src: "https://i.postimg.cc/pdQhg5Ys/1000-cb-20200621002204.webp", label: "Sala de Descanso de ES" },
+                { speaker: "tsumugi", lines: ["… Uf. Siento que ha pasado mucho tiempo desde la última vez que me senté a leer un rato.", "Ah, ¿tú también has terminado tu libro, Anzu?", "Perdón si te distraje mientras leías. Pero tenerte aquí me ha ayudado mucho a concentrarme."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "Yo también estaba muy concentrada.", dialogue: [
+                  { speaker: "tsumugi", lines: ["¿De verdad? Me alegra mucho saberlo.", "Leer solo tiene sus ventajas y todo eso, pero…", "Por algún motivo, tener a alguien cerca me ayuda a perderme mejor entre las páginas."] },
+                ] },
+                { label: "Bueno, es un lugar compartido.", dialogue: [
+                  { speaker: "tsumugi", lines: ["¿Dices que no tengo que darte las gracias? Supongo que es verdad.", "Pero me llamaste justo cuando me iba a ir.", "Estoy muy agradecido de poder concentrarme mejor que cuando estoy solo."] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "tsumugi", lines: ["Estabas leyendo ese libro que está tan de moda últimamente, ¿no, Anzu?", "Yo leía el guion de una serie. ¿Te acuerdas de ese drama médico que tuvo muy buenas críticas por lo bien escrito que estaba?", "Me encantó verlo, así que imaginé que me gustaría leer el guion también. Y estaba en lo correcto."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "Esa serie es buenísima, ¿a que sí?", dialogue: [
+                  { speaker: "tsumugi", lines: ["Ah, ¿tú también la has visto, Anzu? Jeje, me encanta poder hablar con alguien a la que también le gusta.", "Esa escena en que operaron de corazón abierto al protagonista al final fue súper conmovedora, ¿verdad?", "Lo vi con Natsume, y me dijo que no paraba de sonreír y que me veía raro…"] },
+                ] },
+                { label: "Al leer el guion…", dialogue: [
+                  { speaker: "tsumugi", lines: ["Exacto. Te das cuenta de todos los detalles que no notaste solo viendo la serie.", "Es una lectura muy entretenida incluso si no te acuerdas muy bien de lo que pasó en la serie.", "Oh, ¿te interesa? Te puedo prestar el guion, entonces ♪"] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "tsumugi", lines: ["Las tramas de las series siempre son interesantes, pero ver la interpretación de los actores también es entretenido.", "Es incluso mejor cuando sale alguien que conozco. Lo disfruto mucho más.", "¿Qué tipo de serie crees que se me daría bien, Anzu?"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¿Un romance, quizás?", dialogue: [
+                  { speaker: "tsumugi", lines: ["Wow, ¡no me esperaba eso…! Me voy a sonrojar.", "Hay un montón de romances, ¿no? Desde historias de amor muy bonitas hasta engaños entre parejas…", "… ¿Dices que parece que sé mucho al respecto? Oh, ¡no es que vea muchas series de ese género ni nada…!"] },
+                ] },
+                { label: "¿Una serie de suspenso, quizás…?", dialogue: [
+                  { speaker: "tsumugi", lines: ["Ese tipo de series dependen mucho de los personajes y el guion.", "¿A lo mejor podría hacer de detective…? Aunque me da la sensación de que hacer de criminal también sería divertido.", "Jeje. Espero que me avises si te llega algún encargo de ese estilo… ♪"] },
+                ] },
+              ],
+            },
+          ],
+        },
+        {
+          id: 10, char: "tsumugi", title: "Tsumugi · Amuleto del Guardián", translated: true, type: "miniTalk",
+          sections: [
+            {
+              intro: [
+                { type: "location", src: "https://i.postimg.cc/nhdxPH6J/1000-cb-20200508180336.webp", label: "Sala de Reuniones de ES" },
+                { speaker: "tsumugi", lines: ["Oh, disculpa. No quería ocupar tanto espacio con mis cosas…", "Ah, sí. Esto es un amuleto de la suerte que me regalaron hace poco. Por lo visto, un dios guardián me recompensará con buena fortuna.", "Quiero creer que tiene a un dios dentro que me cuida, así que no quiero que le pase nada. Por eso estoy arreglando esta pequeña rotura."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "¿Y has tenido buena suerte?", dialogue: [
+                  { speaker: "tsumugi", lines: ["Hmm, de momento, no me ha pasado nada muy terrible, todo va bastante bien~ ♪", "No sé cuánto de eso se lo debo al amuleto, pero…", "Bueno, estas cosas solo funcionan si crees en ellas. Lo cuidaré mucho."] },
+                ] },
+                { label: "Tienes que cuidarlo bien.", dialogue: [
+                  { speaker: "tsumugi", lines: ["Jeje. A ti también te gusta cuidar bien de las cosas, ¿verdad, Anzu? Me alegra que lo entiendas.", "… Hm~ Es una rotura pequeña, pero no se ve bien. Aun así, no tengo tiempo de hacerle una costura nueva entera…", "¿Dices que te puedes encargar tú si no me da tiempo? Yey, gracias, Anzu… ♪"] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "tsumugi", lines: ["Como este amuleto es muy bonito, todos los jóvenes lo están comprando. No fue fácil conseguirlo.", "Pero le pude comprar uno a Natsume y otro a Sora. Me imaginé que les gustaría más que un aburrido y viejo amuleto tradicional.", "Sora lo lleva colgando de la mochila, pero no he visto que Natsume lleve el suyo… A lo mejor no le gustó."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "Eso no es verdad.", dialogue: [
+                  { speaker: "tsumugi", lines: ["Lo dices con mucha confianza… O sea, me alegra que te preocupe, pero…", "Oh, ¿estuviste hablando con él sobre el amuleto ayer por la noche? ¿Y te enseñó que lo tiene guardado en la cartera…?", "Conque lo ha puesto en su cartera… ♪ Jeje, sabía que Natsume era dulce por dentro."] },
+                ] },
+                { label: "No te preocupes.", dialogue: [
+                  { speaker: "tsumugi", lines: ["¿Te vas a reunir con Natsume para un encargo después de esto, así que le intentarás preguntar por el amuleto?", "¡No, no…! No es tan importante como para que te ocupes de eso, Anzu. Por favor, no te preocupes.", "Me juntaré con Natsume mañana, y le preguntaré sobre el amuleto. Si no le gusta, buscaré otra cosa para regalarle."] },
+                ] },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "tsumugi", lines: ["Uf, por fin termino de coser. Gracias por hacerme compañía… ♪", "Ahora tengo que encargarme de unos temas de gestión de la agencia.", "Últimamente me ha tocado mucho trabajo de idol, así que no paro de acumular papeleo. Si no lo soluciono hoy, será todo un problema."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                { label: "Yo te ayudo.", dialogue: [
+                  { speaker: "tsumugi", lines: ["No, por favor, no te preocupes. Es trabajo mío.", "¿Dices que tienes tiempo libre y estás impaciente…? Jeje, no debería decírtelo yo, pero te encanta trabajar, ¿no?", "Vale, en ese caso, me encantaría que me ayudases. Muchas gracias ♪"] },
+                ] },
+                { label: "Mientras haces eso…", dialogue: [
+                  { speaker: "tsumugi", lines: ["¿Quieres saber si tengo alguna rotura más que arreglar? Algunos de mis trajes son muy delicados, así que pensaba arreglarlos yo solo en vez de llevarlos a la costurera…", "Ajaja, ¿dices que verme coser te ha dado ganas de hacer lo mismo?", "Bueno, si insistes. Me aseguraré de compensarte adecuadamente luego."] },
+                ] },
+              ],
+            },
+          ],
+        },
       ],
     };
 
@@ -8182,29 +8667,56 @@
     { speaker:"esu", lines:["... Bueno, puede que sea verdad, pero..."] },
     { speaker:"kanna", lines:["......"] },
     ],
+    10: [
+    { speaker:"kanna", lines:["Tengo una duda. ¿Por qué estás tan obsesionado con ganar el MM, Esu?"] },
+    { speaker:"esu", lines:["¿Eh? No es que esté obsesionado..."] },
+    { speaker:"kanna", lines:["Para empezar, no hay ninguna ventaja derivada de ganar o perder el MM.", "Como mucho, obtendremos un poco de fama si llegamos hasta el final."] },
+    { speaker:"esu", lines:["Bueno, ¡ser más famoso es una gran ventaja!", "¿No sería impresionante ser conocido como “el mejor idol del mundo”?"] },
+    { speaker:"kanna", lines:["Pero ese título no es tangible.", "No te premian con dinero, ni con ningún privilegio especial. No hay ningún beneficio.", "Si la única recompensa es ser conocido como el mejor del mundo, no me parece nada interesante.", "¿No piensas lo mismo, Esu?"] },
+    { speaker:"esu", lines:["No, la verdad es que no le he dado tantas vueltas.", "Para mí es más simple. Es muy guay ganar un torneo, pero es frustrante perderlo.", "Y seguro que nuestros fans piensan lo mismo.", "Aunque hay idols mucho más famosos o geniales que nosotros, tenemos fans que se toman la molestia de apoyarnos día tras día.", "Ellos estarán contentos si ganamos, pero estarán muy decepcionados si perdemos, ¿no?", "No estamos peleando solo por beneficio propio.", "Al subirnos al escenario, cargamos con la esperanza de todos nuestros fans.", "Tú tampoco quieres decepcionar a nadie, ¿verdad?"] },
+    { speaker:"kanna", lines:["Ah... Así que piensas eso."] },
+    { speaker:"esu", lines:["¿¡Por qué pones cara de que no lo entiendes!? No es tan complicado. ¡Y tampoco estoy equivocado! ¿A que no, Raika...?"] },
+    { speaker:"raika", lines:["... ¿Eh? ¿Qué? ¡Ah, sí! ¡Claro que sí!"] },
+    { speaker:"esu", lines:["¡¡Ni siquiera me estás escuchando!!"] },
+    { speaker:"raika", lines:["¡Ups...! ¡Lo siento! Me cuesta entender esta' cosa'."] },
+    { speaker:"kanna", lines:["Sí, estoy de acuerdo. La explicación de Esu es enrevesada y difícil de entender."] },
+    { speaker:"raika", lines:["¿¡Hasta a Kanna le ha costao'!? Wow, ¡Esu es má' listo de lo que parece!"] },
+    { speaker:"esu", lines:["¡No, no! ¡No pretendía que fuese complicado!"] },
+    { speaker:"kanna", lines:["Piensas mucho con el corazón... Con tanto sentimentalismo, me cuesta interpretar tu discurso lógicamente.", "Pero creo que lo entiendo a grandes rasgos. Como seres humanos, buscamos cumplir con las expectativas que los demás tienen de nosotros.", "Incluso antes de la primera ronda, los fans estaban muy emocionados y esperaban una competición de ternura.", "Sentir que quieres complacer a los fans... Supongo que es inevitable.", "Pero no es más que un pensamiento derivado del deseo de no decepcionar a nadie, de tu necesidad de validación... De no querer perder tu valor a ojos de los demás."] },
+    { speaker:"esu", lines:["¿¡Puedes parar!? ¡Pensé que por fin nos estábamos entendiendo, pero lo has estropeado!"] },
+    { speaker:"kanna", lines:["La verdad es que me parece un incordio. Pero si tienes tantas ganas de ganar, Esu, pensemos en una estrategia."] },
+    { speaker:"esu", lines:["¿¡Qué!? ¿¡De verdad!? ¡Por fin te has motivado! ¡No me lo creo!"] },
+    { speaker:"kanna", lines:["Nunca me ha faltado motivación. Bueno, pero con el mínimo esfuerzo hemos terminado causando una polémica en redes.", "Esta vez podemos intentar otra cosa, siempre que no sea muy molesto."] },
+    { speaker:"esu", lines:["... No es exactamente la respuesta que esperaba. ¡Pero bueno!", "¡Vale! Ahora solo nos falta lidiar con Yume...", "Kanna, tú has llegado a la hora. ¿Qué le habrá pasado a él? No ha llegado a tiempo."] },
+    { speaker:"kanna", lines:["Estaba encerrado en su habitación cuando vine hacia aquí.", "A lo mejor sigue de mal humor, igual que ayer."] },
+    { speaker:"esu", lines:["O sea que sigue en modo princesa mimada total, ¿eh?"] },
+    { speaker:"raika", lines:["Yume... Le debe haber afectao' mucho perder el otro día, ¿verda'?", "Quiero animar a Yume..."] },
+    { type:"location", src:"https://i.postimg.cc/jqGC5j12/1000-cb-20250523065410.webp", label:"Habitación de Yume", position:"center center" },
+    { speaker:"fuyume", lines:["Hmmm... (Leyendo comentarios sobre el MM en redes.)", "... Ciegos. Ciegos. Este también está ciego... ¿¡Es que todos han visto el MM con los ojos cerrados!?", "......", "... (Apaga y deja el teléfono y al cabo de un segundo lo vuelve a encender, una y otra vez.)", "¡Ah...! ¡Este comentario!", "¡Alguien ha escrito que los de Esupri somos más adorables!", "Y esta persona también. Ha puesto que nuestra actuación fue la mejor.", "Jeje. Por lo visto sí que hay gente que entiende a Yume de verdad.", "Bueno, entonces no pasa nada. Si por lo menos alguien lo comprende, Yume está contento.", "... ¿Eh? ¿Qué es este comentario...?", "“Ni siquiera son capaces de ser tiernos. No vale la pena verlos.”", "“¿Por qué os conmueve tanto este jueguecito de fingir ser idols?”", "“¿Y qué se supone que representa un príncipe unicornio? Por favor, parece sacado de una obra de teatro de parvularios.”", "... Ugh. Yume no se lo cree. ¡Y pensar que hay tanta gente estúpida!", "Yume supuso que si mostraba su encanto natural, todos lo entenderían, pero Yume fue demasiado ingenuo.", "... Aunque es cierto que nos faltó preparación. Los demás no tuvieron la mejor puesta en escena.", "Nunca pensé que dirían que al personaje de Yume le faltan detalles, pero admitiré que eso es culpa de Yume.", "Pero la próxima vez, Yume no dejará que le digan nada.", "El mundo que Yume ha creado no es ninguna obra de parvularios ni ningún jueguecito. Yume lo demostrará.", "Ra*bits, que solo fingen ser tiernos, se van a enterar de lo que es la ternura real de Esupri."] },
+    ],
   },
    "evt-ballad": {
       1: [
     { type:"location", src:"https://i.postimg.cc/Kz14cn2m/1000-cb-20200508181940.webp", label:"Avenida Estaciones", position:"center center" },
-    { speaker:"niki", lines:["(Ñam, ñam)...♪", "¡Mmm~! Este hashimaki está delicioso. Qué suerte toparme con un puesto de comida.", "No me puedo creer que algo tan rico sea solo popular en algunas zonas del país.", "No tiene sentido~ ¡Debería gustarle a todo el mundo!", "Es un snack de harina y fácil de hacer, ¡y hasta se puede elegir el sabor!", "(Hablando en falseto) Bienvenido~♪ ¿Qué condimento prefiere? ¿Soya? ¿O queso?", "Aww~ ¡No puedo elegir!", "...¡Ups! ¡Casi me lo salto...!", "Najaja, me distraje con un snack delicioso y casi se me olvida por qué estoy aquí~", "Wow, ¿¡por qué hay tanta fila!? Los churros esponjosos son súper famosos, ¿no?", "Pensé que si llegaba temprano no habría nadie. No me imaginé que llegaría tanta gente.", "Será verdad que la comida rica une a las personas~", "¡Creo que hasta se podría decir que la comida rica es el secreto para la paz mundial...!", "Ups, no me puedo emocionar mucho. Tengo que ponerme a la fila antes de que se alargue más."] },
+    { speaker:"niki", lines:["(Ñam, ñam)...♪", "¡Mmm~! Este hashimaki está delicioso. Qué suerte toparme con un puesto de comida.", "No me puedo creer que algo tan rico solo sea popular en algunas zonas del país.", "No tiene sentido~ ¡Debería gustarle a todo el mundo!", "Es un snack de harina, fácil de hacer, ¡y hasta se puede elegir el sabor!", "(Hablando en falseto) Bienvenido~♪ ¿Qué condimento prefiere? ¿Soya? ¿O queso?", "Aww~ ¡No puedo elegir!", "...¡Ups! ¡Casi me lo salto...!", "Najaja, me distraje con un snack delicioso y casi se me olvida por qué estoy aquí~", "Wow, ¿¡por qué hay tanta fila!? Se ve que los churros esponjosos son súper famosos, ¿no?", "Pensé que si llegaba temprano no habría nadie. No me imaginé que llegaría tanta gente.", "Será verdad eso de que la comida rica une a las personas~", "¡Creo que hasta se podría decir que la comida rica es el secreto para lograr la paz mundial...!", "Ups, no me puedo emocionar mucho. Tengo que ponerme en la fila antes de que se alargue más."] },
     { speaker:"yuzuru", lines:["Veamos... Si no me equivoco, esto es todo.", "Esto lo tengo, esto también... Esto otro no estaba, pero puedo volver otro día.", "...Hmm, creo que lo tengo todo. No me falta nada."] },
     { speaker:"niki", lines:["Qué emoción~ Probar comida nueva hace que sienta un cosquilleo en el estómago ♪"] },
-    { speaker:"yuzuru", lines:["Hmm, ¿una voz conocida?", "Oh, así que es el señor Shiina. Parece que está esperando al final de la fila.", "La avenida Estaciones siempre está llena de gente, pero es raro verlos a todos juntos y ordenados.", "La fila conduce a ese carrito. ¿Qué venderán?", "Si el Señor Shiina está en la fila, supongo que será alguna comida.", "... (Mira alrededor)", "...Todos los que salen de la fila tienen un dulce de colores.", "Por la forma, parecen ser... ¿donuts? No, ¿son churros?", "¿Churros...? Ahora que lo pienso, el joven amo me habló de churros el otro día...", "Dijo que iban a abrir una tiendita de churros en la avenida Estaciones.", "Ya veo, así que este debe ser el carrito al que se refería.", "......", "Hm... Me dio la impresión de que quería probarlos. A lo mejor le puedo llevar un regalo al joven amo.", "Normalmente, no permitiría que coma estas cosas.", "Pero como se ha esforzado tanto en el colegio y en sus encargos de idol... A lo mejor no pasa nada por cumplirle un capricho de vez en cuando ♪", "Señor Shiina."] },
+    { speaker:"yuzuru", lines:["Hmm, ¿una voz conocida?", "Oh, así que es el señor Shiina. Parece que está esperando al final de la fila.", "La avenida Estaciones siempre está llena de gente, pero es raro verlos a todos juntos y formados.", "La fila conduce a ese carrito. ¿Qué venderán?", "Si el señor Shiina está en la fila, supongo que será algo de comer.", "... (Mira alrededor)", "...Todos los que salen de la fila tienen unos dulces de colores en la mano.", "Por la forma, parecen ser... ¿donuts? No, ¿son churros?", "¿Churros...? Ahora que lo pienso, el joven amo me habló de churros el otro día...", "Dijo que iban a abrir una tiendita de churros en la avenida Estaciones.", "Ya veo, así que este debe ser el carrito al que se refería.", "......", "Hm... Me dio la impresión de que quería probarlos. A lo mejor le puedo llevar un regalo al joven amo.", "Normalmente, no permitiría que coma estas cosas.", "Pero como se ha esforzado tanto en el colegio y en sus encargos de idol... A lo mejor no pasa nada por cumplirle un capricho de vez en cuando ♪", "Señor Shiina."] },
     { speaker:"niki", lines:["¿Oh? ¿Fushimi?", "¡Qué coincidencia~! ¿Has venido a probar los churros?"] },
     { speaker:"yuzuru", lines:["Se me ocurrió comprarle unos al joven amo. ¿Te importaría si me pongo a tu lado?"] },
-    { speaker:"niki", lines:["Claro que no~ ¡Vamos a comprar estos churros tan famosos juntos! Con compañía el camino se hace más corto... ♪"] },
+    { speaker:"niki", lines:["Claro que no~ ¡Compremos estos churros tan famosos juntos! Con compañía el camino se hace más corto... ♪"] },
     { speaker:"yuzuru", lines:["No diría que es un camino. Solo estamos esperando en una fila, ¿no?"] },
     { speaker:"niki", lines:["¡No, no! ¡La fila es nuestro camino a la comida! Como el camino de ladrillos amarillos, pero de churros, ¿lo pillas?"] },
     { speaker:"yuzuru", lines:["Uhhm. ¿Así que esta fila tan larga es un sendero?"] },
     { speaker:"niki", lines:["Así es."] },
     { speaker:"yuzuru", lines:["Ya veo. Pero el camino de Dorothy era para volver a casa, no para comer. La metáfora no es muy adecuada."] },
-    { speaker:"niki", lines:["Tienes que verlo desde el lado sentimental, Fushimi. Pero me entiendes, ¿verdad? Lo que quiero decir es que en cuanto consigamos estos churros seremos felices."] },
-    { speaker:"yuzuru", lines:["Por favor, no hables sin pensar.", "No suelo pasar el tiempo con gente como tú, señor Shiina. Supongo que el más parecido sería el señor Hibiki."] },
-    { speaker:"niki", lines:["¿De verdad?", "Creo que no tengo a nadie cercano como tú tampoco~ Todos a mi alrededor o son súper relajados o unos raritos.", "Pero me gusta un poco. Así no tengo que esforzarme tanto."] },
-    { speaker:"yuzuru", lines:["Señor Shiina, permite que te pregunte esto.", "Todos se están comiendo los churros apenas salen de la fila. ¿Sabes si este sitio tiene churros para llevar?", "No me los voy a comer yo. Los estoy comprando para mi joven amo, así que me gustaría ponerlos en una caja."] },
-    { speaker:"niki", lines:["¿Hmm~? No estoy seguro. Me los iba a comer mientras daba una vuelta.", "Casi todo el mundo se los come al momento. Así que no se si hay para llevar.", "Ah, Fushimi. Mira a ese tipo."] },
+    { speaker:"niki", lines:["Tienes que pensarlo con el corazón, no con la cabeza, Fushimi. Pero me entiendes, ¿verdad? Lo que quiero decir es que en cuanto consigamos estos churros seremos felices."] },
+    { speaker:"yuzuru", lines:["Por favor, no hables sin pensar.", "No suelo pasar el tiempo con gente como tú, señor Shiina. Supongo que el más parecido a ti en mi entorno sería el señor Hibiki."] },
+    { speaker:"niki", lines:["¿De verdad?", "Creo que no tengo a nadie cercano como tú tampoco~ Todos a mi alrededor o son súper relajados o unos raritos.", "Pero eso me gusta un pelín. Así no tengo que esforzarme tanto."] },
+    { speaker:"yuzuru", lines:["Señor Shiina, permite que te haga una pregunta, por favor.", "Todos se están comiendo los churros apenas salen de la fila. ¿Sabes si este sitio tiene churros para llevar?", "No me los voy a comer yo. Los estoy comprando para mi joven amo, así que me gustaría ponerlos en una caja."] },
+    { speaker:"niki", lines:["¿Hmm~? No estoy seguro. Me los iba a comer mientras daba una vuelta.", "Casi todo el mundo se los come al momento. Así que no sé si hay para llevar.", "Ah, Fushimi. Mira a ese tipo."] },
     { speaker:"yuzuru", lines:["¿Dónde?"] },
-    { speaker:"niki", lines:["Se acaba de comprar unos churros. Y el sitio le ha dado una caja. Creo que se los lleva a algun lado..."] },
+    { speaker:"niki", lines:["Se acaba de comprar unos churros. Y el sitio le ha dado una caja. Creo que se los lleva a algún lado..."] },
     { speaker:"hombre", lines:["¿¡Quéeee!?"] },
     { speaker:"niki", lines:["¿¡Q-Qué está pasando!? ¿¡Una pelea!?", "¡Un tipo vestido de negro acaba de tirar a otro al suelo de un puñetazo!"] },
     { speaker:"hombre", lines:["¡Mi mochila! Espera, ¡devúelveme la mochila! ¡Ladrón~!"] },
@@ -8213,24 +8725,24 @@
       2: [
     { speaker:"yuzuru", lines:["Disculpe, señor. ¿Está bien? ¿Se ha hecho daño?"] },
     { speaker:"hombre", lines:["Estoy bien, pero mi mochila... Argh, tenía algo importante ahí metido..."] },
-    { speaker:"yuzuru", lines:["......", "Por favor espera aquí, señor Shiina. Es peligroso. Voy a buscar al ladrón..."] },
+    { speaker:"yuzuru", lines:["......", "Por favor, espera aquí, señor Shiina. Es peligroso. Voy a buscar al ladrón..."] },
     { speaker:"niki", lines:["¡Para, ladrón~! ¡Bastardo~! La mochila es un tema aparte, ¿¡pero cómo se te ocurre llevarte los churros~!?"] },
-    { speaker:"yuzuru", lines:["¿¡Señor Shiina!? ¡P-Por favor, espera un momento!", "(¿Qué demonios está pasando? Empezó a perseguir al ladrón antes de que me diese cuenta...)", "(Ahh, ¿pero qué hago? La reacción inesperada del señor Shiina me ha hecho dudar.)", "(Aunque seamos de agencias distintas, seguimos siendo idols y compañeros... No puedo permitir que le ocurra nada. Los debo seguir de inmediato.)", "Señor, perseguiré al ladrón. Haré todo lo que este en mi mano por devolverte la mochila."] },
+    { speaker:"yuzuru", lines:["¿¡Señor Shiina!? ¡P-Por favor, espera un momento!", "(¿Qué demonios está pasando? Empezó a perseguir al ladrón antes de que me diese cuenta...)", "(Ahh, ¿pero qué hago? La reacción inesperada del señor Shiina me ha hecho dudar.)", "(Aunque seamos de agencias distintas, seguimos siendo idols y compañeros... No puedo permitir que le ocurra nada. Los debo seguir de inmediato.)", "Señor, perseguiré al ladrón. Haré todo lo que esté en mi mano por devolverle la mochila."] },
     { speaker:"hombre", lines:["¿¡Harías eso por mí!? ¿¡Eh!? ¿¡De verdad!?"] },
-    { speaker:"yuzuru", lines:["Sí. No se preocupe, yo me encargo.", "(Bien. Parece que el ladrón nos ha sacado un poco de distancia mientras estaba hablando.)", "(Puede que tenga que cansarme un poco para capturarlo.)", "(Jeje. No suelo agotarme. No es el momento para sentirme así, pero es un poco emocionante.)", "No creas que podrás escapar tan fácilmente."] },
+    { speaker:"yuzuru", lines:["Sí. No se preocupe, yo me encargo.", "(Bien. Parece que el ladrón nos ha sacado un poco de distancia mientras estaba hablando.)", "(Puede que tenga que correr un poco para capturarlo.)", "(Jeje. No suelo agotarme. No es momento de sentirme así, pero estoy un poco emocionado.)", "No creas que podrás escapar tan fácilmente."] },
     { speaker:"hombre", lines:["......"] },
-    { speaker:"niki", lines:["¡Eh~! ¡Te he dicho que te quedes quieto!", "¡A la gente que le falta el respeto a la comida solo le pasan cosas malas! ¡Te va a golpear un caballo y vas a morir, ese es tú karma~!"] },
+    { speaker:"niki", lines:["¡Eh~! ¡Te he dicho que te quedes quieto!", "¡A la gente que le falta el respeto a la comida solo le pasan cosas malas! ¡Te va a golpear un caballo y vas a morir, ese es tu karma~!"] },
     { speaker:"yuzuru", lines:["Esa frase se usa para quienes se meten en relaciones ajenas."] },
     { speaker:"niki", lines:["¿Eh? ¿De dónde has salido, Fushimi? Hace un segundo no estabas aquí."] },
-    { speaker:"yuzuru", lines:["Jeje. Me he puesto serio un momento para perseguirte.", "Pero debemos ocuparnos de esto. El ladrón está huyendo a un callejón, Señor Shiina."] },
-    { speaker:"niki", lines:["Ah, es verdad. Tío, debería rendirse de una vez."] },
-    { speaker:"yuzuru", lines:["Puede que esto sea ventajoso. La calle principal está muy llena y los pasajeros podrían interferir en nuestra persecución.", "Sin embargo, en un callejón, no nos molesta nadie. Eso es bueno.", "Terminemos con esto."] },
+    { speaker:"yuzuru", lines:["Jeje. Me he puesto serio un momento para perseguirte.", "Pero debemos ocuparnos de esto. El ladrón está huyendo a un callejón, señor Shiina."] },
+    { speaker:"niki", lines:["Ah, es verdad. Ugh, debería rendirse de una vez."] },
+    { speaker:"yuzuru", lines:["Puede que esto juegue a nuestro favor. La calle principal está muy llena y los pasajeros podrían interrumpir la persecución.", "Sin embargo, en un callejón, no nos molesta nadie. No habrá testigos... Eso es bueno.", "Terminemos con esto."] },
     { type:"location", src:"https://i.postimg.cc/rwb51FwD/1000-cb-20240803144552.webp", time: "Unos minutos después", label:"Callejón", position:"center center" },
     { speaker:"ladron", lines:["¡Ahhh! ¡Ahhh! ¿¡Hasta cuándo me van a seguir persiguiendo esos tipos!?", "¿¡Por qué no se rind— Uwaa!?", "¿¡Qué está pasando!? Me he tropezado con... ¿¡Una botella de plástico!?"] },
-    { speaker:"yuzuru", lines:["Así es. Disculpa que sea tan descortés, pero debía detenerte.", "Da las gracias que no te he roto las piernas.", "Aunque quizá eso es muy extremo hoy en día, ¿no crees?", "Al fin y al cabo, tengo una posición que proteger, por tanto... He elegido la solución más pacífica.", "Bien, es hora de que te rindas. No intentes escapar otra ve—"] },
+    { speaker:"yuzuru", lines:["Así es. Disculpa que sea tan descortés, pero debía detenerte.", "Da gracias que no te he roto las piernas.", "Aunque quizá eso es muy extremo hoy en día, ¿no crees?", "Al fin y al cabo, tengo una posición que proteger, por tanto... He optado por la solución más pacífica.", "Bien, es hora de que te rindas. No intentes escapar otra ve—"] },
     { speaker:"ladron", lines:["¡Iiiieh...!"] },
     { speaker:"niki", lines:["Brr... ¿Soy yo, o está congelado de repente? ¿Será porque está muy oscuro~?", "Ah, pero mira, lo ha tirado todo al caerse.", "Listo, todo recuperado ☆", "¡Menos mal que los churros están sanos y salvos!"] },
-    { speaker:"yuzuru", lines:["Tus prioridades están un poco desordenadas, Señor Shiina. La mochila es más importante que los churros."] },
+    { speaker:"yuzuru", lines:["Te estás preocupando de lo que no es, señor Shiina. La mochila es más importante que los churros."] },
     { speaker:"hombre", lines:["¡Ahhh, ahhh...! ¡V-Vosotros!"] },
     { speaker:"yuzuru", lines:["¿Hm? Oh, ¿nos ha seguido hasta aquí?", "Es peligroso acercarse a un ladrón. Podría haber esperado en el carrito."] },
     { speaker:"niki", lines:["¡Recuperemos sus churros, señor~! ¡Y su mochila también!"] },
@@ -8246,14 +8758,14 @@
     { speaker:"yuzuru", lines:["... ¿Por qué hace eso?"] },
     { speaker:"hombre", lines:["¡Auchhhhhhh!"] },
     { speaker:"niki", lines:["¡Fushimi, Fushimi! No le retuerzas el brazo, creo que le duele mucho."] },
-    { speaker:"yuzuru", lines:["Discúlpeme. Me agarró la mano tan de repente, que pensé que era un pervertido. Tan solo actúe en defensa propia."] },
+    { speaker:"yuzuru", lines:["Discúlpeme. Me agarró la mano tan de repente, que pensé que era un pervertido. Lo hice en defensa propia."] },
     { speaker:"hombre", lines:["¿¡Un pervertido!? ¡No, no! ¡Para nada! ¡No iba a hacer nada raro, lo juro!", "Escuchadme... ¿¡Podéis actuar en mi película!?"] },
     { speaker:"niki_yuzuru", lines:["... ¿Qué?"] },
-    { speaker:"hombre", lines:["¡Dejadme que os lo explique! Soy... ¿Espera? ¿Dónde están mis tarjetas? ¡Da igual! Uhmm, veréis, ¡soy un director de cine!", "¡Me encantaría que saliéseis en mi película!"] },
+    { speaker:"hombre", lines:["¡Dejadme que os lo explique! Soy... ¿Espera? ¿Dónde están mis tarjetas? ¡Da igual! Uhmm, veréis, ¡soy un director de cine!", "¡Me encantaría que salieseis en mi película!"] },
     { type:"image", src:"https://i.postimg.cc/rwf4y8rc/1000-cb-20240803092723.webp", wide:true },
     { speaker:"yuzuru", lines:["¿U-Umm...?"] },
     { speaker:"hombre", lines:["¡Me lo dice el instinto, tenéis que ser vosotros! Estáis en el colegio... No, en la universidad, ¿verdad?"] },
-    { speaker:"yuzuru", lines:["Apreciaría que me soltase la mano antes de nada."] },
+    { speaker:"yuzuru", lines:["Le agradecería que me soltase la mano antes de nada."] },
     { speaker:"hombre", lines:["¡Os pagaré lo suficiente! ¡Aunque sea a medio tiempo! Por favor, ¿¡me podéis ayudar!?"] },
     { speaker:"niki", lines:["¡Qué miedo! ¡Está hablando muy rápido y me asusta! ¿Qué le pasa~?"] },
     { speaker:"yuzuru", lines:["Uhhm. ¿Podría calmarse un segundo?", "Verá, no podemos ser parte de su película."] },
@@ -8263,21 +8775,21 @@
     ],
       3: [
     { type:"location", src:"https://i.postimg.cc/hvK47dkH/1000-cb-20200802162232.webp", time: "Unos días después del incidente con el ladrón", label:"Camino con árboles", position:"center center" },
-    { speaker:"yuzuru", lines:["Limpia, limpia. Hm-hm-hmm~♪", "Al mover la escoba con un ritmo constante, consigo reunir los pétalos rápidamente. Parece soy igual de bueno que siempre.", "Ah, me encanta esta trabajo... ♪", "Ay, y mira todos esos pétalos por ahí. Cómo desearía ponerlos todos en un montón ordenado...", "Sin embargo, casi es la hora. Y no puedo quitarle el trabajo a otra persona sin más. Debo controlarme."] },
+    { speaker:"yuzuru", lines:["Limpia, limpia. Hm-hm-hmm~♪", "Al mover la escoba con un ritmo constante, consigo reunir los pétalos rápidamente. Parece que soy igual de bueno que siempre.", "Ah, me encanta este trabajo... ♪", "Ay, y mira todos esos pétalos por ahí. Cómo desearía ponerlos todos en un montón ordenado...", "Sin embargo, ya casi es hora de la reunión. Y no puedo quitarle el trabajo a otra persona así como así. Debo controlarme."] },
     { speaker:"tsumugi", lines:["......", "¿...? (Se frota los ojos sin creerlo.)"] },
     { speaker:"yuzuru", lines:["¿Oh? Hola, señor Aoba.", "Pareces un poco sorprendido. ¿Pasa algo? Me quedo a cuadros si me miras tan intensamente."] },
     { speaker:"tsumugi", lines:["... Ah, tenía razón, estamos en ES. Me confundí y pensé que habíamos vuelto a Yumenosaki por un segundo.", "Espera, ¿por qué estás barriendo aquí, Fushimi? Sabes que ES tiene a personal contratado para eso, ¿no?"] },
-    { speaker:"yuzuru", lines:["Lo sé. Alguien estaba trabajando aquí hace un momento, pero parece que se tomaron un descanso.", "Ver esta escoba solitaria me dio una sensación de nostalgia. Antes de darme cuenta, la había recogido y me había inmerso en el ritmo familiar de la limpieza.", "Desde que me mudé a los dormitorios, no he tenido que limpiar el hogar Himemiya. Casi no tengo oportunidad de usar una escoba estos días."] },
-    { speaker:"tsumugi", lines:["Ah, supongo que eso es verdad.", "No necesitamos una escoba en los dormitorios, después de todo. Y la mayoría de salas tienen personal de limpieza para encargarse de eso."] },
+    { speaker:"yuzuru", lines:["Lo sé. Alguien estaba trabajando aquí hace un momento, pero parece que se tomó un descanso.", "Ver esta escoba solitaria me dio sensación de deja vú. Sin darme cuenta, la recogí y me dejé llevar por el ritmo familiar de la limpieza.", "Desde que me mudé a los dormitorios, no he tenido que limpiar el hogar Himemiya. Casi no tengo oportunidad de usar una escoba últimamente."] },
+    { speaker:"tsumugi", lines:["Ah, supongo que eso es verdad.", "No necesitamos una escoba en los dormitorios... Y la mayoría de las salas tienen personal de limpieza para encargarse de esos temas."] },
     { speaker:"yuzuru", lines:["Disculpa, señor Aoba. Debo marcharme. Me han citado a una reunión con la señorita Anzu."] },
     { speaker:"tsumugi", lines:["¿Eh? ¿A ti también?", "Yo también voy a juntarme con Anzu. En la sala de reuniones de COCHI, ¿verdad?", "Justo voy de camino."] },
     { speaker:"yuzuru", lines:["¿De verdad? Asumí que me tenía algún encargo.", "Si tú también vas, quizá seremos un grupo grande de gente."] },
     { type:"location", src:"https://i.postimg.cc/LXcCyk9V/1000-cb-20201128015824.webp", time: "Treinta minutos después.", label:"Sala de reuniones de COCHI", position:"center center" },
     { speaker:"niki", lines:["Uf... Aaah... Holiiis~☆"] },
     { speaker:"madara", lines:["¡Eh! Wow, ¿qué te pasa, Niki? Estás sudando."] },
-    { speaker:"yuzuru", lines:["¿Así que nos han citado a nosotros cinco? El señor Sakuma, el señor Mikejima, el señor Aoba, el señor Shiina, y yo."] },
-    { speaker:"niki", lines:["¿¡Eh!? ¿¡Por qué hay tanta gente!?", "¿Qué está pasando? Anzu me dijo que quería hablar aquí, así que pensé...", "Pensé que ibamos a degustar los nuevos platos del menú. ¡He venido corriendo desde los dormitorios!", "¡Corrí tan rápido que pensé que se me iban a romper las piernas!"] },
-    { speaker:"rei", lines:["¿Por eso estás sudando? Uno pensaría que es verano con todo ese sudor."] },
+    { speaker:"yuzuru", lines:["¿Así que nos han citado a nosotros cinco? El señor Sakuma, el señor Mikejima, el señor Aoba, el señor Shiina y yo."] },
+    { speaker:"niki", lines:["¿¡Eh!? ¿¡Por qué hay tanta gente!?", "¿Qué está pasando? Anzu me dijo que quería hablar aquí, así que pensé...", "Pensé que íbamos a degustar los nuevos platos del menú. ¡He venido corriendo desde los dormitorios!", "¡Corrí tan rápido que pensé que se me iban a romper las piernas!"] },
+    { speaker:"rei", lines:["¿Por eso estás transpirando? Uno pensaría que es verano con todo ese sudor."] },
     { speaker:"madara", lines:["Ajajaja ☆ Sí que tienes energía, ¿eh, Niki?"] },
     { speaker:"niki", lines:["Ahh, no puedo más... He gastado toda mi energía solo en llegar. Ya no me puedo mover. Adiós mundo cruel..."] },
     { speaker:"rei", lines:["Shiina, ¿qué estás haciendo? Te lo pregunto en serio."] },
@@ -8286,31 +8798,31 @@
     { speaker:"madara", lines:["Tienes mucho apetito, Niki. Yo también tengo el estómago grande. Estamos en la misma sintonía ☆"] },
     { speaker:"yuzuru", lines:["Recuerdo que solías poner un puesto de comida en la puerta de la academia, señor Mikejima."] },
     { speaker:"madara", lines:["Oh, qué nostalgia. Me acuerdo de que Keito siempre venía corriendo y se enfadaba un montón conmigo. ¡Jajaja!"] },
-    { speaker:"yuzuru", lines:["No te rías. Yo no era parte del Consejo Estudiantil en ese entonces, así que solo podía observar la situación. Sin embargo...", "¿Oh? La señorita Anzu ha llegado mientras estábamos conversando. Déjemos nuestra charla para luego.", "Hola, señorita Anzu... Así es, hemos venido los cinco a verte.", "Ya veo. ¿Somos todos?", "¿Puedo preguntar por qué nos has reunido aquí hoy?", "¿Oh? ¿Nos quieres presentar a alguien?", "Ah, tú eres..."] },
+    { speaker:"yuzuru", lines:["No te rías. Yo no era parte del Consejo Estudiantil en aquel entonces, así que solo podía observar la situación. Sin embargo...", "¿Oh? La señorita Anzu ha llegado mientras estábamos conversando. Dejemos nuestra charla para luego.", "Hola, señorita Anzu... Así es, hemos venido los cinco a verte.", "Ya veo. ¿Somos todos?", "¿Puedo preguntar por qué nos has reunido aquí hoy?", "¿Oh? ¿Nos quieres presentar a alguien?", "Ah, tú eres..."] },
     { speaker:"niki", lines:["(Ñam, ñam) ¡Ah~! ¡Tú eres al que le robaron la mochila el otro día!"] },
     { speaker:"rei", lines:["¿Robaron? ¿Qué ocurrió?"] },
     { speaker:"yuzuru", lines:["Bueno, verás..."] },
     { speaker:"rei", lines:["...Hmm, en resumen...", "Fushimi y Shiina fueron testigos de un robo y ayudaron a la víctima, que resultó ser un director de cine."] },
     { speaker:"madara", lines:["Wow, parece de película, ¿eh?", "No se suelen oír historias de gente tropezándose con directores de cine en medio de la calle."] },
-    { speaker:"rei", lines:["Como se suele decir, la realidad supera a la ficción.", "Dejando eso de lado, este director se ha acercado a ES para solicitar que Fushimi y Shiina salgan en su película...", "Sin embargo, la petición fue rechazada de llano porque no tienen capacidad de encargarse de eso, ¿verdad?"] },
-    { speaker:"tsumugi", lines:["Odio tener que decir esto al estar involucrado en la gestión de mi agencia.", "Pero en esta época del año, todos los departamentos estamos tan ocupados que es complejo aceptar proyeectos nuevos. Producir una película tarda bastante tiempo, así que es normal que lo rechacen."] },
-    { speaker:"niki", lines:["¿Hm? No lo entiendo. Si ES rechazo el encargo, ¿por qué está el director aquí con Anzu?"] },
-    { speaker:"yuzuru", lines:["¿La señorita Anzu se ha ofrecido a tomar este proyecto como parte de P Choice?"] },
-    { speaker:"rei", lines:["Ya veo. No había pensado en eso.", "Anzu está a cargo de P Choice tras abandonar la P-Asociación y hacerse independiente.", "Por tanto, puede aceptar propuestas que ES haya rechazado."] },
+    { speaker:"rei", lines:["Como se suele decir, la realidad supera a la ficción.", "Dejando eso de lado, ese mismo director se ha acercado a ES para solicitar que Fushimi y Shiina salgan en su película...", "Sin embargo, la petición fue rechazada de plano porque no tienen capacidad de encargarse de un proyecto así, ¿verdad?"] },
+    { speaker:"tsumugi", lines:["Odio tener que decir esto, ya que formo parte del personal de gestión en mi agencia...", "Pero en esta época del año, todos los departamentos estamos tan ocupados que es complejo aceptar proyectos nuevos. Además, producir una película tarda bastante, así que es normal que lo rechacen."] },
+    { speaker:"niki", lines:["¿Hm? No lo entiendo. Si ES rechazó el encargo, ¿por qué está el director aquí con Anzu?"] },
+    { speaker:"yuzuru", lines:["¿La señorita Anzu se ha ofrecido a hacerse cargo de este proyecto como parte de PChoice?"] },
+    { speaker:"rei", lines:["Ya veo. No había pensado en eso.", "Anzu está a cargo de PChoice tras abandonar la P-Asociación y hacerse independiente.", "Por tanto, puede aceptar propuestas que ES haya rechazado."] },
     { speaker:"niki", lines:["Así que nos has llamado hoy porque..."] },
     { speaker:"fushimi", lines:["Porque seremos parte de la película del director dentro de tu proyecto de P Choice, ¿verdad?"] },
     ],
       4: [
       { speaker:"yuzuru", lines:["¿Este es el guion? Muchas gracias."] },
       { speaker:"niki", lines:["Umm... ¿El título es *Balada de los Perdidos*?", "Un nombre así no dice mucho sobre la historia, ¿no?"] },
-      { speaker:"tsumugi", lines:["... ¿Hmm?", "En resumen, parece que es un drama de reparto en que los personajes son dioses... ¿Algo así?"] },
+      { speaker:"tsumugi", lines:["... ¿Hmm?", "En resumen, parece que es un drama de reparto en que los personajes son dioses guardianes... ¿Algo así?"] },
       { speaker:"niki", lines:["¿¡Cómo lo has leído tan rápido!?"] },
       { speaker:"tsumugi", lines:["Ajaja. Me gusta leer. Supongo que poco a poco he aprendido a leer rápido."] },
       { speaker:"niki", lines:["Aun así, ha sido rapidísimo~ ¡Qué increíble...!"] },
-      { speaker:"yuzuru", lines:["Decir que la película trata sobre dioses no me ayuda mucho. No lo entiendo del todo.", "En Japón, tenemos “ocho millones” de dioses y se supone que hay uno para cada fenómeno.", "¿Oh? ¿Qué ocurre, señorita Anzu?", "Ah, sí, tienes razón. Como el director nos acompaña hoy, sería razonable que nos explicase el guion."] },
+      { speaker:"yuzuru", lines:["Decir que la película trata sobre dioses guardianes no me ayuda mucho. No lo entiendo del todo.", "En Japón, se dice que tenemos “ocho millones” de dioses y al parecer existe uno para cada fenómeno natural.", "¿Oh? ¿Qué ocurre, señorita Anzu?", "Ah, sí, tienes razón. Como el director nos acompaña hoy, sería razonable que nos explicase el guion."] },
       { speaker:"director", lines:["Claro. Lo explicaré...", "La película está situada en la actualidad.", "La historia sigue a un pequeño grupo de dioses guardianes locales que son adorados por la gente y han protegido su tierra por mucho tiempo.", "Sin embargo, a medida que pasa el tiempo, la gente comienza a perder la fe, y los dioses poco a poco pierden su divinidad... Esa es la premisa."] },
       { speaker:"rei", lines:["¿Fe...? Me imagino que algo así resonaría con el público de hoy en día."] },
-      { speaker:"director", lines:["Exacto. La historia es sobre dioses que no pudieron prevenir los cambios del tiempo.", "A medida que pierden su divinidad, los protagonistas pasan de ser dioses a entidades inhumanas...", "Y poco a poco, se convierten en lo que conocemos como espíritus y demonios.", "En el proceso, sus corazones y mentes comienzan a cambiar.", "Algunos resienten a la humanidad por abandonar su su fe, y otros pierden su individualidad y desaparecen completamente.", "Sin embargo, nuestros personajes se preguntan si todavía tienen motivos para proteger su tierra y a quienes la habitan. Esa es mi historia."] },
+      { speaker:"director", lines:["Exacto. La historia es sobre dioses guardianes que no pudieron prevenir los cambios del tiempo.", "A medida que pierden su divinidad, los protagonistas pasan de ser dioses guardianes a entidades inhumanas...", "Y poco a poco, se convierten en lo que conocemos como espíritus y demonios.", "En el proceso, sus corazones y mentes comienzan a cambiar.", "Algunos resienten a la humanidad por abandonar su fe, y otros pierden su individualidad y desaparecen completamente.", "Sin embargo, nuestros personajes se preguntan si todavía tienen motivos para proteger su tierra y a quienes la habitan. Esa es mi historia."] },
       { speaker:"yuzuru", lines:["......", "Hm... ¿No parece un poco difícil actuar una historia así?"] },
       { speaker:"niki", lines:["¿De verdad? Bueno, yo no tengo mucha experiencia, así que no sé qué parte sería difícil."] },
       { speaker:"yuzuru", lines:["Debemos actuar como entidades inhumanas, ¿verdad? Por tanto no podemos recurrir a nuestras experiencias personales o a nuestros recuerdos. Me cuesta pensar en cómo aproximarme a un papel así..."] },
@@ -8318,19 +8830,19 @@
       { speaker:"rei", lines:["Kekeke... A lo mejor nací para este papel, ya que soy un demonio... ♪"] },
       { speaker:"madara", lines:["¿Hm? ¿Qué dices, Anzu?", "¿De verdad lo crees? ¿Crees que podremos hacerle justicia al guion, a pesar de lo difíciles que son los personajes?", "¡Ya me has emocionado! Obviamente me voy a esforzar al máximo si crees en mí, Productora ☆"] },
       { speaker:"niki", lines:["Sí. No entiendo por qué me has elegido.", "Pero lo daré todo, ¡aunque sea un novato actuando!"] },
-      { speaker:"director", lines:["¡Me alegra mucho saberlo!", "Señorita Anzu, me gustaría empezar con las grabaciones mañana, si es posible. ¿Os importaría cuadrar nuestros horarios ahora mismo?", "Entiendo completamente que estáis muy ocupados, y no es necesario que canceléis vuestros otros encargos para esto...", "Pero me gustaría que pudiesemos grabar cuando estéis disponibles, entre vuestros otros encargos."] },
+      { speaker:"director", lines:["¡Me alegra mucho saberlo!", "Señorita Anzu, me gustaría empezar con las grabaciones mañana, si es posible. ¿Os importaría cuadrar nuestros horarios ahora mismo?", "Entiendo perfectamente que estáis muy ocupados, y no es necesario que canceléis vuestros otros encargos para esto...", "Pero me gustaría que pudiésemos grabar cuando estéis disponibles, entre vuestros otros encargos."] },
       { speaker:"yuzuru", lines:["¿...? Tienes mucha razón, señorita Anzu.", "¿Por qué tienes tanta prisa por empezar a grabar...?"] },
       { speaker:"niki", lines:["¿Tienes que terminarlo rápido por alguna razón?"] },
-      { speaker:"director", lines:["De hecho, me gustaría inscribir la película a una premiación.", "Y no queda mucho para que se acabe el plazo. Sé que eso es tema mío, y me disculpo por los inconvenientes. Pero me gustaría grabar lo antes posible."] },
+      { speaker:"director", lines:["De hecho, me gustaría inscribir la película en un festival de cine.", "Y no queda mucho para que se acabe el plazo. Sé que eso es tema mío, y me disculpo por los inconvenientes. Pero me gustaría grabar lo antes posible."] },
       { speaker:"tsumugi", lines:["Oh, ¿una competición?"] },
-      { speaker:"director", lines:["Sé que seguro que pensáis que estoy siendo egoísta."] },
-      { speaker:"tsumugi", lines:["¿Eh? No, no, ¡no he dicho eso?"] },
-      { speaker:"director", lines:["No, lo entiendo. La verdad es una historia penosa.", "Originalmente empecé una compañía de películas pequeña para hacer películas de las que pudiese estar orgulloso. Pero me ha ido mal desde el principio.", "Si esta película fracasa también... Creo que mi compañía quebrará.", "Cuando era joven, la gente decía que era un genio... Pero ahora, me pregunto si tengo talento alguno.", "Así que esta premiación es mi última oportunidad."] },
+      { speaker:"director", lines:["Sé que seguro que pensáis que soy un egoísta."] },
+      { speaker:"tsumugi", lines:["¿Eh? No, no, ¡no he dicho eso!"] },
+      { speaker:"director", lines:["No, lo entiendo. La verdad es una historia penosa.", "Originalmente empecé una compañía de películas pequeña para hacer películas de las que pudiese estar orgulloso. Pero me ha ido mal desde el principio.", "Si esta película fracasa también... Creo que mi compañía quebrará.", "Cuando era joven, la gente decía que era un genio... Pero ahora, me pregunto si tengo talento alguno.", "Así que este festival de cine es mi última oportunidad."] },
       { speaker:"yuzuru", lines:["......"] },
       { speaker:"niki", lines:["Entonces... ¿Estabas buscando a gente para que actuase en tu película en mitad de la calle porque no tenías dinero para una audición?"] },
       { speaker:"director", lines:["Bueno, las audiciones son caras... No tengo fondos para eso ahora mismo~", "Las agencias y grupos de teatro no te hacen caso si eres una compañía pequeña. De hecho casi no me dejan entrar aquí. Jajaja.", "Ah, ¡pero no es solo por eso! ¡No malentendáis mis intenciones! De verdad os quería en mi película. Por eso salí corriendo tras vosotros, aunque se me da fatal correr.", "¡Sois una bendición! Estoy muy feliz de haber hablado contigo, señorita Anzu. Gracias a ti, tengo la oportunidad de trabajar con todos vosotros."] },
       { speaker:"niki", lines:["¿Por qué decidiste trabajar en esta película como P Choice, Anzu?", "... ¿Hmm? ¿De verdad~? ¿Viste una película de este director cuando estabas en el colegio? ¡Y eres fan!", "Jaja. La verdad, mis encargos antiguos y mi reputación me parecen una molestia.", "Pero si me salvan la carrera, a lo mejor mi yo del pasado no era tan malo."] },
-      { speaker:"yuzuru", lines:["......", "Al principio pensé que solo era una coincidencia extraña. Y no hay garantía alguna de que consigamos que ganes esa premiación...", "Sin embargo, si estás dispuesto a invertir en nosotros de corazón, entonces nos esforzaremos al máximo en la grabación."] },
+      { speaker:"yuzuru", lines:["......", "Al principio pensé que solo era una coincidencia extraña. Y no hay garantía alguna de que consigamos que ganes ese festival de cine...", "Sin embargo, si estás dispuesto a invertir en nosotros de corazón, entonces nos esforzaremos al máximo en la grabación."] },
       { speaker:"director", lines:["Gracias. ¡Cuento con vosotros...!"] },
       ],
       5: [
@@ -8346,7 +8858,7 @@
       { speaker:"niki", lines:["Ah, gracias~♪", "“¡Es responsabilidad nuestra proteger a esta tierra y su sosiego!”"] },
       { speaker:"director", lines:["... Vale. Cortemos un momento."] },
       { speaker:"niki", lines:["Wahh, ¡perdón! ¡No podía leer esa palabra!"] },
-      { speaker:"director", lines:["Hm~ No me preocupa como lees. Paré porque quería conversar sobre tu actuación.", "Tu personaje, Yo, también está dudando en este momento...", "Pero se está esforzando por parecer optimista e ignorar las preocupaciones de los demás. En parte lo intenta decir con tanta convicción porque se quiere convencer a si mismo.", "Así que me gustaría que no lo mostrases tan claramente optimista."] },
+      { speaker:"director", lines:["Hm~ No me preocupa cómo lees. Paré porque quería conversar sobre tu actuación.", "Tu personaje, Yo, también está dudando en este momento...", "Pero se está esforzando por parecer optimista e ignorar las preocupaciones de los demás. En parte lo intenta decir con tanta convicción porque se quiere convencer a sí mismo.", "Así que me gustaría que no lo mostrases tan optimista."] },
       { speaker:"niki", lines:["No tan optimista y contento... Vale, ¡entendido!"] },
       { speaker:"director", lines:["Perfecto, vamos a la siguiente escena..."] },
       { speaker:"niki", lines:["...Uff, esto es difícil..."] },
@@ -8358,13 +8870,13 @@
       { speaker:"rei", lines:["Si lo dices así pareces un loco que cocina idols."] },
       { speaker:"director", lines:["La razón por la que te elegí es obvia.", "Es porque tanto Fushimi como tú tenéis un “botón de encendido”, o Switch, en inglés."] },
       { speaker:"niki", lines:["¿Switch? Pero si yo estoy en Crazy:B... ¿Me han cambiado de unidad sin preguntarme?"] },
-      { speaker:"tsumugi", lines:["Wow, bienvenido a Switch ☆ Estamos muy felices de que estés con nostros~"] },
+      { speaker:"tsumugi", lines:["Wow, bienvenido a Switch ☆ Estamos muy felices de que estés con nosotros~"] },
       { speaker:"madara", lines:["¡Eh, eh! No se puede cambiar de unidad así como así. ¡Mirad, la señorita Luci está entrando en pánico!"] },
       { speaker:"niki", lines:["Oh, ¿no te refieres a la unidad Switch? ¿A qué te refieres, entonces?"] },
-      { speaker:"director", lines:["Es... en términos simples, es como un cambio repentino de personalidad.", "Veo a muchos actores en un trabajo como el mío, pero es inusual que tengan esa calidad.", "Alguien que puede cambiar su personalidad por completo como si estuviesen “encendiendo un botón”.", "Si puedes hacer eso, eres ideal para nuestra industria.", "Y cuando os vi perseguir al ladrón, vi como encendíais vuestro botón.", "Ahí me di cuenta. ¡Este es el momento! ¡Es el destino!"] },
+      { speaker:"director", lines:["Es... en términos simples, es como un cambio repentino de personalidad.", "Veo a muchos actores en un trabajo como el mío, pero es inusual que tengan esa calidad.", "Alguien que puede cambiar su personalidad por completo como si estuviese “encendiendo un botón”.", "Si puedes hacer eso, eres ideal para nuestra industria.", "Y cuando os vi perseguir al ladrón, vi cómo encendíais vuestro botón.", "Ahí me di cuenta. ¡Este es el momento! ¡Es el destino!"] },
       { speaker:"niki", lines:["¡Estás muy cerca, muy cerca! ¿Qué te he dicho del espacio personal?", "Nuestro director se distrae completamente cuando está emocionado, ¿eh?"] },
       { speaker:"yuzuru", lines:["Así es. Pero pensar que esa sería la razón...", "¿No te parece inusual? Es bastante raro... aunque supongo que es normal serlo si eres creativo."] },
-      { speaker:"niki", lines:["Uhm. Aunque lo haya explicado, no lo entiendo. No lo siento.", "¿A qué se refiere con botón? No estoy conectado a una bombilla ni nada.", "¿Hm? ¿Qué pasa, An?", "Guh~ Lo siento, An, tienes razón.", "No voy a llegar a ningún lado si sigo así. Necesito un poco más de tiempo para entender el papel.", "Supongo que, como al jamón curado, me hace falta tiempo para estar rico."] },
+      { speaker:"niki", lines:["Uhm. Aunque lo haya explicado, no lo entiendo. No lo siento.", "¿A qué se refiere con botón? No estoy conectado a una bombilla ni nada.", "¿Hm? ¿Qué pasa, An?", "Guh~ Lo siento, An, tienes razón.", "No voy a llegar a ningún lado si sigo así. Necesito un poco más de tiempo para entender el papel.", "Supongo que, como el jamón curado, me hace falta tiempo para estar rico."] },
       { speaker:"yuzuru", lines:["Así es. Aunque queramos grabar rápido, trabajar sin conocer el guion lo suficiente solo será contraproducente.", "Terminemos la reunión por hoy."] },
       { type:"location", src:"https://i.postimg.cc/CxjdQwFY/1000-cb-20201128163857.webp", time:"Esa noche", label: "Lounge de ES", position:"center center" },
       { speaker:"yuzuru", lines:["... (Bebiendo café)"] },
@@ -8372,19 +8884,19 @@
       { speaker:"yuzuru", lines:["... ¿Qué será ese ruido? Suena como si alguien se estuviese arrastrando por el suelo.", "Viene de aquí."] },
       { speaker:"niki", lines:["Ughhh..."] },
       { speaker:"yuzuru", lines:["Oh, vaya. ¿Qué ocurre, señor Shiina? ¿Por qué estás arrastrándote por el suelo? ¿Será que imitas a un bicho muerto?"] },
-      { speaker:"niki", lines:["Ojalá fuese un bicho muerto... O-Olvida eso.. Comida..."] },
+      { speaker:"niki", lines:["Ojalá fuese un bicho muerto... O-Olvida eso... Comida..."] },
       { speaker:"yuzuru", lines:["¿Comida?", "Normalmente tienen dulces por aquí. ¿Te gustaría que te traiga algunos, señor Shiina?", "Por favor, toma esto."] },
-      { speaker:"niki", lines:["(Ñam, ñam)! Delicoso, delicioso, delicioso, delicoso...", "Uf, ¡mucho mejor~! ¡Gracias, Fushimi!", "Tío, la lectura en voz alta del guion hoy ha hecho que me duela la cabeza y eso siempre me da muuuuucha hambre.", "Vine a recargar energías con los dulces de aquí, pero me debilité de camino~"] },
-      { speaker:"yuzuru", lines:["Ya veo. Qué alivio que no te colapsaste.", "Estoy de acuerdo con que la lectura de hoy duró bastante. Es normal que estés cansado."] },
-      { speaker:"niki", lines:["(Ñam, ñam). ¿A que sí~? No tenía suficiente azúcar en el cerebro. Se me iba la vista, me temblaban las manos... ¡Pensé que me iba a morir!", "Sí que es difícil actuar.", "Me alegro de que el director confíe en mí, pero no me siento a la altura.", "Casi nunca había actuado antes, ¿y ahora tengo que hacer de un personaje que ni es humano? Es muy duro.", "Siento que me saldría bien si fuese un chef o algo así.."] },
+      { speaker:"niki", lines:["(Ñam, ñam)! Delicioso, delicioso, delicioso, delicioso...", "Uf, ¡mucho mejor~! ¡Gracias, Fushimi!", "Tío, la lectura en voz alta del guion hoy ha hecho que me duela la cabeza y eso siempre me da muuuuucha hambre.", "Vine a recargar energías con los dulces de aquí, pero me debilité de camino~"] },
+      { speaker:"yuzuru", lines:["Ya veo. Qué alivio que no te colapsaste.", "Estoy de acuerdo en que la lectura de hoy duró bastante. Es normal que estés cansado."] },
+      { speaker:"niki", lines:["(Ñam, ñam). ¿A que sí~? No tenía suficiente azúcar en el cerebro. Se me iba la vista, me temblaban las manos... ¡Pensé que me iba a morir!", "Sí que es difícil actuar.", "Me alegro de que el director confíe en mí, pero no me siento a la altura.", "Casi nunca había actuado antes, ¿y ahora tengo que hacer de un personaje que ni es humano? Es muy duro.", "Siento que me saldría bien si fuese un chef o algo así..."] },
       ],
       6: [
       { type:"location", src:"https://i.postimg.cc/ZqWsmYqB/1000-cb-20200831184236.webp", label:"Biblioteca de Seisoukan", position:"center center" },
-      { speaker:"tsumugi", lines:["A ver... Últimamente nos han pedido mucho este género de libros. A lo mejor puedo cambiar este libro por este otro.", "Y entonces... ¿Hmm? ¿Shiina está aquí?", "(No lo suelo ver en la librería. Cuando viene siempre es por los libros de cocina.)", "(Tiene la cara muy seria y está mirando muchos libros. ¿Estará buscando algo?)", "(Ohh, esa sección es...)"] },
+      { speaker:"tsumugi", lines:["A ver... Últimamente nos han pedido mucho este género de libros. A lo mejor puedo cambiar este libro por este otro.", "Y entonces... ¿Hmm? ¿Shiina está aquí?", "(No lo suelo ver en la biblioteca. Cuando viene siempre es por los libros de cocina.)", "(Tiene la cara muy seria y está mirando muchos libros. ¿Estará buscando algo?)", "(Ohh, esa sección es...)"] },
       { speaker:"niki", lines:["... ¿Eh~? Esto tampoco es lo que estoy buscando~"] },
       { speaker:"tsumugi", lines:["¡Hola, Shiina!"] },
       { speaker:"niki", lines:["Ah, hola~", "¡Qué coincidencia! Aoba, ¿me recomiendas algún manual de actuación?"] },
-      { speaker:"tsumugi", lines:["Me daba la sensación de que eso buscabas.", "Me pareció raro verte aquí. Sueles ir a la sección de cocina."] },
+      { speaker:"tsumugi", lines:["Me daba la sensación de que buscabas eso.", "Me pareció raro verte aquí. Sueles ir a la sección de cocina."] },
       { speaker:"niki", lines:["Bueno, es que ayer os atrasé a todos.", "No quiero causar más problemas. Me gustaría intentar mejorar antes de nuestro próximo ensayo."] },
       { speaker:"tsumugi", lines:["Hm~ No te preocupes tanto por nosotros...", "Lo más importante es que necesitas que el director te dé el visto bueno para seguir actuando.", "Si quieres un manual... Creo que esta no es la sección. Te recomendaría los libros de ahí."] },
       { speaker:"niki", lines:["¿Eh? ¿Estaba mirando mal?", "Como los libros decían teatro y cosas así en las portadas... Por eso no encontraba nada."] },
@@ -8392,13 +8904,13 @@
       { speaker:"niki", lines:["Oh, ¡gracias!", "No estaba llegando a ningún lado yo solo, ojalá me cueste menos con un manual."] },
       { speaker:"tsumugi", lines:["Otro libro que te podría ayudar... A lo mejor te recomendaría algo que te ayude a comprender tu papel."] },
       { speaker:"niki", lines:["¿Mi papel? ¿A qué te refieres?"] },
-      { speaker:"tsumugi", lines:["Bueno, haces de dios, ¿verdad? Si no sabes mucho sobre eso, a lo mejor podrías buscar cuentos sobre los dioses.", "¿Y eso te podría ayudar a entender mejor al personaje, quizás~?"] },
-      { speaker:"niki", lines:["¿Entender mejor...? No es que no comprenda al personaje, pero no empatizo con él.", "Osea, yo soy humano, ¿verdad? Así que, ¿cómo voy a entender cómo se siente alguien que no está ni vivo ni muerto~?", "A mi me basta con tener el estómago lleno para no morirme. Con eso funciono."] },
+      { speaker:"tsumugi", lines:["Bueno, haces de dios guardián, ¿verdad? Si no sabes mucho sobre eso, a lo mejor podrías buscar cuentos sobre los dioses guardianes.", "¿Y eso te podría ayudar a entender mejor al personaje, quizás~?"] },
+      { speaker:"niki", lines:["¿Entender mejor...? No es que no comprenda al personaje, pero no empatizo con él.", "O sea, yo soy humano, ¿verdad? Así que, ¿cómo voy a entender cómo se siente alguien que no está ni vivo ni muerto~?", "A mí me basta con tener el estómago lleno para no morirme. Con eso funciono."] },
       { speaker:"tsumugi", lines:["Ajaja. Yo te veo como alguien que siempre está animado.", "A lo mejor es porque solo te veo cuando estás comiendo. Eres como el contrario de un personaje que está a punto de desaparecer..."] },
       { speaker:"niki", lines:["Los personajes de la película deberían comer algo rico. Si están llenos, todos esos sentimientos horribles se irán en un instante. ¡Nos ahorra muchos problemas y seguro que es un final feliz!", "¿Y si reescribimos un poco el guion~?"] },
       { speaker:"tsumugi", lines:["Eso es bastante más que un poco. Si los personajes se ponen a comer, parecerá un anuncio más que una película, ¿no?"] },
       { speaker:"niki", lines:["Ughh. Eso ya lo sé...", "Ahh. Creo que solo estoy intentando huir de la realidad. Me tengo que inventar una estrategia."] },
-      { speaker:"tsumugi", lines:["Jeje, tú puedes. Aunque no sé si mi consejo te servirá de algo...", "Pero sé que muchos actores se basan en sus experiencias personales, o se ponen en los zapatos del personaje."] },
+      { speaker:"tsumugi", lines:["Jeje, tú puedes. Aunque no sé si mi consejo te servirá de algo...", "Pero sé que muchos actores se basan en sus experiencias personales, o se ponen en la piel del personaje."] },
       { speaker:"niki", lines:["Sí. Fushimi también dijo algo así.", "...¿Experiencia personal, eh?"] },
       { type:"location", src:"https://i.postimg.cc/HkVFY9SN/1000-cb-20200712224341.webp", time: "Unas horas después", label:"Pasillo de Seisoukan Piso 1", position:"center center" },
       { speaker:"niki", lines:["Guuuhh...", "Me metí tanto en el libro que me prestó Aoba que se me ha agotado la energía...", "Me da hambre si me muevo, me da hambre si pienso, ¿pero esto qué es~? Los humanos no somos nada eficientes.", "Aunque eso es lo que hace que la comida siempre esté rica. Si lo pienso así, no es tan terrible...", "... ¿Hm?", "(Si cada vez tengo más hambre, me debilitaré, ¿verdad? Y entonces, tendré una experiencia personal para acercarme al personaje...)", "(Hm~ Pero si me da mucha hambre, dejo de pensar y empiezo a ver a las personas como comida.)", "(Y Rinne también me dijo que me pongo súper agresivo cuando tengo hambre. Pero no me acuerdo de eso.)"] },
@@ -8412,7 +8924,7 @@
       { speaker:"yuzuru", lines:["... ¿Oh?", "Oh, señor Aoba. Me alegro de verte. ¿Cómo estás?"] },
       { speaker:"tsumugi", lines:["Uhm. ¿Has visto a Shiina por algún lado? ¿Sabes dónde está?"] },
       { speaker:"yuzuru", lines:["¿El señor Shiina...?", "No, no lo he visto desde el día en el que leímos el guion. ¿Ocurre algo?"] },
-      { speaker:"tsumugi", lines:["Ya veo...", "Lo vi en la librería el día después de leer el guion, pero parece que ha desaparecido desde entonces."] },
+      { speaker:"tsumugi", lines:["Ya veo...", "Lo vi en la biblioteca el día después de leer el guion, pero parece que ha desaparecido desde entonces."] },
       { speaker:"yuzuru", lines:["... ¿Desaparecido?"] },
       { type:"image", src:"https://i.postimg.cc/GmLGGMw2/1000-cb-20240803102522.webp", wide:true },
       { speaker:"tsumugi", lines:["Sí. Al parecer, no ha vuelto a su dormitorio. Me lo dijeron sus compañeros de cuarto.", "Cuando lo vi, estaba frustrado por no poder entender a su personaje. Me preocupa un poco."] },
@@ -8423,9 +8935,9 @@
       { speaker:"tsumugi", lines:["... Al final también te he metido en esto."] },
       { speaker:"yuzuru", lines:["Por favor, no te preocupes.", "Si el señor Shiina de veras ha desaparecido, yo estoy igual de preocupado.", "Falta poco para nuestro próximo ensayo. Tenemos que encontrarlo lo antes posible.", "Por ahora, vamos a investigar en su cuarto. A lo mejor encontramos alguna pista."] },
       { speaker:"hajime", lines:["Eep..."] },
-      { speaker:"yuzuru", lines:["Oh, ¿el señor Shiino está por ahí?"] },
+      { speaker:"yuzuru", lines:["Oh, ¿el señor Shino está por ahí?"] },
       { speaker:"tsumugi", lines:["Ah, es verdad. ¿Qué está haciendo? ¿Por qué no está dentro?"] },
-      { speaker:"yuzuru", lines:["¿Señor Shiino?"] },
+      { speaker:"yuzuru", lines:["¿Señor Shino?"] },
       { speaker:"hajime", lines:["¿¡Iiiehhh...!?", "¿¡F-Fushimi y Aoba!? W-Wow, m-me habéis dado un susto~..."] },
       { speaker:"tsumugi", lines:["Perdón por asustarte.", "¿Qué haces por aquí? Ya es de noche. Deberías volver dentro."] },
       { speaker:"hajime", lines:["Bueno... Creo que empezó hace dos días... Cuando comencé a escuchar ruidos raros de la parte vieja del edificio."] },
@@ -8434,7 +8946,7 @@
       { speaker:"yuzuru_tsumugi", lines:["... (Escuchan atentamente)"] },
       { speaker:"unknown", lines:["Caaa...r...neeee... Guuu... Guhh..."] },
       { speaker:"tsumugi", lines:["... ¿Hmm? ¿Seguro que no es solo el viento?"] },
-      { speaker:"yuzuru", lines:["No lo es. El señor Shiino está en lo correcto. Ese sonido proviene sin duda de una criatura viva."] },
+      { speaker:"yuzuru", lines:["No lo es. El señor Shino está en lo correcto. Ese sonido proviene sin duda de una criatura viva."] },
       { speaker:"hajime", lines:["¿¡No era producto de mi imaginación...!?", "Pensé que era el viento crujiendo en el edificio antiguo al principio, pero algo no me cuadraba...", "Así que se me ocurrió que a lo mejor se había metido un perro sin dueño."] },
       { speaker:"yuzuru", lines:["Un perro..."] },
       { speaker:"hajime", lines:["¿Uhhh? ¿Ocurre algo?"] },
@@ -8446,7 +8958,7 @@
       { speaker:"tsumugi", lines:["Claro, os acompaño. La verdad es que también me da curiosidad.", "Vamos a descubrir qué está pasando y luego seguimos buscando a Shiina."] },
       { type:"location", src:"https://i.postimg.cc/bJk4kYk8/1000-cb-20250711010011.webp", label:"Patio de Seisoukan", position:"center center" },
       { speaker:"tsumugi", lines:["... ¿Oh? Qué raro. Están las luces encendidas.", "Nadie entra al edificio antiguo, así que siempre están apagadas."] },
-      { speaker:"yuzuru", lines:["Y cuánto más nos acercamos, más se escucha el murmullo.", "......", "(¿Qué está pasando...? Me da la sensación de que algo va terriblemente mal.)", "(Esto no es ningún perro. Parece más bien un animal salvaje grande...)", "(Puede que haya un intruso dentro. Espero que mis miedos no tengan residuo.)", "... Por favor, hablemos más bajo.", "Pareciese ser que hay algo dentro del edificio. Un perro, un intruso, o algo más, de eso no estoy seguro.", "Entremos ahora. Sea lo que sea, lo inmovilizaré apenas lo encuentre.", "Manteneros alerta y procedamos con cuidado."] },
+      { speaker:"yuzuru", lines:["Y cuanto más nos acercamos, más se escucha el murmullo.", "......", "(¿Qué está pasando...? Me da la sensación de que algo va terriblemente mal.)", "(Esto no es ningún perro. Parece más bien un animal salvaje grande...)", "(Puede que haya un intruso dentro. Espero que mis miedos no tengan fundamento.)", "... Por favor, hablemos más bajo.", "Parece ser que hay algo dentro del edificio. Un perro, un intruso, o algo más, de eso no estoy seguro.", "Entremos ahora. Sea lo que sea, lo inmovilizaré apenas lo encuentre.", "Manteneos alerta y procedamos con cuidado."] },
       { speaker:"tsumugi_hajime", lines:["¡Sí, señor...!"] },
       { type:"location", src:"https://i.postimg.cc/pXTqtXrz/1000-cb-20210119002826.webp", label:"Habitación del edificio antiguo", position:"center center" },
       { speaker:"yuzuru", lines:["El sonido parece provenir de esta habitación."] },
@@ -8477,13 +8989,13 @@
       { speaker:"yuzuru", lines:["Lo estoy emplatando. Por favor, espera un momento."] },
       { speaker:"hajime", lines:["Shiina, te he traído un ramen instantáneo. Te lo puedes comer mientras esperas~"] },
       { speaker:"niki", lines:["¡Gracias! ¡Buen provecho! (Sorbe, sorbe...)"] },
-      { speaker:"madara", lines:["Va con todo. Es cómo ver una de esas competiciones de comida."] },
-      { speaker:"tsumugi", lines:["Y pensar que se desmayó del hambre después de comer tanto arroz. Aunque sí que suena a algo que le pasaría a Shiina.", "Pero parece que ya está de vuelta a la normalidad. Qué alivio."] },
-      { speaker:"hajime", lines:["Sí. Sentí como si estuviese en una peli de zombies al verlo en el edificio antiguo."] },
-      { speaker:"tsumugi", lines:["Ahora que lo dice,s era igual que un zombi. Las películas así siempre comienzan con alguien que baja la guardia y lo convierten en zombi, y luego la infección se esparce poco a poco.", "Me encantan las pelis de zombis~ Siempre me emociono mucho al verlas e intento pensar en cómo escaparía.", "Si me fuese a esconder en algún lado, quizá elegiría un supermercado, o algo que tuviese todo lo necesario. Pero seguro que ahí habrían muchas amenazas."] },
+      { speaker:"madara", lines:["Va con todo. Es como ver una de esas competiciones de comida."] },
+      { speaker:"tsumugi", lines:["Y pensar que se desmayó de hambre y luego comió tanto arroz. Aunque sí que suena a algo que le pasaría a Shiina.", "Pero parece que ya está de vuelta a la normalidad. Qué alivio."] },
+      { speaker:"hajime", lines:["Sí. Sentí como si estuviese en una peli de zombis al verlo en el edificio antiguo."] },
+      { speaker:"tsumugi", lines:["Ahora que lo dices, era igual que un zombi. Las películas así siempre comienzan con alguien que baja la guardia y lo convierte en zombi, y luego la infección se esparce poco a poco.", "Me encantan las pelis de zombis~ Siempre me emociono mucho al verlas e intento pensar en cómo escaparía.", "Si me fuese a esconder en algún lado, quizá elegiría un supermercado, o algo que tuviese todo lo necesario. Pero seguro que ahí habría muchas amenazas."] },
       { speaker:"madara", lines:["Las películas así siempre ponen una escena trágica en los supermercados."] },
       { speaker:"tsumugi", lines:["Jeje. Siento que me moriría bastante rápido en una película así. ¿A dónde irías tú, Mikejima?"] },
-      { speaker:"madara", lines:["¿Yo? Déjame pensar... Yo creo que no huiría a ningún lado. Intentaría salvar el mundo.", "Si no encontramos la causa y conseguimos que la gente deje de convertirse en zombies, todos moriremos al final, ¿no?"] },
+      { speaker:"madara", lines:["¿Yo? Déjame pensar... Yo creo que no huiría a ningún lado. Intentaría salvar el mundo.", "Si no encontramos la causa y conseguimos que la gente deje de convertirse en zombis, todos moriremos al final, ¿no?"] },
       { speaker:"tsumugi", lines:["Jeje. Eres tan genial, Mikejima. Hablas como un personaje principal."] },
       { speaker:"madara", lines:["Todos somos los personajes principales de nuestras propias vidas. Tú harías lo mismo para salvar a los que quieres. ¿Verdad, Tsumugi?"] },
       { speaker:"tsumugi", lines:["Sí... Jeje, tienes razón. Soy el personaje principal de mi vida.", "Aunque me esconda en un supermercado o en la base de los zombis, voy a sobrevivir.", "Y no solo yo. Llevaré a todos los que quiero a un final feliz.", "Porque eso es lo que hace Switch... Le damos a la gente la felicidad y la esperanza que necesitan para seguir viviendo."] },
@@ -8495,24 +9007,24 @@
       { speaker:"niki", lines:["Ah, no, estaba entrando en personaje~ Me eligieron para hacer de dios en una película que va a salir pronto.", "Pero no entendía al personaje y sentía que los estaba atrasando a todos. Odié sentirme así... Y se me ocurrieron algunas ideas...", "¡Pensé que podría intentar un ayuno!"] },
       { speaker:"yuzuru", lines:["Ya veo... ¿Y cuál es la lógica detrás de eso, señor Mikejima?"] },
       { speaker:"madara", lines:["Uhm. ¿Por qué me preguntas a mí?"] },
-      { speaker:"yuzuru", lines:["Tu también estabas en la habitación, así que asumo que estabas ayudando al señor Shiina, ¿no?", "No soy capaz de entender lo que quiere decir el señor Shiina. Me gustaría que me lo explicases."] },
+      { speaker:"yuzuru", lines:["Tú también estabas en la habitación, así que asumo que estabas ayudando al señor Shiina, ¿no?", "No soy capaz de entender lo que quiere decir el señor Shiina. Me gustaría que me lo explicases."] },
       { speaker:"niki", lines:["Hmm. ¿De verdad es tan confuso? Seguí los consejos del libro que me recomendaron."] },
       { speaker:"tsumugi", lines:["¿El libro...?"] },
       { speaker:"niki", lines:["Mm-hmm. El libro decía que los dioses pueden vivir sin comida.", "¡Así que! Se me ocurrió que si estaba en ayunas al borde de la muerte, ¡entendería cómo es ser un dios!"] },
       { speaker:"yuzuru", lines:["... ¿Perdón?"] },
       ],
       9: [
-      { speaker:"niki", lines:["Por supuesto, no paré de comer y beber por completo. Me da hambre súper rápido y no me quería morir.", "Así que le pedí a Mikejima que se quedase conmigo y me diese un poquito de arroz cada vez que pareciese que me iba a morir.", "Imagine que Shiina sería capaz de manejarme si me volvía loco o algo así~", "No me acuerdo de nada. Me desperté y de repente estaba comiendo aquí..."] },
+      { speaker:"niki", lines:["Por supuesto, no dejé de comer y beber ni un momento. Me da hambre súper rápido y no me quería morir.", "Así que le pedí a Mikejima que se quedase conmigo y me diese un poquito de arroz cada vez que pareciese que me iba a morir.", "Imaginé que Mikejima sería capaz de manejarme si me volvía loco o algo así~", "No me acuerdo de nada. Me desperté y de repente estaba comiendo aquí..."] },
       { speaker:"yuzuru_tsumugi", lines:["......"] },
-      { speaker:"niki", lines:["¿Hmm? ¿Por qué os habéis quedado callados?", "... Oh, ¡ya lo sé! Tenéis mucha hambre como para hablar, ¿verdad? Os voy a preparar algo como disuclpas por todo el jaleo ♪"] },
+      { speaker:"niki", lines:["¿Hmm? ¿Por qué os habéis quedado callados?", "... Oh, ¡ya lo sé! Tenéis mucha hambre como para hablar, ¿verdad? Os voy a preparar algo como disculpas por todo el jaleo ♪"] },
       { speaker:"yuzuru", lines:["No, el hambre no es el problema... Creo que estamos un poco sorprendidos, eso es todo.", "Veo que tomaste algunas precauciones para el ayuno, pero no quiero ni pensar lo terrible que hubiese sido que pasase lo peor.", "Por favor, prométeme que no volverás a hacer algo tan peligroso de nuevo."] },
       { speaker:"niki", lines:["Najaja... Perdón por preocuparos. Es que no quería seguir retrasando los ensayos.", "Pero siento que valió la pena ponerme al límite.", "No sé cómo decirlo, pero... ¿Me siento más... ligero? ¿Cómo si tuviera una energía fluyendo por dentro?", "A partir de ahora, estoy en otro nivel~♪"] },
       { type:"location", src:"https://i.postimg.cc/tJVfpqRf/1000-cb-20240826202723.webp", time: "Unos días después", label:"Ensayo de movimiento en el plató de la película", position:"center center" },
       { speaker:"yuzuru", lines:["“Oye, ¿te has enterado? Por fin van a demoler el santuario antiguo.”"] },
-      { speaker:"niki", lines:["“Sí, pero... Bueno, la espacio es limitada, ¿no? Por culpa de ese santuario, los humanos no han podido...”"] },
+      { speaker:"niki", lines:["“Sí, pero... Bueno, el espacio es limitado, ¿no? Por culpa de ese santuario, los humanos no han podido...”"] },
       { speaker:"yuzuru", lines:["“La culpa no es del santuario.”"] },
-      { speaker:"niki", lines:["“Ajá. Perdón, Kage.”", "“En realidad... El santuario ha hecho que los humanos no puedan construir en esa zona durante mucho tiempo.”", "“Si no pueden construir, se mudan. Y si se mudan, su fé desaparece. Kage, eres inteligente. No necesitas que un idiota como yo te lo explique, ¿verdad?”"] },
-      { speaker:"yuzuru", lines:["“... Pero llenar la zona con cosas que no tienen nada que ver con nosotros no va a fortalecer su fé.”"] },
+      { speaker:"niki", lines:["“Ajá. Perdón, Kage.”", "“En realidad... El santuario ha hecho que los humanos no puedan construir en esa zona durante mucho tiempo.”", "“Si no pueden construir, se mudan. Y si se mudan, su fe desaparece. Kage, eres inteligente. No necesitas que un idiota como yo te lo explique, ¿verdad?”"] },
+      { speaker:"yuzuru", lines:["“... Pero llenar la zona con cosas que no tienen nada que ver con nosotros no va a fortalecer su fe.”"] },
       { speaker:"niki", lines:["“Exacto. Así que estamos arruinados de una manera u otra. No podemos interferir en las vidas humanas, tenemos las manos atadas.”", "“Nada que hacer. ¡Hay que superarlo, hermano!”"] },
       { speaker:"yuzuru", lines:["“......”"] },
       { speaker:"niki", lines:["“¡Eh, espera! ¿A dónde vas?”"] },
@@ -8522,14 +9034,14 @@
       { speaker:"tsumugi", lines:["Es todo gracias a su esfuerzo. Se ha esmerado por entrar en personaje todos los días."] },
       { speaker:"director", lines:["¿¡Todos los días!? ¿De verdad? ¿Solo por mí...? Wow, estoy conmovido.", "Es tal cual el Yo que imaginé. Ejeje, ¡sabía que no me equivocaba con él...!", "¡Me voy a esforzar yo también para no malgastar su trabajo duro...!"] },
       { speaker:"rei", lines:["... Sí que se te da bien decir lo que la gente quiere escuchar, ¿eh, Aoba?"] },
-      { speaker:"tsumugi", lines:["¿Me lo imagino, o insinuas algo? Le respondí algo normal.", "No es que le pueda decir “estuvo en ayunas varios días para meterse en el personaje”. ¿Verdad, Anzu?"] },
+      { speaker:"tsumugi", lines:["¿Me lo imagino, o insinúas algo? Le respondí algo normal.", "No es que le pueda decir “estuvo en ayunas varios días para meterse en el personaje”. ¿Verdad, Anzu?"] },
       { speaker:"tsumugi", lines:["¿Qué pasa, Anzu...? ¿Te sientes culpable por no haber podido ayudar a Shiina? ¿Crees que las ayunas son culpa tuya?", "Eso lo decidió él por su cuenta. No es culpa tuya para nada, Anzu.", "Además, todos tenemos momentos en los que debemos superar los obstáculos en el camino nosotros solos.", "Eres una productora, y tu rol es apoyar a los idols. Pero si les das la mano siempre, no aprenderán a caminar nunca."] },
-      { speaker:"rei", lines:["Seguro que Anzu eso ya lo sabe. El problema real es que se le haya ocurrido la idea del ayuno.", "Lo que Anzu quiere decir es que aunque su motivación era mejorar para el trabajo, poner su vida en peligro es ir muy lejos."] },
+      { speaker:"rei", lines:["Seguro que Anzu ya lo sabe. El problema real es que se le haya ocurrido la idea del ayuno.", "Lo que Anzu quiere decir es que aunque su motivación era mejorar para el trabajo, poner su vida en peligro es ir muy lejos."] },
       { speaker:"tsumugi", lines:["Sí. Soy consciente de eso también.", "Sin embargo, por más cuestionables que sean sus acciones, quiero apoyarlo.", "Es la respuesta que obtuvo después de pasar un mal rato y reflexionar. Y mejoró su actuación."] },
       { speaker:"madara", lines:["... Sin embargo, no deberíamos embellecer lo que hizo.", "Es mejor mantenerlo en secreto. ¿Verdad, Anzu?", "Gracias. Oye, si me quieres decir algo, soy todo oídos.", "Mama es fuerte. Mama será tu saco de boxeo cuando lo necesites, Anzu ☆"] },
       { speaker:"rei", lines:["Kekeke. Solo se está haciendo el valiente porque sabe que no le vas a pegar.", "Anzu, creo que no pasa nada si le das una o dos patadas ♪", "... Afortunadamente, la actuación de Shiina ha mejorado. Pero el problema es..."] },
       { speaker:"yuzuru", lines:["“... No soporto esa actitud tuya.”", "“Siempre lo piensas todo en positivo. Y nunca te tomas nada en serio.”", "“Te comportas como si nada de esto fuese real. No, te niegas a enfrentarlo.”"] },
-      { speaker:"niki", lines:["“No me digas eso...”", "“¡Sé perfectamente lo que está pasando! ¡Yo nunca pedí nada de esto!”", "“¡Pero desear no va a cambiar nada! No podemos escapar lo que nos espera. Al final, ¡nos van a olvidar a todos!”"] },
+      { speaker:"niki", lines:["“No me digas eso...”", "“¡Sé perfectamente lo que está pasando! ¡Yo nunca pedí nada de esto!”", "“¡Pero desear no va a cambiar nada! No podemos escapar de lo que nos espera. Al final, ¡nos van a olvidar a todos!”"] },
       { speaker:"yuzuru", lines:["¡...!"] },
       { speaker:"niki", lines:["“Aunque ya no nos necesite nadie... aunque nadie se preocupe de nosotros... Quiero cumplir con mis deberes hasta el final.”", "“Porque soy un dios. ¡Y porque esta tierra es nuestro hogar!”"] },
       { speaker:"yuzuru", lines:["......", "...Ah.", "M-Mis disculpas. Se me ha olvidado completamente mi próxima línea."] },
@@ -8543,15 +9055,15 @@
       { speaker:"yuzuru", lines:["......"] },
       { speaker:"rei", lines:["Oh, aquí estás. Te estaba buscando, Fushimi."] },
       { speaker:"yuzuru", lines:["... ¿Oh? ¿Te puedo ayudar con algo?"] },
-      { speaker:"rei", lines:["No te estás comportando como de costumbre hoy. Se me ocurrió ayudarte."] },
+      { speaker:"rei", lines:["No te comportas como de costumbre hoy. Se me ocurrió ayudarte."] },
       { speaker:"yuzuru", lines:["¿A ti...?"] },
       { speaker:"rei", lines:["Kekeke. ¿Te parece tan raro?"] },
-      { speaker:"yuzuru", lines:["Siendo sincero, sí. Disculpa si esto es un poco brusco, pero no parece propio de ti.", "Asumiría que si alguien me va a retroalimentar, sería el director o la señorita Anzu."] },
+      { speaker:"yuzuru", lines:["Siendo sincero, sí. Disculpa si esto es un poco brusco, pero no parece propio de ti.", "Asumiría que si alguien me va a dar su opinión, sería el director o la señorita Anzu."] },
       { speaker:"rei", lines:["Me imaginé que dirías eso. Tú y yo no hemos hablado mucho, ¿no?", "Pero me haría muy feliz que fuésemos tan cercanos que me empezases a llamar por mi nombre y no mi apellido ♪"] },
       { speaker:"yuzuru", lines:["Ahora se nota que estás de broma. ¿Qué buscas en realidad?"] },
       { speaker:"rei", lines:["Sonríes, pero se nota que estás tenso. No tengas miedo, no estoy planeando nada malo.", "Me arrepiento de no estar durante todo el escándalo del ayuno de Shiina. Así que creo oportuno entrometerme ahora.", "Buscar una solución solo podría llevarte mucho tiempo, ¿no crees? Confía en mí. A lo mejor te puedo ayudar a entender las cosas."] },
       { speaker:"yuzuru", lines:["... Bueno, no puedo seguir atrasando al resto. A pesar de mis dudas, aceptaré tu oferta.", "Por favor, ayúdame, señor Sakuma."] },
-      { speaker:"rei", lines:["Hmm. Entonces vamos al grano. ¿Sabes por qué estas actuando peor?"] },
+      { speaker:"rei", lines:["Hmm. Entonces vamos al grano. ¿Sabes por qué estás actuando peor?"] },
       { speaker:"yuzuru", lines:["¿Por qué...? Asumo que es porque soy incompetente.", "En el ensayo de ahora, noté algo “inhumano” en el señor Shiina que iba más allá de su actuación. Me sobrecogió.", "Ni siquiera llevaba puesto el vestuario de la película, pero parecía una persona distinta. Me di cuenta de que ese debía ser el botón al que se refirió el director...", "Y al darme cuenta de que yo aún no había llegado a ese nivel, me puse ansioso y me dio vergüenza.", "Los roles de Yo y de Kage, a cargo del señor Shiina y yo, son completamente opuestos. Kage siempre tiene mucho odio dentro...", "Sin embargo, empatizo mucho con la actuación del señor Shiina, y no lo puedo odiar. Eso debe ser porque aún no logro encarnar a mi propio personaje."] },
       { speaker:"rei", lines:["¿Y por tanto has determinado que eres incompetente? A pesar de que estás tan angustiado, pareces intentar entenderlo todo de forma racional."] },
       { speaker:"yuzuru", lines:["Así es. Sé lo que debo hacer para superarlo. Me debo convertir en mi personaje tan plenamente que no me afecte la actuación del señor Shiina.", "Sin embargo... no sé cómo hacerlo. Me he memorizado todas las líneas del guion, no solo mi parte.", "Y he estudiado obras con temas similares y he leído todas las novelas en las que se ha inspirado el director.", "Pero aun así, no estoy a la altura del señor Shiina. ¿Qué más puedo hacer?", "Incluso he pensado en hacer alguna locura como el ayuno del señor Shiina...", "Él dudaba de sus habilidades cuando lo eligieron para ser protagonista.", "Pero quizás tenía que ser yo el que dudó, pues el papel me está costando demasiado."] },
@@ -8559,7 +9071,7 @@
       { speaker:"yuzuru", lines:["¿Oh? ¿Por qué dices eso? No soy una entidad inhumana ni un dios."] },
       { speaker:"rei", lines:["El Kage que representas carga con la responsabilidad de proteger a Yo, a pesar de que nacieron de dioses distintos.", "Al fin y al cabo, las sombras no existen sin la luz. Si Yo desaparece, a Kage le pasará lo mismo. Vuestros destinos están entrelazados.", "Y además, Kage tiene celos de que Yo pueda vivir sin ataduras, sin darse cuenta de los sentimientos verdaderos de Yo, por supuesto."] },
       { type:"image", src:"https://i.postimg.cc/GtkjTYnK/1000-cb-20240806094949.webp", wide:true },
-      { speaker:"rei", lines:["Fushimi, al igual que Kage, tu deber es proteger a personas con las que no estás emparentadas por sangre desde el día en que naciste. Quizás inclusoantes.", "¿Nunca has sentido ningún rencor por eso? ¿Nunca has tenido celos de tu amo?", "¿Nunca has pensado “podría ser libre si no fuese por él?”"] },
+      { speaker:"rei", lines:["Fushimi, al igual que Kage, tu deber es proteger a personas con las que no estás emparentado por sangre desde el día en que naciste. Quizás incluso antes.", "¿Nunca has sentido ningún rencor por eso? ¿Nunca has tenido celos de tu amo?", "¿Nunca has pensado “podría ser libre si no fuese por él”?"] },
       { speaker:"yuzuru", lines:["......"] },
       { speaker:"rei", lines:["... Los personajes de la *Balada de los Perdidos* pueden sentir emociones gracias a la poca fe de sus creyentes.", "Preocupación, sufrimiento, envidia... Empiezan a sentir esas emociones tan humanas. Aunque son dioses, intentan buscar su propio camino, su propósito.", "Dijiste que había algo inhumano en la actuación de Shiina. Eso era solo él haciendo de Yo.", "Si te dejas de fijar en los dioses y los mortales y te enfrentas al rol de Kage, seguro que encontrarás la respuesta.", "... Bueno, este anciano ya no te molesta más. Me marcho.", "Tengo ganas de ver lo que se te ocurre, Fushimi... ♪"] },
       { speaker:"yuzuru", lines:["... Gracias. Aprecio tus consejos.", "(Me leyó como un libro y hasta parecía que lo disfrutaba.)", "(Es igual que su personaje Mizuchi, se le da muy bien entenderlo todo.)", "(A lo mejor la actuación del señor Sakuma es tan consistente porque su personaje es parecido a él.)", "(... Y por tanto... ¿a lo mejor no soy capaz de interiorizar mi papel porque no me parezco mucho a mi personaje?)", "(Para interpretar a Kage... Para interpretar a una entidad inhumana, me he esforzado al máximo en no dejar que mis recuerdos o mis experiencias influyan...)", "(Ya veo. Otra vez le estoy dando demasiadas vueltas. Igual que en *Fist of Idol: Togenkyo*.)", "(Pensaba que con ese encargo había aprendido a entender la actuación por completo.)", "(Pero todavía me queda mucho por aprender.)"] },
@@ -8573,7 +9085,7 @@
     { speaker:"madara", lines:["“Entonces respóndeme cuando te hablo. Casi me das un ataque al corazón.”"] },
     { speaker:"rei", lines:["“Ja. Como si tuviéramos corazones.”", "“Pero estoy de buen humor hoy, así que me disculparé. Perdóname, Toku.”"] },
     { speaker:"madara", lines:["“¿Mizuchi pidiendo perdón? Qué raro. ¿Qué te ha pasado?”"] },
-    { speaker:"rei", lines:["“No me paran de pasar cosas malas. La fé de la gente es más débil cada día, y mis poderes se han debilitado casi al completo...”", "“Solía tener un dragón de agua como familiar. Era dueño de todo, ¿te acuerdas? Ahora, apenas puedo cuidar de un par de serpientes.”", "“Pero no es que me importe. Casi nadie reza para que llueva hoy en día. Aunque tuviese a mi dragón de agua, no tendría a dónde ir. Estaría desperdiciando su vida.”", "“Tarde o temprano, desapareceremos. No vale la pena deprimirse. No va a cambiar nada, ¿no? Así que es mejor que vivamos con la cabeza en alto, día a día, disfrutando de lo poco que nos queda.”", "“... Cuando los seres humanos mueren, su alma viaja al cielo y sus cuerpos se quedan en la tierra. Pero, ¿y nosotros? ¿Qué pasa cuando desaparecemos? ¿Habrá algo tras la muerte?”", "“¿O tan solo nos iremos de este mundo? ¿Siquiera nos daremos cuenta de que hemos desaparecido?”", "“Si empiezo a darle vueltas no termino. Sin embargo, pronto podremos descubrir la respuesta de primera mano.”", "“Aprovechemos esta angustia al máximo, hermano mío.”"] },
+    { speaker:"rei", lines:["“No me paran de pasar cosas malas. La fe de la gente es más débil cada día, y mis poderes se han debilitado casi al completo...”", "“Solía tener un dragón de agua como familiar. Era dueño de todo, ¿te acuerdas? Ahora, apenas puedo cuidar de un par de serpientes.”", "“Pero no es que me importe. Casi nadie reza para que llueva hoy en día. Aunque tuviese a mi dragón de agua, no tendría a dónde ir. Estaría desperdiciando su vida.”", "“Tarde o temprano, desapareceremos. No vale la pena deprimirse. No va a cambiar nada, ¿no? Así que es mejor que vivamos con la cabeza en alto, día a día, disfrutando de lo poco que nos queda.”", "“... Cuando los seres humanos mueren, su alma viaja al cielo y sus cuerpos se quedan en la tierra. Pero, ¿y nosotros? ¿Qué pasa cuando desaparecemos? ¿Habrá algo tras la muerte?”", "“¿O tan solo nos iremos de este mundo? ¿Siquiera nos daremos cuenta de que hemos desaparecido?”", "“Si empiezo a darle vueltas no termino. Sin embargo, pronto podremos descubrir la respuesta de primera mano.”", "“Aprovechemos esta angustia al máximo, hermano mío.”"] },
     { speaker:"tsumugi", lines:["La grabación va viento en popa. Rei y Mikejima actúan muy bien."] },
     { speaker:"niki", lines:["Hm~ Pero no me gusta Sakuma..."] },
     { speaker:"tsumugi", lines:["¿No te gusta cómo actúa?"] },
@@ -8584,16 +9096,16 @@
     { speaker:"niki", lines:["¡Oh...! T-Tienes razón.", "Qué despiste~ Casi interrumpo toda la grabación.", "¡Gracias por pararme, Hou!", "... Ah. Perdón, no te llamas así. Gracias, Aoba ♪"] },
     { speaker:"tsumugi", lines:["Jeje. Puedes llamarme Hou si quieres."] },
     { speaker:"niki", lines:["Najaja... Ahora que me he puesto este traje, siento que entro a mi personaje enseguida.", "Hemos estado juntos mucho rato porque tú haces de Hou, otro de los dioses que intenta proteger la tierra. Pero no he tenido tiempo de hablar con Fushimi, siempre nos toca grabar escenas distintas."] },
-    { speaker:"tsumugi", lines:["Ahora que lo dices, estáis manteniendo la distancia hasta a la hora de comer desde que grabasteis la gran escena de la pelea. Sí que estáis dedicados a los personajes... Me impresiona que seais tan profesionales."] },
+    { speaker:"tsumugi", lines:["Ahora que lo dices, estáis manteniendo la distancia hasta a la hora de comer desde que grabasteis la gran escena de la pelea. Sí que estáis dedicados a los personajes... Me impresiona que seáis tan profesionales."] },
     { speaker:"niki", lines:["No, no. Si fuera profesional, se me daría mucho mejor distanciarme del personaje.", "El director dijo que tengo un botón, pero claramente se me da fatal usarlo.", "¿A lo mejor se le da mal buscar talentos...?"] },
-    { speaker:"tsumugi", lines:["Bueno, te juzgó en base a su primera impresión de ti.", "Pero yo creo que eres bastante bueno cambiando de personaje. Cuando estamos grabando, te conviertes en Yo."] },
+    { speaker:"tsumugi", lines:["Bueno, te juzgó basándose en su primera impresión de ti.", "Pero yo creo que eres bastante bueno cambiando de personaje. Cuando estamos grabando, te conviertes en Yo."] },
     { speaker:"niki", lines:["Najaja, no es para tanto~ Lo único que se me da bien es cocinar.", "Pero me alegra que me lo digas. Es un alivio saber que estoy haciendo las cosas bien.", "Vale, ¡me voy a esforzar al máximo~!"] },
     { type:"location", src:"https://i.postimg.cc/MGDq2G7G/1000-cb-20240826202458.webp", time: "Unos días después. Casi al final de la grabación.", label:"Plató de Balada de los Perdidos", position:"center center" },
     { speaker:"tsumugi", lines:["“... Uf. He podido levantar la barrera.”", "“Y pensar que alguien rompería el sello que encerraba al demonio Shuten Doji... Si solo quedamos tú y yo, estamos en problemas, Yo.”"] },
     { speaker:"niki", lines:["“No es verdad.”", "“¡No te preocupes! Yo te protegeré, Hou. ¡Y protegeré a nuestra tierra!”"] },
     { speaker:"tsumugi", lines:["(... Yo sonríe para animar a Hou, que está perdiendo la esperanza.)", "(Aunque Yo está dudando mucho y se pregunta si es mejor rendirse, se fuerza a decir esas cosas para convencerse a sí mismo...)", "(Si huye ahora, huirá de la razón de su existencia... Traicionará a los mortales que lo quieren y a la tierra que adora.)", "(Shiina ha demostrado todos esos detalles en una frase tan corta.)", "(Ahora, me toca a mí estar a la altura de su actuación apasionada.)"] },
     { type:"image", src:"https://i.postimg.cc/3JRB2fSb/1000-cb-20240803102533.webp", wide:true },
-    { speaker:"tsumugi", lines:["“... Gracias, Yo.”", "“No te preocupes. Yo también soy un dios. No soy el mejor combatendo, pero haré todo lo que pueda.”", "“Por todas las vidas entrelazadas a esta tierra.”"] },
+    { speaker:"tsumugi", lines:["“... Gracias, Yo.”", "“No te preocupes. Yo también soy un dios. No soy el mejor combatiendo, pero haré todo lo que pueda.”", "“Por todas las vidas entrelazadas a esta tierra.”"] },
     ],
       12: [
     { speaker:"niki", lines:["“Aah... Aah...”"] },
@@ -8601,7 +9113,7 @@
     { speaker:"niki", lines:["“¡Pero...!”"] },
     { speaker:"tsumugi", lines:["“Cada uno tiene sus fortalezas. A ti se te da mejor el combate cuerpo a cuerpo, y estás debilitado ahora mismo.”", "“Yo me encargo de Shuten Doji. Tú recupérate mientras puedes.”"] },
     { speaker:"niki", lines:["“V-Vale. Lo siento, Hou.”"] },
-    { speaker:"tsumugi", lines:["“¿Por qué te disculpas? Deja que yo cuide de ti al menos una vez.”", "“... Aunque creo que yo también estoy al límite.”", "“Tengo que ir a un lugar alejado... Si me sacrifico allí, puede que consiga detenerlo."] },
+    { speaker:"tsumugi", lines:["“¿Por qué te disculpas? Deja que yo cuide de ti al menos una vez.”", "“... Aunque creo que yo también estoy al límite.”", "“Tengo que ir a un lugar alejado... Si me sacrifico allí, puede que consiga detenerlo.”"] },
     { type:"image", src:"https://i.postimg.cc/8znMN1TN/1000-cb-20240806094913.webp", wide:true },
     { speaker:"madara", lines:["“¡Eh! ¿Cómo puede ser que un debilucho como tú ponga esa cara de valiente?”"] },
     { speaker:"tsumugi", lines:["“¡...! ¡Toku! ¿Qué haces aquí?”"] },
@@ -8616,17 +9128,17 @@
     { speaker:"niki", lines:["“¿K-Kage...? ¿Has vuelto a buscarme?”"] },
     { speaker:"yuzuru", lines:["“Ja. No te hagas ilusiones. No he venido por ti... Toma esto.”"] },
     { speaker:"niki", lines:["“¿Eh? ¿Un trozo de pan...?”"] },
-    { speaker:"yuzuru", lines:["“Es una ofrenda. ¿Te acuerdas del pequeño santuario que destruyeron en el desastre? Han dejado varias ofrendas allí.”", "“Y eso no es todo. Alguien construó un santuario diminuto con palos y piedras al lado del destruido.”"] },
+    { speaker:"yuzuru", lines:["“Es una ofrenda. ¿Te acuerdas del pequeño santuario que destruyeron en el desastre? Han dejado varias ofrendas allí.”", "“Y eso no es todo. Alguien construyó un santuario diminuto con palos y piedras al lado del destruido.”"] },
     { speaker:"niki", lines:["“¿De verdad...?”", "“Aunque casi nadie cree en nosotros, todavía no nos han olvidado del todo.”"] },
     { speaker:"yuzuru", lines:["“Así es. Nuestro destino es inevitable, tarde o temprano vamos a desaparecer. No podemos escapar. Pero...”"] },
     { speaker:"niki", lines:["“¡Todavía no ha llegado el momento! Todavía hay gente que cree en nosotros, ¡en los dioses!”", "“¡Gracias por volver, querido hermano! ¡Estoy muy, muy, muy feliz...!”"] },
     { type:"image", src:"https://i.postimg.cc/VL03jFNk/1000-cb-20240803092755.webp", wide:true },
     { speaker:"yuzuru", lines:["“No seas tonto. No es momento de festejar.”", "“... Yo te cubro. Abriré un camino.”", "“Para que le puedas cortar la cabeza a Shuten Doji. No te limites. Debes devorar su ser por completo.”", "“... ¿Eres capaz, Yo?”"] },
     { type:"image", src:"https://i.postimg.cc/ryRkJThP/1000-cb-20240803101409.webp", wide:true },
-    { speaker:"niki", lines:["“¡Yo me encargo, Kage! ¡Siento que soy capaz de cualquier cosa! ¡Me voy a comer a Shuten Doji enterito, hasta los huesos!”", "“¡Devoraré la tristeza y el odio del que se alimentan los demonios, y haré que la paz cunde en esta tierra de nuevo!”", "“¡Ese es mi propósito! ¡Para eso he nacido!”"] },
+    { speaker:"niki", lines:["“¡Yo me encargo, Kage! ¡Siento que soy capaz de cualquier cosa! ¡Me voy a comer a Shuten Doji enterito, hasta los huesos!”", "“¡Devoraré la tristeza y el odio del que se alimentan los demonios, y haré que la paz cunda en esta tierra de nuevo!”", "“¡Ese es mi propósito! ¡Para eso he nacido!”"] },
     { speaker:"yuzuru", lines:["(... Su vínculo es tan fuerte que no se tienen que pedir perdón. Al fin, su conflicto ha terminado.)", "(Para poder lograr esto, tuve que enfrentarme a mi pasado.)", "(“¿Nunca has resentido a tu amo...?” Claro que sí. Al fin y al cabo, soy humano.)", "(En esta época, en que se puede llegar a cualquier lado con suficiente esfuerzo, empecé a pensar en por qué había nacido como sirviente del joven amo...)", "(Solía soñar con lo maravillosa que sería mi vida si hubiese podido elegir mi propio destino.)", "(Pero... Aunque estoy atado, soy libre, porque el joven amo compartió su sueño de ser un idol conmigo.)", "(Me dio la mano y me dejó caminar a su lado.)", "(Y ahora, adoro cada parte del joven amo, hasta las que antes me irritaban.)", "(Decidí usar estos sentimientos de amor y odio para interpretar cómo se siente Kage con Yo... Esta es la respuesta a la que he llegado. ¿Será la correcta, señor Sakuma?)", "(... No. No creo que haya una respuesta correcta. Lo que importa es que sea fiel conmigo mismo. Y de todo corazón...)", "“No bajes la guardia, Yo. Igual de despistado que siempre.”"] },
-    { speaker:"niki", lines:["“Kage... Ajaja. ¡No pasa nada!”", "¡Juntos somos imparables! ¡Es imposible que perdamos!"] },
-    { speaker:"yuzuru", lines:["... Sí, hermano mío. Tienes razón."] },
+    { speaker:"niki", lines:["“Kage... Ajaja. ¡No pasa nada!”", "“¡Juntos somos imparables! ¡Es imposible que perdamos!”"] },
+    { speaker:"yuzuru", lines:["“... Sí, hermano mío. Tienes razón.”"] },
     { speaker:"narrador", lines:["Al final, la Balada de los Perdidos ganó un premio especial.", "A pesar de tener poco presupuesto, la pasión de los actores y del director hicieron que la película se volviese una gema escondida y un clásico atemporal..."] },
     ],
    },
@@ -9259,11 +9771,42 @@
       );
     };
 
+    const BalladEventBanner = ({ setNav }) => {
+      const story = STORIES.find(s => s.id === "evt-ballad");
+      if (!story) return null;
+      const cover = "https://i.postimg.cc/cH1tR4yY/latest-cb-20240728150221.webp";
+      const shuffleMembers = ["yuzuru", "niki", "rei", "tsumugi", "madara"];
+      const decor = ["🔥", "👻", "🕯️", "🦇", "🔥", "👻", "🕯️", "🦇", "🔥", "👻"];
+      return (
+        <section style={{ maxWidth: 1200, margin: "0 auto", padding: "20px 24px 0", position: "relative", zIndex: 2 }}>
+          <button onClick={() => setNav({ page: "story", story })} style={{ position: "relative", display: "block", width: "100%", textAlign: "left", border: "2px solid rgba(200,45,60,0.5)", borderRadius: 24, overflow: "hidden", cursor: "pointer", padding: "22px 26px", background: "linear-gradient(120deg,#120507 0%,#2a0a10 45%,#3d0d12 75%,#4a0e16 100%)", boxShadow: "0 10px 34px rgba(120,10,25,0.5)", transition: "all 0.25s" }} onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 16px 46px rgba(160,15,30,0.62)"; }} onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 10px 34px rgba(120,10,25,0.5)"; }}>
+            <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}>{decor.map((c, i) => { const col = i % 5; const row = Math.floor(i / 5); return (<span key={i} style={{ position: "absolute", left: `${7 + col * 19}%`, top: `${row === 0 ? 8 + (i % 3) * 7 : 60 + (i % 3) * 9}%`, fontSize: 15 + (i % 3) * 6, opacity: 0.16 + (i % 3) * 0.04, filter: "drop-shadow(0 0 6px rgba(220,40,55,0.5))", animation: `bdayFloat ${3 + (i % 4)}s ease-in-out ${i * 0.3}s infinite` }}>{c}</span>); })}</div>
+            <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
+              <div style={{ position: "relative", flexShrink: 0 }}>
+                <div style={{ position: "absolute", inset: -6, borderRadius: 18, background: "radial-gradient(circle,rgba(220,50,65,0.75),rgba(120,15,25,0.1))", filter: "blur(5px)" }} />
+                <img src={cover} alt="" style={{ position: "relative", width: 92, height: 92, borderRadius: 16, objectFit: "cover", border: "2px solid rgba(230,90,105,0.7)", boxShadow: "0 4px 14px rgba(90,5,15,0.6)" }} />
+                <span style={{ position: "absolute", top: -14, left: -10, transform: "rotate(-12deg)", fontSize: 24, filter: "drop-shadow(0 0 5px rgba(255,60,70,0.6))" }}>🎬</span>
+              </div>
+              <div style={{ flex: 1, minWidth: 210 }}>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "3px 12px", borderRadius: 20, background: "rgba(230,60,75,0.18)", border: "1px solid rgba(230,90,105,0.45)", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "#ffb3bd", marginBottom: 8 }}>Nuevo evento · SHUFFLE</div>
+                <h2 style={{ fontFamily: "'Libre Baskerville',serif", fontWeight: 700, fontSize: "clamp(19px,2.8vw,26px)", color: "#fff", margin: "0 0 5px", textShadow: "0 2px 10px rgba(0,0,0,0.5)" }}>👻 SHUFFLE ✕ Balada de los Perdidos</h2>
+                <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13.5, fontWeight: 600, color: "#e6c2c8", margin: 0, lineHeight: 1.5, textShadow: "0 1px 5px rgba(0,0,0,0.4)" }}>Yuzuru y Niki protagonizan una película como entidades inhumanas… pero dar vida a un espíritu es más difícil de lo que parece.</p>
+                <span style={{ display: "inline-block", marginTop: 9, padding: "4px 13px", borderRadius: 20, background: "rgba(230,60,75,0.16)", border: "1px solid rgba(230,90,105,0.35)", fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 12, lineHeight: 1.5, color: "#ffc4cc" }}>✨ ¡Novedad! Estrena las Mini Talks: más de 50 decisiones donde <strong style={{ color: "#fff" }}>tú eliges</strong> ♪</span>
+                <div style={{ display: "flex", alignItems: "center", marginTop: 12 }}>{shuffleMembers.map((cId, i) => (<span key={cId} style={{ display: "inline-block", marginLeft: i === 0 ? 0 : -8, borderRadius: "50%", border: "2px solid rgba(70,10,16,0.9)", boxShadow: "0 2px 8px rgba(90,5,15,0.5)", position: "relative", zIndex: shuffleMembers.length - i }}><Avatar charId={cId} size={38} /></span>))}</div>
+              </div>
+              <span style={{ flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 8, padding: "12px 22px", borderRadius: 16, background: "linear-gradient(135deg,#e0323f,#8a0d18)", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 14, color: "#fff", boxShadow: "0 4px 16px rgba(180,20,35,0.55)" }}>Abrir evento →</span>
+            </div>
+          </button>
+          <button onClick={() => setNav({ page: "browse", tab: "stories", era: "!" })} style={{ display: "block", width: "100%", marginTop: 10, padding: "10px 18px", borderRadius: 14, border: "1px dashed rgba(200,60,75,0.5)", background: "rgba(255,236,238,0.6)", cursor: "pointer", textAlign: "center", fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 13, color: "#b0182a", transition: "all 0.2s" }} onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,221,225,0.9)"; }} onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,236,238,0.6)"; }}>✦ ¡Recuerda que toda la historia principal de la era <strong>!</strong> está disponible! →</button>
+        </section>
+      );
+    };
+
     const HomePage = ({ setNav }) => (
       <div style={{ animation: "fadeIn 0.6s ease", position: "relative", zIndex: 1 }}>
         <FloatingCircles />
         <MainStoryBanner setNav={setNav} />
-        <HimeruBirthdayBanner setNav={setNav} />
+        <BalladEventBanner setNav={setNav} />
         <BirthdayBanner setNav={setNav} />
         <section style={{ padding: "65px 24px 55px", textAlign: "center", position: "relative", zIndex: 1 }}>
           <div style={{ position: "relative", maxWidth: 600, margin: "0 auto" }}>
@@ -9819,6 +10362,7 @@
 
     const StoryPage = ({ story, chapterId, setNav }) => {
       const chapterList = STORY_CHAPTERS[story.id] || [];
+      const minitalkList = STORY_MINITALKS[story.id] || [];
       const [nowTs, setNowTs] = useState(Date.now());
       useEffect(() => { const t = setInterval(() => setNowTs(Date.now()), 1000); return () => clearInterval(t); }, []);
       const nextRelease = chapterList.find(c => c.releaseAt && new Date(c.releaseAt).getTime() > nowTs);
@@ -9826,6 +10370,9 @@
       const setSelectedChapter = (ch) => setNav({ page: "story", story, chapterId: ch ? ch.id : null });
       const units = (story.unit ? (Array.isArray(story.unit) ? story.unit : [story.unit]) : []).map(uid => ({ uid, data: UNIT_DATA[uid] })).filter(u => u.data);
       const typeLabel = story.type === "main" ? "Historia Principal" : story.type === "event" ? "Evento" : story.type === "other" ? "Otros" : story.type === "minitalk" ? "Mini Talk" : "Scout";
+      if (chapterId === "minitalks") return <MinitalksHubPage story={story} minitalks={minitalkList} setNav={setNav} />;
+      const selectedMt = (typeof chapterId === "string" && chapterId.indexOf("mt-") === 0) ? minitalkList.find(c => ("mt-" + c.id) === chapterId) : null;
+      if (selectedMt) return <MiniTalkReader story={story} chapter={selectedMt} minitalks={minitalkList} setNav={setNav} setSelectedChapter={() => setNav({ page: "story", story, chapterId: "minitalks" })} />;
       if (selectedChapter) return selectedChapter.type === "miniTalk" ? <MiniTalkReader story={story} chapter={selectedChapter} setSelectedChapter={setSelectedChapter} /> : <ChapterReader story={story} chapter={selectedChapter} setSelectedChapter={setSelectedChapter} />;
       return (
         <div style={{ maxWidth: 800, margin: "0 auto", padding: "32px 24px 60px", animation: "fadeIn 0.5s ease" }}>
@@ -9845,8 +10392,26 @@
               <StoryReactions storyId={story.id} />
             </div></div>
           {story.id === "rabits_esupri_vs" && <EventPoll />}
-          {VOICELINES[story.id] ? <VoicelinesReader story={story} setNav={setNav} /> : <><h2 style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 18, color: "#2c3e5a", margin: "0 0 14px" }}>Capítulos</h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>{(STORY_CHAPTERS[story.id] || []).map((ch, i) => { const available = ch.translated && (!ch.releaseAt || nowTs >= new Date(ch.releaseAt).getTime()); return (<React.Fragment key={ch.id}>{story.id === "rabits_esupri_vs" && nextRelease && ch.id === nextRelease.id && <EventCountdown chapters={chapterList} />}<button onClick={() => { if (available) setSelectedChapter(ch); }} disabled={!available} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 18px", borderRadius: 14, background: available ? "rgba(255,255,255,0.65)" : "rgba(240,244,250,0.4)", border: available ? "1px solid rgba(160,190,230,0.15)" : "1px solid rgba(160,190,230,0.08)", cursor: available ? "pointer" : "default", opacity: available ? 1 : 0.5, animation: `fadeSlideUp 0.4s ease ${i * 0.04}s both`, textAlign: "left" }}>{STORY_CHAPTER_CHARS[story.id] && STORY_CHAPTER_CHARS[story.id][ch.id] && <div style={{ flexShrink: 0, opacity: available ? 1 : 0.45, filter: available ? "none" : "grayscale(0.5)" }}><Avatar charId={STORY_CHAPTER_CHARS[story.id][ch.id]} size={42} /></div>}<span style={{ width: 34, height: 34, borderRadius: 10, background: available ? "rgba(74,133,194,0.08)" : "rgba(180,195,215,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 14, color: available ? "#3a6db5" : "#a8b8cc", flexShrink: 0 }}>{ch.id}</span><div style={{ flex: 1 }}><div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, color: available ? "#2c3e5a" : "#a0afc0" }}>{ch.title}</div></div>{available ? <>{ch.type === "miniTalk" && <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 10, fontWeight: 700, color: "#c0507a", padding: "2px 8px", borderRadius: 6, background: "rgba(220,120,160,0.1)", border: "1px solid rgba(220,120,160,0.2)", marginRight: 6 }}>Mini Talk</span>}<span style={{ fontSize: 14, color: "#4a85c2" }}>→</span></> : <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11, color: "#a8b8cc", padding: "2px 8px", borderRadius: 6, background: "rgba(180,195,215,0.12)" }}>Próximamente</span>}</button></React.Fragment>); })}</div>{story.phoneCall && <SoraPhoneCall data={story.phoneCall} />}</>}
+          {VOICELINES[story.id] ? <VoicelinesReader story={story} setNav={setNav} /> : <>
+            {minitalkList.length > 0 && <div style={{ marginBottom: 28 }}>
+              <button onClick={() => setNav({ page: "story", story, chapterId: "minitalks" })} style={{ display: "flex", alignItems: "center", gap: 14, width: "100%", padding: "16px 20px", borderRadius: 16, background: "linear-gradient(135deg,rgba(240,150,180,0.16),rgba(255,200,120,0.14))", border: "1px solid rgba(220,160,190,0.35)", cursor: "pointer", textAlign: "left", transition: "all 0.2s", boxShadow: "0 3px 14px rgba(220,150,180,0.16)" }} onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(220,150,180,0.28)"; }} onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 3px 14px rgba(220,150,180,0.16)"; }}>
+                <span style={{ flexShrink: 0, fontSize: 26 }}>💬</span>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 16, color: "#c0507a" }}>Mini Talks</div>
+                  <div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12.5, color: "#b06080" }}>Pasa un rato con los protagonistas ♪</div>
+                </div>
+                <span style={{ fontSize: 16, color: "#c0507a" }}>→</span>
+              </button>
+              <div style={{ position: "relative", marginTop: 13, marginLeft: 20, maxWidth: 440 }}>
+                <div style={{ position: "absolute", top: -7, left: 24, width: 13, height: 13, background: "rgba(255,250,254,0.96)", borderLeft: "1px solid rgba(220,160,190,0.35)", borderTop: "1px solid rgba(220,160,190,0.35)", transform: "rotate(45deg)" }} />
+                <div style={{ position: "relative", background: "rgba(255,250,254,0.96)", border: "1px solid rgba(220,160,190,0.35)", borderRadius: 14, padding: "12px 16px", boxShadow: "0 2px 10px rgba(220,150,180,0.12)" }}>
+                  <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#9a7080", lineHeight: 1.55, margin: 0 }}>¡Lee todas las mini talks, con <strong style={{ color: "#c0507a" }}>más de 50 decisiones distintas</strong>, y pasa un rato con tu idol favorito! ♪</p>
+                </div>
+              </div>
+            </div>}
+            <h2 style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 18, color: "#2c3e5a", margin: "0 0 14px" }}>Capítulos</h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>{(STORY_CHAPTERS[story.id] || []).map((ch, i) => { const available = ch.translated && (!ch.releaseAt || nowTs >= new Date(ch.releaseAt).getTime()); return (<React.Fragment key={ch.id}>{story.id === "rabits_esupri_vs" && nextRelease && ch.id === nextRelease.id && <EventCountdown chapters={chapterList} />}<button onClick={() => { if (available) setSelectedChapter(ch); }} disabled={!available} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 18px", borderRadius: 14, background: available ? "rgba(255,255,255,0.65)" : "rgba(240,244,250,0.4)", border: available ? "1px solid rgba(160,190,230,0.15)" : "1px solid rgba(160,190,230,0.08)", cursor: available ? "pointer" : "default", opacity: available ? 1 : 0.5, animation: `fadeSlideUp 0.4s ease ${i * 0.04}s both`, textAlign: "left" }}>{STORY_CHAPTER_CHARS[story.id] && STORY_CHAPTER_CHARS[story.id][ch.id] && <div style={{ flexShrink: 0, opacity: available ? 1 : 0.45, filter: available ? "none" : "grayscale(0.5)" }}><Avatar charId={STORY_CHAPTER_CHARS[story.id][ch.id]} size={42} /></div>}<span style={{ width: 34, height: 34, borderRadius: 10, background: available ? "rgba(74,133,194,0.08)" : "rgba(180,195,215,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 14, color: available ? "#3a6db5" : "#a8b8cc", flexShrink: 0 }}>{ch.id}</span><div style={{ flex: 1 }}><div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, color: available ? "#2c3e5a" : "#a0afc0" }}>{ch.title}</div></div>{available ? <>{ch.type === "miniTalk" && <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 10, fontWeight: 700, color: "#c0507a", padding: "2px 8px", borderRadius: 6, background: "rgba(220,120,160,0.1)", border: "1px solid rgba(220,120,160,0.2)", marginRight: 6 }}>Mini Talk</span>}<span style={{ fontSize: 14, color: "#4a85c2" }}>→</span></> : <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11, color: "#a8b8cc", padding: "2px 8px", borderRadius: 6, background: "rgba(180,195,215,0.12)" }}>Próximamente</span>}</button></React.Fragment>); })}</div>
+            {story.phoneCall && <SoraPhoneCall data={story.phoneCall} />}</>}
         </div>
       );
     };
@@ -9966,14 +10531,51 @@
       );
     };
 
-    const MiniTalkReader = ({ chapter, setSelectedChapter, story }) => {
+    const MinitalksHubPage = ({ story, minitalks, setNav }) => (
+      <div style={{ maxWidth: 800, margin: "0 auto", padding: "32px 24px 60px", animation: "fadeIn 0.5s ease" }}>
+        <button onClick={() => setNav({ page: "story", story })} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#8a9fba", marginBottom: 20, display: "block" }}>← Volver a {story.title}</button>
+        <div style={{ background: "linear-gradient(135deg,rgba(255,250,254,0.95),rgba(255,245,235,0.9))", borderRadius: 22, border: "1px solid rgba(220,160,190,0.25)", padding: "26px 28px", marginBottom: 24, textAlign: "center" }}>
+          <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11, fontWeight: 700, color: "#c0507a", letterSpacing: "0.12em", textTransform: "uppercase" }}>💬 Mini Talks</span>
+          <h1 style={{ fontFamily: "'Libre Baskerville',serif", fontWeight: 700, fontSize: 24, color: "#2c3e5a", margin: "8px 0 8px" }}>{story.title}</h1>
+          <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 14, lineHeight: 1.6, color: "#9a7080", margin: 0 }}>Elige una mini talk y pasa un rato con los protagonistas. En cada escena, ¡tú eliges qué responder! ♪</p>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          {minitalks.map((mt, i) => {
+            const c = CHARACTERS[mt.char];
+            return (
+              <button key={mt.id} onClick={() => setNav({ page: "story", story, chapterId: "mt-" + mt.id })} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 18px", borderRadius: 14, background: "rgba(255,255,255,0.65)", border: "1px solid rgba(220,160,190,0.18)", cursor: "pointer", textAlign: "left", animation: `fadeSlideUp 0.4s ease ${i * 0.04}s both`, transition: "all 0.2s" }} onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,250,254,0.9)"; e.currentTarget.style.transform = "translateX(3px)"; }} onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.65)"; e.currentTarget.style.transform = "none"; }}>
+                {mt.char && <div style={{ flexShrink: 0 }}><Avatar charId={mt.char} size={44} /></div>}
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 15, color: "#2c3e5a" }}>{mt.title}</div>
+                  {c && <div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11.5, color: textColorFor(c.color), fontWeight: 600, marginTop: 1 }}>{mt.sections ? mt.sections.length : 0} escenas · elige tu respuesta</div>}
+                </div>
+                <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 10, fontWeight: 700, color: "#c0507a", padding: "2px 8px", borderRadius: 6, background: "rgba(220,120,160,0.1)", border: "1px solid rgba(220,120,160,0.2)", marginRight: 4 }}>Mini Talk</span>
+                <span style={{ fontSize: 14, color: "#c0507a" }}>→</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    );
+
+    const MiniTalkReader = ({ chapter, setSelectedChapter, story, minitalks, setNav }) => {
       const sections = chapter.sections || [{ intro: chapter.intro, options: chapter.options, prompt: chapter.prompt }];
       const multi = !!(chapter.sections && chapter.sections.length > 1);
+      const hub = Array.isArray(minitalks) && minitalks.length > 0 && !!setNav;
+      const idx = hub ? minitalks.findIndex(m => m.id === chapter.id) : -1;
+      const prevMt = (hub && idx > 0) ? minitalks[idx - 1] : null;
+      const nextMt = (hub && idx >= 0 && idx < minitalks.length - 1) ? minitalks[idx + 1] : null;
+      const goMt = (mt) => setNav({ page: "story", story, chapterId: "mt-" + mt.id });
+      useEffect(() => { window.scrollTo({ top: 0 }); }, [chapter]);
       return (
         <div style={{ maxWidth: 700, margin: "0 auto", padding: "32px 24px 60px", animation: "fadeIn 0.4s ease" }}>
-          <button onClick={() => setSelectedChapter(null)} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#8a9fba", marginBottom: 20, display: "block" }}>← Volver a {story.title}</button>
-          <div style={{ background: "rgba(255,255,255,0.8)", borderRadius: 20, border: "1px solid rgba(160,190,230,0.15)", padding: "22px 26px", marginBottom: 24, textAlign: "center" }}><span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11, fontWeight: 700, color: "#8a9fba", letterSpacing: "0.1em", textTransform: "uppercase" }}>Mini Talks</span><h1 style={{ fontFamily: "'Libre Baskerville',serif", fontWeight: 700, fontSize: 24, color: "#2c3e5a", margin: "6px 0 0" }}>{chapter.title}</h1></div>
+          <button onClick={() => setSelectedChapter(null)} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#8a9fba", marginBottom: 20, display: "block" }}>← Volver a {hub ? "las Mini Talks" : story.title}</button>
+          <div style={{ background: "rgba(255,255,255,0.8)", borderRadius: 20, border: "1px solid rgba(160,190,230,0.15)", padding: "22px 26px", marginBottom: 24, textAlign: "center" }}><span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11, fontWeight: 700, color: "#8a9fba", letterSpacing: "0.1em", textTransform: "uppercase" }}>Mini Talks{hub && idx >= 0 ? ` · ${idx + 1} de ${minitalks.length}` : ""}</span><h1 style={{ fontFamily: "'Libre Baskerville',serif", fontWeight: 700, fontSize: 24, color: "#2c3e5a", margin: "6px 0 0" }}>{chapter.title}</h1></div>
           {sections.map((sec, i) => <MiniTalkSection key={i} section={sec} index={i} showNumber={multi} />)}
+          {hub && (prevMt || nextMt) && <div style={{ display: "flex", justifyContent: "space-between", gap: 12, marginTop: 8, paddingTop: 24, borderTop: "1px solid rgba(220,160,190,0.2)" }}>
+            {prevMt ? <button onClick={() => goMt(prevMt)} style={{ background: "rgba(255,250,254,0.75)", border: "1px solid rgba(220,160,190,0.3)", borderRadius: 12, padding: "10px 18px", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#c0507a", fontWeight: 600, textAlign: "left", maxWidth: "48%" }}>← {prevMt.title}</button> : <div />}
+            {nextMt ? <button onClick={() => goMt(nextMt)} style={{ background: "linear-gradient(135deg,#e0709a,#f0a0c0)", border: "none", borderRadius: 12, padding: "10px 18px", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#fff", fontWeight: 600, boxShadow: "0 2px 8px rgba(220,100,150,0.3)", textAlign: "right", maxWidth: "48%" }}>{nextMt.title} →</button> : <div />}
+          </div>}
         </div>
       );
     };
@@ -10002,19 +10604,23 @@
         fill: t.fill || "linear-gradient(90deg,#4a85c2,#5b9bd5)",
         time: t.time || "#a0b4cc",
       };
+      const decor = Array.isArray(t.decor) ? t.decor : [];
       return (
-        <div style={{ display: "flex", alignItems: "center", gap: 14, background: th.bg, borderRadius: 16, border: th.border, padding: "12px 16px", marginBottom: 20, boxShadow: th.shadow }}>
+        <div style={{ position: "relative", overflow: "hidden", display: "flex", alignItems: "center", gap: 14, background: th.bg, borderRadius: 16, border: th.border, padding: "12px 16px", marginBottom: 20, boxShadow: th.shadow }}>
+          {decor.length > 0 && <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none", borderRadius: 16, zIndex: 0 }}>
+            {decor.map((d, i) => <span key={i} style={{ position: "absolute", left: d.left, right: d.right, top: d.top, bottom: d.bottom, fontSize: d.size || 20, opacity: d.opacity != null ? d.opacity : 0.16, animation: `bdayFloat ${3.2 + (i % 4) * 0.7}s ease-in-out ${i * 0.5}s infinite` }}>{d.emoji}</span>)}
+          </div>}
           <audio ref={audioRef} src={song.src} preload="metadata"
             onTimeUpdate={e => setCur(e.target.currentTime)}
             onLoadedMetadata={e => setDur(e.target.duration)}
             onPlay={() => setPlaying(true)}
             onPause={() => setPlaying(false)}
             onEnded={() => setPlaying(false)} />
-          {song.cover && <div style={{ flexShrink: 0, width: 100, height: 100, borderRadius: 14, overflow: "hidden", boxShadow: th.coverShadow, border: th.coverBorder }}><img src={song.cover} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} /></div>}
-          <button onClick={toggle} aria-label={playing ? "Pausar" : "Reproducir"} style={{ flexShrink: 0, width: 42, height: 42, borderRadius: "50%", border: "none", cursor: "pointer", background: th.btn, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: th.btnShadow, fontSize: 16, lineHeight: 1 }}>
+          {song.cover ? <div style={{ position: "relative", zIndex: 1, flexShrink: 0, width: 100, height: 100, borderRadius: 14, overflow: "hidden", boxShadow: th.coverShadow, border: th.coverBorder }}><img src={song.cover} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} /></div> : t.coverEmoji ? <div style={{ position: "relative", zIndex: 1, flexShrink: 0, width: 100, height: 100, borderRadius: 14, overflow: "hidden", boxShadow: th.coverShadow, border: th.coverBorder, background: t.coverBg || th.btn, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 44, filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.4))" }}>{t.coverEmoji}</div> : null}
+          <button onClick={toggle} aria-label={playing ? "Pausar" : "Reproducir"} style={{ position: "relative", zIndex: 1, flexShrink: 0, width: 42, height: 42, borderRadius: "50%", border: "none", cursor: "pointer", background: th.btn, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: th.btnShadow, fontSize: 16, lineHeight: 1 }}>
             {playing ? "❚❚" : "▶"}
           </button>
-          <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ position: "relative", zIndex: 1, flex: 1, minWidth: 0 }}>
             <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 6 }}>
               <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 13.5, color: th.title, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{song.title}</span>
               {song.artist && <span style={{ fontFamily: "'Nunito',sans-serif", fontSize: 11.5, color: th.artist, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>· {song.artist}</span>}
