@@ -1967,7 +1967,7 @@
       { era: "!!", id: "evt-ballad", title: "SHUFFLE x Balada de los perdidos", type: "event", unit: null, order: 24, chapters: 12, description: "El proyecto más reciente de P-Choice consiste en una película. Yuzuru y Niki son elegidos como co-protagonistas por un director al que ayudaron. Pero actuar como entidades inhumanas es más dificil de lo que pensaban...", featured: ["yuzuru", "niki", "rei", "tsumugi", "mama", "hajime"], hidden: false, status: "complete", banner: "https://i.postimg.cc/8knsYXLm/latest-cb-20240914102438.webp", translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" }},
       { era: "!!", id: "aira-sct", title: "SCOUT Aira x Bright Me Up!!", type: "scout", unit: null, order: 25, chapters: 4, description: "A Aira se le ocurre una buena idea para su directo en solitario, pero Anzu rechaza su propuesta y Kohaku intenta animarlo...", featured: ["aira", "kohaku", "yume", "tatsumi", "midori", "tetora", "shinobu", "chiaki", "kanata"], status: "complete", banner: "images/aira-sct.webp", translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" } },
       { era: "!!", id: "cross-dom", title: "Cross Scout X Dominante (Caótico VS Drástico)", type: "scout", hidden: true, unit: null, order: 26, chapters: 10, description: "Keito le da clases particulares a Tetora para ayudarlo con un examen, pero los deberes que le pone son demasiado difíciles y Madara se ofrece a hacer de tutor...", featured: ["keito", "tetora", "madara"], status: "complete", banner: "https://i.postimg.cc/0QXLXZgB/410-cb-20240914021054.webp", banner2: "https://i.postimg.cc/HxJggFtg/410-cb-20240914101557.webp", translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" } },
-      { era: "!!", id: "vs-audience", title: "VS ★ AUDIENCIA (Tercera Edición)", type: "event", unit:null, order: 27, chapters: 11, hidden:true, description: "¡Empieza la gran y extravagante audición de “4piece”! Izumi y Wataru participarán en el tercer recinto: La Pagoda de los Gallos Gemelos. Para llegar a la final, deben impresionar a cien personas que cambian cada día, ¿y...?", featured: ["tetora", "midori", "shinobu", "souma", "yuzuru", "arashi", "keito", "eichi", "izumi", "kuro", "wataru", "kanata", "nazuna", "jin", "akiomi", "tsumugi", "hiiro", "aira", "tatsumi", "ibuki", "nice", "seiya"], status: "in-progress", banner: "https://i.postimg.cc/QtNwz391/latest-cb-20240914015203.webp", translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" }, },
+      { era: "!!", id: "vs-audience", title: "VS ★ AUDIENCIA (Tercera Edición)", type: "event", unit:null, order: 27, chapters: 11, hidden:false, description: "¡Empieza la gran y extravagante audición de “4piece”! Izumi y Wataru participarán en el tercer recinto: La Pagoda de los Gallos Gemelos. Para llegar a la final, deben impresionar a cien personas que cambian cada día, ¿y...?", featured: ["tetora", "midori", "shinobu", "souma", "yuzuru", "arashi", "keito", "eichi", "izumi", "kuro", "wataru", "kanata", "nazuna", "jin", "akiomi", "tsumugi", "hiiro", "aira", "tatsumi", "ibuki", "nice", "seiya"], status: "in-progress", banner: "https://i.postimg.cc/QtNwz391/latest-cb-20240914015203.webp", translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" }, },
     ];
     const STORY_CHAPTERS = {
       "koga-bday-2026": [
@@ -2802,14 +2802,14 @@
       { id: 1, title: "Prólogo", translated: true, translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" } },
       { id: 2, title: "Cien / Episodio 1", translated: true },
       { id: 3, title: "Cien / Episodio 2", translated: true },
-      { id: 4, title: "Cien / Episodio 3", translated: true },
-      { id: 5, title: "Cien / Episodio 4", translated: true },
-      { id: 6, title: "Cien / Episodio 5", translated: true },
-      { id: 7, title: "Cien / Episodio 6", translated: true },
-      { id: 8, title: "Cien / Episodio 7", translated: true },
-      { id: 9, title: "Cien / Episodio 8", translated: true },
-      { id: 10, title: "Cien / Episodio 9", translated: true },
-      { id: 11, title: "Cien / Episodio 10", translated: true },
+      { id: 4, title: "Cien / Episodio 3", translated: false },
+      { id: 5, title: "Cien / Episodio 4", translated: false },
+      { id: 6, title: "Cien / Episodio 5", translated: false },
+      { id: 7, title: "Cien / Episodio 6", translated: false },
+      { id: 8, title: "Cien / Episodio 7", translated: false },
+      { id: 9, title: "Cien / Episodio 8", translated: false },
+      { id: 10, title: "Cien / Episodio 9", translated: false },
+      { id: 11, title: "Cien / Episodio 10", translated: false },
       ],
     };
 
@@ -9934,9 +9934,91 @@
   1: [
   { type:"era", season:"primavera", yearLabel:"Segundo año de ES" },
   { type:"location", src:"https://i.postimg.cc/Jnb3jD4q/1000-cb-20200508180437.webp", label:"Oficina de NewDi", position:"center center" },
-  { speaker:"tsumugi", lines:["Lo siento, "] },
+  { speaker:"tsumugi", lines:["Lo siento, pero han cancelado la sesión de fotos que tenías con esa revista para el mes que viene."] },
+  { speaker:"izumi", lines:["¿Qué...?", "¿De qué estás hablando? Pero si me estaban rogando que saliera en portada.", "Encima me pidieron a mí en concreto. ¿Qué demonios ha pasado?"] },
+  { speaker:"tsumugi", lines:["Lo siento... El director no me ha dado muchos detalles, pero por lo visto han cancelado el proyecto de golpe.", "Parece que ha llegado un idol muy famoso del extranjero...", "Y mientras esté aquí, quieren sacarlo en todas las portadas que puedan.", "Por eso los jefes han decidido posponer tu sesión."] },
+  { speaker:"izumi", lines:["¡No me lo creo! ¡Imposible, imposible, imposible...!", "¿Cómo que van a poner a otro idol por delante de mí? ¿Y quién es?"] },
+  { speaker:"tsumugi", lines:["A mí no me han confirmado nada, son solo rumores, pero...", "Por lo que dicen, es uno de los idols que lleva Nice Arneb Thunder, un productor extranjero de primera.", "Nozomi Madoka, de MELLOW DEAR US... ¿Te suena de algo?"] },
+  { speaker:"izumi", lines:["¿Nozomi Madoka...?"] },
+  { time: "Unos días después", speaker:"arashi", lines:["Izumi, ¿te ha llegado el mensaje del pequeño Tsukasa?"] },
+  { speaker:"izumi", lines:["Sí. Quiere que nos apuntemos a *4piece*, ¿no?", "Que tenemos que participar juntos para mantener el buen nombre de Knights... o algo así. Ya está bien de que decida por todos."] },
+  { speaker:"arashi", lines:["Jeje, muy típico de Tsukasa. Ya sabes lo competitivo que es.", "Pero *4piece* es una competición individual, así que apuntarse o no es cosa de cada uno.", "Ni siquiera han dicho quiénes serán los jueces ni cuál es el premio... A mí me da bastante mala espina. Y ese productor Nice va vestido muy raro. Yo no me quiero meter en esto.", "¿Y tú, Izumi? Se nota que no te llama mucho."] },
+  { speaker:"izumi", lines:["Me voy a inscribir, por supuesto."] },
+  { speaker:"arashi", lines:["Me lo imaginaba. A los modelos como nosotros no nos sirve de nada meternos en...", "¿Eh? Izumi, ¿acabas de decir que vas a participar?"] },
+  { speaker:"izumi", lines:["¿Por qué das por hecho que no quiero participar?"] },
+  { speaker:"arashi", lines:["Porque acabas de decir que odias que el pequeño Tsukasa decida por todos.", "Y como dijo que era obligatorio apuntarse, asumí que te negarías."] },
+  { speaker:"izumi", lines:["Yo hago lo que me da la gana. Me fastidia que Kasa nos dé órdenes, pero me habría apuntado igualmente.", "¿Cómo se llamaban...? ¿MELLOW DEAR US? Han salido de la nada y ya me están cancelando encargos con varias revistas. Al menos, apuntándome a esto tendré algo que hacer."] },
+  { speaker:"arashi", lines:["¿MELLOW DEAR US...? ¿Esos del extranjero? Son bastante famosos.", "Los lleva Nice, ¿no? Menuda unidad se ha montado.", "¿No me digas que te has quedado resentido y quieres vengarte del productor Nice?"] },
+  { speaker:"izumi", lines:["No estoy resentido. ¡Solo quiero demostrarles a todos que puedo plantarme en un escenario mundial!", "Quiero que me reconozcan por mí mismo. ¡No solo como parte de Knights!"] },
+  { speaker:"arashi", lines:["Te has picado porque tengo razón, ¿a que sí?", "Pero si tú te vas a apuntar, voy a ser la única que no participe en *4piece*...", "Lo habría pensado mejor de haber sabido que os ibais a apuntar todos.", "Aunque ya tengo varios encargos para esas fechas, así que a estas alturas no puedo cambiar nada.", "A lo mejor te han cancelado los encargos por un capricho del destino.", "Tengo muchas ganas de verte. Más te vale darlo todo, ¿eh?", "Ni se te ocurra dejar que a Knights le vaya mal ♪"] },
+  { speaker:"izumi", lines:["¡Hm! No seas ridícula. Es imposible que nos echen a todos los de Knights.", "Solo tenemos que controlar la situación de principio a fin y actuar de forma que no puedan quitarnos los ojos de encima.", "Sé que los jueces serán exigentes, porque van a participar muchos idols que ya han debutado.", "Pero estoy dispuesto a darlo todo. Si no, no hay manera de ganar, ¿no crees?", "Si competimos cara a cara, hasta ese productor Nice tendrá que admitir lo talentoso que soy.", "Seré yo quien le demuestre al mundo que Japón tiene a los mejores idols."] },
   ],
-  },
+  2: [
+  { type:"location", src:"https://i.postimg.cc/Y2dtftDW/1000-cb-20240927022327.webp", time: "Primer día de 4piece, antes de que empiecen las audiciones", label:"Escenario exterior", position:"center center" },
+  { speaker:"tori", lines:["¡Wow! ¡Este recinto es gigante!", "¡Qué pena que no podamos entrar a verlo...! ¡Tiene una pinta espectacular!"] },
+  { speaker:"eichi", lines:["Jeje. ¿Esto ya te impresiona?", "Claro, Thunderbolt es un conglomerado enorme. Pero, que quede entre nosotros, podemos igualarlos en dinero y poder.", "Si no diésemos por hecho desde ya que podemos replicar y superar lo que hacen, me preocuparía nuestro futuro.", "Y, te lo digo como alguien del gremio, me parece bastante frívolo montar un recinto así solo para *4piece*.", "Es de muy mal gusto; lo único que buscan es exhibir la influencia de Thunderbolt."] },
+  { speaker:"wataru", lines:["Jeje, ¡eso suena más a insulto que a opinión profesional!", "Me da la sensación de que subestimas a Thunderbolt. Cuidado con criticarlos demasiado. Al fin y al cabo, son los que han organizado todo esto.", "Sería una lástima hablar cuando no nos toca."] },
+  { speaker:"tori", lines:["¡No digas eso! ¡El señor Eichi es genial!"] },
+  { speaker:"eichi", lines:["Jeje, gracias por la advertencia. Creo que me ha dado un poco de envidia que a Tori le guste tanto el recinto de Thunderbolt.", "Pero, aun así, espero ver algo revolucionario de su parte.", "Están intentando rescatar el talento que ES no ha sido capaz de descubrir.", "Por eso he autorizado a que *fine* participe, y tampoco me opuse a que Tori se inscribiera."] },
+  { speaker:"tori", lines:["Pero no esperaba que ATLANTIS me tuviera tan ocupado... He tenido que retirarme de esto~", "Los problemas con la construcción no podían llegar en peor momento... Qué mala suerte."] },
+  { speaker:"yuzuru", lines:["No te preocupes tanto. Aunque te pierdas esta audición, ya tienes asegurado un escenario en el que brillar.", "No puedes estar en todo a la vez, joven amo. Lo mejor será que te centres en tu nuevo negocio."] },
+  { speaker:"tori", lines:["Sí... Tengo que centrarme, o volverán a retrasar la construcción de ATLANTIS.", "Wataru, no sé si querías participar en esto, pero si te apuntas, te animaré hasta el final. Me dijiste que te habías metido por mí, así que..."] },
+  { speaker:"wataru", lines:["Déjamelo a mí. Me encargaré de todo sin un solo fallo, para compensarte.", "Así puedes concentrarte en tu trabajo, Himegimi."] },
+  { speaker:"tori", lines:["¡Claro que sí! ¡Más te vale no ser de los primeros en caer, ¿¡me oyes!?"] },
+  { speaker:"yuzuru", lines:["Señor Hibiki, yo también te estaré animando. Espero que pueda demostrar todo tu talento.", "Joven amo, deberíamos irnos ya."] },
+  { speaker:"tori", lines:["¿¡Ya!? Qué pena, quería ver cómo empezaba todo~", "¡Buena suerte, Hibiki! ¡Luego me lo cuentas todo!"] },
+  { speaker:"wataru", lines:["... Jeje. Valoro que el Señor Mayordomo y Himegimi me hayan venido a despedir con lo ocupados que están.", "¿Tú qué vas a hacer después de esto, Eichi?", "Dijiste que tenías algo más importante pendiente, ¿no?"] },
+  { speaker:"eichi", lines:["Sí. Voy a ver *4piece* por la televisión, pero tengo que volver a ES y terminar lo que tengo pendiente antes de medianoche.", "Aunque antes quiero darte una cosa.", "Supongo que te acordarás de esta máscara, ¿verdad...?"] },
+  { speaker:"wataru", lines:["Sí. Es imposible que me olvide de ella. Yo soy la máscara.", "Pero... te llevaste mi máscara porque querías que siguiera siendo idol. ¿Por qué me la devuelves ahora?"] },
+  { speaker:"eichi", lines:["Considérala un amuleto de buena suerte.", "Siempre interpretas a la perfección los papeles que te pido.", "Pero no puedes anteponer tu lealtad hacia mí o hacia *fine* si vas a interpretar el papel que *4piece* exige.", "Te has metido en un juego de lo más complicado.", "Te devuelvo la máscara por un tiempo, para que puedas tomar tus propias decisiones en *4piece*.", "Olvida que formas parte de *fine* y afronta este reto como un idol independiente.", "Aunque, cuando *4piece* acabe, tendrás que volver con nosotros, por supuesto."] },
+  { speaker:"wataru", lines:["Gracias, Eichi. Me conmueve que pienses tanto en mí.", "La llevaré puesta cuando quiera ser libre, o cuando quiera acordarme de ti ♪"] },
+  { speaker:"eichi", lines:["Jeje. Pensé que me dirías que me la quedara, que con la intención bastaba. Pero ya veo que no tenía de qué preocuparme.", "Bueno, dicho esto, me marcho.", "Keito también participa en *4piece*. Voy a incordiarlo un poco antes de volver.", "No me preocupo por ti, Wataru. Da lo mejor de ti hasta el final."] },
+  { speaker:"wataru", lines:["¡Eichi, preocúpate aunque sea un poco por mí! ¡Voy a ponerme tristísimo!"] },
+  { speaker:"eichi", lines:["Ajaja. Confío plenamente en ti, Wataru. Ganes o no, te seguiré admirando igual que siempre.", "Bueno, es hora de ir a ver a un viejo amigo.", "Estoy deseando ver la tormenta que vas a desatar en *4piece*, Wataru ♪"] },
+  { type:"location", src:"https://i.postimg.cc/dtQmpj9x/1000-cb-20240610224729.webp", label:"Interior del Recinto", position:"center center" },
+  { speaker:"keito", lines:["......", "(La verdad... es que no estoy nada nervioso. No sé por qué.)", "(Pero supongo que tiene sentido. Estoy acostumbrado a que el público me juzgue, y esto no es distinto.)", "(Aunque esta vez me juzgarán a mí solo.)"] },
+  { speaker:"nazuna", lines:["Vaya, Keito-chin. Tú también por aquí.", "No te creas que voy a perder contra ti~ Aunque me da pena tener que competir contra otro de Rhythm Link."] },
+  { speaker:"keito", lines:["Sí. Yo tampoco pienso perder. Prepárate.", "Nos hemos enfrentado muchas veces, desde que éramos adolescentes. Puede que esta batalla sea distinta, pero no te lo voy a poner fácil.", "A AKATSUKI le ha ido muy bien con *Mundos Sacudidos R*. Con ese impulso, también podremos conquistar *4piece*."] },
+  { speaker:"nazuna", lines:["Ajaja. ¿Conquistar, dices? Pareces recién salido de una serie de época.", "Pero bueno, no podría pedir un rival mejor."] },
+  { speaker:"eichi", lines:["Así es. Y Wataru de *fine* también se ha inscrito."] },
+  { speaker:"nazuna", lines:["¡Agh! ¿¡T-T-Tenshouin!? ¿C-Cuándo hash llegadosh?!", "¿No me digas que tú también vas a participar en *4piece*?"] },
+  { speaker:"eichi", lines:["Vaya susto te he dado, Nito. Si con solo hablarte te pones así de nervioso, nunca superarás una audición tan imprevisible como esta.", "No es que sepa disimular mi presencia. Acabo de llegar.", "Os he oído hablar al pasar. Estáis calibrando a vuestros rivales, ¿verdad?"] },
+  { speaker:"keito", lines:["No somos tan calculadores. Solo estábamos charlando.", "¿Y qué haces tú aquí? Me dijeron que no ibas a participar en *4piece*...", "Si has venido a causar problemas, hazme el favor de irte. Preferiría que no te metieras en mis asuntos antes de que empiecen las audiciones."] },
+  { speaker:"eichi", lines:["Jeje. No seas tan malo conmigo, Keito. Somos amigos, ¿no?", "Los rumores son ciertos: no me he inscrito en las audiciones.", "La vida es demasiado corta para pasarla buscando la aprobación de los demás. Un evento tan grandioso como este lo disfrutaré más desde la distancia.", "Aun así, como viejo amigo tuyo, tengo un par de consejos para ti."] },
+  { speaker:"keito", lines:["¿De verdad?"] },
+  { speaker:"eichi", lines:["Como jefe del Comité Ejecutivo de ES, ya sé a qué recinto te van a asignar.", "Y parece que a ti y a Wataru que os van a poner con un idol muy interesante.", "Se llama Ibuki Taki. Solo se ha inscrito con ES temporalmente...", "Pero, de todos los novatos, es el que más talento tiene.", "Estoy seguro de que cumplirá mis expectativas... No, de que las superará."] },
+  ],
+  3: [
+  { type:"location", src:"https://i.postimg.cc/SxYhL8Hj/1000-cb-20240824170603.webp", label:"Recinto Tres de 4piece, la Pagoda de los Gallos Gemelos", position:"center center" },
+  { speaker:"nice", lines:["“¡Bienvenidos al tercer recinto de *4piece*: la Pagoda de los Gallos Gemelos!”", "“A partir de ahora, vais a competir en esta Pagoda... O eso me gustaría decir.”", "“Pero este recinto es un poco distinto a los demás.”", "“Delante de la pantalla, veréis una moneda de madera. Hay una por participante. ¿Seríais tan amables de cogerla?”"] },
+  { speaker:"hiiro", lines:["Vale. Ya las tenemos.", "Detrás de la mía hay un pájaro pintado. ¿Tengo que buscarle la pareja?"] },
+  { speaker:"nice", lines:["“Jaja, *Nice*, Hiiro Amagi. Qué perspicaz.”", "“Para quien no lo sepa, os explico cómo funciona. Estas monedas sirven para verificar la identidad de las partes de un trato: se parte en dos una pieza que lleva un solo dibujo.”", "“Las monedas que encajen decidirán quién es vuestra pareja en esta audición.”", "“La competición en la Pagoda de los Gallos Gemelos será por parejas. Y vuestra pareja será la persona cuya moneda encaje a la perfección con la que tenéis en la mano.”"] },
+  { speaker:"hiiro", lines:["Ya veo. Así que quien tenga la otra mitad de esta águila es mi pareja, ¿no?", "¡Eh! ¿Alguien tiene la otra mitad de esta moneda de águila? Si la tienes, ¡ven a decírmelo, por favor!"] },
+  { speaker:"nazuna", lines:["¡Anda! ¡Yo también tengo un águila!", "Parece que nos toca ser pareja. Me alegro de poder trabajar contigo, Hiiro-chin.", "No te cortes conmigo. Puedes llamarme hermano mayor, o Ni~chan si prefieres ♪"] },
+  { speaker:"hiiro", lines:["Ya tengo suficiente con el hermano mayor que tengo. Pero puedo llamarte hermano mayor mini."] },
+  { speaker:"nazuna", lines:["¡No me llames mini! ¡Sabes que no me gusta que me digan eso!"] },
+  { speaker:"hiiro", lines:["Hm. Perdón si te he hecho enfadar, senpai Nazuna."] },
+  { speaker:"keito", lines:["(Vaya... Así que Nito y Amagi van juntos, ¿eh? Los dos son bastante espabilados.)", "(Yo tengo un pavo real...)", "¿Alguien tiene una moneda con un pavo real dibujado?"] },
+  { speaker:"ibuki", lines:["¿Un pavo real? ¡Yo~!", "¡Síp! ¡Los dibujos de nuestras monedas encajan a la perfección! No hay ninguna duda~♪", "Eres Hasumi de AKATSUKI, ¿verdad~?"] },
+  { speaker:"keito", lines:["Vaya, así que eres Ibuki Taki... ¿Sabes quién soy?"] },
+  { speaker:"ibuki", lines:["Podría preguntarte lo mismo~ ¿Cómo sabes quién soy?"] },
+  { speaker:"keito", lines:["Te has inscrito en ES temporalmente, ¿no? Eichi, el representante de Star Pro, me habló de ti.", "Le impresionaste mucho, Taki. Dicen que destacas entre los n sovatos.", "No esperaba que nos tocara ser pareja, pero espero que trabajemos bien juntos."] },
+  { speaker:"ibuki", lines:["Nyajajaja. Contaba con que estuvieras así de bien informado~♪ Por lo visto soy más famoso de lo que creía.", "Me esforzaré por estar a la altura de tus expectativas, Hasumi~♪ Eres el líder de AKATSUKI, ¿no? A ver si nos va bien~"] },
+  { speaker:"nazuna", lines:["Parece que Keito-chin también ha encontrado a su pareja.", "No había visto nunca a ese chico. ¿Será de ES?"] },
+  { speaker:"hiiro", lines:["Es Ibuki Taki, uno de los novatos de ES."] },
+  { speaker:"nazuna", lines:["Ah, es de quien hablaba Tenshouin... ¿Lo conoces, Hiiro-chin?"] },
+  { speaker:"hiiro", lines:["Sí. Bueno, lo he visto por ahí.", "No sé cuánto talento tendrá, pero físicamente es muy fuerte. Se mueve como si hubiera entrenado artes marciales."] },
+  { speaker:"nazuna", lines:["Ya veo~... Y con la cabeza de Keito-chin, van a ser una pareja temible.", "Pero... Me preocupan más esos dos."] },
+  { speaker:"izumi", lines:["¡No me lo puedo creer!"] },
+  { speaker:"wataru", lines:["Por mucho que lo dudes, es la pura realidad ☆", "Nuestras monedas tienen una paloma dibujada.", "Vamos a ganar juntos, Sr. Caballero ♪"] },
+  { speaker:"izumi", lines:["Si vamos a trabajar juntos, al menos podrías llamarme por mi nombre.", "Sé que eres muy talentoso, pero es imposible llevarse bien con un excéntrico rarito como tú. Me huelo que esto va a ser un desastre."] },
+  { speaker:"nice", lines:["“Parece que todos habéis encontrado a vuestra pareja.”"] },
+  { speaker:"izumi", lines:["¿Pareja? ¿Y encima tenemos que estar contentos con una pareja impuesta? Por favor, que no somos niños.", "¿No se suponía que *4piece* era una competición individual? ¿Por qué nos has emparejado?"] },
+  { speaker:"wataru", lines:["¡No puede ser! ¡Qué cruel, Sr. Caballero! ¡Para que lo sepas, yo tenía muchas ganas de ser tu pareja!"] },
+  { speaker:"izumi", lines:["¡Sé que no vas en serio, payaso...!"] },
+  { speaker:"nice", lines:["“Jeje, veo que a algunos no os hace mucha gracia vuestra pareja.”", "“Sé que puede costar dar el máximo cuando dependéis de otra persona...”", "“Pero, como organizador de *4piece*, os aseguro que esta es la mejor manera de afrontar el desafío que tenéis por delante.”", "“Al fin y al cabo, tendréis que enfrentaros a un público de cien personas.”"] },
+  ],
+},
 };
 
     const VOICELINES = {
@@ -10601,54 +10683,58 @@
     const FourPieceEventBanner = ({ setNav }) => {
       const [isMobile, setIsMobile] = useState(typeof window !== "undefined" && window.innerWidth < 640);
       useEffect(() => { const f = () => setIsMobile(window.innerWidth < 640); window.addEventListener("resize", f); return () => window.removeEventListener("resize", f); }, []);
-      const photoWataru = "https://i.postimg.cc/D0Fkrz90/1000-cb-20240823132443.webp";
-      const photoIzumi = "https://i.postimg.cc/4ywMpQv8/1000-cb-20240823074744.webp";
-      const chats = [
-        { leftId: "wataru", label: "◈ Wataru & Izumi ◈", lines: [
-          { id: "wataru", text: "¡Hola a todos! El DESAFÍO THUNDERBOLT 4piece por fin está a punto de empezar." },
-          { id: "wataru", text: "Vuestro querido Wataru Hibiki, de fine, está a cargo de la promoción de hoy." },
-          { id: "izumi", text: "Y yo también, Izumi Sena, de Knights. El programa empieza por la noche. Vendréis a vernos, ¿verdad?" },
-          { id: "izumi", text: "Nuestro recinto es la Pagoda de los Gallos Gemelos…" },
-          { id: "wataru", text: "De hecho, acabamos de terminar la primera ronda \uD83C\uDFB6 ¿A que sí, don caballero?" },
-          { id: "izumi", text: "Mirad el programa para saber más. Yo me lo estoy tomando muy en serio." },
-          { id: "izumi", text: "Prometo que os demostraré mi valía a todos, así que, por favor, animadme." },
-          { id: "wataru", text: "Jejeje \u2B50 ¡No puedo esperar a ver qué cosas Amazing nos esperan…! No cambiéis de canal… \u2B50" },
-        ] },
-      ];
+      const story = STORIES.find(s => s.id === "vs-audience");
+      const photoWataru = "https://i.postimg.cc/4ywMpQv8/1000-cb-20240823074744.webp";
+      const photoIzumi = "https://i.postimg.cc/D0Fkrz90/1000-cb-20240823132443.webp";
       // Mezcla el color del personaje hacia el blanco (para nombres legibles y burbujas tintadas suaves)
       const mix = (hex, amt) => { const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16); const m = v => Math.round(v + (255 - v) * amt); return [m(r), m(g), m(b)]; };
       const decor = ["⚡", "☆", "✦", "⚡", "✧", "☆", "⚡", "✦", "☆", "✧", "⚡", "☆", "✦", "⚡", "✧", "☆", "✦", "⚡", "✧", "☆"];
       const photoStyle = (rot) => ({ position: "relative", width: "clamp(84px,22vw,120px)", height: "clamp(108px,28vw,152px)", borderRadius: 14, objectFit: "cover", objectPosition: "top center", border: "2px solid rgba(140,225,255,0.7)", boxShadow: "0 6px 18px rgba(10,10,40,0.6)", transform: `rotate(${rot}deg)`, flexShrink: 0 });
       const photoWrap = { position: "relative", flexShrink: 0 };
       const photoGlow = { position: "absolute", inset: -8, borderRadius: 20, background: "radial-gradient(circle,rgba(102,216,255,0.55),rgba(60,40,150,0.05))", filter: "blur(6px)" };
+      // Bocadillo tipo cómic que sale de cada foto (lo que dicen sus cartas)
+      const cardBubble = (charId, text, delay) => { const c = CHARACTERS[charId]; const [br, bg, bb] = mix(c.color, 0.85); return (
+        <div style={{ position: "relative", maxWidth: "clamp(122px,34vw,168px)", marginBottom: 15, background: `linear-gradient(135deg,rgba(${br},${bg},${bb},0.98),#ffffff)`, border: `2px solid rgb(${br},${bg},${bb})`, borderRadius: 15, padding: "9px 13px", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 12.5, lineHeight: 1.38, color: "#20263f", textAlign: "center", boxShadow: `0 6px 18px rgba(5,8,30,0.45), 0 0 22px rgba(${br},${bg},${bb},0.4)`, animation: `softBob 3.4s ease-in-out ${delay}s infinite` }}>
+          {text}
+          <span style={{ position: "absolute", bottom: -8, left: "50%", marginLeft: -8, width: 15, height: 15, background: `rgb(${br},${bg},${bb})`, borderRight: `2px solid rgb(${br},${bg},${bb})`, borderBottom: `2px solid rgb(${br},${bg},${bb})`, transform: "rotate(45deg)" }} />
+        </div>
+      ); };
       return (
         <section style={{ maxWidth: 1200, margin: "0 auto", padding: "20px 24px 0", position: "relative", zIndex: 2 }}>
           <div style={{ position: "relative", border: "2px solid rgba(102,216,255,0.45)", borderRadius: 24, overflow: "hidden", background: "linear-gradient(120deg,#080a1f 0%,#131636 42%,#1d1f4c 74%,#2a1c58 100%)", boxShadow: "0 10px 34px rgba(30,25,90,0.5)" }}>
             <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none", zIndex: 4 }}>{decor.map((c, i) => { const col = i % 7; const band = i % 4; return (<span key={i} style={{ position: "absolute", left: `${3 + col * 14 + (i % 2) * 4}%`, top: `${band === 0 ? 5 + (i % 4) * 4 : band === 1 ? 30 + (i % 3) * 6 : band === 2 ? 55 + (i % 3) * 6 : 80 + (i % 4) * 4}%`, fontSize: 12 + (i % 4) * 7, opacity: 0.16 + (i % 3) * 0.07, filter: "drop-shadow(0 0 6px rgba(120,210,255,0.7))", animation: `bdayFloat ${2.6 + (i % 5) * 0.6}s ease-in-out ${i * 0.22}s infinite` }}>{c}</span>); })}</div>
-            <div style={{ position: "relative", padding: "24px 26px 8px" }}>
+            <div style={{ position: "relative", padding: "26px 26px 28px" }}>
               {(() => {
                 const wataruImg = (
-                  <div style={photoWrap}>
-                    <div style={photoGlow} />
-                    <img src={photoWataru} alt="Wataru Hibiki" style={photoStyle(-5)} />
-                    <span style={{ position: "absolute", top: -15, left: -12, transform: "rotate(-14deg)", fontSize: 25, filter: "drop-shadow(0 0 6px rgba(255,225,80,0.85))", zIndex: 3 }}>⚡</span>
+                  <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                    {cardBubble("wataru", "Vamos a ganar juntos, Sr. Caballero ♪", 0)}
+                    <div style={photoWrap}>
+                      <div style={photoGlow} />
+                      <img src={photoWataru} alt="Wataru Hibiki" style={photoStyle(-5)} />
+                      <span style={{ position: "absolute", top: -15, left: -12, transform: "rotate(-14deg)", fontSize: 25, filter: "drop-shadow(0 0 6px rgba(255,225,80,0.85))", zIndex: 3 }}>⚡</span>
+                    </div>
                   </div>
                 );
                 const izumiImg = (
-                  <div style={photoWrap}>
-                    <div style={photoGlow} />
-                    <img src={photoIzumi} alt="Izumi Sena" style={photoStyle(5)} />
-                    <span style={{ position: "absolute", top: -15, right: -12, transform: "rotate(14deg)", fontSize: 25, filter: "drop-shadow(0 0 6px rgba(255,225,80,0.85))", zIndex: 3 }}>⚡</span>
+                  <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                    {cardBubble("izumi", "¡No me lo puedo creer! ¡Imposible, imposible, imposible…!", 0.8)}
+                    <div style={photoWrap}>
+                      <div style={photoGlow} />
+                      <img src={photoIzumi} alt="Izumi Sena" style={photoStyle(5)} />
+                      <span style={{ position: "absolute", top: -15, right: -12, transform: "rotate(14deg)", fontSize: 25, filter: "drop-shadow(0 0 6px rgba(255,225,80,0.85))", zIndex: 3 }}>⚡</span>
+                    </div>
                   </div>
                 );
                 const textBlock = (
                   <div style={{ flex: isMobile ? "none" : "1 1 300px", minWidth: 0, width: isMobile ? "100%" : "auto", maxWidth: 560, textAlign: "center" }}>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 7, marginBottom: 10, justifyContent: "center" }}>
-                      <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "3px 12px", borderRadius: 20, background: "rgba(255,224,80,0.16)", border: "1px solid rgba(255,224,80,0.5)", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "#ffe89a" }}>⚡ Próximamente · esta noche</span>
+                      <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "3px 12px", borderRadius: 20, background: "rgba(120,240,150,0.16)", border: "1px solid rgba(120,240,150,0.55)", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "#9dffb8" }}>● ¡Ya disponible!</span>
+                      <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "3px 12px", borderRadius: 20, background: "rgba(255,224,80,0.16)", border: "1px solid rgba(255,224,80,0.5)", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 11, letterSpacing: "0.05em", textTransform: "uppercase", color: "#ffe89a" }}>⚡ Primeros 3 capítulos</span>
                       <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "2px 12px 2px 4px", borderRadius: 20, background: "rgba(102,216,255,0.16)", border: "1px solid rgba(102,216,255,0.5)", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 11, letterSpacing: "0.05em", textTransform: "uppercase", color: "#9fe4ff" }}><Avatar charId="ibuki" size={20} />★ Debut de Ibuki Taki</span>
                     </div>
                     <h2 style={{ fontFamily: "'Libre Baskerville',serif", fontWeight: 700, fontSize: "clamp(19px,2.8vw,26px)", color: "#fff", margin: "0 0 6px", textShadow: "0 2px 12px rgba(0,0,0,0.55)" }}>⚡ DESAFÍO THUNDERBOLT ✕ 4piece</h2>
-                    <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13.5, fontWeight: 600, color: "#c9d3f0", margin: "0 auto", maxWidth: 460, lineHeight: 1.5, textShadow: "0 1px 5px rgba(0,0,0,0.4)" }}>Ibuki Taki se presenta por primera vez, con Izumi y Wataru sobre el escenario. La competición arranca en la <strong style={{ color: "#fff" }}>Pagoda de los Gallos Gemelos</strong>.</p>
+                    <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13.5, fontWeight: 600, color: "#c9d3f0", margin: "0 auto", maxWidth: 460, lineHeight: 1.5, textShadow: "0 1px 5px rgba(0,0,0,0.4)" }}>Ibuki Taki debuta junto a Izumi y Wataru en la <strong style={{ color: "#fff" }}>Pagoda de los Gallos Gemelos</strong>. ¡Los primeros 3 capítulos ya están disponibles!</p>
+                    {story && <button onClick={() => setNav({ page: "story", story })} style={{ display: "inline-flex", alignItems: "center", gap: 9, marginTop: 15, padding: "12px 26px", borderRadius: 16, border: "none", cursor: "pointer", background: "linear-gradient(135deg,#66c8ff,#4a5ce0)", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 15, color: "#fff", textShadow: "0 1px 4px rgba(0,0,0,0.3)", animation: "thunderPulse 2.4s ease-in-out infinite", transition: "transform 0.2s" }} onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px) scale(1.03)"; }} onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0) scale(1)"; }}>⚡ Leer el evento →</button>}
                   </div>
                 );
                 if (isMobile) return (
@@ -10664,30 +10750,8 @@
                 );
               })()}
             </div>
-            <div style={{ position: "relative", padding: "4px 22px 26px", maxWidth: 820, margin: "0 auto", zIndex: 2 }}>
-              {chats.map((chat, ci) => (
-                <div key={ci} style={{ marginTop: ci === 0 ? 0 : 26 }}>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, margin: "6px 0 20px" }}>
-                    <span style={{ flex: 1, height: 1, background: "linear-gradient(90deg,transparent,rgba(140,225,255,0.45))" }} />
-                    <span style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 11.5, letterSpacing: "0.14em", textTransform: "uppercase", color: "#9fe4ff", textShadow: "0 0 10px rgba(102,216,255,0.5)", whiteSpace: "nowrap" }}>{chat.label}</span>
-                    <span style={{ flex: 1, height: 1, background: "linear-gradient(90deg,rgba(140,225,255,0.45),transparent)" }} />
-                  </div>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                    {chat.lines.map((line, i) => { const c = CHARACTERS[line.id]; const left = line.id === chat.leftId; const showName = i === 0 || chat.lines[i - 1].id !== line.id; const [br, bg, bb] = mix(c.color, 0.9); const [nr, ng, nb] = mix(c.color, 0.42); return (
-                      <div key={i} style={{ display: "flex", flexDirection: left ? "row" : "row-reverse", alignItems: "flex-end", gap: 12, marginTop: showName ? 0 : -8, animation: "fadeIn 0.5s ease" }}>
-                        <div style={{ flexShrink: 0, width: 44, borderRadius: "50%", boxShadow: showName ? `0 0 0 2px rgba(${br},${bg},${bb},0.5), 0 3px 10px rgba(5,8,30,0.5)` : "none", visibility: showName ? "visible" : "hidden" }}>{showName ? <Avatar charId={line.id} size={44} /> : null}</div>
-                        <div style={{ maxWidth: "80%", display: "flex", flexDirection: "column", alignItems: left ? "flex-start" : "flex-end" }}>
-                          {showName && <div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 12, color: `rgb(${nr},${ng},${nb})`, margin: left ? "0 0 4px 6px" : "0 6px 4px 0", letterSpacing: "0.02em", textShadow: "0 1px 6px rgba(0,0,0,0.7)" }}>{c.name}</div>}
-                          <div style={{ position: "relative", fontFamily: "'Nunito',sans-serif", fontSize: 14, lineHeight: 1.55, color: "#20263f", background: `linear-gradient(135deg,rgba(${br},${bg},${bb},0.97),rgba(255,255,255,0.9))`, border: `1.5px solid rgba(${br},${bg},${bb},0.95)`, borderRadius: left ? "18px 18px 18px 5px" : "18px 18px 5px 18px", padding: "11px 16px", boxShadow: `0 6px 18px rgba(5,8,30,0.4), 0 0 22px rgba(${br},${bg},${bb},0.18)` }}>{line.text}</div>
-                        </div>
-                      </div>
-                    ); })}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
-          <button onClick={() => setNav({ page: "browse", tab: "stories" })} style={{ display: "block", width: "100%", marginTop: 10, padding: "10px 18px", borderRadius: 14, border: "1px dashed rgba(120,160,240,0.5)", background: "rgba(238,242,255,0.6)", cursor: "pointer", textAlign: "center", fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 13, color: "#3a4fb0", transition: "all 0.2s" }} onMouseEnter={e => { e.currentTarget.style.background = "rgba(224,231,255,0.9)"; }} onMouseLeave={e => { e.currentTarget.style.background = "rgba(238,242,255,0.6)"; }}>✦ Mientras tanto, explora todas las historias, eventos y scouts ya disponibles →</button>
+          <button onClick={() => setNav({ page: "browse", tab: "stories" })} style={{ display: "block", width: "100%", marginTop: 10, padding: "10px 18px", borderRadius: 14, border: "1px dashed rgba(120,160,240,0.5)", background: "rgba(238,242,255,0.6)", cursor: "pointer", textAlign: "center", fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 13, color: "#3a4fb0", transition: "all 0.2s" }} onMouseEnter={e => { e.currentTarget.style.background = "rgba(224,231,255,0.9)"; }} onMouseLeave={e => { e.currentTarget.style.background = "rgba(238,242,255,0.6)"; }}>✦ Explora también todas las demás historias, eventos y scouts disponibles →</button>
         </section>
       );
     };
@@ -11348,6 +11412,45 @@
       );
     };
 
+    // Intro promocional de 4piece (Wataru & Izumi) mostrada sobre la lista de capítulos del evento
+    const FourPieceIntro = () => {
+      const [open, setOpen] = useState(true);
+      const leftId = "wataru";
+      const lines = [
+        { id: "wataru", text: "¡Hola a todos! El DESAFÍO THUNDERBOLT 4piece por fin está a punto de empezar." },
+        { id: "wataru", text: "Vuestro querido Wataru Hibiki, de fine, está a cargo de la promoción de hoy." },
+        { id: "izumi", text: "Y yo también, Izumi Sena, de Knights. El programa empieza por la noche. Vendréis a vernos, ¿verdad?" },
+        { id: "izumi", text: "Nuestro recinto es la Pagoda de los Gallos Gemelos…" },
+        { id: "wataru", text: "De hecho, acabamos de terminar la primera ronda \uD83C\uDFB6 ¿A que sí, don caballero?" },
+        { id: "izumi", text: "Mirad el programa para saber más. Yo me lo estoy tomando muy en serio." },
+        { id: "izumi", text: "Prometo que os demostraré mi valía a todos, así que, por favor, animadme." },
+        { id: "wataru", text: "Jejeje \u2B50 ¡No puedo esperar a ver qué cosas Amazing nos esperan…! No cambiéis de canal… \u2B50" },
+      ];
+      return (
+        <div style={{ marginBottom: 28, borderRadius: 20, overflow: "hidden", border: "1px solid rgba(110,150,230,0.28)", background: "rgba(255,255,255,0.65)", boxShadow: "0 4px 18px rgba(80,120,200,0.12)" }}>
+          <button onClick={() => setOpen(o => !o)} style={{ display: "flex", alignItems: "center", gap: 13, width: "100%", padding: "13px 18px", border: "none", cursor: "pointer", textAlign: "left", background: "linear-gradient(120deg,#12143a,#221a52,#2d1f5e)" }}>
+            <div style={{ display: "flex" }}>{["wataru", "izumi"].map((cId, i) => <span key={cId} style={{ marginLeft: i === 0 ? 0 : -10, borderRadius: "50%", border: "2px solid rgba(20,20,55,0.9)", position: "relative", zIndex: 2 - i }}><Avatar charId={cId} size={38} /></span>)}</div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 10.5, letterSpacing: "0.12em", textTransform: "uppercase", color: "#9fe4ff", marginBottom: 2 }}><span style={{ width: 7, height: 7, borderRadius: "50%", background: "#66ffa0", boxShadow: "0 0 8px #66ffa0", animation: "bannerTwinkle 1.4s ease-in-out infinite" }} />En directo</div>
+              <div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 14.5, color: "#fff", textShadow: "0 1px 6px rgba(0,0,0,0.4)" }}>⚡ La promoción de hoy — Wataru &amp; Izumi</div>
+            </div>
+            <span style={{ flexShrink: 0, fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 13, color: "#9fe4ff" }}>{open ? "▴ Ocultar" : "▾ Leer"}</span>
+          </button>
+          {open && <div style={{ padding: "20px 20px 22px", display: "flex", flexDirection: "column", gap: 14, animation: "fadeIn 0.35s ease" }}>
+            {lines.map((line, i) => { const c = CHARACTERS[line.id]; const left = line.id === leftId; const showName = i === 0 || lines[i - 1].id !== line.id; const col = c.bubbleColor || c.color; return (
+              <div key={i} style={{ display: "flex", flexDirection: left ? "row" : "row-reverse", alignItems: "flex-end", gap: 11, marginTop: showName ? 0 : -8 }}>
+                <div style={{ flexShrink: 0, width: 40, visibility: showName ? "visible" : "hidden" }}>{showName ? <Avatar charId={line.id} size={40} /> : null}</div>
+                <div style={{ maxWidth: "82%", display: "flex", flexDirection: "column", alignItems: left ? "flex-start" : "flex-end" }}>
+                  {showName && <div style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 12, color: col, margin: left ? "0 0 3px 4px" : "0 4px 3px 0" }}>{c.name}</div>}
+                  <div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 14, lineHeight: 1.55, color: "#2c3e5a", background: `linear-gradient(135deg,${col}22,${col}0f)`, border: `1px solid ${col}44`, borderRadius: left ? "16px 16px 16px 5px" : "16px 16px 5px 16px", padding: "10px 15px" }}>{line.text}</div>
+                </div>
+              </div>
+            ); })}
+          </div>}
+        </div>
+      );
+    };
+
     const StoryPage = ({ story, chapterId, setNav }) => {
       const chapterList = STORY_CHAPTERS[story.id] || [];
       const minitalkList = STORY_MINITALKS[story.id] || [];
@@ -11398,6 +11501,7 @@
               </div>
             </div>}
             {story.greeting && <BdayGreeting greeting={story.greeting} />}
+            {story.id === "vs-audience" && <FourPieceIntro />}
             <h2 style={{ fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 18, color: "#2c3e5a", margin: "0 0 14px" }}>Capítulos</h2>
             {story.id === "aira-sct" && <div style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 14, padding: "11px 14px", borderRadius: 12, background: "rgba(74,133,194,0.07)", border: "1px solid rgba(160,190,230,0.2)" }}>
               <span style={{ flexShrink: 0, fontSize: 15, lineHeight: 1.5 }}>📍</span>
@@ -12222,7 +12326,7 @@
       return (
         <div style={{ minHeight: "100vh", background: page === "story" ? "linear-gradient(180deg,#f8fafd 0%,#f5f8fc 100%)" : "linear-gradient(180deg,#f0f5fc 0%,#e8f0fb 30%,#edf3fa 60%,#f0f4fb 100%)", fontFamily: "'Nunito',sans-serif" }}>
           <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-          <style>{`*,*::before,*::after{box-sizing:border-box}body{margin:0}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeSlideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}@keyframes chatBubbleIn{from{opacity:0;transform:translateY(10px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes floatCircle{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(20px,-30px) scale(1.05)}50%{transform:translate(-15px,-50px) scale(0.95)}75%{transform:translate(25px,-20px) scale(1.03)}}@keyframes bdayPulse{0%,100%{box-shadow:0 8px 30px rgba(255,190,70,0.35)}50%{box-shadow:0 8px 38px rgba(255,190,70,0.6)}}@keyframes bdayPulseBlue{0%,100%{box-shadow:0 10px 34px rgba(40,95,175,0.42)}50%{box-shadow:0 12px 46px rgba(70,125,215,0.72)}}@keyframes bdayPulseRed{0%,100%{box-shadow:0 10px 34px rgba(180,40,55,0.42)}50%{box-shadow:0 12px 46px rgba(225,60,80,0.72)}}@keyframes bdayFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(12deg)}}@keyframes bannerFloat{0%{transform:translate(0,0) rotate(0deg) scale(1)}25%{transform:translate(11px,-20px) rotate(16deg) scale(1.18)}50%{transform:translate(-9px,-34px) rotate(-12deg) scale(0.88)}75%{transform:translate(15px,-15px) rotate(22deg) scale(1.12)}100%{transform:translate(0,0) rotate(0deg) scale(1)}}@keyframes bannerTwinkle{0%,100%{opacity:0.4}50%{opacity:0.95}}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(130,160,200,0.25);border-radius:3px}button:focus-visible{outline:2px solid #5b9bd5;outline-offset:2px}.xbanner .xb2{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s ease}.xbanner:hover .xb2,.xcard:hover .xb2{opacity:1}.xbanner .xbhint{position:absolute;bottom:6px;right:8px;z-index:4;display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:999px;background:rgba(20,35,65,0.55);color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:10px;letter-spacing:.02em;pointer-events:none;transition:opacity .3s ease;backdrop-filter:blur(3px)}.xbanner:hover .xbhint,.xcard:hover .xbhint{opacity:0}
+          <style>{`*,*::before,*::after{box-sizing:border-box}body{margin:0}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeSlideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}@keyframes chatBubbleIn{from{opacity:0;transform:translateY(10px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes floatCircle{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(20px,-30px) scale(1.05)}50%{transform:translate(-15px,-50px) scale(0.95)}75%{transform:translate(25px,-20px) scale(1.03)}}@keyframes bdayPulse{0%,100%{box-shadow:0 8px 30px rgba(255,190,70,0.35)}50%{box-shadow:0 8px 38px rgba(255,190,70,0.6)}}@keyframes bdayPulseBlue{0%,100%{box-shadow:0 10px 34px rgba(40,95,175,0.42)}50%{box-shadow:0 12px 46px rgba(70,125,215,0.72)}}@keyframes bdayPulseRed{0%,100%{box-shadow:0 10px 34px rgba(180,40,55,0.42)}50%{box-shadow:0 12px 46px rgba(225,60,80,0.72)}}@keyframes bdayFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(12deg)}}@keyframes thunderPulse{0%,100%{box-shadow:0 6px 20px rgba(50,60,190,0.5),0 0 0 rgba(102,216,255,0)}50%{box-shadow:0 8px 30px rgba(102,216,255,0.85),0 0 22px rgba(102,216,255,0.55)}}@keyframes softBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}@keyframes bannerFloat{0%{transform:translate(0,0) rotate(0deg) scale(1)}25%{transform:translate(11px,-20px) rotate(16deg) scale(1.18)}50%{transform:translate(-9px,-34px) rotate(-12deg) scale(0.88)}75%{transform:translate(15px,-15px) rotate(22deg) scale(1.12)}100%{transform:translate(0,0) rotate(0deg) scale(1)}}@keyframes bannerTwinkle{0%,100%{opacity:0.4}50%{opacity:0.95}}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(130,160,200,0.25);border-radius:3px}button:focus-visible{outline:2px solid #5b9bd5;outline-offset:2px}.xbanner .xb2{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s ease}.xbanner:hover .xb2,.xcard:hover .xb2{opacity:1}.xbanner .xbhint{position:absolute;bottom:6px;right:8px;z-index:4;display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:999px;background:rgba(20,35,65,0.55);color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:10px;letter-spacing:.02em;pointer-events:none;transition:opacity .3s ease;backdrop-filter:blur(3px)}.xbanner:hover .xbhint,.xcard:hover .xbhint{opacity:0}
 .dark-mode .card{background:rgba(22,28,38,0.7) !important;border-color:rgba(60,80,110,0.25) !important}
 `}</style>
 
