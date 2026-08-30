@@ -12891,7 +12891,9 @@
         });
       }, []);
       let filtered = STORIES.filter(s => s.era === activeEra && !s.hidden);
-      if (activeType !== "all") filtered = filtered.filter(s => s.type === activeType);
+      // Los cumpleaños solo aparecen al elegir "Otros": en "Todas" saturaban el listado de historias
+      if (activeType === "all") filtered = filtered.filter(s => !/-bday-\d{4}$/.test(s.id));
+      else filtered = filtered.filter(s => s.type === activeType);
       filtered = [...filtered].sort((a, b) => sortOrder === "popular" ? ((popularity[b.id] || 0) - (popularity[a.id] || 0)) : sortOrder === "chrono" ? a.order - b.order : b.order - a.order);
       const charEntries = Object.entries(CHARACTERS).filter(([, c]) => c.unit);
       const filteredChars = charUnitFilter ? charEntries.filter(([, c]) => c.unit === charUnitFilter) : charEntries;
@@ -13500,7 +13502,8 @@
       if (chapterId === "minitalks") return <MinitalksHubPage story={story} minitalks={minitalkList} setNav={setNav} />;
       const selectedMt = (typeof chapterId === "string" && chapterId.indexOf("mt-") === 0) ? minitalkList.find(c => ("mt-" + c.id) === chapterId) : null;
       if (selectedMt) return <MiniTalkReader story={story} chapter={selectedMt} minitalks={minitalkList} setNav={setNav} setSelectedChapter={() => setNav({ page: "story", story, chapterId: "minitalks" })} />;
-      if (selectedChapter) return selectedChapter.type === "miniTalk" ? <MiniTalkReader story={story} chapter={selectedChapter} setSelectedChapter={setSelectedChapter} /> : <ChapterReader story={story} chapter={selectedChapter} setSelectedChapter={setSelectedChapter} />;
+      const releasedChapters = chapterList.filter(c => !c.releaseAt || new Date(c.releaseAt).getTime() <= nowTs);
+      if (selectedChapter) return selectedChapter.type === "miniTalk" ? <MiniTalkReader story={story} chapter={selectedChapter} chapters={releasedChapters} setSelectedChapter={setSelectedChapter} /> : <ChapterReader story={story} chapter={selectedChapter} setSelectedChapter={setSelectedChapter} />;
       return (
         <div style={{ maxWidth: 800, margin: "0 auto", padding: "32px 24px 60px", animation: "fadeIn 0.5s ease" }}>
           <button onClick={() => setNav({ page: "browse", tab: "stories" })} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#8a9fba", marginBottom: 20, display: "block" }}>← Volver a Explorar</button>
@@ -13754,18 +13757,21 @@
       );
     };
 
-    const MiniTalkReader = ({ chapter, setSelectedChapter, story, minitalks, setNav }) => {
+    const MiniTalkReader = ({ chapter, setSelectedChapter, story, minitalks, chapters, setNav }) => {
       const sections = chapter.sections || [{ intro: chapter.intro, options: chapter.options, prompt: chapter.prompt }];
       const multi = !!(chapter.sections && chapter.sections.length > 1);
       const hub = Array.isArray(minitalks) && minitalks.length > 0 && !!setNav;
-      const idx = hub ? minitalks.findIndex(m => m.id === chapter.id) : -1;
-      const prevMt = (hub && idx > 0) ? minitalks[idx - 1] : null;
-      const nextMt = (hub && idx >= 0 && idx < minitalks.length - 1) ? minitalks[idx + 1] : null;
-      const goMt = (mt) => setNav({ page: "story", story, chapterId: "mt-" + mt.id });
+      // Fuera del hub de mini talks (p. ej. los cumpleaños) navegamos por los capítulos de la propia historia
+      const navList = hub ? minitalks : (Array.isArray(chapters) ? chapters : []);
+      const idx = navList.findIndex(m => m.id === chapter.id);
+      const prevMt = (idx > 0) ? navList[idx - 1] : null;
+      const nextMt = (idx >= 0 && idx < navList.length - 1) ? navList[idx + 1] : null;
+      const goMt = (mt) => hub ? setNav({ page: "story", story, chapterId: "mt-" + mt.id }) : setSelectedChapter(mt);
       const pov = chapter.pov || "anzu";
       const povC = CHARACTERS[pov];
       const pAcc = mtAccent(pov);
-      const acc = mtAccent(chapter.char);
+      // Sin `char` (los cumpleaños), el acento sale del personaje del saludo de la historia
+      const acc = mtAccent(chapter.char || (story && story.greeting && story.greeting.charId));
       const [revealed, setRevealed] = useState(1);
       const onAnswered = (i) => { setRevealed(r => Math.max(r, i + 2)); if (i === sections.length - 1) markMtRead(story.id, chapter.id); };
       const [isMobile, setIsMobile] = useState(typeof window !== "undefined" && window.innerWidth < 760);
@@ -13827,9 +13833,9 @@
           {multi && revealed >= sections.length && <div style={{ textAlign: "center", padding: "22px 0 4px", animation: "fadeIn 0.55s ease" }}>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 18px", borderRadius: 999, background: `${acc}14`, border: `1px solid ${acc}38`, fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 13, color: textColorFor(acc) }}>✓ Fin de la mini talk</span>
           </div>}
-          {hub && (prevMt || nextMt) && <div style={{ display: "flex", justifyContent: "space-between", gap: 12, marginTop: 8, paddingTop: 24, borderTop: "1px solid rgba(220,160,190,0.2)" }}>
-            {prevMt ? <button onClick={() => goMt(prevMt)} style={{ background: "rgba(255,250,254,0.75)", border: "1px solid rgba(220,160,190,0.3)", borderRadius: 12, padding: "10px 18px", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#c0507a", fontWeight: 600, textAlign: "left", maxWidth: "48%" }}>← {prevMt.title}</button> : <div />}
-            {nextMt ? <button onClick={() => goMt(nextMt)} style={{ background: "linear-gradient(135deg,#e0709a,#f0a0c0)", border: "none", borderRadius: 12, padding: "10px 18px", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#fff", fontWeight: 600, boxShadow: "0 2px 8px rgba(220,100,150,0.3)", textAlign: "right", maxWidth: "48%" }}>{nextMt.title} →</button> : <div />}
+          {(prevMt || nextMt) && <div style={{ display: "flex", justifyContent: "space-between", gap: 12, marginTop: 8, paddingTop: 24, borderTop: hub ? "1px solid rgba(220,160,190,0.2)" : `1px solid ${acc}2e` }}>
+            {prevMt ? <button onClick={() => goMt(prevMt)} style={{ background: hub ? "rgba(255,250,254,0.75)" : "rgba(255,255,255,0.78)", border: hub ? "1px solid rgba(220,160,190,0.3)" : `1px solid ${acc}45`, borderRadius: 12, padding: "10px 18px", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 13, color: hub ? "#c0507a" : textColorFor(acc), fontWeight: 600, textAlign: "left", maxWidth: "48%" }}>← {prevMt.title}</button> : <div />}
+            {nextMt ? <button onClick={() => goMt(nextMt)} style={{ background: hub ? "linear-gradient(135deg,#e0709a,#f0a0c0)" : `linear-gradient(135deg,${acc},${acc}b8)`, border: "none", borderRadius: 12, padding: "10px 18px", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#fff", fontWeight: 600, boxShadow: hub ? "0 2px 8px rgba(220,100,150,0.3)" : `0 2px 8px ${acc}55`, textAlign: "right", maxWidth: "48%" }}>{nextMt.title} →</button> : <div />}
           </div>}
           {openAnchor && commentsEnabled && sb && <CommentPanel storyId={story.id} chapterId={chapter.id} anchor={openAnchor} isMobile={isMobile} likes={likes} toggleLike={toggleLike} onClose={() => setOpenAnchor(null)} onPosted={reloadComments} />}
         </div>
