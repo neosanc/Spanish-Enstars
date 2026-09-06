@@ -22,6 +22,39 @@
       font-family: 'Nunito', sans-serif
     }
 
+    @keyframes oshiPop {
+      from { opacity: 0; transform: scale(0.94) }
+      to { opacity: 1; transform: scale(1) }
+    }
+
+    @keyframes oshiRing {
+      0%, 100% { transform: rotate(0) }
+      20% { transform: rotate(-9deg) }
+      40% { transform: rotate(9deg) }
+      60% { transform: rotate(-5deg) }
+      80% { transform: rotate(5deg) }
+    }
+
+    @keyframes oshiSpot {
+      0%, 100% { transform: translateX(-8%) skewX(-8deg) }
+      50% { transform: translateX(8%) skewX(-8deg) }
+    }
+
+    @keyframes oshiPuerta {
+      0%, 100% { box-shadow: 0 0 40px rgba(155,89,182,0.35) }
+      50% { box-shadow: 0 0 90px rgba(155,89,182,0.6) }
+    }
+
+    @keyframes oshiLinea {
+      from { opacity: 0; transform: translateY(10px) }
+      to { opacity: 1; transform: none }
+    }
+
+    @keyframes oshiPuntos {
+      0%, 100% { opacity: 0.3; transform: translateY(0) }
+      50% { opacity: 1; transform: translateY(-3px) }
+    }
+
     @keyframes fadeIn {
       from {
         opacity: 0
@@ -212,7 +245,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script type="text/babel">
     // @ts-nocheck
-    const { useState, useEffect, useRef } = React;
+    const { useState, useEffect, useRef, useMemo } = React;
 
     // ─── SUPABASE (votos y comentarios) ────────────────────────
     const SUPABASE_URL = "https://bigacvnhnhugjqwhktyc.supabase.co";
@@ -683,7 +716,7 @@
         va: "Takumi Watanabe",
         agency: "Starmaker Production",
         height: "179cm", weight: "63 kg", blood: "O",
-        birthday: "26 de Agosto", zodiac: "Virgo",
+        birthday: "29 de Agosto", zodiac: "Virgo",
         handedness: "Diestro",
         school: "Academia Yumenosaki",
         roommates: "Ibara Saegusa, Mitsuru Tenma, Tsumugi Aoba",
@@ -2008,6 +2041,7 @@
       { era: "!!", id: "adonis-bday-2026", title: "¡Feliz cumpleaños, Adonis! 2026", type: "other", unit: "undead", order: 29, chapters: 3, description: "Una mini talk especial para celebrar el cumpleaños de Adonis Otogari junto a Anzu. En cada escena, ¡tú eliges qué responder! ♪", featured: ["adonis", "kaoru"], status: "complete", banner: "images/adonis-727a13cc.webp", bannerPos: "center 15%", greeting: { charId: "adonis", text: "Gracias. Que mis amigos y tú me celebréis el cumpleaños es el mejor regalo que podría pedir." }, translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" }, phoneCall: { caller: "adonis", label: "Llamada de cumpleaños ♪", src: "audio/adonis-call.mp3", lines: ["¿Hola? No pude agradecerte del todo antes.", "Muchas gracias por prepararlo todo para mi fiesta de cumpleaños.", "Voy a esforzarme por convertirme en el idol que tú crees que puedo llegar a ser."] } },
       { era: "!!", id: "midori-bday-2026", title: "¡Feliz cumpleaños, Midori! 2026", type: "other", unit: "ryuseitai", order: 30, chapters: 3, description: "Una mini talk especial para celebrar el cumpleaños de Midori Takamine junto a Anzu. En cada escena, ¡tú eliges qué responder! ♪", featured: ["midori", "shinobu"], status: "complete", banner: "images/midori-45ab5f40.webp", bannerPos: "center 15%", greeting: { charId: "midori", text: "¿¡Has dibujado una mascota en mi regalo de cumpleaños!? ¡Gracias! Lo cuidaré con toda mi alma... ♪" }, translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" }, phoneCall: { caller: "midori", label: "Llamada de cumpleaños ♪", src: "audio/midori-call.mp3", lines: ["¿H-Hola...? Estaba mirando las fotos de hoy y sin querer le di al botón de llamada...", "Pero quería darte las gracias de todas formas.", "Gracias por celebrar mi cumpleaños conmigo hoy... ♪"] } },
       { era: "!!", id: "kanata-bday-2026", title: "¡Feliz cumpleaños, Kanata! 2026", type: "other", unit: "ryuseitai", order: 31, chapters: 3, description: "Una mini talk especial para celebrar el cumpleaños de Kanata Shinkai junto a Anzu. En cada escena, ¡tú eliges qué responder! ♪", featured: ["kanata", "chiaki"], status: "complete", banner: "images/kanata-9b44170d.webp", bannerPos: "center 15%", greeting: { charId: "kanata", text: "Jeje, gracias ♪ Estoy muy «feliz» de que hayáis venido todos a «celebrar» conmigo ♪" }, translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" }, phoneCall: { caller: "kanata", label: "Llamada de cumpleaños ♪", src: "audio/kanata-call.mp3", lines: ["Buenas noches~♪ Gracias por hacer de mi «cumpleaños» un día tan especial.", "Debes haberte esforzado mucho por «planearlo», ¿verdad?", "Me puso muy contento veros a todos «celebrando» conmigo...♪"] } },
+      { era: "!!", id: "keito-bday-2026", title: "¡Feliz cumpleaños, Keito! 2026", type: "other", unit: "akatsuki", order: 32, chapters: 3, description: "Una mini talk especial para celebrar el cumpleaños de Keito Hasumi junto a Anzu. En cada escena, ¡tú eliges qué responder! ♪", featured: ["keito", "souma", "kuro"], status: "complete", banner: "images/keito-ea2f2182.webp", bannerPos: "center 15%", greeting: { charId: "keito", text: "¿Quieres celebrar mi cumpleaños? Jeje... Gracias. Te lo agradeceré esforzándome aún más en mi trabajo." }, translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" }, phoneCall: { caller: "keito", label: "Llamada de cumpleaños ♪", src: "audio/keito-call.mp3", lines: ["¿Hola? Soy yo. Quería darte las gracias por hacer que hoy mi cumpleaños haya sido tan maravilloso.", "¿Pensabas que te iba a reñir? Jaja, claro que no.", "Sigamos esforzándonos juntos."] } },
       { era: "!!", id: "evt-ballad", title: "SHUFFLE x Balada de los perdidos", type: "event", unit: null, order: 24, chapters: 12, description: "El proyecto más reciente de P-Choice consiste en una película. Yuzuru y Niki son elegidos como co-protagonistas por un director al que ayudaron. Pero actuar como entidades inhumanas es más dificil de lo que pensaban...", featured: ["yuzuru", "niki", "rei", "tsumugi", "mama", "hajime"], hidden: false, status: "complete", banner: "https://i.postimg.cc/8knsYXLm/latest-cb-20240914102438.webp", translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" }},
       { era: "!!", id: "aira-sct", title: "SCOUT Aira x Bright Me Up!!", type: "scout", unit: null, order: 25, chapters: 4, description: "A Aira se le ocurre una buena idea para su directo en solitario, pero Anzu rechaza su propuesta y Kohaku intenta animarlo...", featured: ["aira", "kohaku", "yume", "tatsumi", "midori", "tetora", "shinobu", "chiaki", "kanata"], status: "complete", banner: "images/aira-sct.webp", translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" } },
       { era: "!!", id: "cross-dom", title: "Cross Scout X Dominante (Caótico VS Drástico)", type: "scout", hidden: true, unit: null, order: 26, chapters: 10, description: "Keito le da clases particulares a Tetora para ayudarlo con un examen, pero los deberes que le pone son demasiado difíciles y Madara se ofrece a hacer de tutor...", featured: ["keito", "tetora", "madara"], status: "complete", banner: "https://i.postimg.cc/0QXLXZgB/410-cb-20240914021054.webp", banner2: "https://i.postimg.cc/HxJggFtg/410-cb-20240914101557.webp", translator: { name: "@koiprimavera", url: "https://x.com/koiprimavera" } },
@@ -2021,6 +2055,178 @@
         { id: 3, title: "Capítulo 3", translated: true },
         { id: 4, title: "Capítulo 4", translated: true },
         { id: 5, title: "Capítulo 5", translated: true },
+      ],
+      "keito-bday-2026": [
+        {
+          id: 1, title: "Un momento de cumpleaños", translated: true, type: "miniTalk",
+          sections: [
+            {
+              intro: [
+                { type: "location", src: "https://i.postimg.cc/9QCqv6nG/1000-cb-20200620115410.webp", label: "Jardín de ES" },
+                { speaker: "keito", lines: ["Hm, Kanzaki me pidió que lo esperase aquí, pero..."] },
+                { speaker: "souma", lines: ["¡Hasumi-dono! He preparado té. De gyokuro, pues hoy es el día en que naciste ♪"] },
+                { speaker: "kuro", lines: ["Gracias, Kanzaki. Venga, Hasumi, pruébalo."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                {
+                  label: "Hola...",
+                  dialogue: [
+                    { speaker: "souma", lines: ["¡Oh, Anzu-dono! ¡Ya que estás aquí, te prepararé una taza a ti también!"] },
+                    { speaker: "keito", lines: ["Hm, ¿me estabas buscando? Bueno, Kanzaki tiene razón. Si no tienes prisa, ¿por qué no te quedas a tomar un té con nosotros?"] },
+                  ],
+                },
+                {
+                  label: "¡Feliz cumpleaños!",
+                  dialogue: [
+                    { speaker: "keito", lines: ["Ah, Anzu. Gracias por felicitarme.", "Jeje, dicho así, tan formal, me llega al corazón. Suena bien, ¿sabes?"] },
+                  ],
+                },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "keito", lines: ["¿Pensabas que esto era una reunión de AKATSUKI? No, es solo que Kanzaki está preocupado por mí."] },
+                { speaker: "souma", lines: ["¡Así es! Hasumi-dono ha estado muy ocupado últimamente, así que he decidido que ya era hora de que descansase un poco ♪"] },
+                { speaker: "kuro", lines: ["Jaja. Es bueno descansar de vez en cuando, ¿no crees? Venga, te voy a dar un buen masaje en los hombros."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                {
+                  label: "No os quiero interrumpir, es solo que...",
+                  dialogue: [
+                    { speaker: "keito", lines: ["¿Qué ocurre? ¿Quieres que hablemos a solas en algún momento? No tengo ningún plan hoy aparte de la fiesta...", "Ay— ¿¡ay, ay!? ¡Kiryu! ¡Me estás haciendo daño, no aprietes tan fuerte...!"] },
+                  ],
+                },
+                {
+                  label: "Necesito hablar contigo.",
+                  dialogue: [
+                    { speaker: "keito", lines: ["¿Quieres saber si podemos vernos después de la fiesta? Por mi parte no hay problema, pero ¿a ti te viene bien con tu horario?", "Si estás muy ocupada, puedo esperar."] },
+                  ],
+                },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "keito", lines: ["Ahh... No me puedo creer que hayas acabado dándome un masaje y todo..."] },
+                { speaker: "kuro", lines: ["Vale, vale, pero no te levantes aún. Todavía tienes muchos nudos en la espalda, ¿sabes?"] },
+                { speaker: "souma", lines: ["Estoy dispuesto a tomarte el relevo si estás agotado. Deberías descansar y guardar fuerzas para la fiesta de luego, Kiryu-dono."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                {
+                  label: "La fiesta empezará pronto.",
+                  dialogue: [
+                    { speaker: "keito", lines: ["Hm, la has organizado y preparado tú para mí, ¿verdad, Anzu? Gracias.", "Iré cuando sea la hora. Tengo muchas ganas de verlo todo."] },
+                  ],
+                },
+                {
+                  label: "Os lleváis muy bien.",
+                  dialogue: [
+                    { speaker: "keito", lines: ["Bueno, eso no lo puedo negar. Seguro que seguiré pasando mucho tiempo con ellos, hoy y de aquí en adelante."] },
+                    { speaker: "kuro", lines: ["Jaja, ¡me encanta oír eso! Todos contamos contigo, Hasumi ♪"] },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 2, title: "Noche de cumpleaños · Parte 1", translated: true, type: "miniTalk",
+          sections: [
+            {
+              intro: [
+                { type: "location", src: "https://i.postimg.cc/QtTtBmzM/1000-cb-20241130211944.webp", label: "Sala de reuniones de Rhythm Link", time: "Esa noche, tras la fiesta" },
+                { speaker: "keito", lines: ["(Hm~ Parece que he llegado un poco pronto. Todavía faltan unos minutos para la hora.)", "(Ahora que lo pienso, dejé los regalos en la oficina, ¿verdad?)", "(Quizá pueda ir a buscarlos mientras espero a Anzu.)"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                {
+                  label: "Ya has llegado.",
+                  dialogue: [
+                    { speaker: "keito", lines: ["Ah, Anzu. ¿Qué tal ha ido todo?", "Yo también acabo de llegar. Mejor nos sentamos en el sofá, en vez de quedarnos aquí de pie."] },
+                  ],
+                },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "keito", lines: ["De hecho, pensé en ir a buscar mis regalos mientras te esperaba...", "Pero la verdad es que... me han llegado muchos más de los que esperaba. Solo abrirlos me va a llevar un buen rato.", "... Hm, este es de Hibiki, ¿no?"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                {
+                  label: "¿Qué te ha regalado?",
+                  dialogue: [
+                    { speaker: "keito", lines: ["No lo sé. En la fiesta me dijo “tendrás que esperar a abrirlo”. Me ha... entrado bastante curiosidad. ¿Lo abro?", "Oh, es el guion del próximo proyecto de Dramatica. Vaya, sabe perfectamente lo que me hace ilusión. Ugh, qué pillo... ♪"] },
+                  ],
+                },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "keito", lines: ["He leído el guion por encima. Parece que nuestra próxima actuación será muy interesante.", "Por supuesto, tendremos que afinar muchos detalles a partir de ahora. Todo el proceso creativo me entusiasma.", "Bueno, si vuelvo a encargarme del guion, quizá Itsuki pueda ayudarnos con el vestuario..."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                {
+                  label: "Me encantaría verte actuar.",
+                  dialogue: [
+                    { speaker: "keito", lines: ["Ya veo. Suelo centrarme en escribir, pero quizá no estaría mal aprender algo de interpretación.", "Lo hablaré con Hibiki. Si acabo actuando, sus consejos me ayudarán mucho."] },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 3, title: "Noche de cumpleaños · Parte 2", translated: true, type: "miniTalk",
+          sections: [
+            {
+              intro: [
+                { type: "location", src: "https://i.postimg.cc/QtTtBmzM/1000-cb-20241130211944.webp", label: "Sala de reuniones de Rhythm Link" },
+                { speaker: "keito", lines: ["Oh, discúlpame. No paro de hablar de mí.", "Escuchas tan bien que siempre acabo yéndome por las ramas.", "Pero dijiste que querías hablar conmigo, ¿de qué se trata?"] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                {
+                  label: "Te he traído un regalo.",
+                  dialogue: [
+                    { speaker: "keito", lines: ["Ya veo. ¿Te importa que lo abra delante de ti?", "Es un broche precioso. De color azul oscuro, como el mar profundo. Me gusta mucho. Gracias."] },
+                  ],
+                },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "keito", lines: ["No pensaba que me darías un regalo al final del día.", "¿Qué pasa? ¿Dices que no esperabas que me lo pusiera al momento...?", "Ahora que lo dices, supongo que no es muy propio de mí... Será que estoy demasiado emocionado por mi cumpleaños."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                {
+                  label: "Eso me sorprende aún más.",
+                  dialogue: [
+                    { speaker: "keito", lines: ["Oh, venga. Hasta yo soy capaz de disfrutar de mi propio cumpleaños.", "Además, has venido a felicitarme en persona, Anzu. Sería raro que no me alegrase por eso, ¿no crees?"] },
+                  ],
+                },
+              ],
+            },
+            {
+              intro: [
+                { speaker: "keito", lines: ["Ya casi se ha acabado el día. Ha sido un buen día...", "Estoy muy agradecido de que todos lo hayan celebrado conmigo hoy, y muy feliz también.", "Pienso celebrar como es debido los cumpleaños de los demás cuando lleguen. No es que antes no lo hiciera, pero..."] },
+              ],
+              prompt: "¿Qué le dices?",
+              options: [
+                {
+                  label: "¡Yo también me esforzaré al máximo!",
+                  dialogue: [
+                    { speaker: "keito", lines: ["Si te puedo ayudar en algo, dímelo. Seguro que a los demás idols tampoco les importaría echarte una mano.", "No estás sola, Anzu. No olvides nunca que nos tienes a nosotros."] },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
       ],
       "kanata-bday-2026": [
         {
@@ -2366,7 +2572,7 @@
           sections: [
             {
               intro: [
-                { type: "location", src: "https://i.postimg.cc/fTQSg2yV/1000-cb-20240927023543.webp", label: "Sala de reuniones de Rythm Link" },
+                { type: "location", src: "https://i.postimg.cc/fTQSg2yV/1000-cb-20240927023543.webp", label: "Sala de reuniones de Rhythm Link" },
                 { speaker: "adonis", lines: ["... ¿Hola? Soy yo. Gracias por llamarme, con lo ocupada que estás.", "Y gracias por desearme feliz cumpleaños. Mis compañeros de unidad y mis amigos me van a hacer una fiesta un poco más tarde. Sí, tengo mucha suerte de tenerlos cerca.", "Sí, les avisaré. Nos vemos luego."] },
               ],
               prompt: "¿Qué le dices?",
@@ -12929,6 +13135,38 @@
       );
     };
 
+    // Cumpleaños de Keito: 6 de septiembre + 3 días (hasta el 9 de septiembre)
+    const keitoBdayActive = () => { const d = new Date(); return d.getMonth() === 8 && d.getDate() >= 6 && d.getDate() <= 9; };
+
+    const KeitoBirthdayBanner = ({ setNav }) => {
+      if (!keitoBdayActive()) return null;
+      const story = STORIES.find(s => s.id === "keito-bday-2026");
+      if (!story) return null;
+      const icon = ICON_IMAGES["keito"];
+      const bits = ["✦", "★", "♪", "✧", "☆", "❋", "✦", "★", "♪", "✧"];
+      return (
+        <section style={{ maxWidth: 1200, margin: "0 auto", padding: "20px 24px 0", position: "relative", zIndex: 2 }}>
+          <button onClick={() => setNav({ page: "story", story })} style={{ position: "relative", display: "block", width: "100%", textAlign: "left", border: "2px solid rgba(205,180,110,0.55)", borderRadius: 24, overflow: "hidden", cursor: "pointer", padding: "22px 26px", background: "linear-gradient(120deg,#0c1a12 0%,#16301f 42%,#234a32 74%,#316745 100%)", boxShadow: "0 10px 34px rgba(25,70,48,0.45)", animation: "bdayPulsePine 2.8s ease-in-out infinite" }} onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 16px 44px rgba(60,130,92,0.58)"; }} onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 10px 34px rgba(25,70,48,0.45)"; }}>
+            <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}>{bits.map((c, i) => { const col = ["#e8cf8e", "#a8d8b4", "#fff", "#d8c37a", "#7fbc95"][i % 5]; return (<span key={i} style={{ position: "absolute", left: `${(i * 11 + 5) % 95}%`, top: `${(i * 27) % 82}%`, fontSize: 11 + (i % 3) * 6, color: col, opacity: 0.72, textShadow: `0 0 8px ${col}`, animation: `bdayFloat ${3 + (i % 4)}s ease-in-out ${i * 0.3}s infinite` }}>{c}</span>); })}</div>
+            <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
+              <div style={{ position: "relative", flexShrink: 0 }}>
+                <div style={{ position: "absolute", inset: -6, borderRadius: "50%", background: "radial-gradient(circle,rgba(232,207,142,0.85),rgba(49,103,69,0.15))", filter: "blur(4px)" }} />
+                {icon && <img src={icon} alt="Keito" style={{ position: "relative", width: 72, height: 72, borderRadius: "50%", objectFit: "cover", border: "3px solid rgba(245,238,214,0.95)", boxShadow: "0 4px 14px rgba(10,32,20,0.55)" }} />}
+                <span style={{ position: "absolute", top: -14, left: "50%", transform: "translateX(-50%) rotate(-8deg)", fontSize: 26 }}>🎂</span>
+              </div>
+              <div style={{ flex: 1, minWidth: 200 }}>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "3px 12px", borderRadius: 20, background: "rgba(255,255,255,0.16)", border: "1px solid rgba(232,207,142,0.45)", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "#f3ead0", marginBottom: 8 }}>🎉 6 de septiembre · Cumpleaños</div>
+                <h2 style={{ fontFamily: "'Libre Baskerville',serif", fontWeight: 700, fontSize: "clamp(20px,3vw,27px)", color: "#fff", margin: "0 0 4px", textShadow: "0 2px 10px rgba(0,0,0,0.45)" }}>¡Feliz cumpleaños, Keito! ✦</h2>
+                <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 14, fontWeight: 600, color: "#d6e6da", margin: 0, textShadow: "0 1px 5px rgba(0,0,0,0.35)" }}>Celebra el día con una mini talk especial donde <strong style={{ color: "#fff" }}>tú eliges</strong> qué responder ♪</p>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 6, marginTop: 8, padding: "3px 12px", borderRadius: 20, background: "rgba(255,255,255,0.14)", fontFamily: "'Nunito',sans-serif", fontWeight: 700, fontSize: 12, color: "#f3ead0" }}>☎️ ¡Y una llamada de cumpleaños de Keito!</span>
+              </div>
+              <span style={{ flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 8, padding: "12px 22px", borderRadius: 16, background: "linear-gradient(135deg,#2c6042,#4b8f66)", fontFamily: "'Nunito',sans-serif", fontWeight: 800, fontSize: 14, color: "#fff", boxShadow: "0 4px 16px rgba(12,40,25,0.5)" }}>Abrir historia →</span>
+            </div>
+          </button>
+        </section>
+      );
+    };
+
     // Preview del próximo evento: DESAFÍO THUNDERBOLT · 4piece (aún sin publicar → presentación siempre visible)
     const FourPieceEventBanner = ({ setNav }) => {
       const [isMobile, setIsMobile] = useState(typeof window !== "undefined" && window.innerWidth < 640);
@@ -13103,6 +13341,7 @@
         <AdonisBirthdayBanner setNav={setNav} />
         <MidoriBirthdayBanner setNav={setNav} />
         <KanataBirthdayBanner setNav={setNav} />
+        <KeitoBirthdayBanner setNav={setNav} />
         <FourPieceEventBanner setNav={setNav} />
         <BirthdayBanner setNav={setNav} />
         <section style={{ padding: "65px 24px 55px", position: "relative", zIndex: 1 }}>
@@ -13177,8 +13416,8 @@
 
           {browseTab === "characters" && <>
             <div style={{ marginBottom: 24, borderRadius: 20, background: "linear-gradient(135deg,rgba(235,220,250,0.6),rgba(220,230,255,0.6))", border: "1px solid rgba(200,170,230,0.25)", padding: "18px 22px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-              <div><div style={{ fontFamily: "'Libre Baskerville',serif", fontSize: 17, fontWeight: 700, color: "#4a3060", marginBottom: 4 }}>¿No sabes cuál es tu personaje favorito?</div><div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#7a60a0" }}>Descubre con qué idol conectas más respondiendo unas preguntas.</div></div>
-              <button onClick={() => setNav({ page: "quiz" })} style={{ padding: "10px 22px", borderRadius: 14, background: "linear-gradient(135deg,#9b59b6,#7b68ee)", border: "none", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 14, fontWeight: 700, color: "#fff", boxShadow: "0 4px 14px rgba(155,89,182,0.3)", transition: "all 0.2s", whiteSpace: "nowrap" }} onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(155,89,182,0.4)"; }} onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 4px 14px rgba(155,89,182,0.3)"; }}>✦ ¡Toma el test!</button>
+              <div><div style={{ fontFamily: "'Libre Baskerville',serif", fontSize: 17, fontWeight: 700, color: "#4a3060", marginBottom: 4 }}>{SALA_OSHI_ACTIVA ? "¿Todavía no tienes un oshi?" : "¿No sabes cuál es tu personaje favorito?"}</div><div style={{ fontFamily: "'Nunito',sans-serif", fontSize: 13, color: "#7a60a0" }}>{SALA_OSHI_ACTIVA ? "Entra en la sala, conócelos y sal de ahí con un favorito." : "Descubre con qué idol conectas más respondiendo unas preguntas."}</div></div>
+              <button onClick={() => setNav({ page: "quiz" })} style={{ padding: "10px 22px", borderRadius: 14, background: "linear-gradient(135deg,#9b59b6,#7b68ee)", border: "none", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontSize: 14, fontWeight: 700, color: "#fff", boxShadow: "0 4px 14px rgba(155,89,182,0.3)", transition: "all 0.2s", whiteSpace: "nowrap" }} onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(155,89,182,0.4)"; }} onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 4px 14px rgba(155,89,182,0.3)"; }}>{SALA_OSHI_ACTIVA ? "✦ ¡Entra en la sala!" : "✦ ¡Toma el test!"}</button>
             </div>
             <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 24 }}>
               <button onClick={() => setCharUnitFilter(null)} style={{ padding: "5px 12px", borderRadius: 10, border: !charUnitFilter ? "2px solid #5b9bd5" : "2px solid rgba(160,190,230,0.18)", background: !charUnitFilter ? "rgba(91,155,213,0.08)" : "rgba(255,255,255,0.4)", cursor: "pointer", fontFamily: "'Nunito',sans-serif", fontWeight: 600, fontSize: 12, color: !charUnitFilter ? "#3a6db5" : "#8a9fba" }}>Todos</button>
@@ -14676,6 +14915,574 @@
       return null;
     };
 
+    // ═══════════════════════════════════════════════════════════
+    //  LA SALA DEL OSHI
+    //  Interruptor: ponlo en true cuando la traducción esté lista.
+    //  Con false, /quiz sigue mostrando el test antiguo, pero
+    //  #/sala-oshi te deja probar la sala en privado.
+    // ═══════════════════════════════════════════════════════════
+    const SALA_OSHI_ACTIVA = false;
+
+    // Una canción por idol. Pega aquí el enlace de YouTube y el botón
+    // «Escuchar su canción» aparecerá solo en los que tengan uno.
+    // Ej.: eichi: { titulo: "Sanctuary", url: "https://youtu.be/xxxxxxx" },
+    const OSHI_SONGS = {
+      eichi: { titulo: "", url: "" },
+      wataru: { titulo: "", url: "" },
+      tori: { titulo: "", url: "" },
+      yuzuru: { titulo: "", url: "" },
+      hokuto: { titulo: "", url: "" },
+      subaru: { titulo: "", url: "" },
+      makoto: { titulo: "", url: "" },
+      mao: { titulo: "", url: "" },
+      chiaki: { titulo: "", url: "" },
+      kanata: { titulo: "", url: "" },
+      tetora: { titulo: "", url: "" },
+      midori: { titulo: "", url: "" },
+      shinobu: { titulo: "", url: "" },
+      hiiro: { titulo: "", url: "" },
+      aira: { titulo: "", url: "" },
+      mayoi: { titulo: "", url: "" },
+      tatsumi: { titulo: "", url: "" },
+      nagisa: { titulo: "", url: "" },
+      hiyori: { titulo: "", url: "" },
+      ibara: { titulo: "", url: "" },
+      jun: { titulo: "", url: "" },
+      shu: { titulo: "", url: "" },
+      mika: { titulo: "", url: "" },
+      hinata: { titulo: "", url: "" },
+      yuta: { titulo: "", url: "" },
+      rinne: { titulo: "", url: "" },
+      himeru: { titulo: "", url: "" },
+      kohaku: { titulo: "", url: "" },
+      niki: { titulo: "", url: "" },
+      rei: { titulo: "", url: "" },
+      kaoru: { titulo: "", url: "" },
+      koga: { titulo: "", url: "" },
+      adonis: { titulo: "", url: "" },
+      tomoya: { titulo: "", url: "" },
+      nazuna: { titulo: "", url: "" },
+      mitsuru: { titulo: "", url: "" },
+      hajime: { titulo: "", url: "" },
+      keito: { titulo: "", url: "" },
+      kuro: { titulo: "", url: "" },
+      souma: { titulo: "", url: "" },
+      tsukasa: { titulo: "", url: "" },
+      leo: { titulo: "", url: "" },
+      izumi: { titulo: "", url: "" },
+      ritsu: { titulo: "", url: "" },
+      arashi: { titulo: "", url: "" },
+      natsume: { titulo: "", url: "" },
+      tsumugi: { titulo: "", url: "" },
+      sora: { titulo: "", url: "" },
+      madara: { titulo: "", url: "" },
+    };
+
+    const OSHI_ROSTER = ["eichi","wataru","tori","yuzuru","hokuto","subaru","makoto","mao","chiaki","kanata","tetora","midori","shinobu","hiiro","aira","mayoi","tatsumi","nagisa","hiyori","ibara","jun","shu","mika","hinata","yuta","rinne","himeru","kohaku","niki","rei","kaoru","koga","adonis","tomoya","nazuna","mitsuru","hajime","keito","kuro","souma","tsukasa","leo","izumi","ritsu","arashi","natsume","tsumugi","sora","madara"];
+    const OSHI_KEYWORDS = [{"es":"Cool","jp":"クール","en":"Cool","emoji":"❄️","ids":["yuzuru","hokuto","midori","mayoi","nagisa","shu","yuta","rei","kaoru","adonis","kuro","souma","izumi","ritsu","natsume"]},{"es":"Adorable","jp":"可愛い","en":"Cute","emoji":"🎀","ids":["tori","shinobu","kanata","aira","hiyori","mika","kohaku","tomoya","nazuna","hajime","arashi","sora"]},{"es":"Perruno/a","jp":"犬派","en":"Dog Person","emoji":"🐶","ids":["tori","subaru","hiyori","jun","koga"]},{"es":"Gatuno/a","jp":"猫派","en":"Cat Person","emoji":"🐱","ids":["hinata","yuta","leo","arashi","natsume"]},{"es":"Intelectual","jp":"知的","en":"Intellectual","emoji":"📖","ids":["eichi","makoto","tatsumi","ibara","himeru","keito","tsukasa","tsumugi"]},{"es":"Hermano/a menor","jp":"弟","en":"Younger Sibling","emoji":"🧒","ids":["midori","hiiro","hiyori","shu","yuta","kohaku","kaoru","adonis","mitsuru","keito","ritsu","arashi","tsumugi"]},{"es":"Hermano/a mayor","jp":"兄","en":"Older Sibling","emoji":"🧑","ids":["tori","mao","nagisa","hinata","rinne","himeru","rei","tomoya","hajime","kuro","souma","leo","sora","madara"]},{"es":"Hijo/a único/a","jp":"一人っ子","en":"Only Child","emoji":"⭐","ids":["eichi","wataru","yuzuru","hokuto","subaru","makoto","tetora","shinobu","chiaki","aira","mayoi","tatsumi","ibara","jun","mika","niki","koga","nazuna","tsukasa","izumi","natsume"]},{"es":"Alergia al polen","jp":"花粉症","en":"Pollen Allergy","emoji":"🤧","ids":["mao","koga"]},{"es":"Zurdo/a","jp":"左利き","en":"Left-Handed","emoji":"✋","ids":["eichi","ibara","yuta","niki","ritsu"]},{"es":"De buena familia","jp":"御曹司","en":"Son of a Noble Family","emoji":"👑","ids":["eichi","tori","hiyori","tsukasa"]},{"es":"Tiene carné de conducir","jp":"運転免許持ち","en":"Has Driver's License","emoji":"🚗","ids":["wataru","chiaki","tatsumi","jun","rinne","rei","leo","izumi","madara"]},{"es":"Club deportivo","jp":"運動部出身","en":"In Athletic Club","emoji":"🏃","ids":["tori","yuzuru","subaru","makoto","mao","tetora","midori","chiaki","hiiro","aira","jun","adonis","nazuna","mitsuru","keito","kuro","tsukasa","leo","izumi","arashi","madara"]},{"es":"Club cultural","jp":"文化部出身","en":"In Culture Club","emoji":"🎨","ids":["eichi","wataru","hokuto","shinobu","kanata","mayoi","nagisa","hiyori","ibara","shu","mika","hinata","yuta","rei","kaoru","koga","tomoya","hajime","souma","ritsu","natsume","tsumugi","sora"]},{"es":"Enérgico/a","jp":"元気","en":"Lively","emoji":"🔥","ids":["wataru","subaru","mao","tetora","chiaki","hiiro","jun","hinata","rinne","niki","koga","mitsuru","leo","madara"]},{"es":"Se adora a sí mismo/a","jp":"自分大好き","en":"Loves Themselves","emoji":"💋","ids":["tori","hiyori","shu","himeru","mitsuru","arashi"]},{"es":"Goloso/a","jp":"甘党","en":"Sweet Tooth","emoji":"🍰","ids":["tori","mayoi","nagisa","hinata","kohaku","kaoru","tsukasa","arashi"]},{"es":"Musculoso/a","jp":"筋肉男子","en":"Muscular","emoji":"💪","ids":["tetora","chiaki","hiiro","jun","adonis","kuro","madara"]},{"es":"Ordenado/a","jp":"きれい好き","en":"Likes Tidiness","emoji":"🧹","ids":["yuzuru","chiaki","yuta","kaoru","hajime","keito","kuro","izumi"]},{"es":"Desordenado/a","jp":"片付け苦手","en":"Poor at Cleaning","emoji":"🌀","ids":["wataru","tori","midori","aira","hinata","rinne","leo"]},{"es":"Tsundere","jp":"ツンデレ","en":"Tsundere","emoji":"😤","ids":["tori","makoto","yuta","rinne","koga","keito","izumi","ritsu","natsume"]},{"es":"Alma de la fiesta","jp":"ムードメーカー","en":"Mood Maker","emoji":"🎉","ids":["wataru","subaru","mao","tetora","shinobu","kanata","aira","hiyori","hinata","niki","kaoru","mitsuru","kuro","leo","arashi","madara"]},{"es":"Tímido/a","jp":"人見知り","en":"Introverted","emoji":"🫣","ids":["makoto","midori","shinobu","mayoi","shu","mika","hajime","ritsu"]},{"es":"Le gusta cocinar","jp":"料理好き","en":"Likes Cooking","emoji":"🍳","ids":["yuzuru","tetora","kanata","tatsumi","niki","hajime","souma","izumi","ritsu","arashi"]},{"es":"Llora con facilidad","jp":"涙もろい","en":"Gets Emotional Easily","emoji":"😢","ids":["yuzuru","hokuto","aira","rei","kaoru","nazuna","arashi"]},{"es":"Torpe","jp":"ドジっ子","en":"Clumsy","emoji":"💫","ids":["makoto","tetora","aira","mika","tsumugi"]},{"es":"De fiar","jp":"しっかり者","en":"Reliable","emoji":"🛡️","ids":["eichi","yuzuru","mao","shinobu","chiaki","tatsumi","ibara","shu","hinata","himeru","koga","nazuna","keito","tsukasa","izumi","madara"]},{"es":"Boke","jp":"ボケ寄り","en":"Boke","emoji":"🤪","ids":["wataru","hokuto","subaru","kanata","hiiro","adonis","mitsuru","tsumugi"]},{"es":"Tsukkomi","jp":"ツッコミ寄り","en":"Tsukkomi","emoji":"👊","ids":["tori","makoto","shinobu","aira","jun","koga","tomoya","keito","izumi"]},{"es":"Le gusta la moda","jp":"オシャレ好き","en":"Likes Fashion","emoji":"👗","ids":["tori","makoto","aira","hiyori","himeru","kaoru","nazuna","izumi","arashi"]},{"es":"Toca instrumentos","jp":"楽器演奏が得意","en":"Good at Playing Instruments","emoji":"🎸","ids":["eichi","wataru","tori","hokuto","subaru","mao","hinata","yuta","rei","koga","keito","leo","ritsu","madara"]},{"es":"Fan de los parques temáticos","jp":"テーマパーク好き","en":"Likes Theme Parks","emoji":"🎢","ids":["wataru","tori","subaru","shinobu","chiaki","hinata","yuta","kaoru","mitsuru","hajime","sora","madara"]},{"es":"Se le dan bien las redes","jp":"SNSに強い","en":"Skilled with Social Media","emoji":"📱","ids":["makoto","midori","shinobu","aira","ibara","himeru","kaoru","nazuna","hajime","arashi","natsume"]}];
+    const OSHI_QUESTIONS = [{"id":"Q1","es":"¿Adónde irías en una primera cita?","jp":"初デートに行くならどこ？","en":"Where would you go on a first date?","emoji":"💐","answers":{"eichi":{"es":"","en":"","jp":"最初のデートは、きっと思い出に残るものだよね。綺麗な景色を気兼ねなく楽しんでもらえるような場所に連れていこうかな"},"wataru":{"es":"","en":"","jp":"不思議がいっぱいの科学館を案内しましょうか。景色を楽しみたいときは、ロープウェイや気球に乗って空中散歩も良いですね♪"},"tori":{"es":"","en":"","jp":"おもちゃ屋さんに行くのはどう？　部屋に飾れるようなお酒落なおもちゃを、ボクがプレゼントしてあげる！"},"yuzuru":{"es":"","en":"","jp":"アフタヌーンティーはいかがでしようか。作法に不安がおありでも、わたくしがリードいたします。安心してお楽しみくださいまし"},"hokuto":{"es":"","en":"","jp":"劇場に行って観劇だな。好きな劇団や役者、気になる演目があれば教えてくれ。俺がチケットを取っておこう"},"subaru":{"es":"","en":"","jp":"天気がいい日に、二人で外に出かけたいな～。おおきな公園ならのびのびできそうだし、ピクニックなんかもできちゃいそう！"},"makoto":{"es":"","en":"","jp":"映画を観たり、ゲームをしたり、室内でも楽しいことはたくさんあるよね。もしゲームをするなら、協力プレイなんてどうかな？"},"mao":{"es":"","en":"","jp":"遊園地とか映画館とか、定番の場所には行きたいよな～。デートまでに、雰囲気が良さそうなカフェなんかも探しておくよ♪"},"tetora":{"es":"","en":"I'd like to go to a theme park! 'Cuz there's all sortsa things we could do there together, like going on a buncha rides, buying souvenirs, and so much more♪","jp":"テーマパークに行きたいッス！　アトラクションに乗ったり、お土産を選んだり、二人でできることがある場所ッスからね♪"},"midori":{"es":"","en":"I think it'd be fun anywhere, as long as I'm with the person I love, but... For me, it'd be even more fun if we're at a place that has mascot characters.","jp":"どんな場所でも、好きなひとと一緒なら楽しいのかなって思うけど……俺は、ゆるキャラがいる場所だともっと楽しいです"},"shinobu":{"es":"","en":"I would love an opportunity to lead the way around a ninja village! I want to show you all there is to know about my favorite thing! Be it by witnessing ninjutsu, having a first-hand experience with it, or anything else of the like♪","jp":"忍者の里に案内させてほしいでござる！　ー緒に忍術を見たり、体験したりして、拙者の好きなものを知ってほしいでござるよ♪"},"chiaki":{"es":"","en":"A date means going to the amusement park! There's roller coasters, the ferris wheel, and most importantly, hero shows! The day would pass by in a flash☆","jp":"デートといえば遊園地だな。ジェットコースターに観覧車、そしてヒーローショウ！　ー日なんてあっという間に過ぎそうだ☆"},"kanata":{"es":"","en":"If it's warm, I want to go play in the \"sea\"~ If it's a cold season, then let's go to the \"aquarium\"...♪","jp":"あたたかいじきは、『うみ』にいってあそびたいですね～。さむいきせつには、『すいぞくかん』にいきましょう……♪"},"hiiro":{"es":"","en":"","jp":"自然が豊かな場所に案内するよ！　お弁当を持っていって、緑に囲まれながら食事するのも良いかもしれないね♪"},"aira":{"es":"","en":"","jp":"好きな映像を持ち寄って鑑賞会がしたいなァ。お互いのことをもっと知るための、良いきっかけにもなりそうじゃない？"},"mayoi":{"es":"","en":"As it's something that occurs often in daily life, I wouldn't be overly anxious if we went out for a meal. But I don't know if I can speak well while I eat...","jp":"日常のなかにあるものですから、食事でしたら過度に緊張せずに済みそうです。食事中、上手く話せるかはわかりませんが……"},"tatsumi":{"es":"","en":"","jp":"植物固に行きましょうか。温室内は天気も気にせず済みますし、豊かな録を楽しむだけでなく、癒やされることもできると思います"},"nagisa":{"es":"","en":"","jp":"……チョコレートの専門店に足を運ぼうかな。好みの甘さ、苦味のチョコレートを見つけ出すのも楽しいかもしれないね"},"hiyori":{"es":"","en":"I'd like to go find a popular photo spot♪ Where there's a perfect balance between nature and buildings, there are always plenty of photo spots. Just be mindful not to take too many photos, alright?","jp":"話題のフォトスポットに行きたいね♪　建物と自然が調和していて、フォトスポットもたくさんあるみたい。撮りすきに注意だね？"},"ibara":{"es":"","en":"How about bouldering? It's helpful for relieving physical inactivity. Even if you never tried it, I'll personally guide you every step of the way.","jp":"運動不足解消にも役立ちますし、ボルダリングはとうでしよう？　初心者のかたも、自分が手取り足取りお教えしますよ"},"jun":{"es":"","en":"","jp":"慣れない場所に行くと戸惑いそうなんで、のんびり公園を歩くぐらいが良いんですけど。ドキドキか足りませんかねえ～？"},"shu":{"es":"","en":"I might take you to an art exhibition that happens to be on at the time. Refining our sense of aesthetics is important, no matter when.","jp":"そのとき聞催されている、美術展などに連れて行くかもしれないね。いかなる場面でも、感性を磨くことは必要なのだよ"},"mika":{"es":"","en":"How about a craft store? If you pick out a fabric you like, I can make ya an adorable teddy bear♪","jp":"手芸屋さんに行くのはどうやろか。好きな生地を選んでくれたら、おれがかわいいテディベアをつくったるで♪"},"hinata":{"es":"","en":"If you can enjoy yourself childishly, won't I get to see all kinds of facial expressions? I'd have them have a blast with me in a huge park with playground equipment☆","jp":"童心に返って楽しめたら、いろんな表情が見られるかも？　遊具があるおおきな公園で、俺と思いっきりハシャいじゃおう☆"},"yuta":{"es":"","en":"You'll have a better time if we could play all sorts of things, right? So, I'd have them come to the arcade with me♪","jp":"いろんなもので遊べたほうが、充実した時間を過ごせますよね。ということで、俺とゲームセンターに行きましょう♪"},"rinne":{"es":"","en":"Seeing as it's a place with lotsa cute animals, why not hit up the horse races! It's real fun to watch a race that gets your palms sweaty with excitement, and you can enjoy the gourmet food at the track while watching the game♪","jp":"かわいい動物がいる場所ってことで、競馬場はどうよ！　競馬場グルメを楽しみながら手に汗握るレース観戦なんて、楽しそうだろ♪"},"himeru":{"es":"","en":"A café where you can drink delicious coffee. HiMERU is sure there will be a variety of snacks and sweets, so he thinks it would please anyone.","jp":"美味しい珈琲が飲める喫茶店に行きましょうか。軽食やスイーツも豊富ですから、喜んでいただけると思いますよ"},"kohaku":{"es":"","en":"","jp":"団子でも食べに行こか。一口に団子って言うても、ほんまにいろんな種類があるんよ。お気に入りの味を見つけてほしいわ"},"niki":{"es":"","en":"Why not go to the market? There's lots of restaurants near the market that use fresh ingredients to make some exquisite meals, so we could enjoy some delicious food!","jp":"市場に行くのはどうっすか？　市場近くには新鮮な食材を使った絶品料理を出すお店も多いんで、美味しい食事を楽しむっす！"},"rei":{"es":"","en":"","jp":"お気に入りのジャズクラブに招待しようかのう。非日常な空間を堪能するも良し、我輩の好きな曲に耳を傾けるのも良しじゃ♪"},"kaoru":{"es":"","en":"","jp":"一緒に買い物や食事を楽しむのはもちろん、綺麗な景色も見に行きたいな。展望台がある商業施設だったら、ぜんぶ叶うかも♪"},"koga":{"es":"","en":"","jp":"やっばり、ライブには行きて～よな。いろんなアーティストが参加するような野外フェスで、思いっきり音楽を楽しもうぜ♪"},"adonis":{"es":"","en":"","jp":"バーベキューをしたいと思う。二人で予定を立てるときに、好みの肉や食材を教えてほしい。俺が立派に焼き上げよう"},"tomoya":{"es":"","en":"Maybe a shopping mall... If the facilities have greenery, you can enjoy nature alongside shopping and dining!","jp":"ショッピングモールかなあ……。緑がたくさんある施設なら、買い物や食事だけじゃなくて自然も楽しめると思います！"},"nazuna":{"es":"","en":"If it's a place to enjoy the day together, how about the zoo? The animals are soothing, and you'll have endless things to talk about while watching them, don't you think?","jp":"ー日中楽しめる場所だと思うから、動物園はどうだ？　動物に癒やされるし、動物を見てたら話も尽きないと思わないか？"},"mitsuru":{"es":"","en":"I want to go to a place with athletic activities! I'd like to keep my body active and feel thrilled together, yanno~☆","jp":"アスレチックが置いてあるところに行きたいんだぜ！　身体をいっぱい動かしながら、一緒にワクワクしたいんだぜ～☆"},"keito":{"es":"","en":"A manga museum. I'd like to show you my favorite works, but if we can't read them all in one day, we can come back another time.","jp":"漫画のミュージアムだな。俺の好きな作品を紹介したいと思っているんだが、一日で読み切れなかったときはまた足を運ぼう"},"kuro":{"es":"","en":"How about window-shoppin'? We won't run outta things to talk about when we're lookin' at all the different shops and goods. We can find out each other's taste in fashion and what sorta trends are hot, too.","jp":"ウィンドウショッピングはどうだ？　いろんな店や商品を見て回る間は会話も尽きねえだろうし、好みや流行もわかるよな"},"souma":{"es":"","en":"What about a \"cat ka-fay\"? Cats look so adorable, just seeing them is sure to make the two of us smile...♪","jp":"『猫かふぇ』はどうであろうか。猫たちの愛らしい姿に、二人とも自然と笑顔になれること間違いなしである……♪"},"tsukasa":{"es":"","en":"","jp":"人気小説の世界観を再現した施設にお連れしたいと思います。登場人物になった気持ちで、物語さながらの体験をしたいですね"},"leo":{"es":"","en":"An outdoor classical Live would be perfect! Not in a theater, but under the open sky with music playing all around us. I want to hear it, and I want you to hear it too!","jp":"クラシックの野外コンサートがいいな！　ホールのなかじゃなくて、青空の下で響く音楽を聴きたいし聴いてほしい！"},"izumi":{"es":"","en":"A date means you'll be walking right next to me, right? Then let's stop by my favorite boutiques. I'll help you pick out something perfect for being by my side.","jp":"デートってことは俺の隣を歩くんだよねぇ？　それならお気に入りのブティックに行って、相応しい格好を選んであげるよ"},"ritsu":{"es":"","en":"","jp":"昼はお洒落な喫茶店、夜になるとロウソク揺らめく秘密基地……みたいなカフェがあるんだよねぇ。そこで一日中お喋りしようよ"},"arashi":{"es":"","en":"Of course I'd want to go shopping. We could stop by a chic café for lunch while we're out shopping and enjoy the whole day together♪","jp":"もちろん、ショッピングに行きたいわア。お買い物の合間にお洒落なカフェでランチをしたり、一日を満喫しちゃいましょ♪"},"natsume":{"es":"","en":"Let's head to the illuminated atriUM. A light show might just begin at my sigNAL♪","jp":"イルミネーションが見られるアトリウムに行こうカ。ボクの掛け声で光のショウが始まるなんてこともあるかもしれないネ♪"},"tsumugi":{"es":"","en":"","jp":"プラネタリウムはどうでしょうか。昼夜問わず星空を眺められますし、ふかふかのシートに癒やされるもの良いですよね"},"sora":{"es":"","en":"","jp":"一緒にスポーツがしたいです！　スポーツに縁がないひとも、スケートやサイクリングなら気軽に楽しめると思うな～？"},"madara":{"es":"","en":"We'll go to a festival together! Throughout the year, there're a variety of festivals, but it might be the best idea to go to one with fireworks in the summer♪","jp":"お祭りに連れていくぞお！　一年を通して様々なお祭りがあるが、夏には花火大会があるお祭りに行くのも良さそうだ♪"}}},{"id":"Q2","es":"¿Cuáles son tus asignaturas favoritas?","jp":"得意教科は？","en":"What are your best subjects?","emoji":"📚","answers":{"eichi":{"es":"","en":"","jp":"学習する範囲に囚われず、様々な分野に精通していたいと思って日々学んでいるからね。すべて得意と言っておこうかな"},"wataru":{"es":"","en":"","jp":"勉学におけるオールラウンダー、それがこの私日々樹渉です……☆　一度学んだこと、覚えたことは忘れませんよ♪"},"tori":{"es":"","en":"","jp":"国語や英語かなあ？　だから文系科目のほうが得意なんだけど、歴史の授業で覚えたことはすぐに忘れちゃうんだよね"},"yuzuru":{"es":"","en":"","jp":"得意なのは理系科目全般でしょうか。文系科目が苦手というわけではありませんが、美術だけはやや苦手に感じております"},"hokuto":{"es":"","en":"","jp":"暗記が得意なおかげで、歴史を覚えるのに苦労はしなかったな。学生は勉学も仕事のうちだ、他の教科も当然きちんと学んでいたぞ"},"subaru":{"es":"","en":"","jp":"暗記科目ならわりと得意だよ☆　授業やテストをちゃんと受けてたから、暗記科目以外もまぁまぁできてたと思うな～"},"makoto":{"es":"","en":"","jp":"教科で言うと、情報になるのかなあ。データの収集とかプログラミングとか、そういうことが得意だし好きなんだ♪"},"mao":{"es":"","en":"","jp":"どの教科もまずまずって感じで、これと言えるものがないんだよな～。成績も、平均よりちょっと上って感じだよ"},"tetora":{"es":"","en":"I'm confident with my practical classes, like P.E. and home economics♪ I wanna get better at theory-based subjects too, but it's pretty difficult for me...","jp":"体育とか家庭科とか、実技なら自信があるッスよ♪　座学もできるようになりたいんスけど、なかなか難しいッス……"},"midori":{"es":"","en":"Math's my best subject, or more like, it's the only thing I can do...? I'm not at all good with other subjects, so I think I'm pretty compatible with it.","jp":"数学が得意というか、数学だけはできるというか……？　他の教科は全然できないので、相性なんだと思います"},"shinobu":{"es":"","en":"I've got a bit of confidence when it comes to Japanese history! I studied a whole lot to make myself well-versed with the era of ninjas♪","jp":"日本史にはちょっと自信があるでござるよ！　忍者のいた時代に詳しくなるために、いっぱい勉強したでござるから♪"},"chiaki":{"es":"","en":"My best subjects are the liberal arts, like Japanese literature and language! And my weakest subject is math. I would always study until late at night before a test for that class.","jp":"得意なのは現代文などの文系科目だ！　そして、苦手なのは数学だな。テスト前は、夜遅くまで勉強していたぞ"},"kanata":{"es":"","en":"\"History\" or \"biology\" might be my best, I think? When I say \"biology\", of course i mean \"fishies\"...♪","jp":"『れきし』や『せいぶつ』がとくいかもしれませんね？　『せいぶつ』といっても、『おさかな』ですけど……♪"},"hiiro":{"es":"","en":"","jp":"どの教科も成績は良いから、得意と言えるんじゃないかな？　この先ももっと学んで、知識を増やしていきたいよ！"},"aira":{"es":"","en":"","jp":"赤点も取っちゃうし、得意教科なんてないよォ。ぜんぶの投業がアイドルのレッスンになればいいのにって考えちゃうなァ"},"mayoi":{"es":"","en":"As most of my studies were self-led, so it's hard to decide which subject I'm good at. I've always studied whatever was necessary, whether it's sciences or humanities...","jp":"独学で学んできたことが多いので、得意教科を通ぶのは難しいですね。文系理系関係なく、必要なことを勉強していましたから"},"tatsumi":{"es":"","en":"","jp":"国語や歴史など、文系科目のほうが得意だと思いますな。分野に偏りなく学んでいるつもりでも、得意不得意は生じるものです"},"nagisa":{"es":"","en":"","jp":"……学問として私が好んでいるのは考古学だよ。歴史学でもあり自然科学であるとも言えるから、どの教科とも言えないかな"},"hiyori":{"es":"","en":"I excel at all of them! But, if I had to say, maybe any memorization-based subjects would be my forte? I have a good memory, you see...","jp":"せんぶそれなりに得意だね！　でも、どちらかといえば暗記科目のほうが得意かな？　ぼくってば、記憶力が良いからね……♪"},"ibara":{"es":"","en":"To be frank, it doesn't quite fit into the framework of traditional academic subjects, but I'm proficient in politics, economics, management, information, statistics, and so on... just to name a few.","jp":"正直、教科という枠組みには当てはまりませんな。政治、経済、経営、情報、統計学などが得意……と言っておきましよう"},"jun":{"es":"","en":"","jp":"頭が悪い自覚はあるんで、得意教科はないっすねぇ～。記号や数字が並んでないぶん、数学よりは国語のほうがましですけど"},"shu":{"es":"","en":"Between the humanities and the sciences, I'm somewhat stronger in the humanities. As for practical skills and knowledge, home economics would likely be my strongest area.","jp":"文系理系で言えば、文系のほうがやや得意だが。技術や知識で言えば、家庭科がもっとも得意ということになるのだろうね"},"mika":{"es":"","en":"Ever since I figured out how to memorize thin's properly, I've gotten a bit better at history. Gettin' good grades really makes me happy♪","jp":"暗記のコツを教えてもろてから、歴史がほんのちょっとだけ出来るようになったで。良い点が取れたときは嬉しかったわぁ♪"},"hinata":{"es":"","en":"According to my recent test scores, I guess it's science. Although, I'm way more passionate about physics than I am chemistry currently...♪","jp":"最近のテストの点数を振り返ってみると、理科なのかなぁ。ちなみに俺のなかでは今、化学よりも物理が熱い……♪"},"yuta":{"es":"","en":"The best score I got on my latest tests was world history, so that's my best subject as of now. Not sure what it'll be next, though.","jp":"この前のテストで一番点数が良かったのは世界史なので、今は世界史が得意科目です。次はわかりませんけどね"},"rinne":{"es":"","en":"That's a hard question to ask someone who never went to school. I guess, even though I never studied normally, I've got tons of wisdom when it comes to a lotta different things♪","jp":"学校に行ってない人間に質問されても困るっしょ。ま、普通のお勉強をしてないぶん、いろんな知恵はつけてるけどなァ♪"},"himeru":{"es":"","en":"HiMERU is good with every subject. However, he may say that he's more knowledgeable when it comes to fields of science.","jp":"HiMERUは、どんな教科も得意なのですよ。ただ、どちらかと言えば、理系分野に通じているかもしれませんね"},"kohaku":{"es":"","en":"","jp":"長いこと、学校っちもんに縁がなかったら答えようがあらへんわ。得意も不得意も、これから見つけられたら良ぇね"},"niki":{"es":"","en":"I haven't really studied much, so I can't say for sure. But cooking's my specialty, so could I maybe say home economics?","jp":"ろくに勉強してないんで、何とも言えないんすけど。料理が得意なんで、家庭科ってことにしちゃ駄目っすかね？"},"rei":{"es":"","en":"","jp":"文系理系問わず何でも得意じゃよ♪　しかし知識としては、文系的に捉えられるものを蓄積しておる気がするのう"},"kaoru":{"es":"","en":"","jp":"文系科目のほうがすこし得意かな？　と言っても、投業をサボってたこともあったし、成績自体はごく普通って感じかな"},"koga":{"es":"","en":"","jp":"俺様には音楽だけあればじゅうぶんだぜ。その他の勉強は、補習なんてことにならない程度にやるって感じだな"},"adonis":{"es":"","en":"","jp":"理系科目のほうが平均点は高いな。文系科目はどうしても、国語が難しい。問題文を読むだけでも時間がかかってしまうんだ"},"tomoya":{"es":"","en":"My scores in all subjects are about average, so I can't say there's anything I'm particularly good at... Although, I consider myself worse at science.","jp":"どの教科もだいたい平均点なので、得意と言えるものがないというか……。でも、理系科目のほうが苦手だなとは思ってます"},"nazuna":{"es":"","en":"There's nothing I could say is my strong point. But I'd say that in terms of scores, I get slightly higher marks in science subjects.","jp":"得意って言い切れるものがあるわけじゃないんだけど。点数で言うと、理系科目のほうがちょっとだけ高い気がするな"},"mitsuru":{"es":"","en":"I'm no good at studying, yanno. I also dislike sitting still in a chair, so I enjoy P.E. the most and I'm good at it!","jp":"勉強はぜんぶ苦手なんだぜ。椅子に座ってじっとしてるのも苦手だから、体育が一番好きだし得意なんだぜ！"},"keito":{"es":"","en":"You could say that liberal arts as a whole are my strongpoint. I believe I've not only excelled in Japanese language and history, but also in civics.","jp":"文系教科全般、得意と言っていいだろう。国語や歴史はもちろんのこと、公民の各科目もよく学んだと思っているぞ"},"kuro":{"es":"","en":"I'm good at sewin' and cookin', so home ec. is my forte. I usually suck at studying the classic way... especially math; it hurts my head.","jp":"裁縫も料理も得意だから、得意なのは家庭科だな。普通の勉強はだいたい苦手だぜ……特に数学なんか、頭が痛くなっちまう"},"souma":{"es":"","en":"I enjoy classical literature and Japanese history. On the contrary, I am not as good at English and world history. While I improve on my current abilities, I want to overcome my weaknesses too.","jp":"古典や日本史が好きである。一方で、英語と世界史はあまり得意ではない。できることを伸ばしつつ、苦手も克服したいものである"},"tsukasa":{"es":"","en":"","jp":"どの教科も胸を張って得意と言えるよう、勉学に励んでいます。幼いころから英才教育を受けてきましたし、苦手はありません"},"leo":{"es":"","en":"Music! That's the one thing I'm truly proud of! I'm not great at regular academics, so I'm really glad music is part of the curriculum♪","jp":"音楽だ！　おれにはこれしかない！　普通の勉強は苦手だから、授業のなかに音楽があって良かったなって思ってるぞ♪"},"izumi":{"es":"","en":"There's no subject I'm bad at, but picking just one that I'm best at feels off, too. My grades are good overall, so can't we just say I'm good at everything?","jp":"苦手な教科はないけど、これが得意って言うのもちがうかな。成績は良かったし、ぜんぶできるってことで良いんじゃない？"},"ritsu":{"es":"","en":"","jp":"たとえ授業をサボっても、勉強はできるほう～♪　テストの点数は、何でも補習にならない程度に取ってたかなぁ"},"arashi":{"es":"","en":"I'm really good at memorization-heavy subjects like Japanese history and world history♪ Once I memorize timelines and events, I'm surprisingly unlikely to forget them.","jp":"日本史とか世界史とか、暗記が中心の科目が得意よ♪　年表って、一度覚えると案外忘れないものなのよねェ"},"natsume":{"es":"","en":"I'm confident in just about any school subJECT. But considering how often I work with experiments and chemiCALS, chemistry might be my specialTY.","jp":"学校で習う程度のお勉強なら何でも得意だヨ。実験をしたり薬品を扱ったりしているかラ、あえて挙げるなら化学かもネ"},"tsumugi":{"es":"","en":"","jp":"数式さえ読み解ければ何とかなるので、数学は点数を取りやすいですよね。登場人物の心情読解より、うんと簡単です"},"sora":{"es":"","en":"","jp":"体育は好きですけど、勉強はあんまり得意じゃないな～？　教科書を開いてじっとしてると、すぐ眠くなっちゃいます"},"madara":{"es":"","en":"I'm equally skilled with all subjects, I'd think. But if I'm forced to pick one I'm best at, it'd have to be physical education.","jp":"どんな教科も満遍なく、そこそここなすぞお。一番得意なものを強いて選ぶなら、やっぱり体育だろうなあ"}}},{"id":"Q3","es":"¿Cuál fue el último mensaje que le enviaste a un compañero de unidad?","jp":"最後にユニットメンバーとしたメールの内容は？","en":"What's the last text you sent to a unit member?","emoji":"💬","answers":{"eichi":{"es":"","en":"","jp":"仕事の連絡をするついでに、みんなをお茶に誘ったよ。ひとりで過ごすより、みんながいてくれたほうが気が休まるんだ"},"wataru":{"es":"","en":"","jp":"稽古場に姫君が差し入れを持ってきてくださったので、そのお礼を。もちろん、対面でも感謝をお伝えしましたよ……☆"},"tori":{"es":"","en":"","jp":"TVで見た料理がすごく美味しそうだったの。だから、今日はハンバーグが食べたいなって思わず弓弦に連絡しちやった"},"yuzuru":{"es":"","en":"","jp":"英智さまに頼まれていた書類仕事を終えましたので、その報告をいたしました。お役に立てたようで何よりでございます"},"hokuto":{"es":"","en":"","jp":"『ユニット』リーダー宛に届いた仕事の連絡を、みんなに転送したぞ。予定は遊木や衣更が管理してくれて、助かっている"},"subaru":{"es":"","en":"","jp":"面白い形の雲を見つけたから、写真を撮ってみんなに送ったよ！　俺は鳥に見えたんだけど、サリ～は犬に見えたって！"},"makoto":{"es":"","en":"","jp":"見覚えのあるペンを拾ったから、明星くんのかな？　って連絡したんだ。落とし物を見つけることができて良かったよ♪"},"mao":{"es":"","en":"","jp":"たまたま面白そうなゲームを見つけたから、真に連絡したよ。今度一緒にプレイする約束もしたんだ、楽しみだな♪"},"tetora":{"es":"","en":"I messaged everyone 'bout when we'll have our next practice session together! Midori-kun's the only one who hasn't responded yet, so I'm just gonna go and ask him directly!","jp":"集まってレッスンする日をみんなに相談したッス！　まだ翠くんだけ返事がないんで、もう直接間きに行くッスよ！"},"midori":{"es":"","en":"My parents gave me lots of vegetables, so I asked everyone in my unit if they'd like some before I offered them to anyone else. I'll carry some with me later.","jp":"親が野菜をたくさんくれたので、欲しいひとがいないかまずは『ユニット』のみんなに連絡しました。後で持っていきます"},"shinobu":{"es":"","en":"Tetora-kun sent me our schedule for the practice session, so I replied to that! I'm in charge of booking us a practice room♪","jp":"鉄虎くんがレッスンの日程を連絡してくれたので、返事をしたでござる！　レッスン室の予約は拙者が請け負うでござるよ♪"},"chiaki":{"es":"","en":"I got my hands on some ninja-themed sentai merchandise, so I couldn't help but message Sengoku about it. It made me happy to get a text praising how cool it looks☆","jp":"忍者を題材にした戦隊もののグッズを手に入れて、思わず仙石に連絡したんだが。格好良いと言ってもらえて嬉しかったぞ☆"},"kanata":{"es":"","en":"I texted Chiaki to tell him that I was at the \"sea\". Because he will get \"worried\" if he doesn't know my \"location\".","jp":"『うみ』にいますってちあきにれんらくしましたよ。『いばしょ』をおしえておかないと、『しんぱい』されちゃいますからね"},"hiiro":{"es":"","en":"","jp":"マヨイ先輩と出かけていたから、藍良と翼先輩に今から帰るよと連絡したかな？　帰ったら、二人が出迎えてくれたよ♪"},"aira":{"es":"","en":"","jp":"今度『ユニット』で出かけるならどこがいいか、いくつか候補を送ったよォ。行き先は、四人で話しあって決める予定！"},"mayoi":{"es":"","en":"I was out shopping with Hiiro-san, and asked Aira-san and Tatsumi-san what kind of souvenirs they wanted us to buy. In the end, we bought some sweets to take back.","jp":"一彩さんとお買い物に出かけたので、藍良さんと異さんにお土産は何がいいか尋ねました。お菓子を買って帰りましたよ"},"tatsumi":{"es":"","en":"","jp":"藍良さんからの連絡に、お礼などを伝えていますな。俺はスマホに不慣れなので、すこし返信が遅くなってしまいがちなんです"},"nagisa":{"es":"","en":"","jp":"……茨から次の仕事の資料が送られてきて、後で見ておくことを伝えたかな。連絡がきたときは、撮影が始まる直前だったんだ"},"hiyori":{"es":"","en":"I sent a cute picture of Mary for everyone to see! Before that, I think I sent a picture I took with Nagisa-kun?","jp":"みんなに見てほしくて、メアリのかわいい写真を送ったね！　その前は、凪砂くんと一緒に撮った写真を送ったかな？"},"ibara":{"es":"","en":"I received several photos of His Highness and His Excellency, and told him that if we were to upload them on social media, it should be the fourth one.","jp":"殿下から、閣下との写真が何枚も送られてきましたので、SNSにアップするのであれば四枚目にしてくだざいと伝えました"},"jun":{"es":"","en":"","jp":"おひいさんが急にいなくなるもんだから、どこですかって連絡しましたねぇ～。よくあるやり取りって感じです"},"shu":{"es":"","en":"","jp":"次の仕事の集合時間や場所を連絡したのだよ。現場へ二人で向かう予定になっていても、念のための共有は必要だろうからね"},"mika":{"es":"","en":"","jp":"衣装用の小物をつくってて、出来を見てもらいたくて連絡したわぁ。良い出来って言ってもらえて嬉しかったんよ～♪"},"hinata":{"es":"","en":"Something like, sending a photo of the meal I ate with Yuta, saying \"delicious, wasn't it?\" I gotta find the next restaurant to go to!","jp":"ゆうたくんと食べたご飯の写真を送って、美味しかったね～みたいなやり取りをしたかな？　次に行くお店も探さなきゃ！"},"yuta":{"es":"","en":"Aniki messaged me saying he was hungry, so I replied to him asking if he wanted to go somewhere to eat. After that, we went out somewhere together♪","jp":"アニキからお腹空いた～って連絡が来たので、どこか食べに行く？　って返事しました。その後、一緒に出かけましたよ♪"},"rinne":{"es":"","en":"I took a picture of my winnin' race ticket and sent it to the guys, but no one replied. Even though I hit a real bullseye with my guess, isn't that pretty cold?","jp":"万馬券の写真を撮って送ったんだけどよォ、誰も返信してこねェの。せっかく俺っちの予想が的中したってのに、冷たくねェ？"},"himeru":{"es":"","en":"Amagi was causing HiMERU to receive far too many notifications, and he asked him to refrain from sending so many. If he hadn't involved himself, Amagi likely would have begun messaging HiMERU directly.","jp":"天城からの通知があまりに多いので、控えるようにと注意をしました。何か送っておかないと、直接絡まれてしまうのですよ"},"kohaku":{"es":"","en":"","jp":"メンバーみんなに、お土産の写真を送ったで。ロケ先で食べた和菓子がすごく美味しくて、つい買ってしもたんよ"},"niki":{"es":"","en":"HiMERU-kun asked me where I was, so I replied to that. If someone tries to get hold of me, I'll check it out, but I don't normally contact others myself~","jp":"HiMERUくんにどこにいるか聞かれて、返信したっす。連絡が来たら見ますけど、自分から連絡することはすくないっすね～"},"rei":{"es":"","en":"","jp":"仕事が一段落ついたので仮眠を取るとみんなに連絡したのう。連絡しておいたおかげで、薫くんに起こしてもらえたぞい♪"},"kaoru":{"es":"","en":"","jp":"美味しそうな肉料理を出すお店を見つけたから、アドニスくんに連絡したよ。予定が合えば、一緒にランチするのもいいかも♪"},"koga":{"es":"","en":"","jp":"俺様がレコーディングするとき、羽風先輩の歌声が先に入っててよう。イケてる歌声だったから、感想を送っておいたぜ"},"adonis":{"es":"","en":"","jp":"大神に歌のレッスンに誘われたので、もちろん行くと返事をした。お互いに高めあい、よりカ強い歌声を響かせたいと思う"},"tomoya":{"es":"","en":"I texted Mitsuru about work and got no response, so I sent a follow-up message. It seems as though he forgot to reply.","jp":"仕事の連絡をしたのに光から返信がなくて、催促の連絡をしたなぁ。本人日く、返信するのを忘れてたみたいです"},"nazuna":{"es":"","en":"Since work finished early, I thought to reach out and see if we could have lunch together. I didn't expect it, so I was surprised to see everyone show up.","jp":"仕事が早く終わったから、誰か一緒にランチできないかと思って連絡したんだけど、全員集まると思わなくてびっくりしたよ"},"mitsuru":{"es":"","en":"I found a beautiful flower while I was dashing around, so I took a picture of it and sent it to Hajime! It's amazing how he can tell what kind of flower it is just from seeing a photo~☆","jp":"ダッシュしてたら綺麗な花を見つけたから、写次真を撮って創ちゃんに送ったぜ！　写真だけで何の花かわかるなんてすごいぜ～☆"},"keito":{"es":"","en":"I contacted Kiryu and Kanzaki about our work schedules, but neither of them responded. Well, that isn't unusual, though.","jp":"仕事の予定について連絡したんだが、鬼龍からも神崎からも口頭で返事をされてしまった。まぁ、珍しいことではないがな"},"kuro":{"es":"","en":"I wanted to hear what their plans were for our new song, so I hit 'em up. After that, we ended up meetin' up and talkin' face-to-face.","jp":"新曲の歌いかたについて、二人のプランを聞きたくて連絡したぜ。そのあと結局、直接会って話したんだけどな"},"souma":{"es":"","en":"I hadn't realized I'd sent an incomprehensible string of characters, so I contacted my seniors to apologize. Handling a \"sumatto fone\" is difficult...","jp":"我の知らぬうちに謎の文字列が送信されていたので、先輩がたにお詫びの連絡をした。『すまほ』の扱いは難しいであるな……"},"tsukasa":{"es":"","en":"","jp":"皆さんに仕事の予定をお伝えしたり、質問に答えたりしましたね。鳴上先輩はいつも返事が早く、有り難いです"},"leo":{"es":"","en":"","jp":"おれのスマホどこだ？　っていう連絡を、スオ～のスマホからみんなにした！　ちなみにスマホは、スタジオに落っこちてた！"},"izumi":{"es":"","en":"","jp":"レッスンに合流するのが遅れそうって連絡を、かさくんにしたかな。わかりましたって必ず一言返事があるの、真面目だよねぇ"},"ritsu":{"es":"","en":"","jp":"ビルの窓からセッちゃんが見えたから、『上見て』って送ってみた～。すぐに気づいて、軽く手を振ってくれたよ"},"arashi":{"es":"","en":"","jp":"ブランドの新作の情報を見て、泉ちゃんに連絡したわァ。お互いのセンスを確かめあうのって、案外楽しいものよ♪"},"natsume":{"es":"","en":"","jp":"ご飯を食べに行くお店を予約したかラ、二人にそのことを伝えたヨ。今回は和食のお店にしてみたんだけド、口に合うかな？"},"tsumugi":{"es":"","en":"","jp":"今度ロケに行く場所の周辺情報を調べて送りましたよ～。もちろん仕事が第一ですが、時間があれば観光もしたいですよね♪"},"sora":{"es":"","en":"","jp":"ゲームでハイスコアが出せたのが嬉しくて、画面を写真に撮って送りました！　二人とも褒めてくれて嬉しかったな～♪"},"madara":{"es":"","en":"As a solo unit, that's a pretty difficult question for me to answer. Ah, but I did get a reminder for an event I'd set up a while ago.","jp":"『ソロユニット』の俺には答えづらい質問だなあ。過去の自分が設定しておいた予定のリマインドが届いたぐらいだぞお"}}},{"id":"Q4","es":"¿Qué es lo primero que haces al levantarte últimamente?","jp":"最近朝起きて最初にするとは？","en":"What's the first thing you do when you wake up in the morning these days?","emoji":"🌅","answers":{"eichi":{"es":"","en":"","jp":"夜間に起きた出来事や届いた連絡を確認するよ。もっとゆっくり過ごしたいのだけど、忙しいとどうしても時間に追われるね"},"wataru":{"es":"","en":"","jp":"『おねむ』な子たちを起こしに行きますかね～。眠たそうな子を見ると、ついちょっかいをかけたくなってしまうんです☆"},"tori":{"es":"","en":"","jp":"日光を浴びるようになったかも。窓越しでも、太陽の光を浴びるのって気持ちが良いし、朝が来たなって思えて目も覚めるんだ"},"yuzuru":{"es":"","en":"","jp":"新たな一日を清々しく始められるように、部屋の掃除をいたします。最近は、水回りの掃除に力を入れておりますよ"},"hokuto":{"es":"","en":"","jp":"朝食までの時間、クロスワードパズルを解いている。眠い朝でも、解いているうちに頭が働くようになって目が覚めるんだ"},"subaru":{"es":"","en":"","jp":"近ごろは自主トレしてるよ！　室内でできる簡単なやつだけど、朝から身体が元気になる感じがして気持ち良いんだよね♪"},"makoto":{"es":"","en":"","jp":"この前、充電ケーブルが刺さっていなくてスマホの電源が落ちてたことがあったんだ。だから、まず充電を確認してるかな"},"mao":{"es":"","en":"","jp":"漫画の片付けだな～。寝る直前に読んでるからついベッドサイドに積んじゃってさ、起きてから棚にしまってるんだ"},"tetora":{"es":"","en":"I heard it was good for your health if you drink a glass of water in the morning, so I do that. After that, I go out for my morning training routine.","jp":"身体に良いって聞いたんで、コップー杯ぶんの水を飲んでみてるッス。飲んだ後は、朝のトレーニングに出かけるッスよ"},"midori":{"es":"","en":"I play a mascot character game on my phone. That's the best way to spend time whenever you wanna lie in bed for a little longer, yeah?","jp":"ゆるキャラのアプリゲームで遊んでます。もうすこしごろごろしていたいなってときに、ちょうどいいんですよね"},"shinobu":{"es":"","en":"I try to do exercises that help you grow taller. I hope it works out, even if I only grow a tiny bit more~","jp":"身長が伸びるというエクササイズをしてみているでござる。ほんのちょっとでもいいから、結果が出るといいでござるな～"},"chiaki":{"es":"","en":"I begin my day with a fresh start by doing radio exercises! I get to move every muscle in my body in an efficient manner, and it also feels really good to refresh my mind and body first thing in the morning!","jp":"原点に帰って、ラジオ体操をしているぞ!全身の筋肉を効率良く動かせるし、心身ともにすっきりして気持ちが良いんだ"},"kanata":{"es":"","en":"A new \"fishie\" has joined the \"fish tank\" in our room, so I check its \"state\" while giving it my \"greetings\"♪","jp":"へやの『すいそう』にあたらしい『おさかな』さんがふえたので、『あいさつ』をしながら『ようす』をみてますよ♪"},"hiiro":{"es":"","en":"","jp":"その日の予定を確認して、空き時間がありそうならレッスン室を予約しているよ。練習したい振り付けがあるからね"},"aira":{"es":"","en":"","jp":"ついスマホを触っちゃうなァ。フリマサイトに欲しいグッズが出品されてるのを見つけると、一気に目が覚めるよォ！"},"mayoi":{"es":"","en":"","jp":"洗濯機を回しています。夜に洗濯することもおおかったのですが、洗濯物は朝干したほうがやはり気持ちが良いですよね"},"tatsumi":{"es":"","en":"","jp":"新聞を読んでいるかもしれません。見出しや記事の大きさで内容や重要性がわかるというのは、新聞ならではの利点ですな"},"nagisa":{"es":"","en":"","jp":"……献立を考えるかな。私は最近料理をするようになったから、早いうちにメニューを決めておかないと買い物が難しいんだ"},"hiyori":{"es":"","en":"","jp":"収録現場でもらったちいさな観葉植物にお水をあげてるね。枯らさないように、水のやりすぎには注意してるね！"},"ibara":{"es":"","en":"There's no excuse not to make use of the morning hours when the brain is most active. I utilize this time by reading multiple media outlets, including specialized journals, to gather information.","jp":"脳が最も活性化している朝の時間を活用しない手はありません。専門誌など複数のメディアを読み込み、情報を得ています"},"jun":{"es":"","en":"","jp":"スマホの場所の確認ですかねえ～。この前、寝てる間にスマホがべッドの下に落ちたみたいで、探すのに手間取ったんです"},"shu":{"es":"","en":"The temperature difference between morning and night has been quite drastic lately, so the first thing I do is check the room temperature.","jp":"最近は朝晩の寒暖差が激しく、寝る前と朝でも想像以上に気温が変化していることがある。だからまず、室温を確認するのだよ"},"mika":{"es":"","en":"I try to read first, even if it's just for five minutes. Once idol work starts, I usually forget, so mornin's are ma only chance.","jp":"五分でもいいから読書しようとがんばってるで。活動を始めた後だと忘れてしまいそうやから、朝読むようにしてるんよ"},"hinata":{"es":"","en":"Maybe try to guess the current time and then check my smartphone for the answer. I'm usually about right, but I wanna make my internal clock even more accurate!","jp":"いま何時か考えて、スマホを見て答え合わせをしてるかも。だいたい当たってるんだけど、体内時計をもっと正確にしたい！"},"yuta":{"es":"","en":"I dunno why, but my hair's been terrible when I wake up lately~ So I usually go to the mirror see what it's like this morning.","jp":"最近、なぜか寝癖が酷いんですよね～。だから、今日はどんな寝癖があるかなって、鏡の前に行って探しちゃいます"},"rinne":{"es":"","en":"","jp":"新台が出る日なら朝からパチンコ屋に並ぶんだけどなア。時間がある日なら、起きて最初にすることは二度寝じゃねェ？"},"himeru":{"es":"","en":"","jp":"朝飲む珈琲の銘柄を決めます。珈琲は起きて一時問ほど経ってから飲むのが良いとされており、すぐには淹れられませんからね"},"kohaku":{"es":"","en":"","jp":"朝の番組に、動物コーナーってあるやろ？　たまに珍しい生き物が出てくるから、それ目当てでチャンネルを合わせてるで"},"niki":{"es":"","en":"","jp":"僕、バイトしてるんすけど、最近は朝のシフトが詰まってるんすよね。だから、起きてすぐに支度してお店に向かってるっす！"},"rei":{"es":"","en":"","jp":"床に落ちたアイマスクを拾い上げておるぞい。よく眠れるようにとつけて寝るんじゃが、最近はよく外れてしまうんじゃよ"},"kaoru":{"es":"","en":"","jp":"連絡が来てないか確認してるかな。仕事の連絡以外に、友達から他愛もない連絡が来てると何だか嬉しくならない？"},"koga":{"es":"","en":"","jp":"愛犬と散歩に出かけるから、普通に身支度だな。支度に時間をかけるとレオンを待たせちまうから、ぱぱっと済ませてるぜ"},"adonis":{"es":"","en":"","jp":"近ごろは、目覚めたらラジオをつけている。ラジオを通して知らない音楽に巡り会えた朝は、とても清々しい気持ちになる"},"tomoya":{"es":"","en":"I try to do vocalizations and check the condition of my throat. Recently, I've been recording in the morning, so... it feels like doing preparation exercises.","jp":"声を出してみて、喉の調子を確かめてます。近ごろは朝からの収録が続いてるので、発声の準備運動をする……って感じですね"},"nazuna":{"es":"","en":"Because I'm raising a rabbit, I open its cage in the morning and let it walk around indoors. Seeing it move around energetically makes me feel lively too♪","jp":"うさぎを飼ってるから、朝起きたらケージを開けて室内を散歩させてるよ。活発に動いてる姿を見ると、おれまで元気になるよ♪"},"mitsuru":{"es":"","en":"I get out of bed, yanno! If I stand up and feel full of energy, I go for a run! If I'm hungry instead, I have breakfast first!","jp":"ベッドから下りるんだぜ。立ち上がってみて、元気が溢れてたら走りに行くぜ！　お腹が空いてたら朝ご飯にする！"},"keito":{"es":"","en":"I try to set aside the time for meditation. Not only does it improve my ability to concentrate and relax, but it seems to have a positive effect on creativity too.","jp":"時間を取って、現想をすることもある。集中力を高めたりリラックスするのはもちろん、創造力の向上にも良い影響があるそうだ"},"kuro":{"es":"","en":"A while ago, I fell asleep with the light on in my room. Guess that's why the first thing I do when I get up is to check if they're still on.","jp":"すこし前に、部屋の電気をつけたまま寝ちまってさ。そのせいか、最近は起きたらまず電気がついてないか確認しちまうな"},"souma":{"es":"","en":"I prepare breakfast. Now that I have a new kitchen knife, I look forward to cooking with it every day♪","jp":"朝餉の支度をしておるな。新しい包丁を手に入れたゆえ、その包丁を使って料理をすることが毎日の楽しみなのである♪"},"tsukasa":{"es":"","en":"","jp":"起きてすぐ、朝の過ごしかたについて予定を立ててみています。朝はやることが多いので、時間をもっと上手く使いたいんです"},"leo":{"es":"","en":"I probably check whether I'm actually still in bed first. Sometimes I wake up on the floor, so if I'm still in bed, I'm like, \"Nice, good job, me!\"","jp":"自分がベッドで寝てるか確認するかも。気づいたら床で寝てることもあるから、ベッドの上にいるだけでおれ偉いな～って思う！"},"izumi":{"es":"","en":"I run a hot bath first. Just taking a shower is fine too, but I feel better when I actually soak in the tub.","jp":"バスタブにお湯を張る。シャワーを浴びるだけでもいいんだけど、浴槽に浸かったほうが身体の調子が良い気がするんだよね"},"ritsu":{"es":"","en":"","jp":"起きたことの連絡。ごろごろしたい朝なんかは、連絡しておけば誰も起こしに来なくてのんびりできるって気づいたんだ～"},"arashi":{"es":"","en":"I love airing out my room to start the day on a high note! That fresh air is the best way to wake up my brain♪","jp":"気持ち良く一日を始めるために、部屋の空気を入れ替えるようにしたの。新鮮な空気を取り込むと、目も覚めるわ♪"},"natsume":{"es":"","en":"I'm temporarily in charge of the fortune-telling segment on a morning TV shoW, so I always turn on the TV  to check the broadCAST.","jp":"期間限定で朝の番組の占いコーナーを任されているかラ、放送内容を確認するためにTVをつけているヨ"},"tsumugi":{"es":"","en":"","jp":"顔を洗ってからタオルがないことに気づく、ということがあったばかりなので、顔を拭くのに使うタオルを用意していますよ"},"sora":{"es":"","en":"","jp":"アラームより早く起きれた朝は、アラームの設定を解除するな～。そうすると、早起きできた実感が湧いてきます♪"},"madara":{"es":"","en":"","jp":"次のライブに向けて、体力づくりをしているぞお。早朝のトレーニングは清々しい気持ちになれるからおすすめだ"}}},{"id":"Q5","es":"¿Por qué eres tan genial?","jp":"どうしてそんなにかっこいいんですか？","en":"Why are you so cool?","emoji":"✨","answers":{"eichi":{"es":"","en":"","jp":"ふふ、褒めてくれてありがとう。ファンのみんなに情けない姿は見せられないからね、自然とかっこよくいたいと思うものさ"},"wataru":{"es":"","en":"","jp":"かっこいいだけですか？　もっといろんな姿をお見せしますから、たくさんの表現で私を彩ってみてくださいね……☆"},"tori":{"es":"","en":"","jp":"えっ、かっこいいかなぁ？　かわいいって言われるのが多いからドキッとしちゃった。かっこいい姿も見せられるようにがんばるよ♪"},"yuzuru":{"es":"","en":"","jp":"自分をいかに魅せるかは、アイドルが常に向き合う課題と存じます。わたくしもこの課題を遂行する身、というのが答えでしようか"},"hokuto":{"es":"","en":"","jp":"俺は、いちど心に決めたことは買きとおす主義だ。己を曲げない強さがかっこよさに見えることもあるのかもしれないな"},"subaru":{"es":"","en":"","jp":"大切な仲間や大好きなひとたちがいて、毎日がキラキラしてるから！　もっとキラキラを届けられるようにがんばるよ！"},"makoto":{"es":"","en":"","jp":"『かっこいい』の自覚はないから、何だか照れちゃうな。かっこよく見てもらいたいなと思う気持ちが外見にも表れてるのかも？"},"mao":{"es":"","en":"","jp":"周りのやつらがかっこいいから、俺もかっこよくいたいって思うことはあるよ。俺だけ見劣りしたら、それこそかっこ悪いだろ？"},"tetora":{"es":"","en":"Maybe it's 'cuz everyone's always supporting me? Also, if you think my constant hard work towards my goal is somethin' \"cool\", then I'm real happy 'bout that!","jp":"応援してくれるみんながいるからッスかね？　あとは、俺が目標に向かって努力し続けてる姿が、そう見えてたら嬉しいッス！"},"midori":{"es":"","en":"I don't really know how to answer that... But I think that it's thanks to my parents that I was born with this face, so I'll express my gratitude to them later...","jp":"どうしてと聞かれても困るけど……俺がこの顔に生まれたのは両親のおかげだと思うので、親に感謝しておきますね……"},"shinobu":{"es":"","en":"I-I'm cool? It surprises me to hear that, but I'd certainly be glad if you consider ninjas to be something cool!","jp":"か、かっこいいでござるか？　びっくりしちゃったけど、忍者のことをかっこいいと思えてもらえているなら嬉しいでござる！"},"chiaki":{"es":"","en":"It might be because I dream of becoming a hero. And not just any hero, but a \"cool\" one...☆","jp":"ヒーローになりたいという夢があるからかもしれないな。ただのヒーローじゃないぞ、『かっこいい』ヒーロー……☆"},"kanata":{"es":"","en":"Must be because there are so many \"cool\" people around me~ Did you get caught up in that, and end up thinking I was \"cool\" as well...?","jp":"ぼくのまわりには、『かっこいい』ひとがいっぱいいますからね～。つられて、ぼくがかっこよくみえていたりして……？"},"hiiro":{"es":"","en":"","jp":"自己を分析していけばわかるのかもしれないけど、すぐに答えを出すのは難しそうだ。僕も僕自身のことを考えてみるよ！"},"aira":{"es":"","en":"","jp":"ちょっと照れるけど……『ALKALOID』の色っていうのかな？　それに引っ張ってもらってるなアって思うことはあるかも！"},"mayoi":{"es":"","en":"","jp":"そんな、畏れ多いです……。私なんか、ちっともかっこよくないのですが……今後もそう言っていただけるようにがんばりますぅ"},"tatsumi":{"es":"","en":"","jp":"気持ちにどこか、余裕があるからかもしれませんな。その余裕を俺に与えてくれているのは、仲間の存在だと感じていますよ"},"nagisa":{"es":"","en":"","jp":"……私がアイドルとして生きているから、かな。アイドルは、みんなを幸せにするためにどんな魅力だって発揮できるんだ"},"hiyori":{"es":"","en":"","jp":"ぼくがぼくというアイドルをめいっぱい輝かせてるからだね！　みんなの目にも、眩しく綺麗に映っていたらいいなって思うね♪"},"ibara":{"es":"","en":"Making others feel good or admired is also one aspect of being an idol. Therefore, is it appropriate to answer that question with \"It's because I'm an idol\"?","jp":"ひとに好感や憧れを抱かせることも、アイドルの在り方のひとつです。ゆえに、自分がアイドルだからという答えが適切かと"},"jun":{"es":"","en":"","jp":"そりゃあ、かっこ悪いのは嫌でしよう。応援してくれるひとたちには、できるだけかっこいい姿を見せたいですしねぇ～"},"shu":{"es":"","en":"","jp":"アイドル然り、芸術家然り。ひとつの道を極めようとするその姿が、他者の目にかっこよさとして映ることもあるのだろうね"},"mika":{"es":"","en":"","jp":"そんなふうに言ってもらえるんも、アイドルになったからやなぁ……。おれをアイドルにしてくれたきっかけに感謝やね♪"},"hinata":{"es":"","en":"It's more than about being cool, but... I wanna make more people smile and be happy, y'know?","jp":"『かっこいい』に限った話じゃないけど……もっといろんなひとを笑顔にしたいし、喜んでほしいって思ってるからな？"},"yuta":{"es":"","en":"As an idol, the more weapons and charm points you have, the better. And being \"cool\" is one that I have♪","jp":"アイドルとして、武器や魅力は多いほうがいいですから。『かっこいい』も、俺が持ってるもののひとつってことです♪"},"rinne":{"es":"","en":"","jp":"好きなことをしてるからじゃねェ？　アイドルもそうだし、ギャンブルもそうだ！　人生はやっぱ、楽しんだもん勝ちっしょ♪"},"himeru":{"es":"","en":"","jp":"HiMERUは、最高で完璧なアイドルですからね。魅力溢れるアイドルをかっこいいと思うのは、当然のことなのですよ"},"kohaku":{"es":"","en":"","jp":"背丈はまだちっこいけど、度胸と覚悟には自信があんねん。それがわしから滲み出て、かっこよく見えてるんやったら良ぇな"},"niki":{"es":"","en":"","jp":"美味しいご飯を毎日つくって食べてるからっす！　食べると元気になって、みんなにかっこいい姿を見せられるっすからね～♪"},"rei":{"es":"","en":"","jp":"かわいい、かっこいい。ひとに見せた姿のぶんだけ評価の言葉を浴びるのは、我輩がアイドルだからに他ならぬのう♪"},"kaoru":{"es":"","en":"","jp":"今を楽しんでるからじゃない？　気持ちって見た目にも表れると思うから、日々の充実感が俺をかっこよく見せてるのかも♪"},"koga":{"es":"","en":"","jp":"俺様の音楽がテメ～の魂にも届いたから、そう思うんだろ。これからもロックで魂を揺さぶってやるから、覚悟しとけよ！"},"adonis":{"es":"","en":"","jp":"守りたいものがあるからだ。仲間やファンの笑顔、いま俺がいる場所を大切に思う気持ちが、俺を強くしてくれている"},"tomoya":{"es":"","en":"I'm curious about what people find cool about me... but I'm happy to hear that! I'll continue growing from now on, so please support me!","jp":"どこをかっこいいって言われてるのか気になるな……でも嬉しいです！　これからもっと成長するので、応援してくださいね！"},"nazuna":{"es":"","en":"I don't really feel like I'm cool. Well, if I were to give a reason, it may be because I'm \"nii~chan\" to Tomo-chin, Mitsuru-chin, and Hajime-chin♪","jp":"かっこいい自分の実感はあんまりないんだけど。理由があるとしたら、友ちん、光ちん、創ちんの『に～ちゃん』だからかな♪"},"mitsuru":{"es":"","en":"I think the sight of someone running is really cool. All that's to say the reason why I'm cool is because I dash around every day~☆","jp":"走り続ける姿って、かっこいいものだと思うんだぜ。つまり、オレがかっこいいのも毎日ダッシュしてるからなんだぜ～☆"},"keito":{"es":"","en":"It's because of the support and encouragement around me. My friends and allies are the reason I can stand on stage and strive for greater heights.","jp":"周囲の応援や支えがあるからだ。俺が舞台に立ち、高みを目指すことができているのも、仲間や味方の存在あってこそだからな"},"kuro":{"es":"","en":"I guess it's 'cuz AKATSUKI is where I can be with Hasumi 'n Kanzaki. When I see those two honest guys, it's like my spine just straightens up on its own.","jp":"『紅月』って『ユニット』で、蓮巳と神崎と一緒にいるからだろうな。真っ直ぐな二人を見てたら、自然と背筋が伸びるってもんだ"},"souma":{"es":"","en":"There's something about that comment that makes me feel bashful. However, I'm pleased if my daily training has led to that kind of impression.","jp":"何やら面映ゆい心地であるな。だが、日々の修練の成果がそのような見えかたに繋がっているのであれば嬉しく思う"},"tsukasa":{"es":"","en":"","jp":"果たさなくてはならない様々な務めがあるから、でしょうか。務めを果たそうという気持ちは、いつも私を支えてくれます"},"leo":{"es":"","en":"","jp":"かっこいいかあ、そっか～。自分じゃあんまりよくわからないけど、かっこいいって思える部分がおれにあるってことだな！"},"izumi":{"es":"","en":"","jp":"そうあるために、常に努力してるから。自分を磨き上げてステージに立ってるから。アイドルとして当然のことでしょ"},"ritsu":{"es":"","en":"","jp":"お姫さまたちがいるから……なんて、すごくアイドルっぽい答えだけど。見てもらうなら、やっぱりかっこいい姿が良いよねぇ"},"arashi":{"es":"","en":"","jp":"アタシがアタシらしくあるから、じゃないかしら？　自分のことを愛して、美しく輝けば、そこに魅力が宿るのよ♪"},"natsume":{"es":"","en":"","jp":"『そんなに』なんて言っていいのかナ？　次に質問するときにハ、ボクはもっとかっこよくなってるかもしれないヨ♪"},"tsumugi":{"es":"","en":"","jp":"かっこいいと思う気持ちは、あなたが俺に魅力を感じてくれているから生まれるんだと思います。これからもがんばりますね～"},"sora":{"es":"","en":"","jp":"かっこいいって言ってもらうのは、何だか新鮮な～？　かっこいい宙のことを見つけてくれて、ありがとうございます♪"},"madara":{"es":"","en":"","jp":"『そんなに』をつけるぐらい、俺を見てくれているんだなあ。どうしてかっこいいと思ったか、逆に聞かせてほしいぐらいだ♪"}}},{"id":"Q6","es":"¿Qué te apetece hacer en un festival de verano?","jp":"夏祭りでやりたいことは？","en":"What do you want to do at a summer festival?","emoji":"🎆","answers":{"eichi":{"es":"","en":"","jp":"浴衣を着て、打ち上げ花火を眺めるなんてどうだろう？　夜なら昼間の暑さも和らいで、過ごしやすいだろうしね"},"wataru":{"es":"","en":"","jp":"櫓を囲んでの盆踊りはいかがでしょう？　私が楽器で盛り上げるので、共に思う存分踊り明かしましょう☆"},"tori":{"es":"","en":"","jp":"ふわふわの綿飴が食べたいな☆　綿飴ができていく様子を眺めるのも、魔法みたいでとっても楽しいよね♪"},"yuzuru":{"es":"","en":"","jp":"喧騒から離れ、静かに散策するのも良さそうですね。せっかくの機会ですので、お祭りに相応しい浴衣を用意いたしましょう"},"hokuto":{"es":"","en":"","jp":"夏祭りに行くと、フルーツ飴が食べたくなるな。苺飴や林檎飴……どれも美味しいから、何にするか迷ってしまいそうだ"},"subaru":{"es":"","en":"","jp":"花火大会に行って、『た～まや～！』って叫びたいな☆　あと『か～ぎや～』っていうのもあるよね？　みんなで盛り上がろう！"},"makoto":{"es":"","en":"","jp":"射的は欠かせないよね♪　大物を狙いたくなるけど、ああいうのって落ちにくくしてあることも多いから、お菓子が狙い目だよ"},"mao":{"es":"","en":"","jp":"焼きそば、お好み焼き、イカ焼き……いろいろ食べたいけどやっぱりタコ焼きだな。タコ焼きなら分け合えるし、ちょうど良いだろ♪"},"tetora":{"es":"","en":"","jp":"いろんな出店を回りたいッスね～。金魚すくいに行って、誰が一番たくさん金魚をすくえるか勝負するのも楽しそうッス！"},"midori":{"es":"","en":"","jp":"最近はゆるキャラのお面が売られてることがあるから、お面屋があったらチェックしたいな。気に入ったのがあったら買うかも"},"shinobu":{"es":"","en":"","jp":"やっぱり祭りといえば屋台飯！　何を食べるか厳選したいでござるな。トルネードポテトがどんな食感か気になってるでござる♪"},"chiaki":{"es":"","en":"","jp":"祭りの最後に、手持ち花火を買うのはどうだ？　仲間同士で祭りの思い出を語り合いたいな。最高の夏になるはずだ……☆"},"kanata":{"es":"","en":"","jp":"たぶんむしあつくて『あせ』をかくでしょうから、『れいとうぱいん』をたべて、『すいぶん』をほきゅうします～"},"hiiro":{"es":"","en":"","jp":"ヨーヨー釣りというものがあるらしいからやってみたいな。たくさん釣って、みんなに配りたいよ！"},"aira":{"es":"","en":"","jp":"みんなで浴衣を着て屋台を巡りたい！　映える写真が撮れること間違いなしだよねェ♪"},"mayoi":{"es":"","en":"","jp":"私はあまり人混みが得意ではないので……。片隅でひっそりと、皆さんの楽しげな様子を眺めさせていただきます……♪"},"tatsumi":{"es":"","en":"","jp":"すこし遠出をして、地域色のあるお祭りに参加してみたいですな。俺は運転免許を持っているので、移動は任せてください♪"},"nagisa":{"es":"","en":"","jp":"……私はチョコが好きだから、チョコバナナを食べたいな。茨に怒られそうだけど、たまには良いよね"},"hiyori":{"es":"","en":"","jp":"花火大会で空に打ち上がる大輪の花を堪能したいね。人混みに揉まれるのは嫌だから、ぼくのための特別席を用意させるね♪"},"ibara":{"es":"","en":"","jp":"自分は会社の経営もしているので、どの屋台が人気なのか気になってしまいそうです。最近は色々な屋台がありますしね"},"jun":{"es":"","en":"","jp":"う～ん、すぐには思いつかないですねぇ。まぁ、食べ歩きでもゲームでも、誰かと一緒に回れば何でも楽しいと思いますよぉ♪"},"shu":{"es":"","en":"","jp":"夜空に咲く花火を眺めるのも良いかもしれないね。人混みのなかにわざわざ行くなどという愚行は避けたいけれど……"},"mika":{"es":"","en":"","jp":"何をするか迷ってまうわぁ……。出店を見るだけでも楽しいけど。やっぱり焼きそばとか、定番のものを食べたいわ"},"hinata":{"es":"","en":"","jp":"目一杯楽しむなら、みんなでご飯をシェアしていろんなものを食べたいかも？　甘いものは俺が担当するつもり♪"},"yuta":{"es":"","en":"","jp":"輪投げなら任せてください！　大道芸で鍛えたこのコントロール力で、百発百中間違いなしです……☆"},"rinne":{"es":"","en":"","jp":"くじ引き勝負で決まりだな。一番良い景品を当てたやつがタコ焼きを奢るってのはどうだ？　絶対盛り上がるっしょ♪"},"himeru":{"es":"","en":"","jp":"賑やかな祭りを楽しむのも良いですが……。落ち着いた場所で、かき氷を食べながら山車を眺めるというのも良いですね♪"},"kohaku":{"es":"","en":"","jp":"祭りといったら浴衣やろ。わしは着付けもできるし、『Crazy:B』の連中やラブはんと浴衣で祭りを楽しみたいわ♪"},"niki":{"es":"","en":"","jp":"そりゃもちろん、出店のご飯を食べまくるっす！　焼きそばにイカ焼きにフランクフルトに……デザートはりんご飴で決まりっす！"},"rei":{"es":"","en":"","jp":"夏祭りはやっぱり夜が本番かのう。人々が、提灯の明かりの下で楽しむ姿を見るだけでも我輩は満足じゃ……♪"},"kaoru":{"es":"","en":"","jp":"何をしても楽しいと思うけど、定番ってことで金魚すくいをしたいかな。黒い出目金とか、愛嬌があってかわいいよね♪"},"koga":{"es":"","en":"","jp":"祭りといえば射的やピンボールなんかの屋台が楽しみだな。はんっ、俺様のテクニックで景品を根こそぎ掻っ攫ってやんよ！"},"adonis":{"es":"","en":"","jp":"盆踊りに参加してみたい。和太鼓の音色とともに、櫓の下で舞い踊るのはきっとこれまでにない体験になるはずだ"},"tomoya":{"es":"","en":"","jp":"屋台飯は外せないですよね。それに射的とかくじ引きもして……。そうそう、俺はけっこうスーパーボールすくいが得意なんですよ♪"},"nazuna":{"es":"","en":"","jp":"唐揚げを食べながら夜店を回るのが好きなんだよな～。つい屋台飯を買い込んじゃって、いつの間にか大荷物になるのが定番だな♪"},"mitsuru":{"es":"","en":"","jp":"みんなと一緒に屋台を巡るんだぜ！　人混みのなかをダッシュしたら危ないから、ダッシュしないように気をつけるんだぜ☆"},"keito":{"es":"","en":"","jp":"どこからか聞こえてくる祭り囃子を聞くだけでも、気分が上がるものだ。それを聞きながら夕涼みをするのも良さそうだな"},"kuro":{"es":"","en":"","jp":"祭りっていうと、かき氷を食いたくなるが……頭が痛くなるんだよなぁ。もしかして、俺の一口がデカすぎるせいか……？"},"souma":{"es":"","en":"","jp":"『そぉす』をたっぷり絡めた焼きそばを食べたいのである♪　初めて食べたときの、未知の感覚は忘れられぬ……！"},"tsukasa":{"es":"","en":"","jp":"Calorieの高い食事は避けるようにしていますが、たまになら良いでしょう。かき氷や綿飴を食べたいですね♪"},"leo":{"es":"","en":"","jp":"祭り囃子を聞きたいな～。笛の音色に良い刺激をもらえそうだ！　あっ、早速霊感（インスピレーション）が湧いてきた……☆"},"izumi":{"es":"","en":"","jp":"人混みのなかには行きたくないんだよねぇ。こういうときは浴衣を着て、離れた場所から花火を見るのがちょうど良いでしょ"},"ritsu":{"es":"","en":"","jp":"ラムネを飲んで涼むのも良いんじゃない？　ビー玉が鳴る音を聞きながら飲むとか、風情があって良いよねぇ……♪"},"arashi":{"es":"","en":"","jp":"あえて線香花火を楽しむっていうのも良いんじゃないかしら？　肩を寄せ合いながら、秘密の話をしちゃいましょ♪"},"natsume":{"es":"","en":"","jp":"夕暮れ時の夜店を見て回ろうか。たダ、逢魔時は不思議な出来事に出会いやすいかラ、気をつけないといけないネ♪"},"tsumugi":{"es":"","en":"","jp":"フライドポテトとか食べたくなりますね～。家で食べるのとそんなに変わらないはずなのに、美味しく感じるのはどうしてでしょう？"},"sora":{"es":"","en":"","jp":"いろんな屋台飯を食べたいです！　人気の屋台は並びそうだけど、みんなと一緒なら待っている時間もきっと楽しいな～♪"},"madara":{"es":"","en":"","jp":"神輿を担いで『わっしょい』と叫ぶぞお！　みんなで盛り上がるからこそ祭りは楽しい。『お祭り男』の本領を発揮してみせよう！"}}},{"id":"Q7","es":"¿Qué recuerdos tienes de los deberes de vacaciones?","jp":"夏休みの宿題の思い出は？","en":"What memories do you have of summer break homework?","emoji":"📝","answers":{"eichi":{"es":"","en":"","jp":"実を言うと、入退院を繰り返していたから宿題の思い出はそんなに無いんだ。もちろん、勉強に追われるような真似はしていないよ"},"wataru":{"es":"","en":"","jp":"一度夢ノ咲の宿題で『日記をつける』という課題が出たのですが……。飼っている鳩たちの様子を事細かに書いておきました♪"},"tori":{"es":"","en":"","jp":"やっと終わった～って思ったら鞄の一番下に真っ白なドリルが残っててさ～。急いで終わらせたけど、あれはびっくりしたよ……"},"yuzuru":{"es":"","en":"","jp":"計画通りに進めるようにしていたのですが……。美術の課題だけは、納得する作品ができるまで時間が掛かってしまいましたね"},"hokuto":{"es":"","en":"","jp":"プリントを解くとおばあちゃんが和菓子を出してくれたんだ。それが楽しみで毎日コツコツ進めていたような気がするな"},"subaru":{"es":"","en":"","jp":"朝顔の観察日記をつけたな～。如雨露で水をあげると水滴がキラキラしてすっごく綺麗だった！　もちろんそれも日記に書いたよ♪"},"makoto":{"es":"","en":"","jp":"英語問題集には、なかなか手を出せなくて溜め込んじゃってたなぁ。ついゲームのほうに手が伸びちゃうんだよね♪"},"mao":{"es":"","en":"","jp":"自由研究は楽しいからすぐ終わったんだけど、問題集とかはよく後回しにしてたな～。あと、妹の宿題を手伝ったりもしたよ"},"tetora":{"es":"","en":"","jp":"勉強が苦手なんで、どうも後回しにしがちッスね……。でも、答えを丸写しするようなことはしてないッス！"},"midori":{"es":"","en":"","jp":"店の手伝いをしてたらいつの間にか八月になってたんだよね。そういえば、店の段ボールを使ってゆるキャラをつくったなぁ……"},"shinobu":{"es":"","en":"","jp":"もちろん自由研究のテーマは忍者にしたでござる！　しっかりまとまっていると、先生に褒められたでござるよ♪"},"chiaki":{"es":"","en":"","jp":"朝のラジオ体操に行った後、毎日コツコツ進めるようにしていたぞ。運動をしたおかげで頭がスッキリして捗ったな！"},"kanata":{"es":"","en":"","jp":"あぁ、たまにみけじまが『しゅくだい』をもってきていましたね……。ぼくはみているだけでしたよ？"},"hiiro":{"es":"","en":"","jp":"夏休みに限った話ではないけど、貰った課題はさっさとこなすことが多いかな？　忘れないうちに終わらせたいしね"},"aira":{"es":"","en":"","jp":"夏休み中はいろいろやりたいことがありすぎて、夏休み最後の日に慌てて終わらせたなァ……。先生ごめんなさい……"},"mayoi":{"es":"","en":"","jp":"出席が足りていなかったぶん、おおめに宿題をだされましたね。毎週のノルマを決めて進めるように努力しました"},"tatsumi":{"es":"","en":"","jp":"リコーダーの練習をする宿題もあったので、実家の礼拝堂で吹いたりしましたな。場所によってはとても美しく音が響くんです"},"nagisa":{"es":"","en":"","jp":"……秀越では夏休みの課題はとくに無かった気がするよ。それよりもアイドル活動のほうが重視されていたからね"},"hiyori":{"es":"","en":"","jp":"バカンスに行く予定があったから、宿題はすぐに終わらせたね！　ぼくの貴重な時間を費やすなんて、もったいないでしょ？"},"ibara":{"es":"","en":"","jp":"寮で同室の天満氏が困っているのを見て、勉強を見てあげたのは記憶に新しいですね。なぜ最終日に焦り出すんでしょう……"},"jun":{"es":"","en":"","jp":"アイドルのことに関する宿題がたくさん出されたんすよねぇ。時間の確保が難しくて、ギリギリまで溜めちまってました"},"shu":{"es":"","en":"","jp":"マドモアゼル用のワンピースを何着もつくって提出したのだよ。マドモアゼルも喜んでくれたから、こだわったかいがあったね"},"mika":{"es":"","en":"","jp":"ポスター制作の宿題があったんやけど、何を描けば良いのかわからなくて迷ったわぁ。最終的に自分の好きなものを描いたんよ♪"},"hinata":{"es":"","en":"","jp":"つい溜め込んじゃって、ゆうたくんと協力しながら終わらせたなぁ。俺は数学、ゆうたくんは国語っていう感じでね！"},"yuta":{"es":"","en":"","jp":"溜め込んだのをアニキと分け合いっこしながら何とか終わらせましたね。先生にバレたら怒られるけど、ここだけの秘密ってことで♪"},"rinne":{"es":"","en":"","jp":"自由研究とかやったことねェんだよなァ。今やるなら、パチスロの出目研究とかしてェな！　それで大勝ちしまくるぜ！"},"himeru":{"es":"","en":"","jp":"HiMERUのスケジュール管理は完璧なのです。どの教科の宿題も、遅れることなく計画的にやり切りましたよ"},"kohaku":{"es":"","en":"","jp":"読書感想文っちもんを書いたりするんやろ？　わしはまだ書いたことないから、誰かにおすすめの本を教えてもらおうかなぁ"},"niki":{"es":"","en":"","jp":"小学生のときにお父さんと究極のカレーレシピを考えたっすね！　めっちゃくちゃ美味しいって、クラスで人気が出たんすよ～♪"},"rei":{"es":"","en":"","jp":"くく、昔は弟の凛月からよく勉強を見てほしいとねだられておったぞい。凛月は優秀じゃから、すぐ宿題をこなしておったわい"},"kaoru":{"es":"","en":"","jp":"ぜんぶ終わったら自分へのご褒美にパンケーキを食べに行ったよ。夏限定のマンゴーパンケーキがすごく美味しかったな♪"},"koga":{"es":"","en":"","jp":"数学とか、別に将来使うわけでもね～のに大量に課題を出してくるんだよな。あぁクソッ、思い出したら頭が痛くなってきたぜ"},"adonis":{"es":"","en":"","jp":"俺は先生が配慮をしてくれて、宿題は日本語の勉強を中心にしてくれた。どうしてもわからない部分は友人に聞いたりしたな"},"tomoya":{"es":"","en":"","jp":"お店で売ってる自由研究キットを買って、ミョウバンの結晶づくりをしました。大きな結晶ができたときは嬉しかったなぁ……♪"},"nazuna":{"es":"","en":"","jp":"数学とか理科のプリントはすぐ終わった気がするな。国語は読書感想文だったから、どうしても時間がかかったんだよなぁ……"},"mitsuru":{"es":"","en":"","jp":"勉強するより部活でダッシュするほうが楽しいから、最後まで溜めちゃったんだぜ……。でも、ちゃんと終わらせたんだぜ☆"},"keito":{"es":"","en":"","jp":"寺の朝は早いからな。朝の務めが終わったらその流れで課題をこなしていた。その日の課題が終わると、ちょうど昼時になったな"},"kuro":{"es":"","en":"","jp":"俺は勉強はてんで駄目で、文章を読むとどうも眠くなるんだよ。……ってことで、いつもギリギリまで溜めちまってたな"},"souma":{"es":"","en":"","jp":"英語の課題はどうしても時間がかかるゆえ、計画を立てて取り組んだのである。理解が及ばない部分は友人の助けを借りていた"},"tsukasa":{"es":"","en":"","jp":"夏季休暇中も勉学に励むのが学生の本分でしょう？　課題を残すなんて朱桜家の名折れですから、完璧に終わらせていますよ♪"},"leo":{"es":"","en":"","jp":"十曲くらい作曲して、それを自由研究として出してたな！　一日で終わったから、その後は遊びまくったぞ～☆"},"izumi":{"es":"","en":"","jp":"たくさん課題を出されて、面倒くさかった記憶しかないなぁ。まぁ、怒られた覚えはないからちゃんとやってたんじゃない？"},"ritsu":{"es":"","en":"","jp":"ま～くんの観察記録をつけたんだけど、ま～くんに没収されちゃったんだよねぇ。あれ、今どこにあるんだろう……？"},"arashi":{"es":"","en":"","jp":"ご褒美のスイーツを用意してたわね♪　それで、ぜんぶ終わったらパフェを食べに行くの自分のがんばりをちゃんと労らなきゃ♪"},"natsume":{"es":"","en":"","jp":"実験結果をまとめたレポートを提出したヨ。時間があればもっと詳細な分析が出せたんだけどネ。それがすこし心残りかナ"},"tsumugi":{"es":"","en":"","jp":"読書感想文を書きましたね。指定図書だったので普段は読まないジャンルだったんですけど、すごく面白くて夢中になりました♪"},"sora":{"es":"","en":"","jp":"自由研究のテーマはししょ～とせんぱいにアドバイスをもらいました！　白衣を着るだけでワクワクして、楽しい実験ができたな～♪"},"madara":{"es":"","en":"","jp":"歴史年表を埋める課題があったんだが、それが夏休み明けのテストでそのまま出たんだよなあ。やっておいて助かったぞお"}}},{"id":"Q8","es":"¿Qué harías si te encontraras con un fantasma?","jp":"もしお化けに遭遇したらどうする？","en":"What would you do if you encountered a ghost?","emoji":"👻","answers":{"eichi":{"es":"","en":"","jp":"壁をすり抜けたり、姿を隠せたりできるのはある意味便利だよね。どういう感覚なのか、感想を聞かせてほしいな"},"wataru":{"es":"","en":"","jp":"お化けであっても私の観客であることに変わりありません！　楽しんでもらえるような手品を披露しましょう！"},"tori":{"es":"","en":"","jp":"うう、お化けは苦手なんだよね……。なるべく見つからないように、クローゼットのなかに隠れてやり過ごそうかな……？"},"yuzuru":{"es":"","en":"","jp":"わたくしはべつに気にしないのですが……。坊ちゃまに怖い思いをしてもらいたくないので、綺麗にお掃除いたします♪"},"hokuto":{"es":"","en":"","jp":"以前見た舞台では、聖剣を振り回して除霊をしていたな。そういった道具があれば、戦うのも有利になりそうだ"},"subaru":{"es":"","en":"","jp":"お化けとも仲良くしたいな～。そうだ、俺たちのライブに来てくれれば、みんなで盛り上がって仲良くなれそう☆"},"makoto":{"es":"","en":"","jp":"ホラー映画だとひとりになった途端にお化けの餌食になっちゃうし……。必ず誰かと一緒にいて、朝を待つのが定石だよね"},"mao":{"es":"","en":"","jp":"そのときにならないと、どうなるかわからないっていうか……。でもまぁ、みんなで生き残れるようにがんばると思うぜ"},"tetora":{"es":"","en":"","jp":"みんなを守るために、俺が空手で応戦するッス！　あっ、でも幽霊に物理攻撃って効くんスかね……？"},"midori":{"es":"","en":"","jp":"パニックになって情けない姿を見せちゃいそう……。あぁでも、俺より怖がってるひとがいたら逆に冷静になれるかも？"},"shinobu":{"es":"","en":"","jp":"敵わない相手とは戦わないのも、立派な戦略のひとつでござる。忍法で目眩ましをして、お化けから逃げるでござるよ！"},"chiaki":{"es":"","en":"","jp":"ひぃいっ!?　お化け!?　すすす、すまん。この話題だけはどうしても苦手だからどうか許してくれ……！"},"kanata":{"es":"","en":"","jp":"『うみぼうず』などのことでしょうか？　ぼくはおよげないので、『みず』のなかにひきずりこまれるのはこまりますね～"},"hiiro":{"es":"","en":"","jp":"フム、まずは挨拶をしてみるよ。どういった相手でも向き合う大切さを、巽先輩から教えてもらっているからね！"},"aira":{"es":"","en":"","jp":"お化け屋敷とかなら怖がりながら楽しめるんだどねェ……。本物は絶対会いたくない！　もし会ったらヒロくんを盾にして逃げる！"},"mayoi":{"es":"","en":"","jp":"私も屋根裏などの物陰は好きでして……。悪霊でしたら困りますが、大人しいかたでしたら仲良くできるかもしれませんね"},"tatsumi":{"es":"","en":"","jp":"まずは対話から始めますな。もし何か未練があるのなら、解決できるように俺が相談に乗りましょう"},"nagisa":{"es":"","en":"","jp":"……未だ解明されていない存在と遭遇できるなら興味深いな。写真を撮影したときに、どう映るのか確かめてみたい"},"hiyori":{"es":"","en":"","jp":"幽霊たちがぼくを驚かせようと思うのすらおこがましいね！　相手にするのも馬鹿らしいからスルーするね♪"},"ibara":{"es":"","en":"","jp":"そういえば、ESビルに幽霊が出るという噂を聞いたことがありますが……。まだ会ったことはないため確証はありませんな"},"jun":{"es":"","en":"","jp":"この前読んだホラー漫画じゃ、チェーンソーで撃退してましたねぇ。……いや、あれはゾンビでした。勘違いしてすんません"},"shu":{"es":"","en":"","jp":"好んで関わろうという気は起きないね。僕の制作の邪魔をしないのなら、べつにいてもいなくても構わないよ"},"mika":{"es":"","en":"","jp":"おどろおどろしいのは好きやねん。でも、お師さんに迷惑をかけられたら困るなぁ……。どうやったら追い払えるんやろ？"},"hinata":{"es":"","en":"","jp":"俺は平気なんだけど、弟のゆうたくんが苦手なんだよね。お化けよりゆうたくんを落ち着かせるほうが大変かも？"},"yuta":{"es":"","en":"","jp":"えぇっ、お化け!?　本当に出てきちゃったらどうするんですか……！　この話はこれでおしまいにしましょう！"},"rinne":{"es":"","en":"","jp":"魑魅魍魎のたぐいねェ。ああいうのはこっちが何もしなきゃ大人しいもんだ。信じるか信じないかは、あんたのお好きにってな♪"},"himeru":{"es":"","en":"","jp":"非科学的なものについて論じるのはナンセンスですね。幽霊や怪奇現象はフィクションのなかで楽しむのがちょうど良いのです"},"kohaku":{"es":"","en":"","jp":"できれば会いたくないなぁ。けど万が一のときには、二度と出てくる気が起きんよう、しっかりしばき倒すで"},"niki":{"es":"","en":"","jp":"食材を腐らせたりつまみ食いしないなら、ベつに大丈夫っすよ。もしものときには盛り塩でもしてみるっすかね～？"},"rei":{"es":"","en":"","jp":"夜闇に隠れ住まうものとは仲良くしたいのう茶を振る舞うゆえ、我輩と楽しいひとときを過ごそうぞ……♪"},"kaoru":{"es":"","en":"","jp":"霊感がないと、そもそも幽霊がいても気づかないかも？　ポルターガイスト現象が起きたら流石に気づくと思うけどね"},"koga":{"es":"","en":"","jp":"はんっ、ああいう手合いは暗くてジメジメしたところに出てくるんだろ？　それなら、俺様のロックを響かせて追い払ってやるぜ！"},"adonis":{"es":"","en":"","jp":"俺の体はおおきいから、みんなの盾になれるだろう。俺が幽霊を引き付けておくから、その間にみんなには逃げてもらいたい"},"tomoya":{"es":"","en":"","jp":"普通にビビりそうですね……。この前見たホラー映画がすごく怖くて、壁から湧き出てくる手のこととか思い出しちゃいました"},"nazuna":{"es":"","en":"","jp":"撃退方法もわからないし、遭遇したら逃げるが勝ちだよな！　に～ちゃんがみんなを逃がせるよう、がんばるぞ！"},"mitsuru":{"es":"","en":"","jp":"脅かしてくるようなお化けは困るんだぜ。でもでも、優しいお化けなら友達になれるかもしれないんだぜ！"},"keito":{"es":"","en":"","jp":"札を使って祓うといったことを期待されてるかもしれんが、俺にはそういった能力はない。まぁ、読経くらいはできるがな"},"kuro":{"es":"","en":"","jp":"戦わずにいられるのが一番良いけどよ。こっちが襲われそうになったら立ち向かうってのが、年長者の役割だよな"},"souma":{"es":"","en":"","jp":"誰かに危害を与えようとした瞬間に刀で叩き切ってやろうぞ。何が起きようと我が必ず勝つゆえ、ご安心めされよ！"},"tsukasa":{"es":"","en":"","jp":"たとえ不測の事態がおきたとしても、取り乱したりはしません。こ、怖がりなどしませんよ？　えぇ、本当に……"},"leo":{"es":"","en":"","jp":"普段受けない刺激をもらって『すっごく鳥肌が立った歌』とかつくれそうだな！　せっかくならいろんな幽霊に会いたいぞ！"},"izumi":{"es":"","en":"","jp":"お化けなんているわけないでしょ？　まぁもし会ったとしても、俺の美しさに恐れおののいて勝手に逃げていくんじゃない？"},"ritsu":{"es":"","en":"","jp":"夜に現れるものだし、ある意味俺と仲間って言えるよねぇ。お互い干渉せずに、良い距離感で仲良くできたら良いかな"},"arashi":{"es":"","en":"","jp":"現れた目的が分からないと不気味よねぇ……。お化けが何をしたいのかわかるまでは、しばらく様子を見ることになりそうだわ"},"natsume":{"es":"","en":"","jp":"襲ってこなくてモ、気づかないうちに影響を受けてしまうかもしれないからネ……。気づかれないように静かに離れるのが一番ダ"},"tsumugi":{"es":"","en":"","jp":"尼払いのお守りをいくつか持っているので、それが効果があるかもしれません。まぁ、遭遇しないことが一番なんですけどね～"},"sora":{"es":"","en":"","jp":"お化けとも友達になれるんです？　もし友達になれたらゲームを一緒にプレイして、お化けが消えちゃうまで楽しみたいな～♪"},"madara":{"es":"","en":"","jp":"もしお化けが襲ってきたとしても、俺が撃退するぞお！　『母は強し』とも言うからなあ。ぜんぶママに任せなさい！"}}},{"id":"Q9","es":"¿Cuál es tu ramen favorito?","jp":"好きなラーメンは？","en":"What's your favorite ramen?","emoji":"🍜","answers":{"eichi":{"es":"","en":"","jp":"この前『fine』のみんなと食べた醤油ラーメンが美味しかったな。塩分の摂りすぎには注意が必要だけど、たまには良いものだね"},"wataru":{"es":"","en":"","jp":"ここはつけ麺をチョイスしましょうかねぇ。最後にスープを出汁で割って飲むのもなかなか乙なものです♪"},"tori":{"es":"","en":"","jp":"学院の醤油ラーメンが美味しいんだ♪　友達とお喋りしながら食べると麺が伸びちゃうから、ちょっと気をつけないといけないけどね"},"yuzuru":{"es":"","en":"","jp":"偶然立ち寄った店で、たいへん美味しいワンタン麺をいただきました。あとで調べてみたところ、人気の老舗だったようです"},"hokuto":{"es":"","en":"","jp":"最近はとんこつ系のものを食べることが多いだろうか。もちろん、塩や醤油なども好きだぞ"},"subaru":{"es":"","en":"","jp":"『Trickstar』のみんなでつくったラーメンが美味しかったな～。最後に卵をつけてくれて、最高だったよ☆"},"makoto":{"es":"","en":"","jp":"最近は味噌が好きかな。コーンやバターもいれて……カロリーが高くて罪悪感があるけど、最高に美味しいよね♪"},"mao":{"es":"","en":"","jp":"店で食べるラーメンも美味しいし、家で食べるカップ麺もそれはそれで美味しいよなぁ。ラーメンは好物だし、いくらでも話せるぞ♪"},"tetora":{"es":"","en":"","jp":"夜のカップ麺が最高ッスね！　ふふん、最近はケトルも上手に使えるようになったッスから、カップ麺は得意料理ッス！"},"midori":{"es":"","en":"","jp":"野菜をいっぱい入れたラーメンが好きかな。キャベツとかもやしとか、ボリュームがあってお腹がいっぱいになるし"},"shinobu":{"es":"","en":"","jp":"鉄虎くん、翠くんと一緒に食べた油そばが美味しかったでござるな。最後にご飯も入れて、ぺろりと平らげちゃったでござるよ"},"chiaki":{"es":"","en":"","jp":"最近、魚介のスープを使ったラーメン屋を教えてもらってな。ラーメンが食べたくなったらそこに通っているぞ！"},"kanata":{"es":"","en":"","jp":"あついのは『にがて』なので、『しょくどう』の『めにゅう』に『ひやしちゅうか』があったらそれをえらびますね～"},"hiiro":{"es":"","en":"","jp":"いろんなトッピングが乗っているものが好きだよ！　サンマーメンというラーメンを教えてもらったから、今度食べてみたいな！"},"aira":{"es":"","en":"","jp":"鶏白湯の美味しいお店を見つけちゃったんだよねェ。今度『ユニット』のみんなと一緒に食べに行くつもりだよォ♪"},"mayoi":{"es":"","en":"","jp":"寒い日に食べる煮込みラーメンは、普段より美味しく感じますね。野菜がたくさん入っていたり、卵が入っていると嬉しいです……♪"},"tatsumi":{"es":"","en":"","jp":"以前、グルメ特集番組で食べたラーメンがとても美味しかったです。飛行機に乗る必要がありますが、いつか本店に行きたいですな"},"nagisa":{"es":"","en":"","jp":"……路地裏にひっそりとあった中華料理店の酸辣湯麺が忘れられないな。酸っぱさと辛さが癖になって、箸が進んだよ"},"hiyori":{"es":"","en":"","jp":"ロケで行った老舗のとんこつラーメンにとても感動したね！　美味しかったから、今度ジュンくんも連れていってあげるつもり♪"},"ibara":{"es":"","en":"","jp":"自分は閣下の栄養管理もしていますからな。閣下が麺類をご所望の場合は必ず野菜を大量に入れるようにしています！"},"jun":{"es":"","en":"","jp":"ボリュームのあるやつが好きですねぇ。となると、太麺のつけ麺でしょうか。それで、トッピングもいろいろあると最高です"},"shu":{"es":"","en":"","jp":"最近は食材はもとより、見た目にこだわったラーメンも増えているからね。そういったものを食べるのは悪くは無いのだよ"},"mika":{"es":"","en":"","jp":"塩やろか？　この前食べたラーメンが美味しくてな、トッピングにエビとか鴨肉とか乗ってて、めっちゃ豪華だったわぁ♪"},"hinata":{"es":"","en":"","jp":"どの味も好きだから決めきれないな～。サイドメニューも迷いがちで、餃子にご飯に……って、頼み過ぎちゃうんだよね♪"},"yuta":{"es":"","en":"","jp":"それはもちろん、真っ赤な担々麺ですね♪　スープや浮かぶ脂も唐辛子色の、火を吹くくらい最高に辛いやつが好きです"},"rinne":{"es":"","en":"","jp":"深夜のラーメンとか最高だよなァ。屋台にかかってる赤提灯を見かけると、ついつい引き寄せられちまう気がするぜ♪"},"himeru":{"es":"","en":"","jp":"胃もたれをしたくないので食べる頻度は低いのですが。社員食堂の期間限定メニューにあった塩ラーメンは美味しかったですね"},"kohaku":{"es":"","en":"","jp":"う～ん、迷ってまうなぁ。がっつり食べたい気分のときにはとんこつやろか。匂いをかいだだけで食欲をそそられるしな♪"},"niki":{"es":"","en":"","jp":"自分でつくるラーメン！　って言いたいところっすけど、お店のものにはなかなか敵わないっすね～。もっと腕を磨くっす♪"},"rei":{"es":"","en":"","jp":"旅番組のロケで食べたラーメンが美味しくて のう。プライベートに『UNDEAD』のみんなを誘ってまた食べに行ったほどじゃ♪"},"kaoru":{"es":"","en":"","jp":"魚介のあっさりスープにハマってるんだよね。秘境じみた場所に名店があるらしいんだけど、誘ったら誰かついてきてくれるかな？"},"koga":{"es":"","en":"","jp":"最近はカップ麺もスゲ～美味いのが多いよな。遅くなったときには寮に常備されてるカップ麺を食べることもあるぜ"},"adonis":{"es":"","en":"","jp":"同じ『ユニット』の大神と食べたカップ麺が美味かったな。ふたりで疲れ果てていたときに食べたあの味は忘れがたい"},"tomoya":{"es":"","en":"","jp":"袋麺だとチキンスープのやつが好きですね。深夜に食べるラーメンって、何であんなに美味しいんでしょう……♪"},"nazuna":{"es":"","en":"","jp":"ちゃんぽんとか美味しいよな～。麺だけじゃなくて野菜がたっぷり乗ってるおかげで、ちょっとだけ罪悪感も薄れるし♪"},"mitsuru":{"es":"","en":"","jp":"オレはとんこつが好き！　けど、カロリーがすごく高いって聞いたから、食べたらダッシュしてカロリーを消費するんだぜ！"},"keito":{"es":"","en":"","jp":"何かと言われたら味噌……いや、担々麺も好きだな。辛いものを食べたい気分のときにはちょうどいい"},"kuro":{"es":"","en":"","jp":"食べごたえのあるやつってことで、油そばもけっこう好きだな。最後に白飯やトッピングを入れるとまた味が変わって楽しめるしよ"},"souma":{"es":"","en":"","jp":"醤油が好みであるな。町で美味い店を見つけたため『紅月』で食べに行ったところ、ふたりとも気に入ってくれたのである♪"},"tsukasa":{"es":"","en":"","jp":"Calorieの高い食事は瀬名先輩の目が……。えへんえへん（咳払い）。最近食べた味噌味のものがたいへん美味しかったです♪"},"leo":{"es":"","en":"","jp":"味噌！　この前食べたら、服にできたシミが面白い形をしてたから、霊感（インスピレーション）が湧いて一曲できたぞ！"},"izumi":{"es":"","en":"","jp":"そんなカロリーの高いものを俺が食べるわけないでしょ。食べるとしても、年に数回ぐらいなんじゃない？"},"ritsu":{"es":"","en":"","jp":"醤油かな。のんびりしてると麺が伸びちゃうよねぇ。まぁ、すこしゆるくなった麺も美味しく感じるから俺はいいんだけど"},"arashi":{"es":"","en":"","jp":"頻繁に食べるわけにはいかないから、食べるときには厳選してるわね。むしろ、美味しいお店を教えてもらいたいわ♪"},"natsume":{"es":"","en":"","jp":"近ごろは麺が硬めのラーメンをよく食べているヨ。本場は九州だかラ、そのうち食べに行ってお店を回りたいナ♪"},"tsumugi":{"es":"","en":"","jp":"美味しいお店ならどの味も好きですよ～。この前紹介してもらったお店は、パクチーが山のように乗っていて面白かったです"},"sora":{"es":"","en":"","jp":"まぜそばが好きです！　あれ、もしかしてラーメンじゃないですか……？　えぇっと、それならとんこつラーメンが好きです♪"},"madara":{"es":"","en":"","jp":"山に登ったときに食べたカップ麺が至高だったなあ！　いつものカップ麺でありながら、何とも言えない満足感があったぞお"}}},{"id":"Q10","es":"¿En qué programa de tele te gustaría salir en Nochevieja?","jp":"年末年始に出たいテレビといえば？","en":"What's a TV show you'd like to appear on for New Year's?","emoji":"📺","answers":{"eichi":{"es":"","en":"","jp":"年末になるとお笑い番組が増える気がするね。コントを披露するのは難しいけれど、審査員にはなってみたいな"},"wataru":{"es":"","en":"","jp":"新年は各地で様々な行事がありますからねぇ。神楽などを取材させてもらえたら、自分の芸の参考になるかもしれません"},"tori":{"es":"","en":"","jp":"年末にすっごく賑わう商店街があるでしょ？　ひとに揉まれるのは大変だろうけど、グルメロケができたら楽しそう♪"},"yuzuru":{"es":"","en":"","jp":"大掃除用のグッズを紹介する番組があったら出演したいですね。使い勝手が良かったら、自分でも購入するかもしれません"},"hokuto":{"es":"","en":"","jp":"新たな挑戦ということで、隠し芸大会に出演したい。レッスンの合間を縫って練習するのは大変だが、完璧に仕上げてみせよう"},"subaru":{"es":"","en":"","jp":"毎年大吉がお正月太りするから、大吉とふたりで運動がしたいな！　『ペットとお正月大運動会』とか、絶対楽しいはず♪"},"makoto":{"es":"","en":"","jp":"VR空間で年越しするひともいるらしくて、興味があるんだよね。隣にいるアバターが実は海外のひと、っていうことがあるかも♪"},"mao":{"es":"","en":"","jp":"体力勝負の特番も楽しそうだけど……。せっかくの正月だし、のんびり慰安旅行に行く企画があったら参加してみたいよ♪"},"tetora":{"es":"","en":"","jp":"番組というか行事ッスけど。新年に海に浸かりながら空手をする道場があるみたいなんで、俺も一緒に参加したいッス！"},"midori":{"es":"","en":"","jp":"お正月ぐらいはのんびりしたい……。でも、ゆるキャラも出演する番組だったらやる気が出るかも……？"},"shinobu":{"es":"","en":"","jp":"歴史番組に出演したいでござるな！　年末年始の忍者はどういったことをしていたのか、知りたいでござる！"},"chiaki":{"es":"","en":"","jp":"駅伝に出場する選手たちを取材することはできないだろうか？　学生でありながらアスリートでもある彼らと語り合ってみたい！"},"kanata":{"es":"","en":"","jp":"『りょうりばうんぐみ』にしゅつえんしたいですね。『たい』や『こんぶ』で、しんねんの『ごちそう』をつくりましょう♪"},"hiiro":{"es":"","en":"","jp":"兄さんがしていたドッキリに僕も挑戦してみたいな！　ネタを考えるのは大変だろうけど、一生懸命がんばるよ！"},"aira":{"es":"","en":"","jp":"アイドルライブの解説員で出演とか面白いかも！　新人から往年のアイドルまで、いくらでも解説するよォ♪"},"mayoi":{"es":"","en":"","jp":"『ALKALOID』の皆さんと、炬燵でまったりする番組などがあったら良いですね。私は蜜柑を剥く係になります……♪"},"tatsumi":{"es":"","en":"","jp":"旅番組で、初日の出を見に行くというのはどうでしょうか？　せっかくなので、普段行かない場所へ遠出をしたいです"},"nagisa":{"es":"","en":"","jp":"……お餅をその場でついて食べるという企画があったらやりたいな。きなこや餡、いろいろな味付けを堪能できそうだよね"},"hiyori":{"es":"","en":"","jp":"オファーがあったら何でも参加するね！　強いて言うなら、ファンのみんなに直接新年の挨拶ができたら最高だね☆"},"ibara":{"es":"","en":"","jp":"自分は会社の経営もしていますからね。一年の経済ニュースを振り返る番組などであれば、多少はお役に立てるかと"},"jun":{"es":"","en":"","jp":"年末は音楽番組が増えますよねぇ。その年の代表的な歌に『Eden』の曲が選ばれて、オレも出演できたらって思います"},"shu":{"es":"","en":"","jp":"僕は留学をしているからな。フランスの年末年始の過ごしかたを紹介するというのも、なかなか面白くなりそうだ"},"mika":{"es":"","en":"","jp":"年末年始ぐらいお師さんとのんびり過ごしたいなぁ……。『フランスで過ごすお正月』とか、のんびりした番組はできひんやろか？"},"hinata":{"es":"","en":"","jp":"ここはひとつ身体を動かすやつ！　ってことで、鬼ごっこをする番組に出演したいな～。身体能力を活かして、最後まで生き残るよ！"},"yuta":{"es":"","en":"","jp":"ドッキリのターゲットにはなりたくないので、仕掛け人に立候補させてください。初笑いを提供してみせますよ♪"},"rinne":{"es":"","en":"","jp":"特番になるとドッキリもド派手になるし、ここはひとつ仕掛け人ってことで！　俺っちに任せてくれたら、撮れ高は保証するぜェ♪"},"himeru":{"es":"","en":"","jp":"HiMERUはアイドルなので、やはり音楽番組に出演したいですね。名だたるアーティストと肩を並べたいものです"},"kohaku":{"es":"","en":"","jp":"料理番組で餅つきをさせてくれへん？　わしは腕力があるから、杵ぐらい振り上げられるで。新年早々、格好良ぇとこ見せたいわ♪"},"niki":{"es":"","en":"","jp":"ご当地のお雑煮を紹介する番組とかないっすかね？　仕事をしながらお餅を食べられるなんて、僕にとっては夢みたいな番組っす♪"},"rei":{"es":"","en":"","jp":"アイドルライブの解説員で出演とか面白いかも！　新人から往年のアイドルまで、いくらでも解説するよォ♪"},"kaoru":{"es":"","en":"","jp":"出たいというより、何となくドッキリに巻き込まれそうな予感がするんだよね。いやまぁ、出演できることは嬉しいんだけどさ"},"koga":{"es":"","en":"","jp":"ロックアーティストが集まる年越しライブがあるから、それに出てみて～な。すげぇ豪華なメンツが集まるんだぜ♪"},"adonis":{"es":"","en":"","jp":"日本らしい新年の番組というと何があるだろう？　俺としては、神社や寺などでの過ごしかたに興味があるな"},"tomoya":{"es":"","en":"","jp":"新年のスペシャルドラマに出演したいです。実家で家族と一緒に見るでしょうから、照れくさいことになりそうですけど……"},"nazuna":{"es":"","en":"","jp":"お正月は美味しいものをいっぱい食べるぶん、運動もしないと……。ということで、街歩きのロケとかしたいな♪"},"mitsuru":{"es":"","en":"","jp":"鬼ごっこ勝負する番組に出たいんだぜ！　もし鬼が追ってきても、ダッシュで逃げ切ってみせるんだぜ～☆"},"keito":{"es":"","en":"","jp":"昨今は書道もパフォーマンスとして進化しているからな。書き初めの様子を取材する、といったことも面白そうだ"},"kuro":{"es":"","en":"","jp":"おせちづくりに興味があってよ、料理番組で教えてもらいたいぜ。妹のために、美味い伊達巻とかつくってやりてぇんだ"},"souma":{"es":"","en":"","jp":"一年の無病息災を願い、滝行を中継するのはどうだ？　素人が迂闊に手を出すと危険ゆえ、解説は我がしっかり行うつもりである"},"tsukasa":{"es":"","en":"","jp":"年始は仕事でもPrivateでも忙しいのですが……。出演するとしたら、正月料理を紹介するものなどに興味があります"},"leo":{"es":"","en":"","jp":"年越しのオーケストラライブに出てみたい！　毎年、零時ピッタリに曲をジャーンって終わらせてて、本当にすごいよな！"},"izumi":{"es":"","en":"","jp":"正月だからって不摂生な生活はしたくないからねぇ。収録の旅番組で温泉旅行……とかなら嬉しいかな"},"ritsu":{"es":"","en":"","jp":"炬燵でぬくぬくする夜ふかし番組なら大歓迎だよ～。特別ゲストにま～くんを呼んで、蜜柑やお菓子をあ～んしてもらうんだ♪"},"arashi":{"es":"","en":"","jp":"その年のベストコスメの紹介番組とか無いかしら？　お勧めがたくさんあるし、何だったらアタシが企画書をつくっちゃうわよ♪"},"natsume":{"es":"","en":"","jp":"占い番組に占い師として出演してみたいナ。ゲストのこの先一年の運勢を調べてみテ、年末に答え合わせをするのも面白そうダ"},"tsumugi":{"es":"","en":"","jp":"『Switch』の三人で初詣ロケとかに行きたいですね～。一年の安泰を祈って絵馬を飾って。あと、おみくじも引きましょう♪"},"sora":{"es":"","en":"","jp":"マジックショウを披露する番組に出たいです！　大ししょ～と練習した、とっておきの芸を見せるな～♪"},"madara":{"es":"","en":"","jp":"新年を祝う祭りに参加したいなあ！　神輿を担いだまま海に入る祭りは面白そうだ。褌姿で気合を入れるぞお♪"}}},{"id":"Q11","es":"¿Hasta dónde eres capaz de hacer cosas tú solo?","jp":"ひとり●●どこまでできる？","en":"How far can you do an activity alone?","emoji":"🙋","answers":{"eichi":{"es":"","en":"","jp":"機会があったら、ひとり牛丼というものに挑戦してみたいな♪　券売機の使いかたも覚えたし、次はひとりで注文をしてみたいんだ"},"wataru":{"es":"","en":"","jp":"日頃からテーマパークには足繁く通ってますよ。パフォーマーの皆さんの一挙手一投足はとても参考になります♪"},"tori":{"es":"","en":"","jp":"いつも弓弦が一緒にいるから、ひとりで何かするのって珍しいかも。今度ひとりカフェとかしてみてもいいかもね♪"},"yuzuru":{"es":"","en":"","jp":"行楽地には何度かひとりで訪問していますね。坊ちゃまが出かける際に、危険が無いか下調べをする必要がありますので"},"hokuto":{"es":"","en":"","jp":"仕事の合間にひとりでファストフードを食べたりするな。最近はチーズが挟まっているハンバーガーを好んで食べている"},"subaru":{"es":"","en":"","jp":"カラオケにひとりで行ったりってこと？　俺は賑やかなほうが好きだから、みんなと一緒にいたいな～。そのほうが楽しいしね！"},"makoto":{"es":"","en":"","jp":"ひとりラーメンぐらいならできるかな？　でも、回転寿司とかファミリー連れの多い場所は、やっぱりみんなと一緒に行きたいなぁ"},"mao":{"es":"","en":"","jp":"スキーとかキャンプにひとりで行くのはハードルが高いなぁ……。ボウリングとかも友達と一緒に行きたいって思うぞ"},"tetora":{"es":"","en":"","jp":"ひとりキャンプとか、興味があるッスね！　まずは器具を用意して……。それと、キャンプ飯にも挑戦したいッス！"},"midori":{"es":"","en":"","jp":"背が高くて目立ちやすいんで、なるべくひとがいる場所には行きたくないんですよね。行くとしたらゆるキャライベントぐらいかな"},"shinobu":{"es":"","en":"","jp":"忍者はひとりで忍ぶものゆえ、公園などでひとりで修行しているでござる。でも最近はマヨイ殿も参加してくれて嬉しいでござる♪"},"chiaki":{"es":"","en":"","jp":"休日にヒーローショウを個人で見に行っているな。もちろんちびっこたちが優先だから、俺は後ろで観覧をしているぞ！"},"kanata":{"es":"","en":"","jp":"ひとりで『すいぞくかん』にいくのも、なかなかいいものですよ♪　ゆっくり『すいそう』をみているといやされます～"},"hiiro":{"es":"","en":"","jp":"ちょうどこの前、動物園にひとりで行ったんだ！　ペンギンたちをじっくり見られて、とても充実した時間を過ごせたよ！"},"aira":{"es":"","en":"","jp":"映えスポットとか行ったりするけど、ひとりなのはちょっと寂しいからね。行きたい場所があったら、こはくっちをよく誘うよォ♪"},"mayoi":{"es":"","en":"","jp":"私は基本的に何をするのもひとりですが……。えっと、ひとり焼き肉ができるかですか？　それはしたことがないですね……？"},"tatsumi":{"es":"","en":"","jp":"ひとりでドライブに行くこともありますな。風を感じながら登る山道は気持ちが良いですし、頂上の景色も素晴らしいです♪"},"nagisa":{"es":"","en":"","jp":"……発掘に興味のあるひとはすくないから、大抵はひとりかな。あぁでも、以前渉くんと出かけたときは楽しかったよ"},"hiyori":{"es":"","en":"","jp":"ひとりでご飯を食べるなんてとても味気ないからね！　いつも誰かを誘うし、もし近くに誰もいなかったらジュンくんを呼び出すね！"},"ibara":{"es":"","en":"","jp":"会社の経営者として、会食の機会もおおいですが、市場調査の際にひとりで食事に行くこともありますよ"},"jun":{"es":"","en":"","jp":"バイクに乗ってツーリングとかなら行きますよぉ～。綺麗な景色を見ながら走ると、ストレス発散にもなりますし♪"},"shu":{"es":"","en":"","jp":"そもそも、僕が出かける先は静かな場所ばかりだから、個人で赴くのだよ。美術館などはひとりでじっくり見て回りたいしね"},"mika":{"es":"","en":"","jp":"う～ん。ひとりでもそれなりに楽しめると思うけど、やっぱりお師さんと一緒が良ぇなぁ。楽しいことは共有したいもん♪"},"hinata":{"es":"","en":"","jp":"ラーメンはひとりで行くかな。スープのいい香りに誘われて、そのままお店に入っちゃうこともあるんだよね♪"},"yuta":{"es":"","en":"","jp":"最近はひとりでぶらっと町を歩いたりしますね。たまに面白いお店を見つけたり、新しい発見があるんですよ"},"rinne":{"es":"","en":"","jp":"競馬場に行くのはひとりだな。未成年を連れて行くわけにもいかねェし。そのうち、こはくちゃんたちにレクチャーしたいもんだねェ"},"himeru":{"es":"","en":"","jp":"HiMERUは静かに読書をしたいので、カフェによく行きますね。最近は『シナモン』の珈琲が気に入っています"},"kohaku":{"es":"","en":"","jp":"ひとりでスポーツ観戦とかってことやろか？　行きたい気持ちはあるんやけどなぁ……何かおすすめのスポーツを教えてくれへん？"},"niki":{"es":"","en":"","jp":"珍しい食材を手に入れるために、ひとりで海外に行くこともありますし、全然平気っすね！　身軽な方が都合が良いし♪"},"rei":{"es":"","en":"","jp":"料亭やフレンチの経験はひととおりあるが、今更ひとりで行くのものう……。誰かが誘ってくれたら喜んでついていくぞい♪"},"kaoru":{"es":"","en":"","jp":"パンケーキのお店にひとりで行くのはちょっと気が引けるね。そういうときは誰かを誘って行くことにしてるよ♪"},"koga":{"es":"","en":"","jp":"ひとりで牛丼屋にいけませ～ん、なんてことが俺様にあるわけねぇだろ。まぁ、誰かと食べる飯美味しいことは否定しね～けどよう"},"adonis":{"es":"","en":"","jp":"ロケの帰り道に見事な桜を見かけて、しばらくひとりで見入っていたことがある。あれは、言わば『ひとり花見』だったと思う"},"tomoya":{"es":"","en":"","jp":"遊びに行くときは創と一緒のことがおおかったからなぁ……。あっ、でも最近は映画をひとりで見に行ったりしますよ"},"nazuna":{"es":"","en":"","jp":"みんなと一緒のほうが楽しいし、誰かを必ず誘うようにしてるな。兎は寂しがり屋だから……なんてな♪"},"mitsuru":{"es":"","en":"","jp":"ひとりでスポーツ観戦はあんまりしないかも？　せっかくなら、みんなで盛り上がりながら思いっきり応援をしたいんだぜ！"},"keito":{"es":"","en":"","jp":"実家に帰った際に、ひとりで読経することがあるな。朝の静けさのなかで経を読むと、精神が研ぎ澄まされる気がする"},"kuro":{"es":"","en":"","jp":"誰かを誘うのも難しかったから、すこし前にプロレス観戦にひとりで行ってきたな。なかなか白熱する戦いだったぜ"},"souma":{"es":"","en":"","jp":"学生の頃から贔屓にしている『たぴおか』屋があって、時折買いに行っているのである。これぞ、ひとり『たぴおか』であるな！"},"tsukasa":{"es":"","en":"","jp":"考えてみると、Cafeなどは『Knights』の誰かと一緒のことがおおいですね。大抵は呼び出されての同行ではありますが"},"leo":{"es":"","en":"","jp":"オーケストラを聞きに行ったりするな。あっ、大人しくできるのかって思っただろ。おれだってTPOはわきまえてるんだからな"},"izumi":{"es":"","en":"","jp":"ひとりで遊びに行ったりってこと？　そんな暇があるなら、歌やダンスの練習をしたいけどねぇ。まぁ、買い物ぐらいは行くよぉ"},"ritsu":{"es":"","en":"","jp":"ひとりカラオケとかはあまりしないなぁ。それよりお昼寝をしてたいし、そのための場所をいくつか確保してるんだ～♪"},"arashi":{"es":"","en":"","jp":"ひとりでも良いけど、やっぱりショッピングは友達と行くのが一番ね。お互いのコーデを考えるのとか、すごく楽しいわよ♪"},"natsume":{"es":"","en":"","jp":"考えてみる卜、出かけるときはいつもソラやセンパイと一緒に行動しているかモ。そもそモ、あまり外へと出ることも無いしネ"},"tsumugi":{"es":"","en":"","jp":"ひとりで温泉旅行とかも行きたいんですけどね～。スケジュールの都合で、なかなか機会に恵まれません"},"sora":{"es":"","en":"","jp":"ひとりでご飯を食べに行ったりですか？　それなら、宙はこの前美味しいとんこつラーメンを食べに行きました！"},"madara":{"es":"","en":"","jp":"『MaM』はソロ『ユニット』だからなあ！　ひとりは慣れているぶん、旅行やレストランでも全く物怖じしないぞお！"}}},{"id":"Q12","es":"¿Qué tipo de canciones cantas en el karaoke?","jp":"カラオケで歌う曲はどんな曲？","en":"What type of songs do you sing at karaoke?","emoji":"🎤","answers":{"eichi":{"es":"","en":"","jp":"『fine』のみんなでカラオケに行ったときは、僕たちの曲を歌ったりしたよ。そうだ、渉は演歌も披露してくれたんだ♪"},"wataru":{"es":"","en":"","jp":"皆さんのリクエストに応じて歌いますねぇ。ご要望があれば、腹話術を駆使してデュエット曲をひとりで歌いあげましょう！"},"tori":{"es":"","en":"","jp":"『fine』の曲をよく歌うよ♪　夢ノ咲学院に入るまでは、カラオケがボクのレッスンルームだったこともあるんだ～"},"yuzuru":{"es":"","en":"","jp":"どちらかというと落ち着いた曲が多いですね。今度カラオケに行く機会があれば、激しく盛り上がる曲を歌ってみましょうか"},"hokuto":{"es":"","en":"","jp":"明星が歌い始めると俺も引っ張り出されるなしばらく解放してくれないせいで、歌い切るとすこし息切れしてしまうぐらいだ"},"subaru":{"es":"","en":"","jp":"みんなで盛り上がる曲をいっぱい歌うな～。タンバリンも思いっきり鳴らして、全員ノリノリにするよ！"},"makoto":{"es":"","en":"","jp":"最新曲のランキングを見て、何がラインナップされてるかチェックしちゃうな。歌える曲があったらそれにしてるよ♪"},"mao":{"es":"","en":"","jp":"アニソンとかもいい曲がいっぱいあるから、それを歌ったりするぞ。オープニング曲はどれも盛り上がるしな♪"},"tetora":{"es":"","en":"","jp":"テンションの高い曲は必須ッスよね～♪　それとフードも好きなんで、ポテトとかピザとか色々と頼むッス！"},"midori":{"es":"","en":"","jp":"目立ちたくないから歌うのはみんなに譲るなあ。あっ、でも『流星隊』の歌が選ばれたときに自分のパートは歌うかも"},"shinobu":{"es":"","en":"","jp":"歌うのも楽しいのでござるが。ドリンクバーにソフトクリーム機があると、ついそっちに引き寄せられちゃうでござる♪"},"chiaki":{"es":"","en":"","jp":"ヒーロー曲を年代順に歌っていくのが最高に楽しいな！　変身ポーズも完璧に覚えているから、映像に合わせてポーズを取るぞ☆"},"kanata":{"es":"","en":"","jp":"みんなといっしょにうたえる『うた』をうたいますね～。うたうと『のど』がかわくので、おみずを『じょうび』しています"},"hiiro":{"es":"","en":"","jp":"最近の流行りの曲はよくわからないから、『ALKALOID』の曲を歌うよ。これからたくさん覚えていきたいな！"},"aira":{"es":"","en":"","jp":"どれもこれも歌いたいから迷っちゃうなァ。とりあえず、最初の一曲目はみんなで盛り上がる曲にするよォ♪"},"mayoi":{"es":"","en":"","jp":"そんな、私がマイクを握るなんておこがましいです……。私は皆さんの歌に合わせてひっそりとマラカスを振っています……"},"tatsumi":{"es":"","en":"","jp":"昔ソロで活動していたときの曲を歌ったりもしますな。藍良さんはコールをしてくれるので盛り上がります♪"},"nagisa":{"es":"","en":"","jp":"……『Eden』の曲を日和くんたちと歌ったことがあるよ。あまりカラオケには行かないんだけどね"},"hiyori":{"es":"","en":"","jp":"どんな曲も完璧に歌うね！　このぼくが歌ってあげるんだから、みんなしっかり聴くべきだね。余所見は厳禁！"},"ibara":{"es":"","en":"","jp":"カラオケでは皆さんの歌を拝聴するのが中心ですな！　ドリンクの用意やフード類の注文は自分にお任せください！"},"jun":{"es":"","en":"","jp":"ひとからリクエストされて歌うことが多いですかねぇ？　キーの高い歌はちょっと苦労しますけど、がんばって歌います"},"shu":{"es":"","en":"","jp":"歌っても身になるとは思えないし、普通のレッスンルームで練習をしたほうが有意義だね。まぁ、以前友人たちと行ったことはあるよ"},"mika":{"es":"","en":"","jp":"なるちゃんやゆっくんと行ったときは、みんながちいさいときに流行ってた歌を歌ったなあ。思い出話に花が咲いたで♪"},"hinata":{"es":"","en":"","jp":"大熱唱できる歌にするよ！　せっかく周りを気にしなくて良いカラオケに行くんだし、思いっきり叫びたいよね♪"},"yuta":{"es":"","en":"","jp":"アニキとロックバンドの曲を歌ったりしますね。アニキは歌いたがりなんで、マイクを離さないんですよね～"},"rinne":{"es":"","en":"","jp":"歌うより寝るほうが多いなぁ。駅の近くのカラオケルームはソファがふかふかなんだよね。あそこが最近のお気に入りなんだ♪"},"himeru":{"es":"","en":"","jp":"好きな歌を歌うとストレス解消になりますからね。HiMERUは流行にも敏感ですから、流行りのJ-POPなどを歌います"},"kohaku":{"es":"","en":"","jp":"ラブはんとカラオケに行ったときに教えてもらった曲をいま練習しとるんよ。そろそろまたラブはんと行きたいわ♪"},"niki":{"es":"","en":"","jp":"アニソンとかもいい曲がいっぱいあるから、それを歌ったりするぞ。オープニング曲はどれも盛り上がるしな♪"},"rei":{"es":"","en":"","jp":"バラードなども歌ったりするぞい。そういえば、薫くんとデュエットを歌ったときはお互いテンションが上がって楽しかったのう"},"kaoru":{"es":"","en":"","jp":"盛り上げる系の曲は晃牙くんにお任せしてるな。俺はやっぱりラブソング中心かな～♪　今度聞かせてあげるよ"},"koga":{"es":"","en":"","jp":"当然ロックだ！　どの年代のもんでも一通り歌えるから、リクエストがあればいくらでも聴かせてやんよ！"},"adonis":{"es":"","en":"","jp":"やはり『UNDEAD』の曲をよく歌うな。あとは大神のロックを聞きつつ、羽風先輩が頼んだパンケーキを分けてもらったりする"},"tomoya":{"es":"","en":"","jp":"カラオケに行ったら一回は必ず『Trickstar』の曲を歌いますね。俺は北斗先輩のパートを担当させてもらってます♪"},"nazuna":{"es":"","en":"","jp":"カラオケは大学の友達と行くこともあるんだ。そのときはやっぱり『Ra*bits』の曲をリクエストされるぞ！"},"mitsuru":{"es":"","en":"","jp":"もちろん、『Ra*bits』の曲なんだぜ！　それに、『Knights』の曲を姫ちゃんたちと一緒に歌ったりもするんだぜ♪"},"keito":{"es":"","en":"","jp":"そもそも頻繁にカラオケには行かんな。ロックなら数曲歌えるから、それを歌ったことならあるぞ"},"kuro":{"es":"","en":"","jp":"妹とカラオケに行くと、妹はアニソンとかを歌うんだよな。耳に残る曲だから、俺も歌えるようになったぜ"},"souma":{"es":"","en":"","jp":"ふむ、『からおけ』は我には縁遠い場所であるな。試しに『紅月』のみんなで行ってみたいのである！"},"tsukasa":{"es":"","en":"","jp":"以前、歌える曲がすくなくて悔しい思いをしたので、しばらくひとりで練習をしました。そのうち披露できると良いですね♪"},"leo":{"es":"","en":"","jp":"歌ったことのない歌も挑戦するぞ！　メロディはだいたいこんな感じかな～って予想できるから、案外歌えちゃったりするし！"},"izumi":{"es":"","en":"","jp":"そういえば、ちあくんとかおくんと一緒に行ったことがあるよ。あのときは『流星隊』の曲を歌ったりしたっけ"},"ritsu":{"es":"","en":"","jp":"歌うより寝るほうが多いなぁ。駅の近くのカラオケルームはソファがふかふかなんだよね。あそこが最近のお気に入りなんだ♪"},"arashi":{"es":"","en":"","jp":"かわいい恋の曲が最近のお気に入りなの♪　学生の初々しい、甘酸っぱい思いがぎゅっと詰まってて共感できるのよねェ"},"natsume":{"es":"","en":"","jp":"話題になってる曲を歌うようにしてるヨ。ボクと一緒にカラオケに行ったラ、熱烈な恋の歌を聞けたりするかもネ♪"},"tsumugi":{"es":"","en":"","jp":"こだわりはないので、そのときの気分によりますね。履歴を調べて、歌えそうな歌があったらそれを選んだりします"},"sora":{"es":"","en":"","jp":"ゲームの主題歌を歌います！　有名なアーティストの曲なので、みんなも聞いたことがあると思うな～♪"},"madara":{"es":"","en":"","jp":"もちろん、みんなで盛り上がる曲だなあ！　歌っていないときも全力で盛り上げるぞお！　マラカスやタンバリンは任せてくれ！"}}},{"id":"Q13","es":"Al grano: ¿cuál es el detalle clave de tu look de hoy?","jp":"ずばり今日のコーディネートのこだわりは？","en":"What's the focus of today's coordinated outfit?","emoji":"👔","answers":{"eichi":{"es":"","en":"","jp":"僕はスタプロの経営者としての立場もあるからね。カジュアルすぎず、威圧感を与えないような装いにするよう心がけているよ"},"wataru":{"es":"","en":"","jp":"本日は極楽鳥のように華やかでボリューミーな襟巻きをしてきました！　見てください。羽は角度を変えると色が変わるんですよ♪"},"tori":{"es":"","en":"","jp":"妹も愛用してるブランドの服にしたんだ♪　パフスリーブと、マリン風のセーラー襟がお気に入りなんだよね"},"yuzuru":{"es":"","en":"","jp":"シャツの皺を徹底的に伸ばしてきました。執事たるもの、いついかなるときも身だしなみに気を遣う必要がありますので♪"},"hokuto":{"es":"","en":"","jp":"ふむ、こだわりと聞かれると難しいな……。一応社会人の装いとして、常に腕時計を身につけるようにしている"},"subaru":{"es":"","en":"","jp":"えっと、何だろ？　あっ、そうそう！　キラキラのラメがはいったバッジを見つけたからバッグに付けてるんだ。綺麗でしょ☆"},"makoto":{"es":"","en":"","jp":"スニーカーを主役にしたんだ。もらったプレゼントとかはなるべく使いたいから、コーディネート方法を色々と調べてるよ"},"mao":{"es":"","en":"","jp":"今日はどっちかっていうとカジュアルめのコーディネートだな。オーバーサイズのジャケットは気に入っててよく着てるよ♪"},"tetora":{"es":"","en":"","jp":"試しにキャップを被ってきたッス！　アイドルなんだから流行にも敏感にってことで、お酒落の修行中ッス！"},"midori":{"es":"","en":"","jp":"ファッションにあまり興味がないから、いつもだいたい同じシャツとズボンなんだよね……。コーディネートとかよくわからない……"},"shinobu":{"es":"","en":"","jp":"遠目には分かりづらいでござるが、胸元に忍者の刺繍が入っているのでござる。お土産コーナーで見つけたのでござるよ♪"},"chiaki":{"es":"","en":"","jp":"もちろん、燃える炎のレッドだ！　……っとすまん、今の説明はよくわからないな。シャツに入った赤いラインがポイントだぞ♪"},"kanata":{"es":"","en":"","jp":"みずあびをしても、すぐにかわく『ふく』にしました～。この『ふく』ならいつでも『ぷかぷか』できます♪"},"hiiro":{"es":"","en":"","jp":"今日の服は藍良に選んでもらったんだ。『ヒロくんは何着てもキマるから腹立つ』と言っていたから、たぶん似合ってると思うよ！"},"aira":{"es":"","en":"","jp":"ふふん、今日はデニムのセットアップにしたんだァ♪　ヒロくんと買い物に行ったときに一目惚れしたんだよねェ♪"},"mayoi":{"es":"","en":"","jp":"どうも私は黒系の服になりがちでして……。藍良さんにはシックでお洒落と言われるので、私に似合っているとは思います"},"tatsumi":{"es":"","en":"","jp":"身体を冷やしたくなかったので、すこし着込んできました。長年使っているジャケットなので、身体に馴染んでいるんですよ"},"nagisa":{"es":"","en":"","jp":"……茨が用意したものを着てきたから、よくわからないな。こういう質問を受けたときのためにも、今度自分で買い物にいこうかな"},"hiyori":{"es":"","en":"","jp":"凪砂くんが旅行のお土産にスカーフを買ってきてくれたから、それを付けてきたね。不思議な柄が、ぼくにとても似合っているね！"},"ibara":{"es":"","en":"","jp":"華美なのは好みませんが、時計だけは少々奮発しましたね。時計談義からビジネスチャンスに繋がることもありますし♪"},"jun":{"es":"","en":"","jp":"おひいさんがいつも『汗くさい！』って言うんで、汗をかいてもすぐ乾く服にしてますねぇ。って、これはこだわりじゃないか"},"shu":{"es":"","en":"","jp":"最近はフランスの学友がつくった鞄を愛用していてね。シルエットの美しさもさることながら、使い勝手も素晴らしいのだよ"},"mika":{"es":"","en":"","jp":"親友のなるちゃんとお出かけしたときに買ったぬいぐるみをリュックに付けてるんよ♪　このギョロッとした目がかわいいやろ♪"},"hinata":{"es":"","en":"","jp":"ふっふっふ、よく聞いてくれたね！　今日のポイントはトライアングル型のヘアピン！　ゆうたくんもお揃いのものを持ってるんだ♪"},"yuta":{"es":"","en":"","jp":"最近はヘアゴムもちょっとこだわってるんです。お店はだいたい女性客ばかりなので、買うときにちょっと勇気がいりますけど"},"rinne":{"es":"","en":"","jp":"こだわりつっても、店に吊ってあった服をそのまま買ってきたからなァ。まァ、俺っちのスタイルなら何でも似合うだろ♪"},"himeru":{"es":"","en":"","jp":"今日の主役はHiMERUのお気に入りの帽子ですね。トップスなどはシンプルにして、帽子に目線が集まるようにしています"},"kohaku":{"es":"","en":"","jp":"おすすめされたチョーカーを付けてきたんよ。最近の流行りについては、いつもHiMERUはんにアドバイスをもらってるで"},"niki":{"es":"","en":"","jp":"えっ、コーディネートっすか？　えぇっと、料理をしやすいように汚れが目立たない服……っすかね？"},"rei":{"es":"","en":"","jp":"肌触りの良いものを選ぶようにしておるのう。馴染みにしている店があるから、季節ごとに顔を出しておるぞい"},"kaoru":{"es":"","en":"","jp":"シルバーのリングがポイントかな。最近センスの良い個人作家さんを見つけてさ。時々購入してるんだよね♪"},"koga":{"es":"","en":"","jp":"それならこのロックTを見てくれよ。最近注目され始めたロックバンドのやつなんだが、マジでカッケ～歌を歌うんだよ♪"},"adonis":{"es":"","en":"","jp":"今日の服は姉が渡してきたものだから、こだわりは姉に聞かないとわからないな……。聞いてきたほうが良いだろうか？"},"tomoya":{"es":"","en":"","jp":"番組の企画で俺の肌に合う色というものを診断してもらったので、それに合わせた色のシャツを選んでみました"},"nazuna":{"es":"","en":"","jp":"この兎のイラストが描かれたバッジを見てほしいな。兎を飼ってると、ついつい兎グッズに目が引き寄せられるんだよな～♪"},"mitsuru":{"es":"","en":"","jp":"えっと、このスニーカーなんだぜ！　とっても履き心地が良いから、いつでもすぐにダッシュすることができるんだぜ！"},"keito":{"es":"","en":"","jp":"なるべくシンプルにまとめるようにしている。鬼龍から『休日の父ちゃんっぽい』と言われてしまったが、そんなに地味だろうか？"},"kuro":{"es":"","en":"","jp":"俺はお洒落には疎いからな……。自分で刺繍したハンカチを使ってるっていうのは、こだわりの中に入るのか？"},"souma":{"es":"","en":"","jp":"我は常に帯刀しているゆえ、刀の動きを邪魔しない服にすることを心がけているのである。万が一が起きてしまってはならぬのでな"},"tsukasa":{"es":"","en":"","jp":"瀬名先輩と服が被ってしまったことがあるので、最近は仕立て屋に発注しています。本日はAccessoriesがPointです"},"leo":{"es":"","en":"","jp":"ものをなくさないようにポケットの大きな服にしてるぞ！　これでスマホもなくさない……ってあれ、おれのスマホどこに行った!?"},"izumi":{"es":"","en":"","jp":"それは当然、俺の美しさが一番引き立つように、だよねぇ。シンプルにまとめつつ、シルバーのバングルをワンポイントにしてるよ"},"ritsu":{"es":"","en":"","jp":"セッちゃんにおねだりして、イタリアの有名ブランドの鞄を買ってきてもらったんだよねお洒落で使いやすくていい感じ♪"},"arashi":{"es":"","en":"","jp":"お洒落なサングラスを見つけたから、これをメインにコーディネートしたの♪　フレーム部分がゼブラ柄なのが素敵なのよね"},"natsume":{"es":"","en":"","jp":"外見は内面の一番外側。と言われたりもするシ、気を遣ってるヨ。今日はプレッピー風をイメージしてみたんダ♪"},"tsumugi":{"es":"","en":"","jp":"えっと、俺は着れさえすれば何でも良いのでこだわりと言われると……。皺になりにくくて簡単に洗える服……ですかね？"},"sora":{"es":"","en":"","jp":"動きやすい服にしました！　この格好なら走りやすくて、すぐに塀とか壁を乗り越えることができます！"},"madara":{"es":"","en":"","jp":"今日はカジュアルな服にしたなあ。もちろん、仕事の内容に応じてジャケットやスーツを着ることもあるぞお♪"}}}];
+
+    // ─── piezas compartidas ────────────────────────────────────
+    const OSHI_INK = "#2c3e5a", OSHI_MUTED = "#7a94b5", OSHI_FAINT = "#8a9fba";
+    const OSHI_ACC = "#9b59b6", OSHI_ACC2 = "#7b68ee";
+    const OSHI_CARD = "rgba(255,255,255,0.68)", OSHI_LINE = "rgba(160,190,230,0.18)";
+    const SERIF = "'Libre Baskerville',serif", SANS = "'Nunito',sans-serif";
+    const oshiProf = (id) => CHAR_PROFILES[id] || {};
+    const oshiUnit = (id) => { const u = CHARACTERS[id] && CHARACTERS[id].unit; return (u && UNIT_DATA[u]) ? UNIT_DATA[u].name : ""; };
+    const oshiColor = (id) => (CHARACTERS[id] && CHARACTERS[id].color) || "#9b59b6";
+
+    const OshiAvatar = ({ id, size = 48, ring }) => {
+      const c = CHARACTERS[id]; if (!c) return null;
+      const icon = ICON_IMAGES[id];
+      return <div style={{ width: size, height: size, borderRadius: "50%", flexShrink: 0, overflow: "hidden", border: `${ring ? 3 : 2}px solid ${c.color}${ring ? "" : "55"}`, boxShadow: `0 2px 10px ${c.color}30`, background: `${c.color}18` }}>
+        {icon ? <img src={icon} alt={c.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} /> : null}
+      </div>;
+    };
+
+    const HajimeDice = ({ lines, tone = "normal" }) => (
+      <div style={{ display: "flex", gap: 14, alignItems: "flex-start", marginBottom: 26, textAlign: "left", animation: "fadeSlideUp 0.45s ease both" }}>
+        <div style={{ animation: "softBob 4s ease-in-out infinite" }}><OshiAvatar id="hajime" size={54} ring /></div>
+        <div style={{ flex: 1, minWidth: 0, background: tone === "warm" ? "rgba(255,247,252,0.85)" : "rgba(255,255,255,0.8)", border: `1px solid ${tone === "warm" ? "rgba(214,160,200,0.28)" : "rgba(160,190,230,0.28)"}`, borderRadius: "4px 18px 18px 18px", padding: "14px 18px", boxShadow: "0 3px 16px rgba(100,140,190,0.09)" }}>
+          <div style={{ fontFamily: SANS, fontSize: 11, fontWeight: 800, letterSpacing: "0.09em", textTransform: "uppercase", color: "#7fb3d5", marginBottom: 6 }}>Hajime Shino</div>
+          {lines.map((l, i) => <p key={i} style={{ fontFamily: SANS, fontSize: 14, lineHeight: 1.6, color: OSHI_INK, margin: i ? "8px 0 0" : 0 }}>{l}</p>)}
+        </div>
+      </div>
+    );
+
+    const OSHI_STEPS = [
+      { n: 1, t: "La tableta", s: "49 → 7", d: "Filtra a los 49 con palabras clave y fíate del instinto." },
+      { n: 2, t: "El monitor", s: "7 → 5", d: "Hazles hasta tres preguntas y lee sus respuestas." },
+      { n: 3, t: "El escenario", s: "5 → 3", d: "Míralos actuar y quédate con los que te atrapen." },
+      { n: 4, t: "La videollamada", s: "3 → 1", d: "Escucha su mensaje y decide." },
+    ];
+
+    const OshiStepBar = ({ active }) => (
+      <div style={{ display: "flex", gap: 8, marginBottom: 28, flexWrap: "wrap" }}>
+        {OSHI_STEPS.map(s => {
+          const on = s.n === active, done = s.n < active;
+          return (
+            <div key={s.n} style={{ flex: "1 1 140px", padding: "10px 14px", borderRadius: 14, background: on ? `linear-gradient(135deg,${OSHI_ACC}18,${OSHI_ACC2}12)` : done ? "rgba(155,89,182,0.06)" : "rgba(255,255,255,0.5)", border: `1px solid ${on ? "rgba(155,89,182,0.35)" : OSHI_LINE}`, transition: "all .3s" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <span style={{ width: 20, height: 20, borderRadius: "50%", display: "grid", placeItems: "center", fontSize: 11, fontWeight: 800, fontFamily: SANS, color: on || done ? "#fff" : OSHI_FAINT, background: on ? `linear-gradient(135deg,${OSHI_ACC},${OSHI_ACC2})` : done ? "rgba(155,89,182,0.55)" : "rgba(160,190,230,0.2)" }}>{done ? "✓" : s.n}</span>
+                <span style={{ fontFamily: SANS, fontSize: 13, fontWeight: 700, color: on ? "#5b3a80" : done ? OSHI_ACC : OSHI_FAINT }}>{s.t}</span>
+              </div>
+              <div style={{ fontFamily: SANS, fontSize: 11, color: OSHI_FAINT, marginTop: 3, marginLeft: 28 }}>{s.s}</div>
+            </div>
+          );
+        })}
+      </div>
+    );
+
+    const OshiShell = ({ children, max = 980 }) => (
+      <div style={{ position: "relative", zIndex: 1, maxWidth: max, margin: "0 auto", padding: "36px 22px 80px", animation: "fadeIn .4s ease" }}>{children}</div>
+    );
+
+    const OshiBtn = ({ children, onClick, disabled, wide }) => (
+      <button onClick={onClick} disabled={disabled} style={{
+        padding: wide ? "15px 44px" : "13px 30px", borderRadius: 16, border: "none",
+        cursor: disabled ? "not-allowed" : "pointer", fontFamily: SANS, fontSize: wide ? 16 : 15, fontWeight: 800, color: "#fff",
+        background: disabled ? "rgba(160,190,230,0.35)" : `linear-gradient(135deg,${OSHI_ACC},${OSHI_ACC2})`,
+        boxShadow: disabled ? "none" : "0 5px 22px rgba(155,89,182,0.35)", transition: "all .2s"
+      }}
+        onMouseEnter={e => { if (!disabled) { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 10px 30px rgba(155,89,182,0.45)"; } }}
+        onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = disabled ? "none" : "0 5px 22px rgba(155,89,182,0.35)"; }}>{children}</button>
+    );
+    const OshiGhostBtn = ({ children, onClick }) => (
+      <button onClick={onClick} style={{ padding: "11px 22px", borderRadius: 13, background: "rgba(255,255,255,0.6)", border: `1px solid ${OSHI_LINE}`, cursor: "pointer", fontFamily: SANS, fontSize: 13, fontWeight: 700, color: OSHI_MUTED }}>{children}</button>
+    );
+
+    // Botón de canción: solo aparece si el idol tiene enlace en OSHI_SONGS.
+    const OshiSongBtn = ({ id, block }) => {
+      const s = OSHI_SONGS[id];
+      if (!s || !s.url) return null;
+      const col = oshiColor(id);
+      return (
+        <a href={s.url} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}
+          style={{ display: block ? "flex" : "inline-flex", alignItems: "center", justifyContent: "center", gap: 7, padding: "9px 16px", borderRadius: 12, textDecoration: "none", background: `${col}1f`, border: `1px solid ${col}55`, fontFamily: SANS, fontSize: 12.5, fontWeight: 800, color: textColorFor(col), transition: "all .2s" }}
+          onMouseEnter={e => { e.currentTarget.style.background = `${col}33`; }}
+          onMouseLeave={e => { e.currentTarget.style.background = `${col}1f`; }}>
+          <span style={{ fontSize: 13 }}>▶</span>{s.titulo || "Escuchar su canción"}
+        </a>
+      );
+    };
+
+    const OshiTray = ({ picked, need, label, onClear, onNext, nextLabel }) => (
+      <div style={{ position: "sticky", bottom: 16, zIndex: 20, marginTop: 28, background: "rgba(255,255,255,0.9)", backdropFilter: "blur(18px) saturate(1.6)", border: "1px solid rgba(155,89,182,0.2)", borderRadius: 20, padding: "14px 18px", boxShadow: "0 8px 34px rgba(100,140,190,0.18)", display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: 6 }}>
+          {Array.from({ length: need }).map((_, i) => picked[i]
+            ? <div key={i} style={{ animation: "oshiPop .25s ease" }}><OshiAvatar id={picked[i]} size={40} ring /></div>
+            : <div key={i} style={{ width: 40, height: 40, borderRadius: "50%", border: "2px dashed rgba(155,89,182,0.3)", background: "rgba(155,89,182,0.04)" }} />)}
+        </div>
+        <div style={{ flex: 1, minWidth: 120 }}>
+          <div style={{ fontFamily: SANS, fontSize: 13, fontWeight: 800, color: "#5b3a80" }}>{picked.length} / {need}</div>
+          <div style={{ fontFamily: SANS, fontSize: 12, color: OSHI_FAINT }}>{label}</div>
+        </div>
+        {picked.length > 0 && <OshiGhostBtn onClick={onClear}>Limpiar</OshiGhostBtn>}
+        <OshiBtn onClick={onNext} disabled={picked.length !== need}>{nextLabel}</OshiBtn>
+      </div>
+    );
+
+    const OshiPeek = ({ id, onClose, setNav }) => {
+      const c = CHARACTERS[id], p = oshiProf(id); if (!c) return null;
+      const rows = [["Unidad", oshiUnit(id)], ["Agencia", p.agency], ["Cumpleaños", p.birthday], ["Altura", p.height],
+      ["Le gusta", p.likes], ["Aficiones", p.hobby], ["Comida favorita", p.favFood], ["Especialidad", p.specialty], ["Seiyuu", p.va]].filter(r => r[1]);
+      return (
+        <div onClick={onClose} style={{ position: "fixed", inset: 0, zIndex: 200, background: "rgba(30,42,66,0.45)", backdropFilter: "blur(6px)", display: "grid", placeItems: "center", padding: 20, animation: "fadeIn .2s ease" }}>
+          <div onClick={e => e.stopPropagation()} style={{ maxWidth: 560, width: "100%", maxHeight: "86vh", overflowY: "auto", background: `linear-gradient(165deg,${c.color}20,rgba(255,255,255,0.96) 45%)`, border: `1px solid ${c.color}40`, borderRadius: 24, padding: "26px 26px 28px", boxShadow: "0 24px 70px rgba(40,60,100,0.3)", animation: "oshiPop .25s ease" }}>
+            <div style={{ display: "flex", gap: 16, alignItems: "center", marginBottom: 16 }}>
+              <OshiAvatar id={id} size={64} ring />
+              <div style={{ flex: 1 }}>
+                <h3 style={{ fontFamily: SERIF, fontSize: 21, fontWeight: 700, color: OSHI_INK, margin: 0 }}>{c.name}</h3>
+                <p style={{ fontFamily: SANS, fontSize: 13, color: OSHI_MUTED, margin: "3px 0 0" }}>{oshiUnit(id)}</p>
+              </div>
+              <button onClick={onClose} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 22, color: OSHI_FAINT }}>×</button>
+            </div>
+            {p.tagline && <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: 15, color: textColorFor(c.color), margin: "0 0 16px", lineHeight: 1.5 }}>«{p.tagline}»</p>}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: 10 }}>
+              {rows.map(([k, v]) => (
+                <div key={k} style={{ background: "rgba(255,255,255,0.7)", border: `1px solid ${OSHI_LINE}`, borderRadius: 12, padding: "9px 12px" }}>
+                  <div style={{ fontFamily: SANS, fontSize: 10, fontWeight: 800, letterSpacing: ".07em", textTransform: "uppercase", color: OSHI_FAINT }}>{k}</div>
+                  <div style={{ fontFamily: SANS, fontSize: 13, color: OSHI_INK, marginTop: 2 }}>{v}</div>
+                </div>
+              ))}
+            </div>
+            <div style={{ display: "flex", gap: 10, marginTop: 16, flexWrap: "wrap" }}>
+              <OshiSongBtn id={id} />
+              {CHAR_PROFILES[id] && <button onClick={() => setNav({ page: "charProfile", charId: id })} style={{ padding: "9px 16px", borderRadius: 12, border: `1px solid ${c.color}55`, background: `${c.color}1f`, cursor: "pointer", fontFamily: SANS, fontSize: 12.5, fontWeight: 800, color: textColorFor(c.color) }}>Ver su perfil completo →</button>}
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    // ─── PASO 1 ────────────────────────────────────────────────
+    const OshiStep1 = ({ picked, setPicked, onNext, setNav }) => {
+      const [tags, setTags] = useState([]);
+      const [peek, setPeek] = useState(null);
+      const [verTodo, setVerTodo] = useState(false);
+      const matches = useMemo(() => {
+        if (!tags.length) return null;
+        return new Set(OSHI_ROSTER.filter(id => tags.every(t => OSHI_KEYWORDS[t].ids.includes(id))));
+      }, [tags]);
+      const toggleTag = t => setTags(p => p.includes(t) ? p.filter(x => x !== t) : [...p, t]);
+      const toggle = id => setPicked(p => p.includes(id) ? p.filter(x => x !== id) : (p.length < 7 ? [...p, id] : p));
+      const sorpresa = () => {
+        const pool = OSHI_ROSTER.filter(id => id !== "subaru").sort(() => Math.random() - 0.5);
+        setPicked(["subaru", ...pool.slice(0, 6)]);
+      };
+      const idx = OSHI_KEYWORDS.map((k, i) => i);
+      const shown = verTodo ? idx : idx.slice(0, 14);
+      return (
+        <OshiShell>
+          <OshiStepBar active={1} />
+          <HajimeDice lines={[
+            "¡La tableta que hay sobre el escritorio se ha encendido! Vamos a echarle un vistazo.",
+            "Parece que primero hay que «elegir a siete idols que te gusten, guiándote por la intuición» ♪",
+            "Esta tableta lleva instalado el Sistema de Palabras Clave, así que, aunque haya muchísimos candidatos, seguro que encuentras a tu oshi.",
+          ]} />
+          <div style={{ background: OSHI_CARD, border: `1px solid ${OSHI_LINE}`, borderRadius: 20, padding: "18px 20px", marginBottom: 22 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12, gap: 12, flexWrap: "wrap" }}>
+              <div>
+                <div style={{ fontFamily: SERIF, fontSize: 15, fontWeight: 700, color: OSHI_INK }}>Palabras clave</div>
+                <div style={{ fontFamily: SANS, fontSize: 12, color: OSHI_FAINT }}>Combínalas para filtrar. {matches ? `${matches.size} idols coinciden.` : "Ninguna activa: se ven los 49."}</div>
+              </div>
+              <button onClick={sorpresa} style={{ padding: "9px 18px", borderRadius: 12, border: "1px solid rgba(155,89,182,0.3)", background: "linear-gradient(135deg,rgba(216,198,242,0.5),rgba(200,215,250,0.4))", cursor: "pointer", fontFamily: SANS, fontSize: 13, fontWeight: 800, color: "#5b3a80" }}>🎲 Recomiéndame siete</button>
+            </div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 7 }}>
+              {shown.map(i => {
+                const k = OSHI_KEYWORDS[i], on = tags.includes(i);
+                return <button key={i} onClick={() => toggleTag(i)} title={k.jp} style={{
+                  padding: "7px 13px", borderRadius: 999, cursor: "pointer", fontFamily: SANS, fontSize: 12.5, fontWeight: 700,
+                  background: on ? `linear-gradient(135deg,${OSHI_ACC},${OSHI_ACC2})` : "rgba(255,255,255,0.75)",
+                  color: on ? "#fff" : OSHI_MUTED, border: `1px solid ${on ? "transparent" : OSHI_LINE}`,
+                  boxShadow: on ? "0 3px 12px rgba(155,89,182,0.3)" : "none", transition: "all .18s"
+                }}>{k.emoji} {k.es}</button>;
+              })}
+              {!verTodo && <button onClick={() => setVerTodo(true)} style={{ padding: "7px 13px", borderRadius: 999, cursor: "pointer", fontFamily: SANS, fontSize: 12.5, fontWeight: 800, background: "rgba(155,89,182,0.09)", color: OSHI_ACC, border: "1px dashed rgba(155,89,182,0.35)" }}>+{idx.length - shown.length} más</button>}
+              {tags.length > 0 && <button onClick={() => setTags([])} style={{ padding: "7px 13px", borderRadius: 999, cursor: "pointer", fontFamily: SANS, fontSize: 12.5, fontWeight: 700, background: "none", color: OSHI_FAINT, border: "none", textDecoration: "underline" }}>quitar filtros</button>}
+            </div>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(108px,1fr))", gap: 11 }}>
+            {OSHI_ROSTER.map((id, i) => {
+              const c = CHARACTERS[id], sel = picked.includes(id), dim = matches ? !matches.has(id) : false;
+              return (
+                <div key={id} style={{ position: "relative", animation: `fadeSlideUp .4s ease ${Math.min(i, 20) * 0.015}s both`, opacity: dim ? 0.28 : 1, pointerEvents: dim ? "none" : "auto", transition: "opacity .3s" }}>
+                  <button onClick={() => toggle(id)} style={{
+                    width: "100%", padding: "12px 10px 11px", borderRadius: 16, cursor: "pointer", textAlign: "center",
+                    background: sel ? `linear-gradient(160deg,${c.color}2e,${c.color}10)` : "rgba(255,255,255,0.62)",
+                    border: `2px solid ${sel ? c.color : "rgba(160,190,230,0.18)"}`,
+                    boxShadow: sel ? `0 6px 20px ${c.color}45` : "0 2px 8px rgba(100,140,190,0.06)",
+                    transform: sel ? "translateY(-3px)" : "none", transition: "all .22s"
+                  }}
+                    onMouseEnter={e => { if (!sel) e.currentTarget.style.borderColor = `${c.color}70`; }}
+                    onMouseLeave={e => { if (!sel) e.currentTarget.style.borderColor = "rgba(160,190,230,0.18)"; }}>
+                    <div style={{ display: "grid", placeItems: "center", marginBottom: 7 }}><OshiAvatar id={id} size={56} /></div>
+                    <div style={{ fontFamily: SANS, fontSize: 12, fontWeight: 800, color: OSHI_INK, lineHeight: 1.2 }}>{c.name.split(" ")[0]}</div>
+                    <div style={{ fontFamily: SANS, fontSize: 10, color: OSHI_FAINT, marginTop: 2 }}>{oshiUnit(id)}</div>
+                  </button>
+                  <button onClick={e => { e.stopPropagation(); setPeek(id); }} title="Ver ficha" style={{ position: "absolute", top: 6, right: 6, width: 24, height: 24, borderRadius: "50%", border: `1px solid ${OSHI_LINE}`, background: "rgba(255,255,255,0.9)", cursor: "pointer", fontSize: 11, color: OSHI_MUTED, display: "grid", placeItems: "center", padding: 0 }}>🔍</button>
+                  {sel && <span style={{ position: "absolute", top: 6, left: 6, width: 22, height: 22, borderRadius: "50%", background: c.color, color: "#fff", display: "grid", placeItems: "center", fontSize: 12, fontWeight: 900, boxShadow: `0 2px 8px ${c.color}70`, animation: "oshiPop .2s ease" }}>✓</span>}
+                </div>
+              );
+            })}
+          </div>
+          <OshiTray picked={picked} need={7} label="Elige siete idols con la intuición" onClear={() => setPicked([])} onNext={onNext} nextLabel="Siguiente →" />
+          {peek && <OshiPeek id={peek} onClose={() => setPeek(null)} setNav={setNav} />}
+        </OshiShell>
+      );
+    };
+
+    // ─── PASO 2 ────────────────────────────────────────────────
+    const OshiStep2 = ({ seven, picked, setPicked, onNext, onBack }) => {
+      const [qs, setQs] = useState([]);
+      const [fase, setFase] = useState("elegir");
+      const toggleQ = i => setQs(p => p.includes(i) ? p.filter(x => x !== i) : (p.length < 3 ? [...p, i] : p));
+      if (fase === "elegir") return (
+        <OshiShell>
+          <OshiStepBar active={2} />
+          <HajimeDice lines={[
+            "¡Uau, el monitor de la pared se ha iluminado!",
+            "Parece que podemos elegir hasta tres preguntas para hacérselas a los siete idols que has seleccionado.",
+            "Luego miras sus respuestas y buscas a quien encaje con tus gustos. ¿Es así, verdad?",
+          ]} />
+          <div style={{ display: "flex", gap: 8, marginBottom: 20, flexWrap: "wrap", alignItems: "center" }}>
+            <span style={{ fontFamily: SANS, fontSize: 12, color: OSHI_FAINT, fontWeight: 700 }}>Preguntando a:</span>
+            {seven.map(id => <OshiAvatar key={id} id={id} size={34} />)}
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(250px,1fr))", gap: 11 }}>
+            {OSHI_QUESTIONS.map((q, i) => {
+              const on = qs.includes(i);
+              return <button key={q.id} onClick={() => toggleQ(i)} style={{
+                textAlign: "left", padding: "15px 17px", borderRadius: 16, cursor: "pointer",
+                background: on ? `linear-gradient(135deg,${OSHI_ACC}1c,${OSHI_ACC2}12)` : "rgba(255,255,255,0.62)",
+                border: `2px solid ${on ? "rgba(155,89,182,0.5)" : "rgba(160,190,230,0.18)"}`,
+                boxShadow: on ? "0 5px 18px rgba(155,89,182,0.2)" : "none", transition: "all .2s",
+                animation: `fadeSlideUp .4s ease ${i * 0.03}s both`
+              }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 }}>
+                  <span style={{ fontSize: 20 }}>{q.emoji}</span>
+                  {on && <span style={{ width: 20, height: 20, borderRadius: "50%", background: `linear-gradient(135deg,${OSHI_ACC},${OSHI_ACC2})`, color: "#fff", display: "grid", placeItems: "center", fontSize: 11, fontWeight: 900 }}>{qs.indexOf(i) + 1}</span>}
+                </div>
+                <div style={{ fontFamily: SANS, fontSize: 13.5, fontWeight: 700, color: on ? "#5b3a80" : OSHI_INK, marginTop: 8, lineHeight: 1.4 }}>{q.es}</div>
+                <div style={{ fontFamily: SANS, fontSize: 11, color: OSHI_FAINT, marginTop: 4 }}>{q.jp}</div>
+              </button>;
+            })}
+          </div>
+          <div style={{ position: "sticky", bottom: 16, zIndex: 20, marginTop: 26, background: "rgba(255,255,255,0.9)", backdropFilter: "blur(18px)", border: "1px solid rgba(155,89,182,0.2)", borderRadius: 20, padding: "14px 18px", boxShadow: "0 8px 34px rgba(100,140,190,0.18)", display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
+            <div style={{ flex: 1, minWidth: 140 }}>
+              <div style={{ fontFamily: SANS, fontSize: 13, fontWeight: 800, color: "#5b3a80" }}>{qs.length} / 3 preguntas</div>
+              <div style={{ fontFamily: SANS, fontSize: 12, color: OSHI_FAINT }}>Puedes lanzar hasta tres</div>
+            </div>
+            <OshiGhostBtn onClick={onBack}>← Atrás</OshiGhostBtn>
+            <OshiBtn onClick={() => setFase("respuestas")} disabled={qs.length === 0}>Preguntar</OshiBtn>
+          </div>
+        </OshiShell>
+      );
+      return (
+        <OshiShell>
+          <OshiStepBar active={2} />
+          <HajimeDice lines={["Todos se han esforzado muchísimo en responder. ¡Espero que te haya gustado leerlos…! ♪", "Ahora quédate con cinco."]} />
+          {qs.map(qi => {
+            const q = OSHI_QUESTIONS[qi];
+            return (
+              <div key={q.id} style={{ marginBottom: 26 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14, padding: "12px 18px", borderRadius: 16, background: `linear-gradient(135deg,${OSHI_ACC}16,${OSHI_ACC2}0d)`, border: "1px solid rgba(155,89,182,0.2)" }}>
+                  <span style={{ fontSize: 22 }}>{q.emoji}</span>
+                  <div>
+                    <div style={{ fontFamily: SERIF, fontSize: 16, fontWeight: 700, color: OSHI_INK }}>{q.es}</div>
+                    <div style={{ fontFamily: SANS, fontSize: 11, color: OSHI_FAINT }}>{q.jp}</div>
+                  </div>
+                </div>
+                <div style={{ display: "grid", gap: 10 }}>
+                  {seven.map((id, i) => {
+                    const c = CHARACTERS[id], a = q.answers[id] || {}, on = picked.includes(id);
+                    return (
+                      <div key={id} onClick={() => setPicked(p => p.includes(id) ? p.filter(x => x !== id) : (p.length < 5 ? [...p, id] : p))} style={{
+                        display: "flex", gap: 13, alignItems: "flex-start", padding: "14px 16px", borderRadius: 16, cursor: "pointer",
+                        background: on ? `linear-gradient(120deg,${c.color}34,${c.color}14)` : `linear-gradient(120deg,${c.color}1c,${c.color}09)`,
+                        border: `2px solid ${on ? c.color : c.color + "45"}`,
+                        boxShadow: on ? `0 5px 18px ${c.color}33` : "none",
+                        transform: on ? "translateY(-2px)" : "none", transition: "all .2s",
+                        animation: `fadeSlideUp .35s ease ${i * 0.04}s both`
+                      }}>
+                        <OshiAvatar id={id} size={44} ring={on} />
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 5, flexWrap: "wrap" }}>
+                            <span style={{ fontFamily: SANS, fontSize: 13, fontWeight: 800, color: textColorFor(c.color) }}>{c.name}</span>
+                            {on && <span style={{ fontFamily: SANS, fontSize: 10, fontWeight: 800, padding: "2px 8px", borderRadius: 8, background: `${c.color}30`, color: textColorFor(c.color) }}>ELEGIDO</span>}
+                          </div>
+                          <p style={{ fontFamily: SANS, fontSize: 13.5, lineHeight: 1.6, color: OSHI_INK, margin: 0 }}>
+                            {a.es || a.en || <span style={{ color: OSHI_FAINT, fontStyle: "italic" }}>(pendiente de traducir)</span>}
+                          </p>
+                          {!a.es && a.jp && <p style={{ fontFamily: SANS, fontSize: 12, lineHeight: 1.55, color: OSHI_FAINT, margin: "6px 0 0" }}>{a.jp}</p>}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+          <OshiTray picked={picked} need={5} label="Quédate con cinco" onClear={() => setPicked([])} onNext={onNext} nextLabel="Al escenario →" />
+        </OshiShell>
+      );
+    };
+
+    // ─── PASO 3 ────────────────────────────────────────────────
+    const OshiStep3 = ({ five, picked, setPicked, onNext }) => (
+      <OshiShell max={1060}>
+        <OshiStepBar active={3} />
+        <HajimeDice lines={[
+          "Las persianas se han subido solas… ¡Esto tampoco era una ventana, sino otro monitor!",
+          "Es un live especial: «La sala en la que seguro que encuentras a tu oshi».",
+          "Al ver a un idol sobre el escenario se le descubren encantos nuevos. Quédate con tres ♪",
+        ]} />
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(190px,1fr))", gap: 14 }}>
+          {five.map((id, i) => {
+            const c = CHARACTERS[id], p = oshiProf(id), on = picked.includes(id);
+            return (
+              <div key={id} onClick={() => setPicked(pr => pr.includes(id) ? pr.filter(x => x !== id) : (pr.length < 3 ? [...pr, id] : pr))} style={{
+                position: "relative", overflow: "hidden", cursor: "pointer", borderRadius: 22, textAlign: "center",
+                background: `linear-gradient(180deg,${c.color}3a 0%,${c.color}1c 55%,rgba(255,255,255,0.9) 100%)`,
+                border: `2px solid ${on ? c.color : "rgba(160,190,230,0.25)"}`,
+                boxShadow: on ? `0 10px 34px ${c.color}55` : "0 4px 18px rgba(100,140,190,0.12)",
+                transform: on ? "translateY(-5px)" : "none", transition: "all .25s",
+                animation: `fadeSlideUp .5s ease ${i * 0.07}s both`
+              }}>
+                <div style={{ position: "absolute", inset: 0, background: `linear-gradient(200deg,transparent 20%,rgba(255,255,255,0.55) 45%,transparent 70%)`, animation: "oshiSpot 7s ease-in-out infinite", animationDelay: `${i * 0.6}s`, pointerEvents: "none" }} />
+                <div style={{ position: "relative", height: 250, display: "flex", alignItems: "flex-end", justifyContent: "center", padding: "10px 6px 0" }}>
+                  <img src={p.fullBody} alt={c.name} style={{ maxHeight: 240, maxWidth: "100%", objectFit: "contain", display: "block", filter: `drop-shadow(0 6px 22px ${c.color}66)` }} />
+                </div>
+                <div style={{ position: "relative", background: "rgba(255,255,255,0.92)", padding: "12px 14px 14px" }}>
+                  <div style={{ fontFamily: SERIF, fontSize: 15, fontWeight: 700, color: OSHI_INK }}>{c.name}</div>
+                  <div style={{ fontFamily: SANS, fontSize: 11, color: OSHI_FAINT, marginBottom: 6 }}>{oshiUnit(id)}</div>
+                  <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: 12.5, lineHeight: 1.5, color: textColorFor(c.color), margin: "0 0 10px" }}>«{p.quote || p.tagline}»</p>
+                  <OshiSongBtn id={id} block />
+                </div>
+                {on && <span style={{ position: "absolute", top: 10, right: 10, width: 26, height: 26, borderRadius: "50%", background: c.color, color: "#fff", display: "grid", placeItems: "center", fontSize: 13, fontWeight: 900, boxShadow: `0 3px 12px ${c.color}90`, animation: "oshiPop .2s ease" }}>✓</span>}
+              </div>
+            );
+          })}
+        </div>
+        <OshiTray picked={picked} need={3} label="Quédate con tres" onClear={() => setPicked([])} onNext={onNext} nextLabel="Coger la llamada →" />
+      </OshiShell>
+    );
+
+    // ─── PASO 4: mensaje que aparece frase a frase ─────────────
+    const oshiTrocear = (t) => {
+      const crudo = (t.match(/[^.!?♪☆…♥]+[.!?♪☆…♥]*/g) || [t]).map(s => s.trim()).filter(Boolean);
+      const out = [];
+      crudo.forEach(f => {
+        if (out.length && (f.length < 28 || out[out.length - 1].length < 28)) out[out.length - 1] += " " + f;
+        else out.push(f);
+      });
+      return out;
+    };
+
+    const OshiMensaje = ({ id, onPick }) => {
+      const c = CHARACTERS[id], p = oshiProf(id);
+      const frases = useMemo(() => oshiTrocear(p.selfIntro || ""), [id]);
+      const [n, setN] = useState(0);
+      useEffect(() => {
+        if (n >= frases.length) return;
+        const t = setTimeout(() => setN(x => x + 1), n === 0 ? 400 : 1500);
+        return () => clearTimeout(t);
+      }, [n, frases.length]);
+      const listo = n >= frases.length;
+      return (
+        <div style={{ display: "flex", gap: 16, padding: "0 18px 20px", alignItems: "flex-end", animation: "fadeIn .3s ease" }}>
+          <img src={p.fullBody} alt="" style={{ height: 190, objectFit: "contain", filter: `drop-shadow(0 6px 18px ${c.color}55)`, flexShrink: 0 }} />
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div onClick={() => !listo && setN(frases.length)} style={{ cursor: listo ? "default" : "pointer", minHeight: 90, marginBottom: 12 }}>
+              {frases.slice(0, n).map((f, i) => (
+                <div key={i} style={{ background: "rgba(255,255,255,0.92)", border: `1px solid ${c.color}45`, borderRadius: i === 0 ? "18px 18px 18px 4px" : 16, padding: "12px 16px", marginBottom: 8, animation: "oshiLinea .45s ease both" }}>
+                  <p style={{ fontFamily: SANS, fontSize: 13.5, lineHeight: 1.65, color: OSHI_INK, margin: 0 }}>{f}</p>
+                </div>
+              ))}
+              {!listo && (
+                <div style={{ display: "inline-flex", gap: 4, alignItems: "center", padding: "9px 14px", borderRadius: 14, background: `${c.color}1c`, border: `1px solid ${c.color}3a` }}>
+                  {[0, 1, 2].map(d => <span key={d} style={{ width: 6, height: 6, borderRadius: "50%", background: c.color, animation: "oshiPuntos 1.2s ease-in-out infinite", animationDelay: `${d * 0.18}s` }} />)}
+                  <span style={{ fontFamily: SANS, fontSize: 11, fontWeight: 700, color: textColorFor(c.color), marginLeft: 4 }}>toca para verlo entero</span>
+                </div>
+              )}
+            </div>
+            {listo && <div style={{ animation: "fadeSlideUp .4s ease both" }}><OshiBtn onClick={() => onPick(id)}>Es mi oshi ✦</OshiBtn></div>}
+          </div>
+        </div>
+      );
+    };
+
+    const OshiStep4 = ({ three, onPick }) => {
+      const [abierto, setAbierto] = useState(null);
+      const [vistos, setVistos] = useState([]);
+      const ver = id => { setAbierto(id); setVistos(p => p.includes(id) ? p : [...p, id]); };
+      return (
+        <OshiShell max={860}>
+          <OshiStepBar active={4} />
+          <HajimeDice tone="warm" lines={[
+            "¡La tableta del escritorio está sonando…! Vamos a mirar quién es.",
+            "¡Uau, parece que los tres idols que has elegido te están haciendo una videollamada!",
+            "Escucha lo que tienen que decirte y, después, decide a tu oshi para abrir la puerta ♪",
+          ]} />
+          <div style={{ display: "grid", gap: 14 }}>
+            {three.map((id, i) => {
+              const c = CHARACTERS[id], ab = abierto === id, visto = vistos.includes(id);
+              return (
+                <div key={id} style={{ borderRadius: 22, overflow: "hidden", border: `2px solid ${ab ? c.color : "rgba(160,190,230,0.2)"}`, background: ab ? `linear-gradient(160deg,${c.color}1e,rgba(255,255,255,0.85))` : "rgba(255,255,255,0.66)", boxShadow: ab ? `0 10px 32px ${c.color}33` : "0 3px 14px rgba(100,140,190,0.07)", transition: "all .3s", animation: `fadeSlideUp .45s ease ${i * 0.08}s both` }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 14, padding: "16px 18px" }}>
+                    <div style={{ animation: visto ? "none" : "oshiRing 1.6s ease-in-out infinite" }}><OshiAvatar id={id} size={54} ring /></div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontFamily: SERIF, fontSize: 16, fontWeight: 700, color: OSHI_INK }}>{c.name}</div>
+                      <div style={{ fontFamily: SANS, fontSize: 12, color: visto ? OSHI_FAINT : "#43b06a", fontWeight: 700 }}>{visto ? "Llamada vista" : "📞 Llamada entrante…"}</div>
+                    </div>
+                    <button onClick={() => ab ? setAbierto(null) : ver(id)} style={{ padding: "10px 20px", borderRadius: 13, border: "none", cursor: "pointer", fontFamily: SANS, fontSize: 13, fontWeight: 800, color: "#fff", background: ab ? "rgba(160,190,230,0.7)" : `linear-gradient(135deg,${c.color}ee,${c.color}aa)`, boxShadow: ab ? "none" : `0 4px 14px ${c.color}55` }}>{ab ? "Colgar" : "Contestar"}</button>
+                  </div>
+                  {ab && <OshiMensaje id={id} onPick={onPick} />}
+                </div>
+              );
+            })}
+          </div>
+        </OshiShell>
+      );
+    };
+
+    // ─── RESULTADO ─────────────────────────────────────────────
+    const OshiResultado = ({ id, camino, onReset, setNav }) => {
+      const c = CHARACTERS[id], p = oshiProf(id);
+      return (
+        <OshiShell max={780}>
+          <div style={{ textAlign: "center" }}>
+            <HajimeDice tone="warm" lines={[
+              "¿Qué tal «La sala en la que seguro que encuentras a tu oshi»?",
+              "Los encuentros con un oshi son irrepetibles. Me haría muy feliz haberte ayudado a tener uno bueno… ♪",
+            ]} />
+            <div style={{ borderRadius: 28, overflow: "hidden", border: `1px solid ${c.color}45`, background: `linear-gradient(170deg,${c.color}28,${c.color}0c,rgba(255,255,255,0.9))`, padding: "34px 26px 30px", marginBottom: 20, animation: "oshiPuerta 3.5s ease-in-out infinite" }}>
+              <p style={{ fontFamily: SANS, fontSize: 11, fontWeight: 800, letterSpacing: ".14em", textTransform: "uppercase", color: OSHI_ACC, margin: "0 0 18px" }}>La puerta se abre…</p>
+              {p.fullBody && <img src={p.fullBody} alt={c.name} style={{ maxHeight: 330, maxWidth: "100%", objectFit: "contain", filter: `drop-shadow(0 8px 28px ${c.color}66)` }} />}
+              <h2 style={{ fontFamily: SERIF, fontSize: 30, fontWeight: 700, color: OSHI_INK, margin: "18px 0 4px" }}>{c.name}</h2>
+              <p style={{ fontFamily: SANS, fontSize: 14, color: OSHI_MUTED, margin: "0 0 14px" }}>{oshiUnit(id)}</p>
+              {p.tagline && <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: 15, color: textColorFor(c.color), margin: "0 0 20px", lineHeight: 1.55 }}>«{p.tagline}»</p>}
+              <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
+                <OshiSongBtn id={id} />
+                {CHAR_PROFILES[id] && <button onClick={() => setNav({ page: "charProfile", charId: id })} style={{ padding: "13px 30px", borderRadius: 15, border: "none", cursor: "pointer", fontFamily: SANS, fontSize: 14.5, fontWeight: 800, color: "#fff", background: `linear-gradient(135deg,${c.color}ee,${c.color}aa)`, boxShadow: `0 5px 20px ${c.color}55` }}>Conoce mejor a {c.name.split(" ")[0]} →</button>}
+              </div>
+            </div>
+            <div style={{ background: OSHI_CARD, border: `1px solid ${OSHI_LINE}`, borderRadius: 18, padding: "16px 20px", marginBottom: 20, textAlign: "left" }}>
+              <div style={{ fontFamily: SANS, fontSize: 11, fontWeight: 800, letterSpacing: ".08em", textTransform: "uppercase", color: OSHI_FAINT, marginBottom: 10 }}>Tu recorrido por la sala</div>
+              {[["49 → 7", camino.seven], ["7 → 5", camino.five], ["5 → 3", camino.three]].map(([lbl, arr]) => (
+                <div key={lbl} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8, flexWrap: "wrap" }}>
+                  <span style={{ fontFamily: SANS, fontSize: 11, fontWeight: 800, color: OSHI_ACC, width: 44 }}>{lbl}</span>
+                  {arr.map(x => <div key={x} style={{ opacity: x === id ? 1 : 0.55 }}><OshiAvatar id={x} size={30} ring={x === id} /></div>)}
+                </div>
+              ))}
+            </div>
+            <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
+              <OshiGhostBtn onClick={onReset}>Volver a entrar en la sala</OshiGhostBtn>
+              <OshiGhostBtn onClick={() => setNav({ page: "browse", tab: "characters" })}>Ver todos los personajes</OshiGhostBtn>
+            </div>
+          </div>
+        </OshiShell>
+      );
+    };
+
+    // ─── INTRO ─────────────────────────────────────────────────
+    const OshiIntro = ({ onStart, setNav }) => (
+      <OshiShell max={720}>
+        <div style={{ textAlign: "center", paddingTop: 24 }}>
+          <button onClick={() => setNav({ page: "browse", tab: "characters" })} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: SANS, fontSize: 13, color: OSHI_FAINT, marginBottom: 26, display: "block" }}>← Volver a Personajes</button>
+          <div style={{ fontSize: 46, color: OSHI_ACC, marginBottom: 10 }}>✦</div>
+          <h1 style={{ fontFamily: SERIF, fontSize: 30, fontWeight: 700, color: OSHI_INK, margin: "0 0 30px", lineHeight: 1.3 }}>La sala en la que seguro<br />que encuentras a tu oshi</h1>
+          <HajimeDice lines={[
+            "¡Bienvenida! Hoy soy yo quien te hace de guía… Espero estar a la altura ♪",
+            "Esto no es un test: es una sala. Empezarás eligiendo a siete idols por intuición y, según los vayas conociendo, la lista se irá reduciendo a cinco, luego a tres…",
+            "Y al final abrirás la puerta a tu favorito. ¿Entramos?",
+          ]} />
+          <OshiBtn onClick={onStart} wide>Entrar en la sala</OshiBtn>
+        </div>
+      </OshiShell>
+    );
+
+    // ─── PÁGINA ────────────────────────────────────────────────
+    const SalaOshiPage = ({ setNav }) => {
+      const [paso, setPaso] = useState(0);
+      const [seven, setSeven] = useState([]);
+      const [five, setFive] = useState([]);
+      const [three, setThree] = useState([]);
+      const [oshi, setOshi] = useState(null);
+      useEffect(() => { window.scrollTo({ top: 0, behavior: "smooth" }); }, [paso]);
+      const reset = () => { setSeven([]); setFive([]); setThree([]); setOshi(null); setPaso(0); };
+      return (
+        <div>
+          {paso === 0 && <OshiIntro onStart={() => setPaso(1)} setNav={setNav} />}
+          {paso === 1 && <OshiStep1 picked={seven} setPicked={setSeven} onNext={() => setPaso(2)} setNav={setNav} />}
+          {paso === 2 && <OshiStep2 seven={seven} picked={five} setPicked={setFive} onBack={() => { setFive([]); setPaso(1); }} onNext={() => setPaso(3)} />}
+          {paso === 3 && <OshiStep3 five={five} picked={three} setPicked={setThree} onNext={() => setPaso(4)} />}
+          {paso === 4 && <OshiStep4 three={three} onPick={id => { setOshi(id); setPaso(5); }} />}
+          {paso === 5 && oshi && <OshiResultado id={oshi} camino={{ seven, five, three }} onReset={reset} setNav={setNav} />}
+        </div>
+      );
+    };
+
     // ─── ROUTING (URL propia por diálogo) ─────────────────────
     const navToPath = (s) => {
       switch (s.page) {
@@ -14686,6 +15493,7 @@
         case "unit": return "/unidad/" + s.unitId;
         case "unitProfile": return "/unidad-perfil/" + s.unitId;
         case "quiz": return "/quiz";
+        case "salaOshi": return "/sala-oshi";
         case "home": default: return "/";
       }
     };
@@ -14707,6 +15515,7 @@
         case "unidad": return { page: "unit", unitId: b };
         case "unidad-perfil": return { page: "unitProfile", unitId: b };
         case "quiz": return { page: "quiz" };
+        case "sala-oshi": return { page: "salaOshi" };
         default: return { page: "home" };
       }
     };
@@ -14739,7 +15548,7 @@
       return (
         <div style={{ minHeight: "100vh", background: page === "story" ? "linear-gradient(180deg,#f8fafd 0%,#f5f8fc 100%)" : "linear-gradient(180deg,#f0f5fc 0%,#e8f0fb 30%,#edf3fa 60%,#f0f4fb 100%)", fontFamily: "'Nunito',sans-serif" }}>
           <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-          <style>{`*,*::before,*::after{box-sizing:border-box}body{margin:0}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeSlideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}@keyframes chatBubbleIn{from{opacity:0;transform:translateY(10px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes mtSwapR{from{opacity:0;transform:translateX(22px)}to{opacity:1;transform:translateX(0)}}@keyframes mtSwapL{from{opacity:0;transform:translateX(-22px)}to{opacity:1;transform:translateX(0)}}@keyframes promoFall{0%{transform:translate3d(0,-16%,0) rotate(0deg);opacity:0}12%{opacity:var(--op,0.5)}82%{opacity:var(--op,0.5)}100%{transform:translate3d(var(--drift,26px),420px,0) rotate(150deg);opacity:0}}@keyframes mtWave{0%,100%{transform:translateY(0)}50%{transform:translateY(-2.4px)}}.mtwave{display:inline-block;animation:mtWave 2.5s ease-in-out infinite}@media (prefers-reduced-motion: reduce){.mtwave{animation:none}}@keyframes floatCircle{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(20px,-30px) scale(1.05)}50%{transform:translate(-15px,-50px) scale(0.95)}75%{transform:translate(25px,-20px) scale(1.03)}}@keyframes bdayPulse{0%,100%{box-shadow:0 8px 30px rgba(255,190,70,0.35)}50%{box-shadow:0 8px 38px rgba(255,190,70,0.6)}}@keyframes bdayPulseBlue{0%,100%{box-shadow:0 10px 34px rgba(40,95,175,0.42)}50%{box-shadow:0 12px 46px rgba(70,125,215,0.72)}}@keyframes bdayPulseRed{0%,100%{box-shadow:0 10px 34px rgba(180,40,55,0.42)}50%{box-shadow:0 12px 46px rgba(225,60,80,0.72)}}@keyframes bdayPulseGreen{0%,100%{box-shadow:0 10px 34px rgba(120,160,20,0.42)}50%{box-shadow:0 12px 46px rgba(160,200,40,0.72)}}@keyframes bdayPulsePurple{0%,100%{box-shadow:0 10px 34px rgba(110,55,150,0.42)}50%{box-shadow:0 12px 46px rgba(160,90,205,0.72)}}@keyframes bdayPulseForest{0%,100%{box-shadow:0 10px 34px rgba(10,90,70,0.42)}50%{box-shadow:0 12px 46px rgba(30,150,115,0.72)}}@keyframes bdayPulseAqua{0%,100%{box-shadow:0 10px 34px rgba(0,110,150,0.42)}50%{box-shadow:0 12px 46px rgba(40,175,220,0.72)}}@keyframes bdayFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(12deg)}}@keyframes thunderPulse{0%,100%{box-shadow:0 6px 20px rgba(50,60,190,0.5),0 0 0 rgba(102,216,255,0)}50%{box-shadow:0 8px 30px rgba(102,216,255,0.85),0 0 22px rgba(102,216,255,0.55)}}@keyframes softBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}@keyframes eqBar{0%,100%{transform:scaleY(0.35)}50%{transform:scaleY(1)}}@keyframes bannerFloat{0%{transform:translate(0,0) rotate(0deg) scale(1)}25%{transform:translate(11px,-20px) rotate(16deg) scale(1.18)}50%{transform:translate(-9px,-34px) rotate(-12deg) scale(0.88)}75%{transform:translate(15px,-15px) rotate(22deg) scale(1.12)}100%{transform:translate(0,0) rotate(0deg) scale(1)}}@keyframes bannerTwinkle{0%,100%{opacity:0.4}50%{opacity:0.95}}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(130,160,200,0.25);border-radius:3px}button:focus-visible{outline:2px solid #5b9bd5;outline-offset:2px}.xbanner .xb2{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s ease}.xbanner:hover .xb2,.xcard:hover .xb2{opacity:1}.xbanner .xbhint{position:absolute;bottom:6px;right:8px;z-index:4;display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:999px;background:rgba(20,35,65,0.55);color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:10px;letter-spacing:.02em;pointer-events:none;transition:opacity .3s ease;backdrop-filter:blur(3px)}.xbanner:hover .xbhint,.xcard:hover .xbhint{opacity:0}
+          <style>{`*,*::before,*::after{box-sizing:border-box}body{margin:0}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeSlideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}@keyframes chatBubbleIn{from{opacity:0;transform:translateY(10px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes mtSwapR{from{opacity:0;transform:translateX(22px)}to{opacity:1;transform:translateX(0)}}@keyframes mtSwapL{from{opacity:0;transform:translateX(-22px)}to{opacity:1;transform:translateX(0)}}@keyframes promoFall{0%{transform:translate3d(0,-16%,0) rotate(0deg);opacity:0}12%{opacity:var(--op,0.5)}82%{opacity:var(--op,0.5)}100%{transform:translate3d(var(--drift,26px),420px,0) rotate(150deg);opacity:0}}@keyframes mtWave{0%,100%{transform:translateY(0)}50%{transform:translateY(-2.4px)}}.mtwave{display:inline-block;animation:mtWave 2.5s ease-in-out infinite}@media (prefers-reduced-motion: reduce){.mtwave{animation:none}}@keyframes floatCircle{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(20px,-30px) scale(1.05)}50%{transform:translate(-15px,-50px) scale(0.95)}75%{transform:translate(25px,-20px) scale(1.03)}}@keyframes bdayPulse{0%,100%{box-shadow:0 8px 30px rgba(255,190,70,0.35)}50%{box-shadow:0 8px 38px rgba(255,190,70,0.6)}}@keyframes bdayPulseBlue{0%,100%{box-shadow:0 10px 34px rgba(40,95,175,0.42)}50%{box-shadow:0 12px 46px rgba(70,125,215,0.72)}}@keyframes bdayPulseRed{0%,100%{box-shadow:0 10px 34px rgba(180,40,55,0.42)}50%{box-shadow:0 12px 46px rgba(225,60,80,0.72)}}@keyframes bdayPulseGreen{0%,100%{box-shadow:0 10px 34px rgba(120,160,20,0.42)}50%{box-shadow:0 12px 46px rgba(160,200,40,0.72)}}@keyframes bdayPulsePurple{0%,100%{box-shadow:0 10px 34px rgba(110,55,150,0.42)}50%{box-shadow:0 12px 46px rgba(160,90,205,0.72)}}@keyframes bdayPulseForest{0%,100%{box-shadow:0 10px 34px rgba(10,90,70,0.42)}50%{box-shadow:0 12px 46px rgba(30,150,115,0.72)}}@keyframes bdayPulseAqua{0%,100%{box-shadow:0 10px 34px rgba(0,110,150,0.42)}50%{box-shadow:0 12px 46px rgba(40,175,220,0.72)}}@keyframes bdayPulsePine{0%,100%{box-shadow:0 10px 34px rgba(30,80,55,0.45)}50%{box-shadow:0 12px 46px rgba(70,140,100,0.72)}}@keyframes bdayFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(12deg)}}@keyframes thunderPulse{0%,100%{box-shadow:0 6px 20px rgba(50,60,190,0.5),0 0 0 rgba(102,216,255,0)}50%{box-shadow:0 8px 30px rgba(102,216,255,0.85),0 0 22px rgba(102,216,255,0.55)}}@keyframes softBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}@keyframes eqBar{0%,100%{transform:scaleY(0.35)}50%{transform:scaleY(1)}}@keyframes bannerFloat{0%{transform:translate(0,0) rotate(0deg) scale(1)}25%{transform:translate(11px,-20px) rotate(16deg) scale(1.18)}50%{transform:translate(-9px,-34px) rotate(-12deg) scale(0.88)}75%{transform:translate(15px,-15px) rotate(22deg) scale(1.12)}100%{transform:translate(0,0) rotate(0deg) scale(1)}}@keyframes bannerTwinkle{0%,100%{opacity:0.4}50%{opacity:0.95}}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(130,160,200,0.25);border-radius:3px}button:focus-visible{outline:2px solid #5b9bd5;outline-offset:2px}.xbanner .xb2{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s ease}.xbanner:hover .xb2,.xcard:hover .xb2{opacity:1}.xbanner .xbhint{position:absolute;bottom:6px;right:8px;z-index:4;display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:999px;background:rgba(20,35,65,0.55);color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:10px;letter-spacing:.02em;pointer-events:none;transition:opacity .3s ease;backdrop-filter:blur(3px)}.xbanner:hover .xbhint,.xcard:hover .xbhint{opacity:0}
 .dark-mode .card{background:rgba(22,28,38,0.7) !important;border-color:rgba(60,80,110,0.25) !important}
 `}</style>
 
@@ -14751,7 +15560,8 @@
           {page === "unit" && unitId && <UnitPage unitId={unitId} setNav={setNav} />}
           {page === "charProfile" && charId && <CharProfilePage charId={charId} setNav={setNav} />}
           {page === "unitProfile" && unitId && <UnitProfilePage unitId={unitId} setNav={setNav} />}
-          {page === "quiz" && <CharQuizPage setNav={setNav} />}
+          {page === "quiz" && (SALA_OSHI_ACTIVA ? <SalaOshiPage setNav={setNav} /> : <CharQuizPage setNav={setNav} />)}
+          {page === "salaOshi" && <SalaOshiPage setNav={setNav} />}
           <a href="https://ko-fi.com/spanishenstars" target="_blank" rel="noopener noreferrer" style={{ position: "fixed", bottom: 20, right: 20, zIndex: 999, display: "flex", alignItems: "center", gap: 6, padding: "8px 16px", borderRadius: 24, background: "rgba(255,255,255,0.85)", border: "1px solid rgba(160,190,230,0.2)", boxShadow: "0 2px 12px rgba(100,140,190,0.15)", textDecoration: "none", fontFamily: "'Nunito',sans-serif", fontSize: 12, fontWeight: 700, color: "#4a85c2", backdropFilter: "blur(8px)", transition: "all 0.25s" }} onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 4px 18px rgba(74,133,194,0.25)"; e.currentTarget.style.transform = "translateY(-2px)"; }} onMouseLeave={e => { e.currentTarget.style.boxShadow = "0 2px 12px rgba(100,140,190,0.15)"; e.currentTarget.style.transform = "translateY(0)"; }}><span style={{ fontSize: 16 }}>☕</span>Apoyar</a>
           <footer style={{ textAlign: "center", padding: "28px 24px", borderTop: "1px solid rgba(160,190,230,0.12)", position: "relative", zIndex: 1 }}>
             <p style={{ fontFamily: "'Nunito',sans-serif", fontSize: 12, color: "#8a9fba", margin: "0 0 4px" }}>Proyecto de traducción de <a href="https://twitter.com/koiprimavera" target="_blank" rel="noopener noreferrer" style={{ color: "#5b9bd5", textDecoration: "none", fontWeight: 600 }}>@koiprimavera</a></p>
