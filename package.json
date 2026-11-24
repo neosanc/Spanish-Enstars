@@ -1,0 +1,11 @@
+{
+  "name": "espstars",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "devDependencies": {
+    "@babel/standalone": "7.26.4"
+  }
+}

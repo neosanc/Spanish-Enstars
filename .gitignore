@@ -1,0 +1,13 @@
+# Copias de seguridad y borradores locales
+index.backup-*.html
+prototipo-*.html
+icons/
+
+# Archivos del sistema y del editor
+.DS_Store
+.claude/
+.vscode/
+
+# Generado por la compilación
+node_modules/
+dist/
